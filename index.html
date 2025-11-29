@@ -2,10 +2,210 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sick Bay Briefs</title>
+  <title>Sick Bay Briefs – HMCS FRR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --navy: #002b5c;      /* Rolette-style deep blue */
+      --gold: #ffc72c;      /* Accent gold */
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 1.1rem 1.25rem 0.9rem;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    header .site-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    header h1 {
+      font-size: 1.55rem;
+      margin: 0.3rem 0 0.4rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    .intro {
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .topics-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .topics-header h2 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .topics-header span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .topic-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0.9rem 1rem;
+      border-radius: 0.8rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        border-color 0.12s ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.09);
+      border-color: rgba(0, 43, 92, 0.32);
+    }
+
+    .topic-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      background: rgba(0, 43, 92, 0.06);
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      margin-bottom: 0.3rem;
+    }
+
+    .topic-icon {
+      font-size: 1.1rem;
+    }
+
+    .topic-card h3 {
+      font-size: 1rem;
+      margin: 0 0 0.3rem;
+    }
+
+    .topic-card p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .footer-note {
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding: 1.3rem 2rem 1rem;
+      }
+      .container {
+        padding: 1.75rem 2rem 3.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Sick Bay Briefs</h1>
-  <p><a href="winter-skin.html">Cold, Dry Air & Your Skin</a></p>
+  <header>
+    <p class="site-title">HMCS FRR · Sick Bay Briefs</p>
+    <h1>Crew Health &amp; Self-Care Guides</h1>
+    <p>Quick, practical information sailors can scan on their phone.</p>
+  </header>
+
+  <main class="container">
+    <p class="intro">
+      These briefs are written for <strong>non-medical crew</strong>. They focus on
+      prevention, simple self-care, and clear “when to see Sick Bay” advice.
+      Scan the QR posted on the board or tap a topic below.
+    </p>
+
+    <div class="topics-header">
+      <h2>Current topics</h2>
+      <span>(more will be added over time)</span>
+    </div>
+
+    <section class="topics-grid">
+      <!-- Winter / low humidity skin brief -->
+      <a class="topic-card" href="winter-skin.html">
+        <div class="topic-label">
+          <span class="topic-icon">❄️</span>
+          <span>Environment</span>
+        </div>
+        <h3>Cold, Dry Air &amp; Winter Skin</h3>
+        <p>
+          Dry, cracked hands, lips, scalp or nose when the humidity drops –
+          what you can do yourself, and when to see Sick Bay.
+        </p>
+      </a>
+
+      <!-- Shaving / razor bumps brief -->
+      <a class="topic-card" href="shaving.html">
+        <div class="topic-label">
+          <span class="topic-icon">🪒</span>
+          <span>Grooming</span>
+        </div>
+        <h3>Shaving, Razor Burn &amp; Razor Bumps</h3>
+        <p>
+          How to shave with less burn and fewer bumps, simple products to buy
+          yourself, and clear signs it’s time to get medical involved.
+        </p>
+      </a>
+    </section>
+
+    <p class="footer-note">
+      These briefs are general information only and do not replace a medical
+      assessment. If you’re unsure or worried about a symptom, come to Sick Bay.
+    </p>
+  </main>
 </body>
 </html>
