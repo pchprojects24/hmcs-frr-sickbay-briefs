@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minor Cuts, Scrapes & Wound Care – Sick Bay Briefs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --navy: #002b5c;
+      --gold: #ffc72c;
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
+      --danger: #b91c1c;
+      --info: #0369a1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 1.1rem 1.25rem 0.9rem;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    header .site-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    header h1 {
+      font-size: 1.55rem;
+      margin: 0.3rem 0 0.3rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 1.4rem 0 0.5rem;
+    }
+
+    p {
+      margin: 0.2rem 0 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0.1rem 0 0.75rem 1.1rem;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin: 0.18rem 0;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(0, 43, 92, 0.06);
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .pill span {
+      font-size: 1rem;
+    }
+
+    .callout {
+      border-left: 4px solid var(--info);
+      background: #e0f2fe;
+      padding: 0.7rem 0.85rem;
+      border-radius: 0.6rem;
+      margin: 0.8rem 0 1rem;
+      font-size: 0.9rem;
+    }
+
+    .callout-urgent {
+      border-left-color: var(--danger);
+      background: #fef2f2;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .slogan {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      background: #111827;
+      color: #f9fafb;
+      font-size: 0.85rem;
+      margin: 0.6rem 0 0.8rem;
+    }
+
+    .slogan span:first-child {
+      font-size: 1rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.8rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 0.8rem;
+      border: 1px solid var(--border-soft);
+      padding: 0.9rem 0.95rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-note {
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding: 1.3rem 2rem 1rem;
+      }
+
+      main {
+        padding: 1.75rem 2rem 3.25rem;
+      }
+
+      .two-col {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="site-title">HMCS FRR · Sick Bay Briefs</p>
+    <h1>Minor Cuts, Scrapes &amp; Wound Care</h1>
+    <p>Simple self-care for small wounds, and clear signs when to see Sick Bay.</p>
+  </header>
+
+  <main>
+    <div class="pill">
+      <span>🩹</span>
+      <span>Self-care guide</span>
+    </div>
+    <p class="tagline">
+      For minor cuts, scrapes, small blisters and skin splits. If it looks serious,
+      keeps bleeding, or you are unsure, go to Sick Bay.
+    </p>
+
+    <div class="slogan">
+      <span>✔</span>
+      <span><strong>Clean • Thin coat • Cover • Check</strong> — every scrape, every time.</span>
+    </div>
+
+    <h2>1. Is this wound okay for self-care?</h2>
+    <p>You can usually look after it yourself if:</p>
+    <ul>
+      <li>Bleeding stops within a few minutes of firm pressure.</li>
+      <li>The cut is small and shallow, edges close easily.</li>
+      <li>It&rsquo;s a surface scrape or minor blister/chafing.</li>
+      <li>It&rsquo;s a tiny skin split on a knuckle, fingertip, or heel.</li>
+    </ul>
+
+    <div class="callout callout-urgent">
+      <strong>Go to Sick Bay now if:</strong>
+      <ul>
+        <li>Bleeding won&rsquo;t stop with 5–10 minutes of firm pressure.</li>
+        <li>The wound is deep, gaping, or clearly needs stitches.</li>
+        <li>It&rsquo;s a puncture (nail, fish spine, metal) or any bite.</li>
+        <li>Something is stuck in the wound that you can&rsquo;t remove.</li>
+        <li>The injury is near the eye, neck, genitals, or over a suspected fracture.</li>
+      </ul>
+    </div>
+
+    <h2>2. Clean the wound</h2>
+    <p><strong>As soon as you can:</strong></p>
+    <ul>
+      <li>Wash your hands with soap or sanitizer.</li>
+      <li>Rinse the wound under a gentle stream of potable water for 2–5 minutes.</li>
+      <li>Use mild soap on the skin around the wound; let water do most of the cleaning.</li>
+      <li>Gently lift out any visible dirt with clean fingers or tweezers if you can see it easily.</li>
+    </ul>
+    <p><strong>Avoid pouring into the wound:</strong> hydrogen peroxide, full-strength iodine,
+      alcohol, or strong detergents – they damage healing tissue.</p>
+    <p>If you still see grit or debris you can&rsquo;t remove with gentle rinsing, have Sick Bay check it.</p>
+
+    <h2>3. Antiseptics – only if really dirty</h2>
+    <p>Most minor wounds don&rsquo;t need antiseptic solutions once they are well rinsed.</p>
+    <ul>
+      <li>If the wound was heavily contaminated and still looks dirty, a one-time brief rinse
+        with a <strong>dilute</strong> antiseptic (e.g. chlorhexidine 0.05% or povidone-iodine ~1%) is reasonable.</li>
+      <li>Apply briefly, then rinse again with clean water.</li>
+      <li>Avoid repeated soaking or scrubbing with antiseptics – this slows healing.</li>
+    </ul>
+
+    <h2>4. Ointment: petroleum jelly vs antibiotic</h2>
+    <p>After cleaning, apply a <strong>thin</strong> layer over the wound:</p>
+    <ul>
+      <li><strong>Plain petroleum jelly</strong> – good default for clean, low-risk minor wounds.</li>
+      <li><strong>Antibiotic ointment</strong> (e.g. Polysporin&reg;) – consider for dirtier cuts,
+        hand/foot wounds, or when infection would impact duty.</li>
+    </ul>
+    <p>Stop using any antibiotic ointment if the surrounding skin becomes red and itchy
+      (possible allergy); switch back to plain petroleum jelly.</p>
+
+    <h2>5. Dressings &amp; changing them</h2>
+    <p>Covered, slightly moist wounds heal faster and hurt less.</p>
+    <ul>
+      <li>Use a Band-Aid for small cuts, or a non-stick pad and tape for larger scrapes.</li>
+      <li>Consider blister / hydrocolloid dressings for scrapes and blisters under boots or gear.</li>
+      <li>Change standard dressings at least daily, or sooner if wet or dirty.</li>
+      <li>Hydrocolloid dressings can usually stay 2–5+ days if sealed, dry, and skin around looks normal –
+        check once a day, especially at sea.</li>
+      <li>Wrap snug, not tight – fingers and toes should stay warm and pink.</li>
+    </ul>
+
+    <h2>6. Seawater and “dirty” water</h2>
+    <p>Salt water is not a disinfectant.</p>
+    <ul>
+      <li>Avoid exposing open wounds to seawater or dirty bilge/harbour water.</li>
+      <li>If a wound does get soaked in seawater, rinse as soon as you can with potable water and mild soap,
+        then re-dress with fresh ointment and a clean bandage.</li>
+      <li>Keep wounds covered with a waterproof dressing if you expect spray or immersion.</li>
+    </ul>
+
+    <div class="callout callout-urgent">
+      <strong>After seawater exposure, get urgent help if:</strong>
+      <ul>
+        <li>Pain or swelling is rapidly worsening.</li>
+        <li>Redness spreads quickly or skin turns purple/blue.</li>
+        <li>Blisters/bullae appear near the wound.</li>
+        <li>You develop fever, chills, or feel very unwell.</li>
+      </ul>
+    </div>
+
+    <h2>7. Tetanus check</h2>
+    <ul>
+      <li>Routine tetanus booster: about every 10 years.</li>
+      <li>Dirty or major wounds: a booster is usually recommended if it&rsquo;s been &gt;5 years.</li>
+      <li>See Sick Bay if you don&rsquo;t know your last tetanus shot, never finished childhood vaccines,
+        or have a dirty wound and last booster was &gt;5 years ago.</li>
+    </ul>
+
+    <h2>8. When to see Sick Bay</h2>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="section-label">Go now (urgent)</div>
+        <h3>Same watch / immediately</h3>
+        <ul>
+          <li>Bleeding won&rsquo;t stop with firm pressure.</li>
+          <li>Deep, gaping, or long cut that may need stitches.</li>
+          <li>Puncture wounds, bites, crush injuries, or amputations.</li>
+          <li>Foreign body stuck in the wound.</li>
+          <li>Red streaks running away from the wound.</li>
+          <li>Fever, chills, or feeling systemically unwell.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="section-label">Not improving</div>
+        <h3>Within 24 hours</h3>
+        <ul>
+          <li>Redness, warmth, swelling, or pain is getting worse after 24–48 hours.</li>
+          <li>Pus, bad smell, or delayed healing.</li>
+          <li>You have diabetes, circulation problems, or immune issues.</li>
+          <li>You may need a tetanus booster (last shot &gt;10 years, or &gt;5 years with a dirty wound).</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer-note">
+      This brief is general information for minor wounds and does not replace a medical assessment.
+      If you are unsure or worried about a wound, come to Sick Bay.
+    </p>
+  </main>
+</body>
+</html>
