@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>HMCS FRR Sick Bay Briefs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Crew-friendly health briefs for HMCS Frederick Rolette sailors." />
+  <meta charset="UTF-8">
+  <title>HMCS FRR — Sick Bay Briefs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
-      --navy: #0b1b3b;
-      --navy-light: #1f325f;
-      --gold: #f4c542;
-      --gold-dark: #c49718;
-      --bg: #f7f7fa;
+      --navy: #002b45;
+      --navy-light: #004b7a;
+      --gold: #f0c75e;
+      --bg: #f5f7fa;
+      --text: #111827;
+      --muted: #4b5563;
       --card-bg: #ffffff;
-      --text-main: #1b1f2a;
-      --text-muted: #555b6b;
-      --border-soft: #dde1ee;
-      --shadow-soft: 0 10px 22px rgba(0, 0, 0, 0.08);
-      --radius-lg: 14px;
-      --radius-pill: 999px;
+      --accent-soft: #e5f0ff;
     }
 
     * {
@@ -28,378 +23,235 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #101a33 0, #050a16 32%, #02030a 60%, #020309 100%);
-      color: var(--text-main);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
     }
 
     header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
       color: #fff;
-      padding: 1.2rem 1.25rem 0.9rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
+      padding: 1.1rem 1.25rem 1.3rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.75rem 1.5rem;
       justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
       gap: 0.75rem;
     }
 
-    .crest-circle {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      background: radial-gradient(circle at 30% 20%, #4169e1, #0b1b3b);
-    }
-
-    .brand-text h1 {
+    header h1 {
       margin: 0;
-      font-size: 1.1rem;
-      letter-spacing: 0.12em;
+      font-size: 1.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    header .sub {
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
+
+    .badge-ship {
+      font-size: 0.75rem;
       text-transform: uppercase;
-    }
-
-    .brand-text p {
-      margin: 0.1rem 0 0;
-      font-size: 0.84rem;
-      color: rgba(255,255,255,0.72);
-    }
-
-    .tagline {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.7);
-      margin-top: 0.1rem;
+      letter-spacing: 0.08em;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.7);
+      padding: 0.08rem 0.6rem;
+      display: inline-block;
+      margin-top: 0.25rem;
     }
 
     main {
       max-width: 960px;
-      margin: 1.4rem auto 2.4rem;
-      padding: 0 1.25rem;
+      margin: 1.5rem auto 2.5rem;
+      padding: 0 1rem;
     }
 
-    .intro-card {
-      background: linear-gradient(135deg, rgba(9,20,56,0.97), rgba(10,32,84,0.96));
-      border-radius: 18px;
-      padding: 1.1rem 1.2rem 1.25rem;
-      color: #f5f6ff;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-      border: 1px solid rgba(244,197,66,0.5);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .intro-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 0 0, rgba(244,197,66,0.16), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(41,121,255,0.25), transparent 55%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .intro-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .intro-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.7rem;
-      border-radius: var(--radius-pill);
-      background: rgba(0,0,0,0.23);
-      border: 1px solid rgba(255,255,255,0.26);
-    }
-
-    .intro-title {
-      margin: 0.6rem 0 0.25rem;
-      font-size: 1.55rem;
-    }
-
-    .intro-text {
-      margin: 0.1rem 0 0.6rem;
+    .intro {
+      margin-bottom: 1.5rem;
       font-size: 0.95rem;
-      color: rgba(235,238,255,0.88);
-    }
-
-    .intro-list {
-      margin: 0.2rem 0 0;
-      padding-left: 1.1rem;
-      font-size: 0.9rem;
-      color: rgba(235,238,255,0.9);
-    }
-
-    .intro-list li + li {
-      margin-top: 0.1rem;
+      color: var(--muted);
     }
 
     .grid {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
-      margin-top: 1.4rem;
-    }
-
-    @media (min-width: 720px) {
-      .grid-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
     }
 
     .card {
       background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 0.9rem 1rem 1.05rem;
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem 1.1rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
       display: flex;
       flex-direction: column;
-      min-height: 150px;
-    }
-
-    .card-header {
-      display: flex;
-      align-items: baseline;
       justify-content: space-between;
-      gap: 0.5rem;
     }
 
-    .card-kicker {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
+    .card h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.02rem;
     }
 
-    .card-title {
-      margin: 0.18rem 0 0.15rem;
-      font-size: 1.05rem;
-    }
-
-    .card-badge {
-      font-size: 0.72rem;
-      padding: 0.1rem 0.5rem;
-      border-radius: var(--radius-pill);
-      background: #eef1ff;
-      color: var(--navy-light);
-      border: 1px solid rgba(31,50,95,0.2);
-      white-space: nowrap;
-    }
-
-    .card-text {
-      margin: 0.25rem 0 0.4rem;
+    .card p {
+      margin: 0 0 0.65rem;
       font-size: 0.9rem;
-      color: var(--text-muted);
-      flex: 1 1 auto;
+      color: var(--muted);
     }
 
-    .link-row {
+    .tag-row {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0.2rem;
-      gap: 0.5rem;
       flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .tag {
+      font-size: 0.74rem;
+      padding: 0.16rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1f2937;
     }
 
     .card a {
+      align-self: flex-start;
+      margin-top: 0.15rem;
       text-decoration: none;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.86rem;
-      padding: 0.32rem 0.9rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--navy-light);
-      background: linear-gradient(135deg, #ffffff, #eef1ff);
-      color: var(--navy-light);
+      font-size: 0.88rem;
       font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: var(--navy-light);
+      color: #f9fafb;
+      border: 1px solid transparent;
     }
 
-    .btn span {
-      font-size: 0.9em;
-    }
-
-    .btn:hover {
-      background: #e1e5ff;
-    }
-
-    .tagline-small {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+    .card a:hover {
+      background: #ffffff;
+      color: var(--navy-light);
+      border-color: var(--navy-light);
     }
 
     footer {
       max-width: 960px;
-      margin: 1.3rem auto 2rem;
-      padding: 0 1.25rem;
+      margin: 0 auto 2.25rem;
+      padding: 0 1rem;
       font-size: 0.78rem;
-      color: rgba(214,218,240,0.85);
+      color: var(--muted);
     }
 
-    footer p {
-      margin: 0.2rem 0;
+    footer .note {
+      background: #e5e7eb;
+      border-radius: 0.6rem;
+      padding: 0.6rem 0.7rem;
     }
 
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-    }
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+      }
 
-    footer a:hover {
-      text-decoration: underline;
+      main {
+        padding: 0 0.75rem;
+      }
+
+      footer {
+        padding: 0 0.75rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-inner">
-      <div class="brand">
-        <div class="crest-circle">FRR</div>
-        <div class="brand-text">
-          <h1>HMCS FREDERICK ROLETTE</h1>
-          <p>Sick Bay Briefs · Crew Self-Care</p>
-        </div>
-      </div>
-      <div class="tagline">
-        Short, practical pages sailors can scan on their phone when something is bugging them.
-      </div>
+    <div>
+      <h1>HMCS FRR — Sick Bay Briefs</h1>
+      <div class="sub">Crew information pages for common health and self-care topics.</div>
+      <div class="badge-ship">For sailors &bull; Not a substitute for medical assessment</div>
     </div>
   </header>
 
   <main>
-    <section class="intro-card">
-      <div class="intro-inner">
-        <div class="intro-pill">Crew health · Quick reference</div>
-        <h2 class="intro-title">Tap a topic, get the basics, know when to see Sick Bay.</h2>
-        <p class="intro-text">
-          These briefs are written for sailors, not med staff. Each one covers three things:
-        </p>
-        <ul class="intro-list">
-          <li>What&rsquo;s going on (in plain language)</li>
-          <li>What you can realistically do yourself on board</li>
-          <li>Clear red flags that mean it&rsquo;s time for Sick Bay</li>
-        </ul>
-      </div>
-    </section>
+    <p class="intro">
+      These pages are short guides for sailors. They focus on prevention, self-care, and clear signs that it is time to see Sick Bay.
+      Scan the QR code that brought you here any time you want to review the information.
+    </p>
 
-    <section class="grid grid-2" aria-label="Health topics">
-      <!-- Winter / Dry skin -->
+    <div class="grid">
       <article class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-kicker">Environment</div>
-            <h3 class="card-title">Cold, Dry Air &amp; Your Skin</h3>
+        <div>
+          <h2>Cold Weather &amp; Dry Air</h2>
+          <p>How low humidity and cold wind affect skin, lips, scalp and nose &mdash; and what you can do to prevent cracking and flare-ups during winter sailing and Arctic trials.</p>
+          <div class="tag-row">
+            <span class="tag">Dry skin</span>
+            <span class="tag">Lips &amp; nose</span>
+            <span class="tag">Winter sailing</span>
           </div>
-          <div class="card-badge">Winter / Arctic</div>
         </div>
-        <p class="card-text">
-          Why low humidity, cold wind and shipboard heating crack skin, split lips and dry out your nose &mdash;
-          plus simple routines to prevent it.
-        </p>
-        <div class="link-row">
-          <a href="winter-skin.html" class="btn">
-            <span>Open brief</span> <span>›</span>
-          </a>
-          <span class="tagline-small">Hands · face · lips · scalp · nose</span>
-        </div>
+        <a href="winter-skin.html">Open winter-skin brief →</a>
       </article>
 
-      <!-- Shaving -->
       <article class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-kicker">Grooming</div>
-            <h3 class="card-title">Shaving &amp; Razor Bumps</h3>
+        <div>
+          <h2>Shaving Problems</h2>
+          <p>Razor burn, bumps and irritation on the neck and cheeks. Practical shaving tips, self-care and when to ask for medical help.</p>
+          <div class="tag-row">
+            <span class="tag">Razor burn</span>
+            <span class="tag">Razor bumps</span>
+            <span class="tag">Beard area</span>
           </div>
-          <div class="card-badge">Daily shave</div>
         </div>
-        <p class="card-text">
-          Razor burn, ingrown hairs and infected follicles on the neck and jawline. How to shave with less grief,
-          what products actually help, and when bumps need medical review.
-        </p>
-        <div class="link-row">
-          <a href="shaving.html" class="btn">
-            <span>Open brief</span> <span>›</span>
-          </a>
-          <span class="tagline-small">Razor burn · PFB · folliculitis</span>
-        </div>
+        <a href="shaving.html">Open shaving brief →</a>
       </article>
 
-      <!-- Minor wounds -->
       <article class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-kicker">First aid</div>
-            <h3 class="card-title">Minor Cuts &amp; Scrapes</h3>
+        <div>
+          <h2>Minor Cuts &amp; Scrapes</h2>
+          <p>How to clean small wounds, when to use dressings, and which warning signs mean you should report to Sick Bay.</p>
+          <div class="tag-row">
+            <span class="tag">Deck scrapes</span>
+            <span class="tag">Small cuts</span>
+            <span class="tag">Seawater exposure</span>
           </div>
-          <div class="card-badge">Deck / machinery</div>
         </div>
-        <p class="card-text">
-          Simple steps for cleaning and covering small cuts, scrapes and blisters, how to handle seawater exposure,
-          and the warning signs of infection or tetanus risk.
-        </p>
-        <div class="link-row">
-          <a href="wound-care.html" class="btn">
-            <span>Open brief</span> <span>›</span>
-          </a>
-          <span class="tagline-small">Clean · thin-coat · cover · check</span>
-        </div>
+        <a href="wound-care.html">Open wound-care brief →</a>
       </article>
 
-      <!-- Foot care -->
       <article class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-kicker">Feet &amp; footwear</div>
-            <h3 class="card-title">Foot Care at Sea</h3>
+        <div>
+          <h2>Foot Care in Boots</h2>
+          <p>Damp socks, long days in boots, blisters and athlete’s foot. Simple habits to keep your feet healthy at sea.</p>
+          <div class="tag-row">
+            <span class="tag">Boots &amp; socks</span>
+            <span class="tag">Fungal issues</span>
+            <span class="tag">Blisters</span>
           </div>
-          <div class="card-badge">Boots on all day</div>
         </div>
-        <p class="card-text">
-          Long days in damp socks and boots, athlete&rsquo;s foot, blisters and &ldquo;trench-foot-like&rdquo; problems.
-          How to keep your feet dry, spot trouble early and know when to get checked.
-        </p>
-        <div class="link-row">
-          <a href="foot-care.html" class="btn">
-            <span>Open brief</span> <span>›</span>
-          </a>
-          <span class="tagline-small">Socks · boots · fungal issues</span>
-        </div>
+        <a href="foot-care.html">Open foot-care brief →</a>
       </article>
-    </section>
+
+      <article class="card">
+        <div>
+          <h2>Fatigue at Sea</h2>
+          <p>Broken sleep, night watches and long evolutions. How to manage your own sleep, use caffeine sensibly, and spot when tiredness becomes a safety issue.</p>
+          <div class="tag-row">
+            <span class="tag">Watches</span>
+            <span class="tag">Sleep</span>
+            <span class="tag">Caffeine</span>
+          </div>
+        </div>
+        <a href="fatigue.html">Open fatigue brief →</a>
+      </article>
+    </div>
   </main>
 
   <footer>
-    <p>
-      These briefs are for general crew education, not a replacement for medical assessment.
-      If you&rsquo;re unsure, uncomfortable, or symptoms are getting worse, see Sick Bay.
-    </p>
+    <div class="note">
+      These briefs are general information only. They do not replace medical assessment or orders.
+      If you are unsure, worried, or symptoms are not improving, report to Sick Bay.
+    </div>
   </footer>
 </body>
 </html>
