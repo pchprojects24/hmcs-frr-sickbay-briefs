@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Foot Care at Sea – HMCS FRR Sick Bay Briefs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Crew-focused foot care tips for HMCS FRR sailors: damp boots, athlete’s foot, blisters, and trench-foot–like problems." />
+  <style>
+    :root {
+      --navy: #0b1b3b;
+      --navy-light: #1f325f;
+      --gold: #f4c542;
+      --gold-dark: #c49718;
+      --bg: #f7f7fa;
+      --card-bg: #ffffff;
+      --accent: #2979ff;
+      --danger: #c62828;
+      --text-main: #1b1f2a;
+      --text-muted: #555b6b;
+      --border-soft: #dde1ee;
+      --shadow-soft: 0 8px 16px rgba(0, 0, 0, 0.08);
+      --radius-lg: 12px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy), #050a16);
+      color: #fff;
+      padding: 1rem 1.25rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 1.5rem;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .crest-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-text p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    nav a.current {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold-dark);
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 1.5rem auto 2.5rem;
+      padding: 0 1.25rem;
+    }
+
+    .page-meta {
+      margin-bottom: 1.25rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(244,197,66,0.14);
+      color: var(--gold-dark);
+      border: 1px solid rgba(244,197,66,0.6);
+    }
+
+    .page-title {
+      margin: 0.5rem 0 0.25rem;
+      font-size: 1.6rem;
+    }
+
+    .page-subtitle {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .quick-alert {
+      margin-top: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-lg);
+      background: #fff7e0;
+      border: 1px solid rgba(244,197,66,0.7);
+      font-size: 0.9rem;
+    }
+
+    .quick-alert strong {
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1.2fr 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 1rem 1.1rem;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      margin-top: 1.1rem;
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.5rem 1.2rem;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+
+    li + li {
+      margin-top: 0.2rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0.3rem 0 0.2rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pill-list li {
+      background: #eef1ff;
+      border-radius: var(--radius-pill);
+      padding: 0.15rem 0.55rem;
+      font-size: 0.8rem;
+      color: var(--navy-light);
+    }
+
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding-left: 0.75rem;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .callout-danger {
+      border-left-color: var(--danger);
+    }
+
+    .callout-danger strong {
+      color: var(--danger);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .checklist li::before {
+      content: "•";
+      color: var(--accent);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Optional image slots for later */
+    .image-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .image-placeholder {
+      flex: 1 1 130px;
+      min-height: 80px;
+      border-radius: 10px;
+      border: 1px dashed var(--border-soft);
+      background: repeating-linear-gradient(
+        45deg,
+        #f3f4fb,
+        #f3f4fb 6px,
+        #e4e6f4 6px,
+        #e4e6f4 12px
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="crest-circle">FRR</div>
+        <div class="brand-text">
+          <h1>HMCS FREDERICK ROLETTE</h1>
+          <p>Sick Bay Briefs &middot; Crew Self-Care</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">All Briefs</a>
+        <a href="winter-skin.html">Cold &amp; Skin</a>
+        <a href="wound-care.html">Minor Wounds</a>
+        <a href="foot-care.html" class="current">Foot Care</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-meta">
+      <div class="tag">Feet &amp; Footwear</div>
+      <h2 class="page-title">Foot Care at Sea</h2>
+      <p class="page-subtitle">
+        Damp boots, athlete&rsquo;s foot, blisters and &ldquo;trench-foot-like&rdquo; problems &mdash; how to
+        prevent them and when to see Sick Bay.
+      </p>
+      <div class="quick-alert">
+        <strong>Bottom line:</strong> Dry socks, dry boots, and a 30-second check of your feet every
+        day will prevent most problems. Don&rsquo;t ignore deep cracks, spreading redness or
+        pain that makes it hard to stand watch &mdash; those need Sick Bay.
+      </div>
+    </section>
+
+    <section class="grid grid-2">
+      <article class="card">
+        <div class="section-label">Quick overview</div>
+        <h2>Common foot problems in boots</h2>
+        <p>Long days in damp socks and boots can lead to:</p>
+        <ul>
+          <li><strong>Maceration (&ldquo;soggy feet&rdquo;)</strong> &mdash; pale, soft, wrinkled skin that tears and cracks easily.</li>
+          <li><strong>Athlete&rsquo;s foot (tinea pedis)</strong> &mdash; itchy, burning, peeling skin, especially between the toes.</li>
+          <li><strong>Blisters and hot spots</strong> &mdash; friction bubbles on heels, toes and balls of the feet.</li>
+          <li><strong>&ldquo;Trench-foot-like&rdquo; problems</strong> &mdash; cold + wet exposure causing numb, painful, swollen feet.</li>
+          <li><strong>Secondary infections</strong> &mdash; redness, swelling or pus when germs enter through cracked skin.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Not covered here:</strong> major trauma, fractures, severe diabetic foot problems or deep
+          ulcers. Those are emergencies &mdash; go straight to Sick Bay.
+        </div>
+      </article>
+
+      <aside class="card">
+        <div class="section-label">At a glance</div>
+        <h3>Quick habits that make the biggest difference</h3>
+        <ul class="checklist">
+          <li>Fresh socks every day &mdash; and change again mid-day on long watches.</li>
+          <li>Wash and dry your feet daily, especially between the toes.</li>
+          <li>Wear shower sandals in communal heads/showers.</li>
+          <li>Air boots and remove insoles after watch so they fully dry.</li>
+          <li>Use foot powder <em>before</em> problems start, not just after.</li>
+          <li>Pad &amp; tape hot spots before they become blisters.</li>
+          <li>See Sick Bay if athlete&rsquo;s foot doesn&rsquo;t improve, or if there is spreading redness, pain or pus.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="card" id="why">
+      <div class="section-label">Why it happens</div>
+      <h2>Why feet break down in damp boots</h2>
+      <p>Feet inside boots are warm, dark and often wet with sweat. That combination causes:</p>
+      <ul>
+        <li><strong>Soft, fragile skin:</strong> when skin stays wet, it turns white and wrinkled and
+          tears more easily (maceration).</li>
+        <li><strong>Fungal overgrowth:</strong> fungus that causes athlete&rsquo;s foot thrives in warm,
+          moist toe webs and damp socks.</li>
+        <li><strong>More blisters:</strong> wet skin rubs and shears more, so you blister faster in damp socks.</li>
+        <li><strong>Cold-wet injury:</strong> in cold conditions, wet feet lose heat quickly and blood
+          flow drops, which can damage tissues (&ldquo;trench-foot-like&rdquo; problems).</li>
+        <li><strong>Entry points for infection:</strong> cracked heels, split toe webs and popped blisters
+          give bacteria a way in.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="prevention">
+      <div class="section-label">Prevention</div>
+      <h2>Daily prevention: socks, boots &amp; hygiene</h2>
+
+      <h3>1. Socks</h3>
+      <ul>
+        <li>Use <strong>wool-blend or moisture-wicking socks</strong>; avoid 100% cotton that holds sweat.</li>
+        <li><strong>New pair every day</strong> without fail. On a long duty day, change socks once in the middle as well.</li>
+        <li>Always put on <strong>clean, dry</strong> socks after a shower &mdash; not yesterday&rsquo;s pair.</li>
+        <li>Avoid socks that are so tight they leave deep marks (reduced circulation) or so loose they bunch up and rub.</li>
+      </ul>
+
+      <h3>2. Boots</h3>
+      <ul>
+        <li>If you have two pairs, <strong>rotate boots</strong> so each pair can dry fully between uses.</li>
+        <li>After watch, <strong>open laces</strong>, remove insoles and air boots in a dry, ventilated spot.</li>
+        <li>Don&rsquo;t sleep in boots or wet socks. Give feet an off-duty &ldquo;airing out&rdquo; every night.</li>
+        <li>Make sure boots fit properly: not crushing toes, not so loose your heel lifts and rubs.</li>
+      </ul>
+
+      <h3>3. Foot hygiene</h3>
+      <ul>
+        <li><strong>Wash feet daily</strong> with soap, including between toes.</li>
+        <li><strong>Dry thoroughly</strong> &mdash; towel between each toe before socks go on.</li>
+        <li>Wear <strong>shower sandals</strong> in communal showers and heads.</li>
+        <li>Keep toenails trimmed straight across; don&rsquo;t share towels or footwear.</li>
+      </ul>
+
+      <h3>4. Moisture control</h3>
+      <ul>
+        <li>Use foot powder <strong>before</strong> a long watch:
+          <ul>
+            <li>Plain drying powder for sweaty feet.</li>
+            <li>Antifungal powder (e.g., tolnaftate, miconazole) if you tend to athlete&rsquo;s foot.</li>
+          </ul>
+        </li>
+        <li>Apply a light dusting to dry feet and inside socks/boots; avoid thick clumps.</li>
+        <li>Whenever possible on breaks, <strong>take boots and socks off</strong> for 5–10 minutes of air time.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="fungal">
+      <div class="section-label">Self-care</div>
+      <h2>Early athlete&rsquo;s foot: what you can do yourself</h2>
+      <p><strong>Typical signs:</strong></p>
+      <ul>
+        <li>Itchy, burning skin between toes.</li>
+        <li>Peeling or scaly patches, sometimes white and soggy in the toe webs.</li>
+        <li>Dry, flaky skin on the soles that doesn&rsquo;t just look like &ldquo;normal dry skin.&rdquo;</li>
+        <li>Sometimes blisters or a strong foot odour.</li>
+      </ul>
+
+      <h3>Over-the-counter antifungals (ingredients)</h3>
+      <p>At a pharmacy (or provided by Sick Bay), look for creams or sprays containing:</p>
+      <ul>
+        <li><strong>Clotrimazole 1%</strong></li>
+        <li><strong>Miconazole 2%</strong></li>
+        <li><strong>Terbinafine 1%</strong></li>
+      </ul>
+      <p>These all work similarly when used correctly.</p>
+
+      <h3>How to use them</h3>
+      <ul>
+        <li>After showering, <strong>dry your feet well</strong>, especially between the toes.</li>
+        <li>Apply a <strong>thin layer</strong> of cream to the rash and 1–2&nbsp;cm beyond the edges.</li>
+        <li>Use once or twice daily as per product instructions.</li>
+        <li>Continue treatment <strong>for 1–2&nbsp;weeks after the rash clears</strong> to fully kill the fungus.</li>
+        <li>At the same time, tighten up hygiene: fresh socks, powder, shower sandals, and cleaning the shower floor where possible.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Important:</strong> cream alone won&rsquo;t work if your feet stay wet in the same socks all day.
+        The combination of <em>medicine + dry feet + clean socks/boots</em> is what cures it.
+      </div>
+
+      <div class="callout">
+        <strong>Sick Bay note:</strong> Athlete&rsquo;s foot is a valid reason to see Sick Bay. Clotrimazole cream is
+        available and can be issued with clear instructions if you&rsquo;re not improving with your own measures.
+      </div>
+    </section>
+
+    <section class="card" id="blisters">
+      <div class="section-label">Blisters &amp; soggy feet</div>
+      <h2>Blisters and maceration (&ldquo;soggy feet&rdquo;)</h2>
+
+      <h3>Blisters – quick rules</h3>
+      <ul>
+        <li><strong>Small, not too painful:</strong> leave it intact. Pad around it (moleskin donut, blister plaster) and protect inside your sock.</li>
+        <li><strong>Large or very painful:</strong> you can carefully drain it:
+          <ul>
+            <li>Clean skin; use a clean/sterilized needle to pierce near the edge.</li>
+            <li>Gently press out fluid; keep the &ldquo;roof&rdquo; skin in place.</li>
+            <li>Apply a small amount of ointment and cover with a non-stick dressing.</li>
+          </ul>
+        </li>
+        <li>Do <strong>not</strong> tear off the overlying skin; it&rsquo;s your natural bandage.</li>
+        <li>Watch for infection: increasing redness, pus, warmth or red streaks &mdash; those need Sick Bay.</li>
+      </ul>
+
+      <h3>Maceration (&ldquo;soggy white&rdquo; feet)</h3>
+      <ul>
+        <li>Remove wet socks/boots and <strong>gently dry</strong> feet as soon as you can.</li>
+        <li>Air feet in a warm, dry space. Don&rsquo;t rub hard; the wet skin is fragile.</li>
+        <li>Once mostly dry, you may:
+          <ul>
+            <li>Use a little barrier ointment (e.g., petroleum jelly) on heels/soles if they crack easily.</li>
+            <li>Use <strong>powder, not ointment</strong>, between toes to keep that area dry.</li>
+          </ul>
+        </li>
+        <li>If skin peels, trim only loose dead skin; don&rsquo;t pull at it and don&rsquo;t leave raw areas unprotected.</li>
+      </ul>
+
+      <div class="callout">
+        If maceration is severe (very painful, swollen, or you&rsquo;ve lost sensation) or keeps coming back even after
+        better habits, speak with Sick Bay. It may be early immersion foot or need stronger measures.
+      </div>
+    </section>
+
+    <section class="card" id="red-flags">
+      <div class="section-label">When to see Sick Bay</div>
+      <h2>Red flags – don&rsquo;t self-manage these</h2>
+      <h3>See Sick Bay promptly if:</h3>
+      <ul>
+        <li>Athlete&rsquo;s foot <strong>isn&rsquo;t improving</strong> after 2–4&nbsp;weeks of proper cream + hygiene.</li>
+        <li>You have painful heel or toe cracks that make it hard to walk or wear boots.</li>
+        <li>There is <strong>spreading redness, warmth, swelling or pus</strong> around any broken skin.</li>
+        <li>You notice <strong>red streaks</strong> going up your foot or leg, or you feel feverish/unwell.</li>
+        <li>You have a very large or deep blister in a weight-bearing area that you can&rsquo;t protect on your own.</li>
+        <li>Your feet are <strong>persistently numb, pale/blue, or very painful</strong> after cold-wet exposure.</li>
+        <li>Foot problems are interfering with your ability to safely stand watch, climb ladders or wear required footwear.</li>
+      </ul>
+
+      <div class="callout callout-danger">
+        <strong>Get urgent help</strong> (don&rsquo;t wait for routine Sick Parade) if:
+        <ul>
+          <li>Redness and swelling are spreading quickly.</li>
+          <li>You have severe pain, fever, or feel very unwell.</li>
+          <li>The foot looks dusky, purple or black, or you&rsquo;re losing sensation.</li>
+        </ul>
+      </div>
+
+      <p class="footer-note">
+        Medical staff can provide stronger antifungals or antibiotics when needed, assess for immersion foot,
+        and arrange modified duties or different footwear until your feet recover. Early visits mean easier fixes.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="section-label">For future enhancement</div>
+      <h2>Optional image spots (for later)</h2>
+      <p>When you&rsquo;re ready to add pictures, these placeholders can be replaced with simple line illustrations
+        (e.g., &ldquo;healthy vs soggy foot&rdquo;, &ldquo;change your socks&rdquo;, blister diagram).</p>
+      <div class="image-strip">
+        <div class="image-placeholder">Optional: Healthy vs soggy foot</div>
+        <div class="image-placeholder">Optional: Change socks / boot drying icon</div>
+        <div class="image-placeholder">Optional: Red-flag infection illustration</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
