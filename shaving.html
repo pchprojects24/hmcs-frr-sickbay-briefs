@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sick Bay Brief – Shaving & Razor Bumps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --navy: #002b5c;      /* Rolette-style deep blue */
+      --gold: #ffc72c;      /* Accent gold */
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 1rem 1.25rem 0.7rem;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    header .site-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      margin: 0.25rem 0 0.4rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 1rem 2.5rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .breadcrumb a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 43, 92, 0.08);
+      font-size: 1.1rem;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      margin: 0.75rem 0 0.25rem;
+    }
+
+    p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0.25rem 0 0.35rem 1.1rem;
+      padding-left: 0;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin: 0.1rem 0;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(0, 43, 92, 0.08);
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .twocol {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.6rem 1.5rem;
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .do-box,
+    .dont-box {
+      border-radius: 0.6rem;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .do-box {
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      background: rgba(34, 197, 94, 0.06);
+    }
+
+    .dont-box {
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      background: rgba(239, 68, 68, 0.06);
+    }
+
+    .do-box h3,
+    .dont-box h3 {
+      margin-top: 0;
+      font-size: 0.9rem;
+    }
+
+    .alert {
+      border-left: 4px solid #ef4444;
+      padding-left: 0.7rem;
+      margin-top: 0.4rem;
+    }
+
+    .footer-note {
+      text-align: left;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    .top-link {
+      text-align: right;
+      font-size: 0.8rem;
+      margin-top: 0.4rem;
+    }
+
+    .top-link a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .top-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding: 1.1rem 2rem 0.8rem;
+      }
+      .container {
+        padding: 1.5rem 2rem 3rem;
+      }
+      .card {
+        padding: 1.1rem 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <p class="site-title">Sick Bay Briefs · HMCS FRR</p>
+    <h1>Shaving, Razor Burn &amp; Razor Bumps</h1>
+    <p>Practical self-care for sailors who have to shave for work.</p>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">&larr; Back to Sick Bay Briefs</a>
+    </nav>
+
+    <p class="tagline">
+      For sailors who get red skin, bumps, or “pimples” on the lower cheeks or neck after shaving.
+    </p>
+
+    <!-- Overview -->
+    <section class="card" id="overview">
+      <div class="card-header">
+        <div class="card-icon">🪒</div>
+        <div>
+          <span class="pill">Overview</span>
+          <h2>What’s going on with my skin?</h2>
+        </div>
+      </div>
+      <p><strong>Razor burn (irritation)</strong></p>
+      <ul>
+        <li>Red, burning or stinging skin right after shaving.</li>
+        <li>Caused by friction, dry shaving, dull blades, or pressing too hard.</li>
+        <li>Looks like a red rash more than separate “pimples”.</li>
+      </ul>
+
+      <p><strong>Razor bumps (pseudofolliculitis barbae / PFB)</strong></p>
+      <ul>
+        <li>Ingrown hairs – small firm bumps, often with a hair trapped inside.</li>
+        <li>Common on the neck and jawline, especially with curly or coarse hair.</li>
+        <li>Not mainly an infection, but bumps can become infected if picked or shaved over.</li>
+      </ul>
+
+      <p><strong>Folliculitis (infected hair follicles)</strong></p>
+      <ul>
+        <li>Bacteria get into irritated or cut hair follicles.</li>
+        <li>Small, sore or itchy pimples with a white or yellow head.</li>
+        <li>Can merge into larger, painful areas or deeper lumps if not treated.</li>
+      </ul>
+
+      <p><strong>Other shaving issues</strong></p>
+      <ul>
+        <li>Red, itchy rash from products (contact dermatitis).</li>
+        <li>Dry, tight, itchy skin from hot water, soap, and daily shaving.</li>
+        <li>Shaving aggravating acne if you cut through pimples.</li>
+        <li>Dark marks or raised scars after repeated irritation.</li>
+      </ul>
+    </section>
+
+    <!-- Quick wins -->
+    <section class="card" id="quick-wins">
+      <div class="card-header">
+        <div class="card-icon">⚙️</div>
+        <div>
+          <span class="pill">Quick Wins</span>
+          <h2>Fast changes that usually help</h2>
+        </div>
+      </div>
+
+      <div class="do-dont">
+        <div class="do-box">
+          <h3>✅ DO</h3>
+          <ul>
+            <li>Shave after a warm shower or warm, wet towel.</li>
+            <li>Always use shaving cream or gel – never dry shave.</li>
+            <li>Shave with the grain, especially on the neck.</li>
+            <li>Use light pressure and short strokes; let the blade do the work.</li>
+            <li>Rinse with cool water after shaving.</li>
+            <li>Apply a gentle moisturizer or aftershave balm.</li>
+            <li>Change blades regularly; keep razors clean and dry.</li>
+            <li>Consider single-blade or electric options if you get a lot of bumps.</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <h3>⛔ DON’T</h3>
+          <ul>
+            <li>Don’t shave against the grain if you get razor bumps.</li>
+            <li>Don’t pull or stretch the skin tight while shaving.</li>
+            <li>Don’t go over the same spot again and again without re-lathering.</li>
+            <li>Don’t use harsh, alcohol-heavy aftershaves on stingy, dry skin.</li>
+            <li>Don’t pick, squeeze, or dig at ingrown hairs or pustules.</li>
+            <li>Don’t share razors.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Routine -->
+    <section class="card" id="routine">
+      <div class="card-header">
+        <div class="card-icon">📋</div>
+        <div>
+          <span class="pill">Routine</span>
+          <h2>Better shave routine (step by step)</h2>
+        </div>
+      </div>
+
+      <h3>Step 1 – Before you shave</h3>
+      <ul>
+        <li><strong>Warm up:</strong> shave after a warm shower or hold a warm, wet cloth on the area for 2–3 minutes.</li>
+        <li><strong>Clean the skin:</strong> wash with a mild face wash or gentle soap (not a harsh detergent bar).</li>
+        <li><strong>Lather up:</strong> apply shaving cream/gel/soap and let it sit for a minute; use a shaving brush if you have one to gently lift hairs.</li>
+      </ul>
+
+      <h3>Step 2 – During the shave</h3>
+      <ul>
+        <li><strong>Direction:</strong> shave with the grain. Check with your fingers which way the hair lies flat.</li>
+        <li><strong>Pressure &amp; strokes:</strong> use light pressure and short strokes; rinse the blade every few strokes.</li>
+        <li><strong>Number of passes:</strong> try to shave each area once. If you must go again, re-apply lather first.</li>
+        <li><strong>How close is “close enough”:</strong> aim for “inspection clean,” not glass-smooth. If allowed, leaving about 1&nbsp;mm of stubble often reduces ingrowns.</li>
+      </ul>
+
+      <h3>Step 3 – After the shave</h3>
+      <ul>
+        <li><strong>Rinse and cool:</strong> rinse with cool water or use a cool, damp cloth for a minute.</li>
+        <li><strong>Moisturize:</strong> apply an alcohol-free, fragrance-free moisturizer or aftershave balm.</li>
+        <li><strong>Hands off:</strong> don’t scratch or pick at bumps, even if they itch.</li>
+      </ul>
+    </section>
+
+    <!-- Tools -->
+    <section class="card" id="tools">
+      <div class="card-header">
+        <div class="card-icon">🧰</div>
+        <div>
+          <span class="pill">Tools</span>
+          <h2>Shaving gear – what to consider</h2>
+        </div>
+      </div>
+
+      <div class="twocol">
+        <div>
+          <h3>Multi-blade cartridges</h3>
+          <ul>
+            <li><strong>Pros:</strong> fast, very close shave.</li>
+            <li><strong>Cons:</strong> more friction; higher risk of ingrown hairs, especially with curly/coarse hair.</li>
+            <li>Use very light pressure, shave with the grain, and change cartridges often.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Single-blade razors</h3>
+          <ul>
+            <li>Safety razors or single-blade disposables.</li>
+            <li><strong>Pros:</strong> cut at skin level without “lift and cut”; often better for bump-prone skin.</li>
+            <li><strong>Cons:</strong> small learning curve; still need gentle technique.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="twocol">
+        <div>
+          <h3>Electric shavers / clippers</h3>
+          <ul>
+            <li>Foil or rotary shavers; beard trimmers with guards.</li>
+            <li><strong>Pros:</strong> usually leave a tiny bit of stubble → fewer ingrowns; quick.</li>
+            <li><strong>Cons:</strong> not baby-smooth; need power and regular cleaning.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Chemical depilatories</h3>
+          <ul>
+            <li>Creams or powders that dissolve hair.</li>
+            <li><strong>Pros:</strong> no blade; hair regrows with a blunt tip.</li>
+            <li><strong>Cons:</strong> can irritate or burn if misused; strong smell; must follow directions exactly.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted">
+        Waxing or plucking beard hairs is generally not recommended – it can cause more irritation and ingrown hairs.
+      </p>
+    </section>
+
+    <!-- Self-care kit -->
+    <section class="card" id="self-care">
+      <div class="card-header">
+        <div class="card-icon">🧴</div>
+        <div>
+          <span class="pill">Self-Care</span>
+          <h2>Your shaving self-care kit</h2>
+        </div>
+      </div>
+
+      <p>Things you can buy yourself and keep in your wash bag or locker:</p>
+      <ul>
+        <li><strong>Gentle face wash:</strong> mild, non-scrubbing cleanser for daily use.</li>
+        <li><strong>Shaving lubricant:</strong> unscented or “sensitive skin” shaving cream, gel, or soap.</li>
+        <li><strong>Good razor or electric:</strong> whatever you choose, keep blades sharp and clean.</li>
+        <li><strong>Moisturizer / aftershave balm:</strong> alcohol-free, fragrance-free if your skin is reactive.</li>
+      </ul>
+
+      <p><strong>Optional extras if you get a lot of bumps:</strong></p>
+      <ul>
+        <li>Mild chemical exfoliant (salicylic or glycolic acid pads/lotions) a few times a week to help prevent trapped hairs.</li>
+        <li>Benzoyl peroxide face wash once daily if you get “pimple-like” folliculitis.</li>
+        <li>OTC 0.5–1% hydrocortisone cream for short-term use on a bad patch of razor burn or bumps (a few days max).</li>
+        <li>Warm compress routine: warm, wet cloth on sore bumps for 5–10 minutes, then gentle cleanse and moisturize.</li>
+      </ul>
+
+      <p class="muted">
+        Start new products slowly and one at a time so you can tell what helps (or irritates) your skin.
+      </p>
+    </section>
+
+    <!-- When to seek care -->
+    <section class="card" id="when-to-see-medical">
+      <div class="card-header">
+        <div class="card-icon">🚑</div>
+        <div>
+          <span class="pill">When to see medical</span>
+          <h2>When to come to Sick Bay</h2>
+        </div>
+      </div>
+
+      <div class="alert">
+        <p><strong>See Sick Bay or a MO if:</strong></p>
+        <ul>
+          <li>The shaved area is getting more red, hot, swollen, or very painful.</li>
+          <li>You have lots of pus-filled spots or a deep, painful lump.</li>
+          <li>Razor bumps are severe, spreading, or starting to scar.</li>
+          <li>Shaving problems mean you cannot shave to standard without bleeding or significant pain.</li>
+          <li>You’ve tried careful shaving and basic self-care for a few weeks and things are not improving.</li>
+          <li>You’re not sure it’s just shaving rash or something else.</li>
+        </ul>
+      </div>
+
+      <p><strong>What medical staff might do:</strong></p>
+      <ul>
+        <li>Confirm whether it’s mainly razor burn, PFB, folliculitis, acne, or another condition.</li>
+        <li>Prescribe stronger creams or gels (e.g. antibiotic, retinoid, short-term steroid) if needed.</li>
+        <li>Treat or prevent infection with topical or short-course oral antibiotics when appropriate.</li>
+        <li>Talk with you about alternative shaving tools suited to your skin.</li>
+        <li>For severe or recurrent cases, consider referral for procedures (e.g. laser hair reduction) or a temporary shaving profile so your skin can heal.</li>
+      </ul>
+
+      <p class="footer-note">
+        Shaving should be routine, not something that injures you every day. If it is, talk to Sick Bay early rather than waiting for scars or bigger problems.
+      </p>
+    </section>
+
+    <div class="top-link">
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </main>
+</body>
+</html>
