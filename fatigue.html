@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fatigue at Sea — HMCS FRR Sick Bay Briefs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --navy: #002b45;
+      --navy-light: #004b7a;
+      --gold: #f0c75e;
+      --bg: #f5f7fa;
+      --text: #111827;
+      --muted: #4b5563;
+      --card-bg: #ffffff;
+      --accent-soft: #e5f0ff;
+      --danger: #b91c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: #fff;
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.3rem;
+      letter-spacing: 0.03em;
+    }
+
+    header .sub {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 0.5rem;
+      padding: 0.3rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-decoration: none;
+      color: #e5e7eb;
+      border: 1px solid rgba(248, 250, 252, 0.2);
+    }
+
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.25);
+    }
+
+    nav a.primary {
+      background: var(--gold);
+      color: #111827;
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 1.25rem auto 2.5rem;
+      padding: 0 1rem;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pill {
+      font-size: 0.76rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1f2937;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.05rem;
+      border-left: 3px solid var(--navy-light);
+      padding-left: 0.5rem;
+    }
+
+    .card h3 {
+      margin-top: 0.5rem;
+      font-size: 0.98rem;
+    }
+
+    .card p {
+      margin: 0.25rem 0 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0.25rem 0 0.5rem 1.1rem;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 0.1rem;
+    }
+
+    .highlight {
+      background: var(--accent-soft);
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.7rem;
+      font-size: 0.88rem;
+      color: #111827;
+      border: 1px solid #dbeafe;
+    }
+
+    .callout-danger {
+      border-left: 4px solid var(--danger);
+      background: #fef2f2;
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      color: #7f1d1d;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      background: #e5e7eb;
+      border-radius: 999px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.15rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      main {
+        padding: 0 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>HMCS FRR &mdash; Sick Bay Briefs</h1>
+      <div class="sub">Fatigue at Sea &bull; Sleep, Watches, and Self-Care</div>
+    </div>
+    <nav>
+      <a href="index.html" class="primary">← All Topics</a>
+      <a href="winter-skin.html">Winter Skin</a>
+      <a href="shaving.html">Shaving</a>
+      <a href="wound-care.html">Minor Wounds</a>
+      <a href="foot-care.html">Foot Care</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="tagline">
+      This page is for sailors, not medical staff. It covers what fatigue does to you at sea, what you can do yourself, and when to tell your supervisor or see Sick Bay.
+    </p>
+
+    <div class="pill-row">
+      <span class="pill">Long watches</span>
+      <span class="pill">Broken sleep</span>
+      <span class="pill">Night shifts</span>
+      <span class="pill">Caffeine use</span>
+    </div>
+
+    <section class="card">
+      <span class="badge">Quick take</span>
+      <h2>Fatigue: What It Means for You</h2>
+      <div class="highlight">
+        When you are very tired, your brain can work like you are mildly drunk. Reaction time slows, you miss small details, and you are more likely to make mistakes.
+      </div>
+      <p>On a ship, fatigue can affect:</p>
+      <ul>
+        <li>Safety on ladders, decks, machinery and weapons.</li>
+        <li>Situational awareness on watch and in busy evolutions.</li>
+        <li>Mood, patience, teamwork and communication.</li>
+      </ul>
+      <p>Most adults function best with roughly 7–9 hours of sleep per 24 hours. At sea, many people get much less. The habits below are to help you protect the sleep you <em>can</em> get.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Why it happens</span>
+      <h2>Common Fatigue Triggers on Board</h2>
+      <p>Typical naval life makes sleep hard:</p>
+      <ul>
+        <li><strong>Watch rotations:</strong> 1-in-2 and other non-24-hour schedules, split sleep, rotating watches.</li>
+        <li><strong>Noise and motion:</strong> engines, fans, alarms, pipes, rough seas, people moving in messes.</li>
+        <li><strong>Light:</strong> bright workspaces, light leaking into racks, screen glow in your face before bed.</li>
+        <li><strong>Heat or cold:</strong> hot, stuffy berthing or very cool compartments making it hard to settle.</li>
+        <li><strong>High tempo:</strong> long evolutions, drills and training stacked on top of regular work and watches.</li>
+        <li><strong>Habits:</strong> late-night devices or gaming, heavy caffeine late in the day, “pushing through” instead of resting.</li>
+      </ul>
+      <p>You cannot change the mission, but you do control many of your own sleep habits.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">What you can do</span>
+      <h2>Before Sleep: Make It Easier to Switch Off</h2>
+      <h3>Short wind-down routine</h3>
+      <ul>
+        <li>Do the same simple steps before sleep (wash, change, quick stretch, quiet time) to cue your brain it is rack time.</li>
+        <li>Avoid starting new intense tasks (arguments, complicated admin, serious gaming) in the 20–30 minutes before bed if you can help it.</li>
+      </ul>
+
+      <h3>Limit screens and stimulants</h3>
+      <ul>
+        <li>Dim phone/laptop screens and use “night mode” in the last 30–60 minutes before sleep.</li>
+        <li>Try to avoid large doses of caffeine in the 4–6 hours before you plan to sleep.</li>
+        <li>Keep heavy meals and hard exercise out of the final hour before bed when possible.</li>
+      </ul>
+
+      <h3>Simple relaxation tricks</h3>
+      <ul>
+        <li>Slow breathing: in for 4 seconds, out for 4 seconds, for a few minutes.</li>
+        <li>Brief muscle relaxation: tense then release muscle groups from toes up to shoulders.</li>
+        <li>If your mind is racing, jot down a quick “to-do tomorrow” list so you are not trying to hold it all in your head.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <span class="badge">Sleep environment</span>
+      <h2>In Your Rack: Make the Space Work for You</h2>
+      <ul>
+        <li><strong>Block noise:</strong> soft earplugs or low-level white noise can help; make sure you can still wake to alarms or a shake from your section.</li>
+        <li><strong>Block light:</strong> use an eye mask, or improve your rack curtain (towel/blanket over gaps) to get it darker.</li>
+        <li><strong>Temperature:</strong> adjust blankets and clothing so you are not too hot or too cold; a small fan can help in warm, still air if allowed.</li>
+        <li><strong>Mess courtesy:</strong> keep voices down, use headphones, and avoid turning on bright lights when others are clearly sleeping.</li>
+      </ul>
+      <p>Small improvements add up over a deployment. The better you sleep, the safer and sharper you are.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Broken sleep</span>
+      <h2>Fragmented Sleep and Naps</h2>
+      <h3>Core sleep plus top-ups</h3>
+      <ul>
+        <li>Try to protect at least one block of about 4 hours or more of solid sleep in each 24-hour period.</li>
+        <li>Use naps to “top up” your total: for example, 4–5 hours core sleep plus a 60–90 minute nap later is much better than only 4–5 hours total.</li>
+      </ul>
+
+      <h3>Short naps (10–30 minutes)</h3>
+      <ul>
+        <li>Power naps can noticeably improve alertness without heavy grogginess afterwards.</li>
+        <li>Set an alarm, find the quietest spot you can, and use an eye mask or cap over your eyes if there is light.</li>
+      </ul>
+
+      <h3>Longer naps (60–90 minutes)</h3>
+      <ul>
+        <li>Helpful when you have a bigger window off; you may complete a full sleep cycle.</li>
+        <li>Allow a bit of time after waking to clear “sleep inertia” before doing anything safety-critical.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <span class="badge">Caffeine</span>
+      <h2>Caffeine as a Tool, Not a Fix</h2>
+      <p>Caffeine (coffee, tea, caffeinated soft drinks, most energy drinks) blocks sleepiness signals but does <em>not</em> replace sleep.</p>
+      <ul>
+        <li>Know that a typical mug of coffee has around 100 mg of caffeine; many energy drinks have much more.</li>
+        <li>A reasonable upper limit for most healthy adults is about 400 mg per day (roughly 4 mugs of coffee).</li>
+        <li>Use small to moderate amounts earlier in the duty period or before known “low” points (early-morning watch).</li>
+        <li>Avoid large doses of caffeine in the last 4–6 hours before planned sleep if you can.</li>
+        <li>Be cautious with stacking strong coffee plus multiple energy drinks; too much can cause jitters, palpitations and anxiety.</li>
+      </ul>
+      <p>Never use non-prescribed stimulants or someone else’s medication to stay awake. If you think you need something stronger than caffeine, talk to Sick Bay.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Self-check</span>
+      <h2>Am I Too Tired to Be Safe?</h2>
+      <p>Signs you may be too fatigued include:</p>
+      <ul>
+        <li>Fighting to keep your eyes open; head nodding or “microsleeps”.</li>
+        <li>Missing parts of radio calls, having to reread simple instructions.</li>
+        <li>Slow reactions to alarms, orders or changes in the environment.</li>
+        <li>Making simple mistakes you would not normally make.</li>
+        <li>Feeling unusually irritable, snappy or “checked out”.</li>
+      </ul>
+      <p>If you recognize several of these, you are not just “a bit tired” &mdash; your performance is likely impaired.</p>
+
+      <h3>Buddy checks</h3>
+      <ul>
+        <li>Watch your shipmates for the same signs and speak up early if someone looks done.</li>
+        <li>Use buddy checks for critical tasks: two sets of eyes on settings, plots and checklists when everyone is running on little sleep.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <span class="badge">Escalation</span>
+      <h2>When to Speak Up or See Sick Bay</h2>
+      <h3>Talk to your supervisor if:</h3>
+      <ul>
+        <li>You are too sleepy to safely stand watch, handle weapons or operate machinery.</li>
+        <li>You are nodding off despite caffeine and short breaks.</li>
+        <li>You have had near-misses or repeated mistakes clearly linked to tiredness.</li>
+        <li>Several people in your team are obviously exhausted during safety-critical work.</li>
+      </ul>
+
+      <div class="callout-danger">
+        If you are too tired to be safe, your ship and your team are at risk. Saying something early is professionalism, not weakness.
+      </div>
+
+      <h3>See Sick Bay if:</h3>
+      <ul>
+        <li>You feel fatigued all the time even when you have had several nights with enough sleep opportunity.</li>
+        <li>Others say you snore loudly, stop breathing, or wake up choking or gasping.</li>
+        <li>You have extreme tiredness plus other symptoms (shortness of breath, weight loss, low mood, fever, etc.).</li>
+        <li>You think a medication, motion-sickness tablet or other product is making you drowsy.</li>
+      </ul>
+      <p>Medical staff can check for underlying issues (sleep problems, medical conditions, medication effects) and advise on safe duty and sleep strategies.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Key points</span>
+      <h2>Bottom Line</h2>
+      <ul>
+        <li>Fatigue is normal at sea, but unmanaged fatigue is a safety hazard.</li>
+        <li>Protect any sleep window you have, and use naps and sensible caffeine to stay sharp.</li>
+        <li>Look out for yourself and your shipmates; speak up early if fatigue is affecting safety.</li>
+        <li>See Sick Bay if tiredness persists despite decent sleep or if you have worrying symptoms.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
