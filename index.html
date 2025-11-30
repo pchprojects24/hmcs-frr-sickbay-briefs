@@ -2,20 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HMCS FRR — Sick Bay Briefs</title>
+  <title>HMCS Frédérick Rolette — Sick Bay Briefs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="HMCS FRR Sick Bay briefs: short, practical guides for sailors on common health and self-care topics, with clear advice on when to report to Sick Bay.">
-  <meta name="theme-color" content="#002b45">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --navy: #002b45;
-      --navy-light: #004b7a;
-      --gold: #f0c75e;
-      --bg: #f5f7fa;
-      --text: #111827;
-      --muted: #4b5563;
+      /* Refined Palette: Deeper Navy, smoother accents */
+      --navy: #0f172a;       /* Darker slate navy */
+      --navy-light: #1e293b; 
+      --navy-accent: #334155;
+      
+      --gold: #fbbf24;       /* Warmer gold */
+      --gold-dim: #b45309;
+      
+      --bg: #f8fafc;         /* Very light blue-grey */
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      
       --card-bg: #ffffff;
-      --accent-soft: #e5f0ff;
+      --card-border: #e2e8f0;
+      
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 
     * {
@@ -24,275 +37,263 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
+      font-family: 'Inter', sans-serif; /* The biggest modern upgrade */
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Skip link for keyboard users */
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 0.5rem;
-      background: #ffffff;
-      color: #000;
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid #111827;
-      font-size: 0.85rem;
-      z-index: 100;
-    }
-
-    .skip-link:focus {
-      left: 0.75rem;
-    }
-
+    /* Modern Hero Header */
     header {
-      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      background: linear-gradient(160deg, var(--navy) 0%, #002b45 100%);
       color: #fff;
-      padding: 1.1rem 1.25rem 1.3rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
+      padding: 3rem 1.5rem 4rem; /* More vertical space */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle background accent in header */
+    header::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+    }
+
+    .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     header h1 {
       margin: 0;
-      font-size: 1.4rem;
-      letter-spacing: 0.03em;
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     header .sub {
-      font-size: 0.88rem;
-      opacity: 0.9;
-    }
-
-    .badge-ship {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.7);
-      padding: 0.08rem 0.6rem;
       display: inline-block;
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      background: rgba(255,255,255,0.05);
+      padding: 0.25rem 0.75rem;
+      border-radius: 99px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     main {
-      max-width: 960px;
-      margin: 1.5rem auto 2.5rem;
-      padding: 0 1rem;
+      max-width: 1000px;
+      margin: -2.5rem auto 4rem; /* Negative margin pulls content up over header */
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
     }
 
     .intro {
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      color: var(--muted);
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      /* If text is in the white overlap area, keep it readable or hide it inside header. 
+         Here, we simply hide standard intro text or style it nicely. */
+      display: none; 
     }
 
-    section {
-      margin-top: 1.25rem;
-    }
-
-    section > h2 {
-      font-size: 1.1rem;
-      margin: 0 0 0.75rem;
-      color: #0f172a;
-    }
-
+    /* Grid Layout */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Slightly wider cards */
+      gap: 1.5rem;
     }
 
+    /* Modern Card Styles */
     .card {
       background: var(--card-bg);
-      border-radius: 0.9rem;
-      padding: 1rem 1.1rem 1.1rem;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e5e7eb;
+      border-radius: 1rem; /* Softer corners */
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--card-border);
+      text-decoration: none;
+      color: inherit;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1.02rem;
+    /* Icon Container */
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: #f0f9ff; /* Very light blue */
+      color: #0284c7;      /* Vivid blue for icon */
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.25rem;
+    }
+    
+    .card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2;
+    }
+
+    /* Specific colors for specific cards (optional polish) */
+    .card:nth-child(1) .card-icon { color: #0ea5e9; background: #e0f2fe; } /* Cold - Cyan */
+    .card:nth-child(2) .card-icon { color: #ef4444; background: #fee2e2; } /* Shave - Red */
+    .card:nth-child(3) .card-icon { color: #f59e0b; background: #fef3c7; } /* Wound - Orange */
+    .card:nth-child(4) .card-icon { color: #10b981; background: #d1fae5; } /* Foot - Green */
+    .card:nth-child(5) .card-icon { color: #6366f1; background: #e0e7ff; } /* Sleep - Indigo */
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-main);
     }
 
     .card p {
-      margin: 0 0 0.65rem;
-      font-size: 0.9rem;
-      color: var(--muted);
+      margin: 0;
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .tag {
-      font-size: 0.74rem;
-      padding: 0.16rem 0.55rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #1f2937;
-    }
-
-    .card a {
-      align-self: flex-start;
-      margin-top: 0.15rem;
-      text-decoration: none;
-      font-size: 0.88rem;
+    /* Learn more link style at bottom of card */
+    .card-action {
+      margin-top: auto;
+      padding-top: 1rem;
+      font-size: 0.875rem;
       font-weight: 600;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      background: var(--navy-light);
-      color: #f9fafb;
-      border: 1px solid transparent;
-    }
-
-    .card a:hover {
-      background: #ffffff;
       color: var(--navy-light);
-      border-color: var(--navy-light);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      opacity: 0.8;
+      transition: gap 0.2s;
     }
 
-    .card a:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
+    /* Hover States */
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: #cbd5e1;
     }
 
-    footer {
-      max-width: 960px;
-      margin: 0 auto 2.25rem;
-      padding: 0 1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    footer .note {
-      background: #e5e7eb;
-      border-radius: 0.6rem;
-      padding: 0.6rem 0.7rem;
+    .card:hover .card-action {
+      gap: 0.5rem; /* Moves the arrow slightly */
+      opacity: 1;
+      color: #002b45;
     }
 
     @media (max-width: 600px) {
       header {
-        align-items: flex-start;
+        padding: 2.5rem 1.25rem 3.5rem;
+      }
+      
+      header h1 {
+        font-size: 1.5rem;
       }
 
       main {
-        padding: 0 0.75rem;
+        margin-top: -2rem;
+        padding: 0 1rem;
       }
-
-      footer {
-        padding: 0 0.75rem;
+      
+      .grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <a href="#briefs" class="skip-link">Skip to briefs</a>
 
   <header>
-    <div>
-      <h1>HMCS FRR — Sick Bay Briefs</h1>
-      <div class="sub">Crew information pages for common health and self-care topics.</div>
-      <div class="badge-ship">For sailors &bull; Not a substitute for medical assessment</div>
+    <div class="header-content">
+      <div class="sub">HMCS Frédérick Rolette</div>
+      <h1>Sick Bay Briefs</h1>
+      <p style="margin-top: 1rem; opacity: 0.9; max-width: 500px; font-size: 0.95rem;">
+        Preventative guides for sailors. Focus on self-care, prevention, and knowing when to report to medical.
+      </p>
     </div>
   </header>
 
   <main>
-    <p class="intro">
-      These pages are short guides for sailors. They focus on prevention, self-care, and clear signs that it is time to see Sick Bay.
-      Scan the QR code that brought you here any time you want to review the information.
-    </p>
+    <div class="grid">
+      
+      <a class="card" href="winter-skin.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 20-8.5-8.5"/><path d="m4 20 8.5-8.5"/><path d="m20 4-8.5 8.5"/><path d="m4 4 8.5 8.5"/></svg>
+        </div>
+        <div>
+          <h2>Cold Weather &amp; Dry Air</h2>
+          <p>Prevent cracking and flare-ups during winter sailing and Arctic trials.</p>
+        </div>
+        <div class="card-action">Read Guide <span>&rarr;</span></div>
+      </a>
 
-    <section aria-labelledby="briefs-heading" id="briefs">
-      <h2 id="briefs-heading">Health &amp; self-care briefs</h2>
+      <a class="card" href="shaving.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div>
+          <h2>Shaving Problems</h2>
+          <p>Razor burn, bumps, and irritation. Practical tips and when to ask for medical help.</p>
+        </div>
+        <div class="card-action">Read Guide <span>&rarr;</span></div>
+      </a>
 
-      <div class="grid">
-        <article class="card">
-          <div>
-            <h3>Cold Weather &amp; Dry Air</h3>
-            <p>How low humidity and cold wind affect skin, lips, scalp and nose &mdash; and what you can do to prevent cracking and flare-ups during winter sailing and Arctic trials.</p>
-            <div class="tag-row">
-              <span class="tag">Dry skin</span>
-              <span class="tag">Lips &amp; nose</span>
-              <span class="tag">Winter sailing</span>
-            </div>
-          </div>
-          <a href="winter-skin.html">Open winter-skin brief →</a>
-        </article>
+      <a class="card" href="wound-care.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+        </div>
+        <div>
+          <h2>Minor Cuts &amp; Scrapes</h2>
+          <p>How to clean small wounds, dressing tips, and warning signs of infection.</p>
+        </div>
+        <div class="card-action">Read Guide <span>&rarr;</span></div>
+      </a>
 
-        <article class="card">
-          <div>
-            <h3>Shaving Problems</h3>
-            <p>Razor burn, bumps and irritation on the neck and cheeks. Practical shaving tips, self-care and when to ask for medical help.</p>
-            <div class="tag-row">
-              <span class="tag">Razor burn</span>
-              <span class="tag">Razor bumps</span>
-              <span class="tag">Beard area</span>
-            </div>
-          </div>
-          <a href="shaving.html">Open shaving brief →</a>
-        </article>
+      <a class="card" href="foot-care.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 11 3.8 11 8c0 2.25-.5 3-2 5-1.5 2-2 3-2 5 0 2.5 2.5 2.5 2.5 2.5H19c3 0 3-3 3-3V7.5L19 4l-4 4"/></svg>
+        </div>
+        <div>
+          <h2>Foot Care in Boots</h2>
+          <p>Managing damp socks, blisters, and athlete’s foot during long days at sea.</p>
+        </div>
+        <div class="card-action">Read Guide <span>&rarr;</span></div>
+      </a>
 
-        <article class="card">
-          <div>
-            <h3>Minor Cuts &amp; Scrapes</h3>
-            <p>How to clean small wounds, when to use dressings, and which warning signs mean you should report to Sick Bay.</p>
-            <div class="tag-row">
-              <span class="tag">Deck scrapes</span>
-              <span class="tag">Small cuts</span>
-              <span class="tag">Seawater exposure</span>
-            </div>
-          </div>
-          <a href="wound-care.html">Open wound-care brief →</a>
-        </article>
+      <a class="card" href="fatigue.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </div>
+        <div>
+          <h2>Fatigue at Sea</h2>
+          <p>Managing broken sleep, caffeine use, and spotting safety issues.</p>
+        </div>
+        <div class="card-action">Read Guide <span>&rarr;</span></div>
+      </a>
 
-        <article class="card">
-          <div>
-            <h3>Foot Care in Boots</h3>
-            <p>Damp socks, long days in boots, blisters and athlete’s foot. Simple habits to keep your feet healthy at sea.</p>
-            <div class="tag-row">
-              <span class="tag">Boots &amp; socks</span>
-              <span class="tag">Fungal issues</span>
-              <span class="tag">Blisters</span>
-            </div>
-          </div>
-          <a href="foot-care.html">Open foot-care brief →</a>
-        </article>
-
-        <article class="card">
-          <div>
-            <h3>Fatigue at Sea</h3>
-            <p>Broken sleep, night watches and long evolutions. How to manage your own sleep, use caffeine sensibly, and spot when tiredness becomes a safety issue.</p>
-            <div class="tag-row">
-              <span class="tag">Watches</span>
-              <span class="tag">Sleep</span>
-              <span class="tag">Caffeine</span>
-            </div>
-          </div>
-          <a href="fatigue.html">Open fatigue brief →</a>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="note">
-      These briefs are general information only. They do not replace medical assessment or orders.
-      If you are unsure, worried, or symptoms are not improving, report to Sick Bay. In an emergency, use the ship’s emergency procedures immediately.
     </div>
-  </footer>
+  </main>
 </body>
 </html>
