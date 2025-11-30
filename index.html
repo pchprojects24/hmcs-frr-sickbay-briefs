@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>HMCS FRR — Sick Bay Briefs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HMCS FRR Sick Bay briefs: short, practical guides for sailors on common health and self-care topics, with clear advice on when to report to Sick Bay.">
+  <meta name="theme-color" content="#002b45">
   <style>
     :root {
       --navy: #002b45;
@@ -26,6 +28,24 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.5;
+    }
+
+    /* Skip link for keyboard users */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0.5rem;
+      background: #ffffff;
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #111827;
+      font-size: 0.85rem;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      left: 0.75rem;
     }
 
     header {
@@ -73,6 +93,16 @@
       color: var(--muted);
     }
 
+    section {
+      margin-top: 1.25rem;
+    }
+
+    section > h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem;
+      color: #0f172a;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -90,7 +120,7 @@
       justify-content: space-between;
     }
 
-    .card h2 {
+    .card h3 {
       margin: 0 0 0.35rem;
       font-size: 1.02rem;
     }
@@ -135,6 +165,11 @@
       border-color: var(--navy-light);
     }
 
+    .card a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
     footer {
       max-width: 960px;
       margin: 0 auto 2.25rem;
@@ -165,6 +200,8 @@
   </style>
 </head>
 <body>
+  <a href="#briefs" class="skip-link">Skip to briefs</a>
+
   <header>
     <div>
       <h1>HMCS FRR — Sick Bay Briefs</h1>
@@ -179,78 +216,82 @@
       Scan the QR code that brought you here any time you want to review the information.
     </p>
 
-    <div class="grid">
-      <article class="card">
-        <div>
-          <h2>Cold Weather &amp; Dry Air</h2>
-          <p>How low humidity and cold wind affect skin, lips, scalp and nose &mdash; and what you can do to prevent cracking and flare-ups during winter sailing and Arctic trials.</p>
-          <div class="tag-row">
-            <span class="tag">Dry skin</span>
-            <span class="tag">Lips &amp; nose</span>
-            <span class="tag">Winter sailing</span>
-          </div>
-        </div>
-        <a href="winter-skin.html">Open winter-skin brief →</a>
-      </article>
+    <section aria-labelledby="briefs-heading" id="briefs">
+      <h2 id="briefs-heading">Health &amp; self-care briefs</h2>
 
-      <article class="card">
-        <div>
-          <h2>Shaving Problems</h2>
-          <p>Razor burn, bumps and irritation on the neck and cheeks. Practical shaving tips, self-care and when to ask for medical help.</p>
-          <div class="tag-row">
-            <span class="tag">Razor burn</span>
-            <span class="tag">Razor bumps</span>
-            <span class="tag">Beard area</span>
+      <div class="grid">
+        <article class="card">
+          <div>
+            <h3>Cold Weather &amp; Dry Air</h3>
+            <p>How low humidity and cold wind affect skin, lips, scalp and nose &mdash; and what you can do to prevent cracking and flare-ups during winter sailing and Arctic trials.</p>
+            <div class="tag-row">
+              <span class="tag">Dry skin</span>
+              <span class="tag">Lips &amp; nose</span>
+              <span class="tag">Winter sailing</span>
+            </div>
           </div>
-        </div>
-        <a href="shaving.html">Open shaving brief →</a>
-      </article>
+          <a href="winter-skin.html">Open winter-skin brief →</a>
+        </article>
 
-      <article class="card">
-        <div>
-          <h2>Minor Cuts &amp; Scrapes</h2>
-          <p>How to clean small wounds, when to use dressings, and which warning signs mean you should report to Sick Bay.</p>
-          <div class="tag-row">
-            <span class="tag">Deck scrapes</span>
-            <span class="tag">Small cuts</span>
-            <span class="tag">Seawater exposure</span>
+        <article class="card">
+          <div>
+            <h3>Shaving Problems</h3>
+            <p>Razor burn, bumps and irritation on the neck and cheeks. Practical shaving tips, self-care and when to ask for medical help.</p>
+            <div class="tag-row">
+              <span class="tag">Razor burn</span>
+              <span class="tag">Razor bumps</span>
+              <span class="tag">Beard area</span>
+            </div>
           </div>
-        </div>
-        <a href="wound-care.html">Open wound-care brief →</a>
-      </article>
+          <a href="shaving.html">Open shaving brief →</a>
+        </article>
 
-      <article class="card">
-        <div>
-          <h2>Foot Care in Boots</h2>
-          <p>Damp socks, long days in boots, blisters and athlete’s foot. Simple habits to keep your feet healthy at sea.</p>
-          <div class="tag-row">
-            <span class="tag">Boots &amp; socks</span>
-            <span class="tag">Fungal issues</span>
-            <span class="tag">Blisters</span>
+        <article class="card">
+          <div>
+            <h3>Minor Cuts &amp; Scrapes</h3>
+            <p>How to clean small wounds, when to use dressings, and which warning signs mean you should report to Sick Bay.</p>
+            <div class="tag-row">
+              <span class="tag">Deck scrapes</span>
+              <span class="tag">Small cuts</span>
+              <span class="tag">Seawater exposure</span>
+            </div>
           </div>
-        </div>
-        <a href="foot-care.html">Open foot-care brief →</a>
-      </article>
+          <a href="wound-care.html">Open wound-care brief →</a>
+        </article>
 
-      <article class="card">
-        <div>
-          <h2>Fatigue at Sea</h2>
-          <p>Broken sleep, night watches and long evolutions. How to manage your own sleep, use caffeine sensibly, and spot when tiredness becomes a safety issue.</p>
-          <div class="tag-row">
-            <span class="tag">Watches</span>
-            <span class="tag">Sleep</span>
-            <span class="tag">Caffeine</span>
+        <article class="card">
+          <div>
+            <h3>Foot Care in Boots</h3>
+            <p>Damp socks, long days in boots, blisters and athlete’s foot. Simple habits to keep your feet healthy at sea.</p>
+            <div class="tag-row">
+              <span class="tag">Boots &amp; socks</span>
+              <span class="tag">Fungal issues</span>
+              <span class="tag">Blisters</span>
+            </div>
           </div>
-        </div>
-        <a href="fatigue.html">Open fatigue brief →</a>
-      </article>
-    </div>
+          <a href="foot-care.html">Open foot-care brief →</a>
+        </article>
+
+        <article class="card">
+          <div>
+            <h3>Fatigue at Sea</h3>
+            <p>Broken sleep, night watches and long evolutions. How to manage your own sleep, use caffeine sensibly, and spot when tiredness becomes a safety issue.</p>
+            <div class="tag-row">
+              <span class="tag">Watches</span>
+              <span class="tag">Sleep</span>
+              <span class="tag">Caffeine</span>
+            </div>
+          </div>
+          <a href="fatigue.html">Open fatigue brief →</a>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="note">
       These briefs are general information only. They do not replace medical assessment or orders.
-      If you are unsure, worried, or symptoms are not improving, report to Sick Bay.
+      If you are unsure, worried, or symptoms are not improving, report to Sick Bay. In an emergency, use the ship’s emergency procedures immediately.
     </div>
   </footer>
 </body>
