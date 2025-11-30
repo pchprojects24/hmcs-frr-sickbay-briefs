@@ -2,365 +2,348 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cold, Dry Air & Your Skin – Shipboard Self-Care</title>
+  <title>Cold Weather Skin — HMCS Frédérick Rolette</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f5f7fa;
+      --navy: #0f172a;       
+      --navy-light: #1e293b; 
+      --navy-accent: #334155;
+      --gold: #fbbf24;       
+      --bg: #f8fafc;         
+      --text-main: #1e293b;
+      --text-muted: #475569;
       --card-bg: #ffffff;
-      --text: #111827;
-
-      --header-bg: #283fb5;   /* Rolette blue */
-      --accent-gold: #f6d950; /* rope/crown gold */
-      --border: #d2dde8;
-      --muted: #6b7280;
+      --card-border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
+    /* Sticky Header */
     header {
-      background: var(--header-bg);
+      background: var(--navy);
       color: #fff;
-      padding: 1.25rem 1rem;
-    }
-
-    header .inner {
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
       display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.4rem;
-    }
-
-    header p {
-      margin: 0;
+    .nav-back {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
       font-size: 0.9rem;
-      opacity: 0.95;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; }
+
+    .ship-name {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      font-weight: 700;
     }
 
     main {
-      max-width: 900px;
-      margin: 1.2rem auto 2.5rem;
-      padding: 0 1rem;
+      max-width: 700px;
+      margin: 2rem auto 5rem;
+      padding: 0 1.5rem;
     }
 
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.85rem;
-      text-decoration: none;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+      letter-spacing: -0.02em;
     }
 
-    .back-link span {
+    .subtitle {
       font-size: 1.1rem;
-      line-height: 1;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
     }
 
-    .back-link:hover,
-    .back-link:focus-visible {
-      color: var(--header-bg);
-      outline: none;
+    /* General Info Box */
+    .info-box {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .info-box h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #0369a1;
+    }
+    .info-box p { margin-bottom: 0; font-size: 0.95rem; }
+
+    /* The Expandable Grid */
+    .card-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .pill-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: rgba(246, 217, 80, 0.22);
-      color: var(--header-bg);
-      font-size: 0.8rem;
+    /* Expandable Card Styles */
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+
+    summary {
+      padding: 1.25rem;
+      cursor: pointer;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
+      font-size: 1.1rem;
+      color: var(--navy-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none; /* Hides default triangle */
+      background: #fff;
+    }
+
+    /* Custom Chevron Icon */
+    summary::after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    summary::-webkit-details-marker {
+      display: none; /* Hides default triangle in Safari */
+    }
+
+    summary:hover {
+      background-color: #f8fafc;
+    }
+
+    /* Icon inside summary */
+    .icon {
+      margin-right: 0.75rem;
+      font-size: 1.25rem;
+      vertical-align: middle;
+    }
+
+    /* The Hidden Content */
+    .content {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid #f1f5f9;
+      color: var(--text-muted);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content h3 {
+      font-size: 1rem;
+      color: var(--navy-accent);
+      margin-top: 1.25rem;
       margin-bottom: 0.5rem;
     }
 
-    .pill-label span {
-      font-size: 0.95rem;
+    .content ul {
+      margin-top: 0;
+      padding-left: 1.25rem;
     }
 
-    h2 {
-      margin: 0.1rem 0 0.6rem;
-      font-size: 1.2rem;
+    .content li {
+      margin-bottom: 0.5rem;
     }
 
-    .summary-box {
-      background: var(--card-bg);
+    /* Warning Box at bottom */
+    .warning-box {
+      margin-top: 2rem;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
       border-radius: 0.75rem;
-      border: 1px solid var(--border);
-      padding: 0.9rem 1rem;
-      margin-bottom: 1.1rem;
+      padding: 1.25rem;
     }
-
-    .summary-box p {
-      margin: 0.35rem 0;
-      font-size: 0.93rem;
-    }
-
-    section {
-      background: var(--card-bg);
-      border-radius: 0.75rem;
-      border: 1px solid var(--border);
-      padding: 1rem 1.1rem;
-      margin-bottom: 0.9rem;
-    }
-
-    section h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.05rem;
+    .warning-box h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #991b1b;
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.5rem;
     }
 
-    section h3 span.icon {
-      font-size: 1.1rem;
-    }
-
-    p {
-      margin: 0.3rem 0;
-      font-size: 0.93rem;
-    }
-
-    ul {
-      margin: 0.3rem 0 0.2rem 1.1rem;
-      padding: 0;
-      font-size: 0.93rem;
-    }
-
-    li {
-      margin-bottom: 0.2rem;
-    }
-
-    .subheading {
-      font-weight: 600;
-      margin-top: 0.5rem;
-    }
-
-    .highlight {
-      background: rgba(246, 217, 80, 0.22);
-      border-left: 3px solid var(--accent-gold);
-      padding: 0.4rem 0.6rem;
-      border-radius: 0.35rem;
-      font-size: 0.9rem;
-      margin-top: 0.4rem;
-    }
-
-    .when-to-see {
-      border-left: 4px solid #dc2626;
-    }
-
-    @media (min-width: 720px) {
-      header h1 {
-        font-size: 1.55rem;
-      }
-      header p {
-        font-size: 0.95rem;
-      }
-    }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="inner">
-      <h1>Cold, Dry Air & Your Skin</h1>
-      <p>Winter and cold-weather trials: simple self-care for dry skin, lips and nose so you stay comfortable and fit for duty.</p>
-    </div>
+    <a href="index.html" class="nav-back">
+      <span>&larr;</span> Sick Bay Briefs
+    </a>
+    <div class="ship-name">HMCS Frédérick Rolette</div>
   </header>
 
   <main>
-    <a class="back-link" href="index.html">
-      <span>←</span>
-      <span>Back to topics</span>
-    </a>
+    <h1>Cold, Dry Air &amp; Your Skin</h1>
+    <p class="subtitle">Select a topic below to see self-care instructions.</p>
 
-    <div class="pill-label">
-      <span>❄️</span>
-      <span>Cold & Dry Air</span>
-    </div>
-    <h2>Why this matters at sea</h2>
-
-    <div class="summary-box">
-      <p><strong>Cold, dry outside air + heated ship’s air = very low humidity.</strong> That dry air pulls water out of your skin, lips and nose.</p>
-      <p>Result: dry, itchy hands, cracked heels, chapped lips and more nosebleeds than usual. A bit of daily self-care and a few cheap items from shore can prevent most of it.</p>
+    <div class="info-box">
+      <h2>Why this matters</h2>
+      <p>Cold air + ship heating = low humidity. This pulls water from your skin. Simple items like <strong>moisturizing cream, lip balm, and saline spray</strong> will prevent most issues.</p>
     </div>
 
-    <section>
-      <h3><span class="icon">🧊</span>What cold, dry air does</h3>
-      <p>In winter and during cold-weather trials:</p>
-      <ul>
-        <li>Cold air holds very little moisture. Heating it inside the ship dries it out even more.</li>
-        <li>Dry air <strong>pulls water from your skin and the lining of your nose</strong>, so they dry out and can crack.</li>
-        <li>Wind, salt spray, frequent hand washing, gloves and long hot showers all make the drying worse.</li>
-      </ul>
-    </section>
+    <div class="card-stack">
 
-    <section>
-      <h3><span class="icon">👀</span>Common problems you might notice</h3>
-      <ul>
-        <li>Dry, tight, itchy skin on hands, arms or legs.</li>
-        <li>Cracked knuckles or fingertips that sting or bleed.</li>
-        <li>Chapped, split lips; sore corners of the mouth.</li>
-        <li>“Beard dandruff” or an itchy, flaky scalp.</li>
-        <li>Dry, cracked heels.</li>
-        <li>Dry, crusty nose and more nosebleeds than usual.</li>
-        <li>Scratchy, dry throat after watch or overnight.</li>
-        <li>Eczema patches (if you’ve had eczema before) flaring in winter.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3><span class="icon">🧰</span>Stuff worth buying for yourself</h3>
-      <p>Before winter or cold-weather trials, consider picking up:</p>
-      <ul>
-        <li>1 thick, fragrance-free <strong>moisturizing cream</strong> (tub or tube – not a thin lotion).</li>
-        <li>1 unscented <strong>lip balm</strong> or small tub of petroleum jelly.</li>
-        <li>1 small tube of <strong>hand cream</strong> you actually like using.</li>
-        <li>1 bottle of <strong>saline nasal spray</strong>.</li>
-        <li>Optional: a foot/heel cream, thin cotton gloves or socks for overnight use with cream.</li>
-      </ul>
-      <div class="highlight">
-        Small, simple items like these prevent most winter skin issues and keep you from fighting cracked hands and lips all deployment.
-      </div>
-    </section>
-
-    <section>
-      <h3><span class="icon">👐</span>Hands</h3>
-      <p class="subheading">Day-to-day</p>
-      <ul>
-        <li>Use <strong>warm, not hot</strong> water when you can.</li>
-        <li>If there’s a choice, pick the gentlest soap or hand wash.</li>
-        <li><strong>After every wash</strong>, put on a small amount of hand cream. Keep a tube in your pocket.</li>
-      </ul>
-
-      <p class="subheading">At night</p>
-      <ul>
-        <li>Put a <strong>thick layer</strong> of cream or petroleum jelly on the backs of your hands and over any cracks.</li>
-        <li>If you have them, wear thin cotton gloves or clean socks over your hands for a few hours or overnight.</li>
-      </ul>
-
-      <p class="subheading">On duty / cleaning</p>
-      <ul>
-        <li>Wear protective gloves for cleaning chemicals and detergents.</li>
-        <li>If a particular product always irritates your skin, try to avoid direct contact or use extra protection.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3><span class="icon">💋</span>Lips</h3>
-      <ul>
-        <li>Carry a <strong>plain lip balm</strong> or petroleum jelly and use it often:
+      <details>
+        <summary>
+          <span><span class="icon">👐</span> Hands &amp; Knuckles</span>
+        </summary>
+        <div class="content">
+          <h3>Day-to-day</h3>
           <ul>
-            <li>before you go on watch,</li>
-            <li>every 1–2 hours in cold wind,</li>
-            <li>before sleep.</li>
+            <li>Use <strong>warm, not hot</strong> water when you can.</li>
+            <li>Use the gentlest soap available.</li>
+            <li><strong>After every wash</strong>, put on a small amount of hand cream. Keep a tube in your pocket.</li>
           </ul>
-        </li>
-        <li><strong>Don’t lick your lips</strong> – saliva evaporates and dries them more.</li>
-        <li>If the corners of your mouth crack, keep them clean and greasy with ointment; if they’re not improving after several days, see medical.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3><span class="icon">🧴</span>Skin on body and face</h3>
-      <p class="subheading">Showers</p>
-      <ul>
-        <li>Keep showers <strong>short and warm</strong>, not long and hot.</li>
-        <li>Use soap mainly on armpits, groin and feet. Rinse the rest rather than scrubbing hard.</li>
-      </ul>
-
-      <p class="subheading">After shower</p>
-      <ul>
-        <li>Pat skin dry, then while it’s still slightly damp, <strong>put cream on</strong> arms, legs, hands and any dry areas.</li>
-        <li>For very dry or cracked spots, use a thin layer of petroleum jelly over cream at night.</li>
-      </ul>
-
-      <p class="subheading">Out on deck</p>
-      <ul>
-        <li>Cover as much skin as possible: hat, neck gaiter/face covering, gloves.</li>
-        <li>If wool itches, wear a cotton T-shirt or base layer under wool.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3><span class="icon">🦶</span>Feet</h3>
-      <ul>
-        <li>Change out of <strong>wet socks</strong> as soon as you can.</li>
-        <li>Before bed:
+          <h3>At night</h3>
           <ul>
-            <li>rub a <strong>thick cream or ointment</strong> into heels and other dry areas,</li>
-            <li>put on clean socks.</li>
+            <li>Put a <strong>thick layer</strong> of cream or petroleum jelly on hands/cracks.</li>
+            <li>Wear thin cotton gloves or clean socks over hands overnight if available.</li>
           </ul>
-        </li>
-        <li>On days off, if you can: soak feet in warm water for 10–15 minutes, gently file thick hard skin, then moisturize.</li>
-        <li>If heel cracks are so deep it hurts to walk, or look red and angry, see medical.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3><span class="icon">🧔</span>Scalp and beard</h3>
-      <ul>
-        <li>Use a <strong>gentle shampoo</strong>; daily if hair is oily, every 2–3 days if it’s dry.</li>
-        <li>If you get dandruff or beard flakes, an <strong>anti-dandruff shampoo</strong> a few times per week can help (they can buy one ashore).</li>
-        <li>For beards: wash, rinse well, then use a simple <strong>beard oil or conditioner</strong> if you like to keep skin and hair from drying out.</li>
-        <li>Wear a hat in the cold; if wool hats itch, use one with a liner or wear a thin layer underneath.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3><span class="icon">👃</span>Nose and throat</h3>
-      <ul>
-        <li>Use <strong>saline nasal spray</strong> several times a day to keep the inside of your nose moist.</li>
-        <li>A tiny amount of petroleum jelly or saline gel at the entrance of each nostril at night can help stop cracking and crusting.</li>
-        <li>For a nosebleed:
+          <h3>On duty</h3>
           <ul>
-            <li>sit up and <strong>lean forward</strong>,</li>
-            <li>pinch the soft part of your nose for 10–15 minutes without checking,</li>
-            <li>spit out any blood; don’t tilt your head back.</li>
+            <li>Wear protective gloves for cleaning chemicals.</li>
           </ul>
-        </li>
-        <li>Drink water regularly; in cold, dry air you lose fluid with every breath even if you don’t feel thirsty.</li>
-      </ul>
-    </section>
+        </div>
+      </details>
 
-    <section class="when-to-see">
-      <h3><span class="icon">⚠️</span>When to see medical</h3>
+      <details>
+        <summary>
+          <span><span class="icon">💋</span> Lips</span>
+        </summary>
+        <div class="content">
+          <ul>
+            <li>Carry <strong>plain lip balm</strong> or petroleum jelly.</li>
+            <li>Apply before watch, every 1–2 hours in wind, and before sleep.</li>
+            <li><strong>Don’t lick your lips</strong> – saliva evaporates and dries them more.</li>
+            <li>If corners of the mouth crack, keep them clean and greasy with ointment.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span><span class="icon">🚿</span> Face &amp; Body (Showers)</span>
+        </summary>
+        <div class="content">
+          <h3>Showers</h3>
+          <ul>
+            <li>Keep showers <strong>short and warm</strong>, not long and hot.</li>
+            <li>Use soap mainly on armpits, groin, and feet. Rinse the rest.</li>
+          </ul>
+          <h3>After shower</h3>
+          <ul>
+            <li>Pat skin dry. While slightly damp, <strong>put cream on</strong> arms, legs, and hands.</li>
+            <li>Use petroleum jelly over cream for very dry spots at night.</li>
+          </ul>
+          <h3>Out on deck</h3>
+          <ul>
+            <li>Cover skin: hat, neck gaiter, gloves.</li>
+            <li>If wool itches, wear cotton underneath.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span><span class="icon">🦶</span> Feet &amp; Heels</span>
+        </summary>
+        <div class="content">
+          <ul>
+            <li>Change out of <strong>wet socks</strong> immediately.</li>
+            <li><strong>Before bed:</strong> rub thick cream/ointment into heels and put on clean socks.</li>
+            <li><strong>Days off:</strong> soak feet in warm water for 10 mins, file hard skin, then moisturize.</li>
+            <li>See medical if heel cracks are deep, painful, or look infected.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span><span class="icon">🧔</span> Scalp &amp; Beard</span>
+        </summary>
+        <div class="content">
+          <ul>
+            <li>Use gentle shampoo (daily if oily, every 2–3 days if dry).</li>
+            <li>Use anti-dandruff shampoo if you get flakes.</li>
+            <li><strong>Beards:</strong> Wash, rinse well, and use beard oil/conditioner to prevent drying.</li>
+            <li>Wear a hat liner if wool hats make you itch.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span><span class="icon">👃</span> Nose &amp; Nosebleeds</span>
+        </summary>
+        <div class="content">
+          <ul>
+            <li>Use <strong>saline nasal spray</strong> several times a day.</li>
+            <li>Apply a tiny amount of petroleum jelly inside nostrils at night.</li>
+            <li><strong>For a bleed:</strong> Sit up, lean forward, pinch soft part of nose for 10–15 mins. Do not tilt head back.</li>
+            <li>Drink water regularly to stay hydrated.</li>
+          </ul>
+        </div>
+      </details>
+
+    </div> <div class="warning-box">
+      <h2><span class="icon">⚠️</span> When to see medical</h2>
       <ul>
         <li>Skin cracks are <strong>very painful, deep, or not healing</strong>.</li>
-        <li>You see <strong>redness, warmth, pus, or spreading colour</strong> around a crack or rash.</li>
-        <li>A rash is <strong>spreading, blistering, or keeping you awake at night</strong>.</li>
-        <li>Dry skin or eczema is <strong>not improving after 1–2 weeks</strong> of good self-care.</li>
-        <li>You have nosebleeds **often**, or one bleed:
-          <ul>
-            <li>lasts longer than about 30 minutes despite proper pressure, or</li>
-            <li>makes you feel light-headed or unwell.</li>
-          </ul>
-        </li>
-        <li>Skin or nose problems are <strong>stopping you from doing your job</strong> or wearing required PPE.</li>
-        <li>You’re simply <strong>not sure what it is</strong> and it seems to be getting worse.</li>
+        <li>You see <strong>redness, warmth, pus</strong>, or spreading color.</li>
+        <li>A rash is blistering or keeping you awake at night.</li>
+        <li>Nosebleeds last longer than 30 mins or make you feel faint.</li>
+        <li>Problems prevent you from doing your job or wearing PPE.</li>
       </ul>
-    </section>
+    </div>
+
   </main>
 </body>
 </html>
