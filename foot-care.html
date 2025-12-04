@@ -5,8 +5,10 @@
   <title>Foot Care at Sea – HMCS FRR Sick Bay Briefs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Crew-focused foot care tips for HMCS FRR sailors: damp boots, athlete’s foot, blisters, and trench-foot–like problems." />
-  <style>
-    :root {
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>:root {
       --navy: #0b1b3b;
       --navy-light: #1f325f;
       --gold: #f4c542;
@@ -294,29 +296,138 @@
       text-align: center;
       padding: 0.4rem;
     }
-  </style>
+
+/* Layout refresh overrides */
+:root {
+  --navy: #0f172a;
+  --navy-light: #1e293b;
+  --navy-accent: #334155;
+  --gold: #fbbf24;
+  --gold-dim: #b45309;
+  --bg: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background: linear-gradient(160deg, var(--navy) 0%, #002b45 100%);
+  color: #fff;
+  padding: 3rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.back-link {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+.back-link:hover { opacity: 1; }
+
+.sub {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  background: rgba(255,255,255,0.05);
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.subtitle {
+  max-width: 720px;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: -2.5rem auto 4rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.page-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--card-border);
+}
+
+@media (max-width: 600px) {
+  header { padding: 2.5rem 1.1rem 3.5rem; }
+  main { padding: 0 1.1rem; margin-top: -2rem; }
+  h1 { font-size: 1.75rem; }
+  .subtitle { font-size: 0.95rem; }
+}
+</style>
 </head>
 <body>
   <header>
-    <div class="header-inner">
-      <div class="brand">
-        <div class="crest-circle">FRR</div>
-        <div class="brand-text">
-          <h1>HMCS FRÉDÉRICK ROLETTE</h1>
-          <p>Sick Bay Briefs &middot; Crew Self-Care</p>
-        </div>
-      </div>
-      <nav>
-        <a href="index.html">All Briefs</a>
-        <a href="winter-skin.html">Cold &amp; Skin</a>
-        <a href="wound-care.html">Minor Wounds</a>
-        <a href="foot-care.html" class="current">Foot Care</a>
-      </nav>
+    <div class="header-content">
+      <a class="back-link" href="index.html">&#8592; All briefs</a>
+      <div class="sub">HMCS Frédérick Rolette</div>
+      <h1>Foot Care at Sea</h1>
+      <p class="subtitle">Manage wet boots, blisters, and athlete's foot while keeping watch-ready.</p>
     </div>
   </header>
 
+
   <main>
-    <section class="page-meta">
+    <div class="page-card">
+<section class="page-meta">
       <div class="tag">Feet &amp; Footwear</div>
       <h2 class="page-title">Foot Care at Sea</h2>
       <p class="page-subtitle">
@@ -541,6 +652,7 @@
         <div class="image-placeholder">Optional: Red-flag infection illustration</div>
       </div>
     </section>
+    </div>
   </main>
 </body>
 </html>

@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <title>Fatigue at Sea — HMCS FRR Sick Bay Briefs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>:root {
       --navy: #002b45;
       --navy-light: #004b7a;
       --gold: #f0c75e;
@@ -181,25 +183,138 @@
         padding: 0 0.75rem;
       }
     }
-  </style>
+
+/* Layout refresh overrides */
+:root {
+  --navy: #0f172a;
+  --navy-light: #1e293b;
+  --navy-accent: #334155;
+  --gold: #fbbf24;
+  --gold-dim: #b45309;
+  --bg: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background: linear-gradient(160deg, var(--navy) 0%, #002b45 100%);
+  color: #fff;
+  padding: 3rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.back-link {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+.back-link:hover { opacity: 1; }
+
+.sub {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  background: rgba(255,255,255,0.05);
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.subtitle {
+  max-width: 720px;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: -2.5rem auto 4rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.page-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--card-border);
+}
+
+@media (max-width: 600px) {
+  header { padding: 2.5rem 1.1rem 3.5rem; }
+  main { padding: 0 1.1rem; margin-top: -2rem; }
+  h1 { font-size: 1.75rem; }
+  .subtitle { font-size: 0.95rem; }
+}
+</style>
 </head>
 <body>
   <header>
-    <div>
-      <h1>HMCS FRÉDÉRICK ROLETTE &mdash; Sick Bay Briefs</h1>
-      <div class="sub">Fatigue at Sea &bull; Sleep, Watches, and Self-Care</div>
+    <div class="header-content">
+      <a class="back-link" href="index.html">&#8592; All briefs</a>
+      <div class="sub">HMCS Frédérick Rolette</div>
+      <h1>Fatigue at Sea</h1>
+      <p class="subtitle">Sleep, watches, caffeine, and when tiredness becomes a safety risk.</p>
     </div>
-    <nav>
-      <a href="index.html" class="primary">← All Topics</a>
-      <a href="winter-skin.html">Winter Skin</a>
-      <a href="shaving.html">Shaving</a>
-      <a href="wound-care.html">Minor Wounds</a>
-      <a href="foot-care.html">Foot Care</a>
-    </nav>
   </header>
 
+
   <main>
-    <p class="tagline">
+    <div class="page-card">
+<p class="tagline">
       This page is for sailors, not medical staff. It covers what fatigue does to you at sea, what you can do yourself, and when to tell your supervisor or see Sick Bay.
     </p>
 
@@ -376,6 +491,7 @@
         <li>See Sick Bay if tiredness persists despite decent sleep or if you have worrying symptoms.</li>
       </ul>
     </section>
+    </div>
   </main>
 </body>
 </html>
