@@ -106,8 +106,6 @@
       color: var(--text-muted);
       font-size: 1.05rem;
       max-width: 600px;
-      /* If text is in the white overlap area, keep it readable or hide it inside header. 
-         Here, we simply hide standard intro text or style it nicely. */
       display: none; 
     }
 
@@ -161,6 +159,7 @@
     .card:nth-child(3) .card-icon { color: #f59e0b; background: #fef3c7; } /* Wound - Orange */
     .card:nth-child(4) .card-icon { color: #10b981; background: #d1fae5; } /* Foot - Green */
     .card:nth-child(5) .card-icon { color: #6366f1; background: #e0e7ff; } /* Sleep - Indigo */
+    .card:nth-child(6) .card-icon { color: #0ea5e9; background: #e0f2fe; } /* Seasickness - Blue/Cyan */
 
     .card h2 {
       margin: 0;
@@ -240,7 +239,14 @@
       
       <a class="card" href="winter-skin.html">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m20 20-8.5-8.5"/><path d="m4 20 8.5-8.5"/><path d="m20 4-8.5 8.5"/><path d="m4 4 8.5 8.5"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12h20"/>
+            <path d="M12 2v20"/>
+            <path d="m20 20-8.5-8.5"/>
+            <path d="m4 20 8.5-8.5"/>
+            <path d="m20 4-8.5 8.5"/>
+            <path d="m4 4 8.5 8.5"/>
+          </svg>
         </div>
         <div>
           <h2>Cold Weather &amp; Dry Air</h2>
@@ -251,7 +257,12 @@
 
       <a class="card" href="shaving.html">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/>
+            <line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
         </div>
         <div>
           <h2>Shaving Problems</h2>
@@ -262,7 +273,12 @@
 
       <a class="card" href="wound-care.html">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <path d="M12 12h.01"/>
+            <path d="M12 8v8"/>
+            <path d="M8 12h8"/>
+          </svg>
         </div>
         <div>
           <h2>Minor Cuts &amp; Scrapes</h2>
@@ -273,7 +289,9 @@
 
       <a class="card" href="foot-care.html">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 11 3.8 11 8c0 2.25-.5 3-2 5-1.5 2-2 3-2 5 0 2.5 2.5 2.5 2.5 2.5H19c3 0 3-3 3-3V7.5L19 4l-4 4"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 11 3.8 11 8c0 2.25-.5 3-2 5-1.5 2-2 3-2 5 0 2.5 2.5 2.5 2.5 2.5H19c3 0 3-3 3-3V7.5L19 4l-4 4"/>
+          </svg>
         </div>
         <div>
           <h2>Foot Care in Boots</h2>
@@ -284,11 +302,28 @@
 
       <a class="card" href="fatigue.html">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
         </div>
         <div>
           <h2>Fatigue at Sea</h2>
           <p>Managing broken sleep, caffeine use, and spotting safety issues.</p>
+        </div>
+        <div class="card-action">Read Guide <span>&rarr;</span></div>
+      </a>
+
+      <a class="card" href="seasickness.html">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/>
+            <path d="M4 10a4 4 0 0 1 8 0v2"/>
+            <path d="M8 10h4"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Seasickness</h2>
+          <p>Motion sickness at sea: simple self-care, Gravol/meclizine use, and when to see Sick Bay.</p>
         </div>
         <div class="card-action">Read Guide <span>&rarr;</span></div>
       </a>
