@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seasickness — HMCS FRR Sick Bay Briefs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --navy: #002b45;
+      --navy-light: #004b7a;
+      --gold: #f0c75e;
+      --bg: #f5f7fa;
+      --text: #111827;
+      --muted: #4b5563;
+      --card-bg: #ffffff;
+      --accent-soft: #e5f0ff;
+      --danger: #b91c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: #fff;
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.3rem;
+      letter-spacing: 0.03em;
+    }
+
+    header .sub {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 0.5rem;
+      padding: 0.3rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-decoration: none;
+      color: #e5e7eb;
+      border: 1px solid rgba(248, 250, 252, 0.2);
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.25);
+    }
+
+    nav a.primary {
+      background: var(--gold);
+      color: #111827;
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    nav a.current {
+      background: #0b1120;
+      border-color: rgba(15, 23, 42, 0.6);
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 1.25rem auto 2.5rem;
+      padding: 0 1rem;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pill {
+      font-size: 0.76rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1f2937;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.05rem;
+      border-left: 3px solid var(--navy-light);
+      padding-left: 0.5rem;
+    }
+
+    .card h3 {
+      margin-top: 0.5rem;
+      font-size: 0.98rem;
+    }
+
+    .card p {
+      margin: 0.25rem 0 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0.25rem 0 0.5rem 1.1rem;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 0.1rem;
+    }
+
+    .highlight {
+      background: var(--accent-soft);
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.7rem;
+      font-size: 0.88rem;
+      color: #111827;
+      border: 1px solid #dbeafe;
+    }
+
+    .callout-danger {
+      border-left: 4px solid var(--danger);
+      background: #fef2f2;
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      color: #7f1d1d;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      background: #e5e7eb;
+      border-radius: 999px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.15rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      main {
+        padding: 0 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>HMCS FRÉDÉRICK ROLETTE &mdash; Sick Bay Briefs</h1>
+      <div class="sub">Seasickness &bull; Motion Sickness at Sea &amp; Self-Care</div>
+    </div>
+    <nav>
+      <a href="index.html" class="primary">← All Topics</a>
+      <a href="winter-skin.html">Winter Skin</a>
+      <a href="shaving.html">Shaving</a>
+      <a href="wound-care.html">Minor Wounds</a>
+      <a href="foot-care.html">Foot Care</a>
+      <a href="fatigue.html">Fatigue</a>
+      <a href="seasickness.html" class="current">Seasickness</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="tagline">
+      For sailors who feel unwell when the ship moves. This page covers what seasickness looks like, what you can try yourself, how Gravol and similar meds fit in, and when to see Sick Bay.
+    </p>
+
+    <div class="pill-row">
+      <span class="pill">New to sea</span>
+      <span class="pill">Heavy seas</span>
+      <span class="pill">Small boats / RHIBs</span>
+      <span class="pill">Nausea &amp; dizziness</span>
+    </div>
+
+    <section class="card">
+      <span class="badge">Quick take</span>
+      <h2>What Seasickness Feels Like</h2>
+      <div class="highlight">
+        Seasickness is your brain reacting to mixed signals: your inner ear feels motion, but your eyes and body position say you are still. The mismatch can make you feel nauseated, dizzy and unwell.
+      </div>
+      <p>Common symptoms:</p>
+      <ul>
+        <li>Queasy or “off” feeling in the stomach.</li>
+        <li>Nausea and sometimes vomiting.</li>
+        <li>Yawning, cold sweat, pale skin, heavy head.</li>
+        <li>Dizziness, difficulty concentrating, feeling tired.</li>
+        <li>Headache, increased salivation, loss of appetite.</li>
+      </ul>
+      <p>Seasickness usually starts mild and builds. Catching it early and taking simple steps often prevents a bad day.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Why it happens</span>
+      <h2>Why Some People Feel Worse at Sea</h2>
+      <p><strong>Sensory conflict:</strong></p>
+      <ul>
+        <li>Your inner ear senses the ship’s pitch, roll and heave.</li>
+        <li>If you are working below decks or staring at a close object, your eyes tell your brain you are still.</li>
+        <li>The mismatch between “moving” and “not moving” triggers symptoms.</li>
+      </ul>
+
+      <h3>Shipboard risk factors</h3>
+      <ul>
+        <li>New to sea or back after a long time ashore.</li>
+        <li>Working below decks without a view of the horizon.</li>
+        <li>Strong smells (fuel, galley, paint, heads) when already queasy.</li>
+        <li>Reading, phone use or screens when the ship is moving a lot.</li>
+        <li>Heavy, greasy meals, dehydration or a hangover before sailing.</li>
+        <li>Not enough sleep, high stress, long days in rough weather.</li>
+        <li>Known motion sensitivity in cars, aircraft or amusement rides.</li>
+      </ul>
+      <p>This is about physiology, not toughness. Many experienced sailors still get seasick in the wrong conditions.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Non-drug self-care</span>
+      <h2>What You Can Do Without Medication</h2>
+
+      <h3>1. Position and fresh air</h3>
+      <ul>
+        <li>When safe to do so, move to a more stable part of the ship (midships, closer to waterline).</li>
+        <li>Get into <strong>fresh, cool air</strong> and away from strong smells.</li>
+        <li>Outside, look at the <strong>horizon or a fixed distant object</strong>, not the deck at your feet.</li>
+      </ul>
+
+      <h3>2. What you look at and how you move</h3>
+      <ul>
+        <li>Avoid reading, phone use or fine close work once you feel queasy.</li>
+        <li>Keep head movements slow and deliberate; avoid quick turns.</li>
+        <li>On small boats, face the direction of travel where possible.</li>
+      </ul>
+
+      <h3>3. Food and fluids</h3>
+      <ul>
+        <li>Eat <strong>small, bland meals</strong> (toast, crackers, plain cereal, simple sandwiches).</li>
+        <li>Avoid very greasy, spicy or heavy meals before and during heavy seas.</li>
+        <li>Do not sail on an empty stomach; a light snack is usually better than nothing.</li>
+        <li>Take regular small sips of water or dilute drinks to stay hydrated.</li>
+        <li>Avoid alcohol before and during sailing days.</li>
+      </ul>
+
+      <h3>4. Rest and general condition</h3>
+      <ul>
+        <li>Try to be as well rested as possible before known rough transits.</li>
+        <li>Fatigue and stress make seasickness harder to tolerate.</li>
+      </ul>
+
+      <h3>5. Simple physical strategies</h3>
+      <ul>
+        <li>If off duty and unwell, lie on your back in a stable area with your head supported and minimal movement.</li>
+        <li>Loosen tight clothing; avoid overheating.</li>
+        <li>Use slow, steady breathing: in through the nose, out through the mouth.</li>
+      </ul>
+
+      <h3>6. Low-risk extras (mixed evidence)</h3>
+      <ul>
+        <li><strong>Ginger</strong> (biscuits, tea, tablets) may help mild nausea for some people.</li>
+        <li><strong>Acupressure wrist bands</strong> (P6 point) are low risk; some find them helpful.</li>
+        <li>Chewing gum or mints may provide distraction and help with saliva flow.</li>
+      </ul>
+      <p>These extras are optional. The basics (position, air, vision, food and fluids) make the biggest difference.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Medication overview</span>
+      <h2>Gravol &amp; Similar Medications: Where They Fit</h2>
+      <p>This section is about how these medicines affect you and your duties. It is not a dosing guide.</p>
+
+      <h3>1. Dimenhydrinate (Gravol&reg;)</h3>
+      <ul>
+        <li>First-generation antihistamine commonly used for motion sickness.</li>
+        <li>Available in Sick Bay for crew use; also available over-the-counter.</li>
+        <li><strong>Main side-effect:</strong> drowsiness and slower reaction time. Some people feel very sleepy or “foggy”.</li>
+        <li>Can also cause dry mouth, blurred vision and, less often, constipation or urinary difficulty.</li>
+        <li>Alcohol and other sedating medicines make this worse.</li>
+      </ul>
+
+      <h3>2. Meclizine (e.g., Bonamine&reg;)</h3>
+      <ul>
+        <li>Another motion-sickness antihistamine that is often less sedating for many people.</li>
+        <li>Can be obtained through the Base Clinic or purchased where available.</li>
+        <li>Still may cause some drowsiness, but often milder than dimenhydrinate.</li>
+      </ul>
+
+      <h3>3. General safety points</h3>
+      <ul>
+        <li>These medicines can help you tolerate motion, but they can also <strong>impair watchkeeping, machinery operation and weapon handling</strong>.</li>
+        <li>Whenever possible, <strong>try a new motion-sickness medicine on a non-critical day</strong> first, so you know how sleepy it makes you.</li>
+        <li>Follow Sick Bay advice and package instructions. Do not take more than recommended or mix multiple products without medical guidance.</li>
+        <li>Tell your supervisor if you have taken a sedating medication and you are assigned to safety-critical duties.</li>
+        <li>If you are pregnant, have eye, heart, prostate or serious medical issues, discuss use with Sick Bay before relying on these medicines.</li>
+      </ul>
+
+      <p>If you think you need regular or strong medication just to function at sea, discuss this with the MO or Sick Bay rather than self-managing long-term.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">Stepwise plan</span>
+      <h2>Step-by-Step: What to Do When You Feel Seasick</h2>
+
+      <h3>1. Before sailing / early prep</h3>
+      <ul>
+        <li>Get a reasonable sleep if you can.</li>
+        <li>Eat a light, non-greasy meal before sailing.</li>
+        <li>Stay hydrated; avoid alcohol.</li>
+        <li>If you are known to be very motion-sensitive, sort out your plan early (preferred position, non-drug measures, and any approved medication) with Sick Bay or your supervisor.</li>
+      </ul>
+
+      <h3>2. At the first signs of queasiness</h3>
+      <ul>
+        <li>Move to fresh air and, if safe, a place where you can see the horizon.</li>
+        <li>Stop reading or using your phone.</li>
+        <li>Use slow breathing and try to keep your head movements smooth.</li>
+        <li>Have small sips of water or a simple drink; nibble bland snacks if you can tolerate them.</li>
+        <li>Use low-risk extras such as ginger or a wrist band if you choose.</li>
+      </ul>
+
+      <h3>3. If symptoms continue but are still manageable</h3>
+      <ul>
+        <li>Keep up the non-drug measures above; sometimes it takes a bit of time to settle.</li>
+        <li>If you have been <strong>cleared to use motion-sickness medicine</strong> (Gravol, meclizine) and you are not in a heavily safety-critical role, you may choose to take it as directed.</li>
+        <li>Be honest with yourself about how drowsy you feel. If you are too sleepy for safe duties, you must speak to your supervisor.</li>
+      </ul>
+
+      <h3>4. If you are vomiting or unable to function</h3>
+      <ul>
+        <li>Let your supervisor know; do not quietly stay at a safety-critical station while severely unwell.</li>
+        <li>Move away from tasks where an error could harm you or others.</li>
+        <li>Go to Sick Bay for assessment, hydration and supervised treatment.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <span class="badge">Red flags</span>
+      <h2>When Seasickness Might Be Something Else</h2>
+      <p>Seasickness is common, but not everything that happens at sea is “just” seasickness.</p>
+
+      <h3>See Sick Bay promptly if:</h3>
+      <ul>
+        <li>You are vomiting repeatedly or cannot keep fluids down.</li>
+        <li>Dizziness is so severe that you cannot stand, walk or perform duties safely.</li>
+        <li>Seasickness-like symptoms are still severe after 1–3 days at sea and are affecting your ability to do your job.</li>
+        <li>You need motion-sickness tablets most days just to cope at sea.</li>
+      </ul>
+
+      <h3>Get urgent help (do not assume seasickness) if:</h3>
+      <ul>
+        <li>You have chest pain, shortness of breath, or feel like you might collapse.</li>
+        <li>You have a severe, sudden headache, confusion, or trouble speaking.</li>
+        <li>You notice one-sided weakness, facial droop, slurred speech or difficulty walking straight.</li>
+        <li>You have high fever, severe abdominal pain, or vomiting blood/black material.</li>
+      </ul>
+
+      <div class="callout-danger">
+        If something feels “not right” or out of proportion to usual seasickness, get checked. It is better to be seen and reassured than to miss a serious problem.
+      </div>
+    </section>
+
+    <section class="card">
+      <span class="badge">Key points</span>
+      <h2>Bottom Line</h2>
+      <ul>
+        <li>Seasickness is common and often improves after a few days, but it can seriously affect safety and performance.</li>
+        <li>Start with non-drug steps: position, fresh air, horizon view, small bland meals, fluids and rest.</li>
+        <li>Gravol and meclizine can help but may make you sleepy and slower; use them within unit policy and be honest about your fitness for duty.</li>
+        <li>See Sick Bay if you cannot keep fluids down, if symptoms stay severe, or if anything does not fit the usual seasickness pattern.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
