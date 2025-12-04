@@ -104,8 +104,14 @@
       margin-bottom: 1rem;
     }
     .info-box strong { color: #0c4a6e; }
-    .info-box ul { margin-bottom: 1rem; }
+    .info-box ul { margin-bottom: 1rem; padding-left: 1.25rem; }
     .info-box li { margin-bottom: 0.25rem; color: #334155; }
+
+    .info-box p {
+      margin-bottom: 0.25rem;
+      color: #334155;
+      font-size: 0.95rem;
+    }
 
     /* Stack Layout */
     .card-stack {
@@ -209,6 +215,11 @@
 
     .do-col ul, .dont-col ul { padding-left: 1.25rem; margin-bottom: 0; }
     .do-col li, .dont-col li { font-size: 0.9rem; margin-bottom: 0.25rem; }
+
+    /* Warning-style list inside details */
+    .warning-list li {
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -222,18 +233,32 @@
 
   <main>
     <h1>Shaving &amp; Razor Bumps</h1>
-    <p class="subtitle">Practical self-care for sailors who have to shave for work. For those who get red skin, bumps, or “pimples” on the lower cheeks or neck.</p>
+    <p class="subtitle">Practical self-care for sailors who have to shave for work, especially if you get red skin, small bumps, or “pimples” on the lower cheeks or neck.</p>
 
     <div class="info-box">
       <h2>What’s going on with my skin?</h2>
+
       <p><strong>Razor burn (irritation)</strong></p>
-      <ul><li>Red, burning or stinging skin. Caused by friction, dull blades, or pressing too hard.</li></ul>
+      <ul>
+        <li>Red, burning or stinging skin right after shaving.</li>
+        <li>From friction, dry shaving, dull blades, or pressing too hard.</li>
+      </ul>
       
-      <p><strong>Razor bumps (Ingrown hairs)</strong></p>
-      <ul><li>Small firm bumps, often with a hair trapped inside. Common on curly/coarse hair.</li></ul>
+      <p><strong>Razor bumps (ingrown hairs / pseudofolliculitis)</strong></p>
+      <ul>
+        <li>Small firm bumps, often with a hair trapped inside, usually on the neck or jawline.</li>
+        <li>More common with curly or coarse hair and very close shaves.</li>
+      </ul>
       
-      <p><strong>Folliculitis (Infected follicles)</strong></p>
-      <ul><li>Bacteria get into cut follicles. Small sore pimples with white/yellow heads.</li></ul>
+      <p><strong>Folliculitis (infected follicles)</strong></p>
+      <ul>
+        <li>Bacteria get into irritated hair follicles.</li>
+        <li>Small sore pimples with white/yellow heads that can crust.</li>
+      </ul>
+
+      <p style="margin-top:0.75rem;font-size:0.9rem;">
+        All three can overlap. The aim here is to calm the skin, reduce bumps, and keep you able to shave safely for work.
+      </p>
     </div>
 
     <div class="card-stack">
@@ -243,27 +268,27 @@
           <span><span class="icon">⚡</span> Quick Wins: Do's &amp; Don'ts</span>
         </summary>
         <div class="content">
-          <p>Fast changes that usually help immediately.</p>
+          <p>Fast changes that usually help quickly.</p>
           <div class="do-dont-grid">
             <div class="do-col">
               <h4>✅ DO</h4>
               <ul>
                 <li>Shave after a warm shower.</li>
-                <li>Always use shaving cream/gel.</li>
-                <li>Shave <strong>with the grain</strong>.</li>
-                <li>Use light pressure.</li>
-                <li>Rinse with cool water.</li>
-                <li>Use clean blades.</li>
+                <li>Always use shaving cream or gel (never dry shave).</li>
+                <li>Shave <strong>with the grain</strong>, especially on the neck.</li>
+                <li>Use light pressure and short strokes.</li>
+                <li>Rinse with cool water after shaving.</li>
+                <li>Use clean, sharp blades and replace regularly.</li>
               </ul>
             </div>
             <div class="dont-col">
               <h4>⛔ DON'T</h4>
               <ul>
-                <li>Don't shave against the grain.</li>
-                <li>Don't stretch skin tight.</li>
-                <li>Don't shave the same spot repeatedly.</li>
-                <li>Don't use alcohol-heavy aftershave.</li>
-                <li>Don't pick at bumps.</li>
+                <li>Don’t shave against the grain.</li>
+                <li>Don’t stretch skin tight while shaving.</li>
+                <li>Don’t go over the same spot again and again without re-lathering.</li>
+                <li>Don’t use strong alcohol-heavy aftershaves that sting and dry you out.</li>
+                <li>Don’t pick or squeeze bumps or ingrown hairs.</li>
               </ul>
             </div>
           </div>
@@ -278,23 +303,23 @@
           <h3>Step 1 – Before you shave</h3>
           <ul>
             <li><strong>Warm up:</strong> shave after a warm shower or hold a warm, wet cloth on the area for 2–3 minutes.</li>
-            <li><strong>Clean the skin:</strong> wash with a mild face wash.</li>
-            <li><strong>Lather up:</strong> apply shaving cream/gel and let it sit for a minute.</li>
+            <li><strong>Clean the skin:</strong> wash with a mild, non-scrubby face wash.</li>
+            <li><strong>Lather up:</strong> apply shaving cream/gel and let it sit for about a minute to soften hairs.</li>
           </ul>
 
           <h3>Step 2 – During the shave</h3>
           <ul>
-            <li><strong>Direction:</strong> shave with the grain. Check which way hair grows.</li>
-            <li><strong>Pressure:</strong> use light pressure and short strokes.</li>
-            <li><strong>Passes:</strong> try to shave each area once. If you must go again, re-lather.</li>
-            <li><strong>Aim:</strong> aim for “inspection clean,” not glass-smooth. Leaving 1mm stubble reduces ingrowns.</li>
+            <li><strong>Direction:</strong> shave with the grain. Check which way hair grows in each area.</li>
+            <li><strong>Pressure:</strong> use light pressure and short strokes; let the blade do the work.</li>
+            <li><strong>Passes:</strong> try to shave each area once. If you must go again, rinse and re-lather first.</li>
+            <li><strong>Aim:</strong> aim for “inspection clean,” not glass-smooth. Leaving ~1 mm of stubble usually causes fewer ingrowns (follow unit shaving standards or medical profile).</li>
           </ul>
 
           <h3>Step 3 – After the shave</h3>
           <ul>
-            <li><strong>Rinse and cool:</strong> rinse with cool water.</li>
-            <li><strong>Moisturize:</strong> apply alcohol-free balm.</li>
-            <li><strong>Hands off:</strong> don’t scratch or pick at bumps.</li>
+            <li><strong>Rinse and cool:</strong> rinse with cool water, then gently pat dry.</li>
+            <li><strong>Moisturize:</strong> apply a gentle, alcohol-free moisturizer or balm.</li>
+            <li><strong>Hands off:</strong> avoid scratching, rubbing, or picking bumps.</li>
           </ul>
         </div>
       </details>
@@ -307,23 +332,27 @@
           <h3>Multi-blade cartridges</h3>
           <ul>
             <li><strong>Pros:</strong> fast, very close shave.</li>
-            <li><strong>Cons:</strong> more friction; higher risk of ingrown hairs.</li>
-            <li><em>Tip: Use very light pressure.</em></li>
+            <li><strong>Cons:</strong> more friction and “lift and cut” can cause more ingrown hairs, especially on curly hair.</li>
+            <li><em>Tip:</em> use very light pressure and don’t chase an ultra-close shave if you get bumps.</li>
           </ul>
-          <h3>Single-blade (Safety) Razors</h3>
+
+          <h3>Single-blade (safety) razors</h3>
           <ul>
-            <li><strong>Pros:</strong> cuts at skin level; better for bump-prone skin.</li>
-            <li><strong>Cons:</strong> learning curve required.</li>
+            <li><strong>Pros:</strong> cuts hairs at skin level; often better for bump-prone skin.</li>
+            <li><strong>Cons:</strong> needs a bit of practice to use safely.</li>
           </ul>
-          <h3>Electric shavers</h3>
+
+          <h3>Electric shavers / clippers</h3>
           <ul>
-            <li><strong>Pros:</strong> leaves tiny stubble (fewer ingrowns); quick.</li>
-            <li><strong>Cons:</strong> not baby-smooth; requires power/cleaning.</li>
+            <li><strong>Pros:</strong> usually leave a tiny amount of stubble, which reduces ingrown hairs; quick.</li>
+            <li><strong>Cons:</strong> not baby-smooth; needs power and regular cleaning.</li>
+            <li><em>Note:</em> any stubble length must still meet grooming/respirator standards for your role.</li>
           </ul>
-          <h3>Depilatories (Creams)</h3>
+
+          <h3>Chemical depilatory creams</h3>
           <ul>
-            <li><strong>Pros:</strong> no blade; hair regrows blunt.</li>
-            <li><strong>Cons:</strong> can burn skin; strong smell. Must follow directions exactly.</li>
+            <li><strong>Pros:</strong> no blade; hair regrows with a blunt end.</li>
+            <li><strong>Cons:</strong> can irritate or burn skin and often smell strong; must follow package directions exactly and patch-test first.</li>
           </ul>
         </div>
       </details>
@@ -333,21 +362,43 @@
           <span><span class="icon">🧴</span> Self-Care Kit</span>
         </summary>
         <div class="content">
-          <p>Things to keep in your wash bag:</p>
+          <p>Useful items for your wash bag (ingredient-based, not brand-specific):</p>
           <ul>
-            <li><strong>Gentle face wash:</strong> mild cleanser for daily use.</li>
-            <li><strong>Lubricant:</strong> sensitive skin shaving cream or gel.</li>
-            <li><strong>Moisturizer:</strong> alcohol-free balm.</li>
+            <li><strong>Gentle face wash:</strong> mild, non-scrub cleanser for daily use.</li>
+            <li><strong>Shaving lubricant:</strong> shaving cream/gel for sensitive skin (avoid strong fragrance if you react easily).</li>
+            <li><strong>Moisturizer:</strong> simple alcohol-free moisturizer or aftershave balm.</li>
           </ul>
-          <h3>Optional Extras</h3>
+
+          <h3>Optional extras (over-the-counter)</h3>
           <ul>
-            <li><strong>Mild chemical exfoliant:</strong> (salicylic acid) a few times a week to prevent trapped hairs.</li>
-            <li><strong>Benzoyl peroxide wash:</strong> once daily if you get pimple-like folliculitis.</li>
-            <li><strong>Hydrocortisone cream (OTC):</strong> for short-term use on bad razor burn (few days max).</li>
+            <li><strong>Mild chemical exfoliant:</strong> product with a low strength of salicylic acid or similar, used a few times per week to help prevent trapped hairs. Stop if it burns or peels too much.</li>
+            <li><strong>Benzoyl peroxide wash:</strong> a low-strength wash once daily if you get pimple-like folliculitis; rinse off well and be aware it can bleach fabric.</li>
+            <li><strong>Hydrocortisone cream (0.5–1%):</strong> for short-term use (a few days) on bad razor burn to reduce redness and itch. Not for daily, long-term use.</li>
           </ul>
-          <p><em>Start new products slowly and one at a time.</em></p>
+
+          <p><em>Start new products slowly and one at a time so you know what your skin tolerates.</em></p>
         </div>
       </details>
+
+      <details>
+        <summary>
+          <span><span class="icon">⚠️</span> When to see medical</span>
+        </summary>
+        <div class="content">
+          <ul class="warning-list">
+            <li>Bumps are <strong>very painful</strong>, keep getting infected, or you see <strong>pus, crusting, or spreading redness</strong>.</li>
+            <li>You have many deep, hard bumps or scars on the neck or jawline.</li>
+            <li>Rash is blistering, oozing, or keeping you awake at night.</li>
+            <li>Skin problems make it hard to shave to required standards, wear PPE, or do your job safely.</li>
+            <li>You’ve tried good shaving technique and basic self-care for a few weeks and things are <strong>not improving</strong> or are getting worse.</li>
+            <li>You’re unsure if it’s shaving rash, infection, eczema, or something else.</li>
+          </ul>
+          <p style="font-size:0.9rem;margin-top:0.75rem;">
+            Medical staff can check for infection or other skin conditions and talk through options such as different shaving methods, medicated creams, or (if needed) shaving profiles in line with policy.
+          </p>
+        </div>
+      </details>
+
     </div>
 
   </main>
