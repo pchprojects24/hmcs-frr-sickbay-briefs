@@ -16,13 +16,14 @@
       --navy-accent: #334155;
       --gold: #fbbf24;
       --gold-dim: #b45309;
-      --bg: #f8fafc;
+      --bg: #eaf2fb;
       --text-main: #1e293b;
       --text-muted: #475569;
       --card-bg: #ffffff;
       --card-border: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --tint: #f3f7fd;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
       --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 
@@ -33,8 +34,10 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.75;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
+      padding: 1rem;
     }
 
     header {
@@ -43,6 +46,8 @@
       padding: 3rem 1.5rem 4rem;
       position: relative;
       overflow: hidden;
+      border-radius: 1.2rem 1.2rem 0 0;
+      box-shadow: var(--shadow-md);
     }
 
     header::after {
@@ -62,6 +67,8 @@
       position: relative;
       z-index: 2;
     }
+
+    .intro-block { margin-bottom: 2.25rem; }
 
     .back-link {
       color: rgba(255,255,255,0.85);
@@ -92,45 +99,53 @@
 
     h1 {
       margin: 0 0 0.5rem;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
 
     .subtitle {
       max-width: 640px;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: rgba(255,255,255,0.9);
       margin: 0;
     }
 
     main {
-      max-width: 900px;
-      margin: -2.5rem auto 4rem;
-      padding: 0 1.5rem;
+      max-width: 960px;
+      margin: -2.5rem auto 3rem;
+      padding: 0;
       position: relative;
       z-index: 10;
     }
 
-    .section-card {
+    .page-card {
       background: var(--card-bg);
-      border-radius: 1rem;
-      padding: 1.5rem;
+      border-radius: 1.25rem;
+      padding: 2rem 1.5rem 2.25rem;
       box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .section-card {
+      background: var(--tint);
+      border-radius: 1rem;
+      padding: 1.25rem 1.25rem 1.1rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
       border: 1px solid var(--card-border);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .section-card h2 {
       margin: 0 0 0.5rem;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--navy);
     }
 
     .section-card p {
       margin: 0;
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
     .card-stack {
@@ -140,13 +155,41 @@
       margin-top: 1.5rem;
     }
 
+    .accordion-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.5rem;
+      align-items: center;
+    }
+
+    .toggle-all {
+      background: rgba(15, 23, 42, 0.05);
+      color: var(--navy-light);
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .toggle-all:hover {
+      background: rgba(15, 23, 42, 0.08);
+      box-shadow: var(--shadow-sm);
+    }
+
     details {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 0.9rem;
+      border-radius: 0.95rem;
       box-shadow: var(--shadow-sm);
       overflow: hidden;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
     }
 
     details[open] {
@@ -155,21 +198,36 @@
     }
 
     summary {
-      padding: 1.25rem;
+      padding: 1.1rem 1.25rem;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.05rem;
       color: var(--navy-light);
       display: flex;
       align-items: center;
       justify-content: space-between;
       list-style: none;
-      background: #fff;
+      background: linear-gradient(90deg, rgba(226, 232, 240, 0.45), rgba(241, 245, 249, 0.75));
+      border-radius: 0.95rem;
+      transition: background 0.2s ease, padding 0.2s ease;
     }
 
     summary::after {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      transition: transform 0.2s;
+      content: "";
+      display: inline-flex;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      margin-left: 1rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    details[open] summary {
+      background: linear-gradient(90deg, rgba(148, 163, 184, 0.12), rgba(226, 232, 240, 0.65));
+      padding: 1.15rem 1.3rem;
     }
 
     details[open] summary::after { transform: rotate(180deg); }
@@ -188,6 +246,7 @@
       border-top: 1px solid #f1f5f9;
       color: var(--text-muted);
       animation: fadeIn 0.25s ease;
+      background: #fff;
     }
 
     @keyframes fadeIn {
@@ -202,8 +261,10 @@
       margin-bottom: 0.5rem;
     }
 
-    .content ul { margin-top: 0; padding-left: 1.25rem; }
-    .content li { margin-bottom: 0.4rem; }
+    p { margin: 0 0 0.9rem; }
+
+    .content ul { margin: 0.25rem 0 0.75rem 0; padding-left: 1.25rem; }
+    .content li { margin-bottom: 0.6rem; }
 
     .warning-card {
       background: #fff7ed;
@@ -226,17 +287,21 @@
     }
 
     @media (max-width: 600px) {
-      header { padding: 2.5rem 1.1rem 3.5rem; }
-      main { padding: 0 1.1rem; margin-top: -2rem; }
-      h1 { font-size: 1.75rem; }
-      .subtitle { font-size: 0.95rem; }
+      body { padding: 0.6rem; }
+      header { padding: 2.5rem 1.1rem 3.5rem; border-radius: 1rem 1rem 0 0; }
+      main { margin-top: -2rem; }
+      h1 { font-size: 1.9rem; }
+      .subtitle { font-size: 1rem; }
+      .page-card { padding: 1.6rem 1.1rem 2rem; }
+      summary { font-size: 1rem; }
+      .toggle-all { padding: 0.45rem 0.85rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="header-content">
+    <div class="header-content intro-block">
       <a class="back-link" href="index.html">&#8592; All briefs</a>
       <div class="sub">HMCS Frédérick Rolette</div>
       <h1>Cold Weather Skin</h1>
@@ -245,121 +310,157 @@
   </header>
 
   <main>
-    <div class="section-card">
-      <h2>Quick Actions</h2>
-      <p>Moisturize twice daily, especially hands/face. Keep gloves dry and change socks often.</p>
-    </div>
+    <div class="page-card">
+      <div class="section-card">
+        <h2>Quick Actions</h2>
+        <p>Moisturize twice daily, especially hands/face. Keep gloves dry and change socks often.</p>
+      </div>
 
-    <div class="section-card">
-      <h2>Why this matters</h2>
-      <p>Cold air + ship heating = <strong>very dry air inside</strong>. This pulls water from your skin, lips, and nose. Simple items like a <strong>plain, fragrance-free moisturizing cream</strong>, <strong>lip balm</strong>, and <strong>saline nasal spray</strong> prevent most issues if you use them early and often.</p>
-    </div>
+      <div class="section-card">
+        <h2>Why this matters</h2>
+        <p>Cold air + ship heating = <strong>very dry air inside</strong>. This pulls water from your skin, lips, and nose. Simple items like a <strong>plain, fragrance-free moisturizing cream</strong>, <strong>lip balm</strong>, and <strong>saline nasal spray</strong> prevent most issues if you use them early and often.</p>
+      </div>
 
-    <div class="card-stack">
-      <details open>
-        <summary><span><span class="icon">👐</span> Hands &amp; Knuckles</span></summary>
-        <div class="content">
-          <h3>Day-to-day</h3>
-          <ul>
-            <li>Use <strong>warm, not hot</strong> water when you can.</li>
-            <li>Use the gentlest soap available; alcohol hand rubs and harsh soaps dry skin fast.</li>
-            <li><strong>After every wash or sanitizer use</strong>, rub in a small amount of <strong>plain, fragrance-free hand cream</strong> (cream or ointment works better than thin lotion). Keep a tube in your pocket.</li>
-          </ul>
-          <h3>At night</h3>
-          <ul>
-            <li>Put a <strong>thick layer</strong> of cream or petroleum jelly on dry areas and skin cracks.</li>
-            <li>Wear thin cotton gloves or clean socks over hands overnight if available.</li>
-          </ul>
-          <h3>On duty</h3>
-          <ul>
-            <li>Wear protective gloves for cleaning chemicals or frequent wet work.</li>
-          </ul>
-        </div>
-      </details>
+      <div class="accordion-actions">
+        <button class="toggle-all" type="button" aria-expanded="false">Open all</button>
+      </div>
 
-      <details>
-        <summary><span><span class="icon">💋</span> Lips</span></summary>
-        <div class="content">
-          <ul>
-            <li>Carry a <strong>plain lip balm</strong> or petroleum jelly (avoid strong flavours/perfume if you’re prone to irritation).</li>
-            <li>Apply before watch, every 1–2 hours in wind/cold, and before sleep.</li>
-            <li><strong>Don’t lick your lips</strong> – saliva evaporates and dries them more.</li>
-            <li>If corners of the mouth crack, keep them clean and greasy with ointment; see medical if they are very sore or crusting.</li>
-          </ul>
-        </div>
-      </details>
+      <div class="card-stack">
+        <details>
+          <summary><span><span class="icon">👐</span> Hands &amp; Knuckles</span></summary>
+          <div class="content">
+            <h3>Day-to-day</h3>
+            <ul>
+              <li>Use <strong>warm, not hot</strong> water when you can.</li>
+              <li>Use the gentlest soap available; alcohol hand rubs and harsh soaps dry skin fast.</li>
+              <li><strong>After every wash or sanitizer use</strong>, rub in a small amount of <strong>plain, fragrance-free hand cream</strong> (cream or ointment works better than thin lotion). Keep a tube in your pocket.</li>
+            </ul>
+            <h3>At night</h3>
+            <ul>
+              <li>Put a <strong>thick layer</strong> of cream or petroleum jelly on dry areas and skin cracks.</li>
+              <li>Wear thin cotton gloves or clean socks over hands overnight if available.</li>
+            </ul>
+            <h3>On duty</h3>
+            <ul>
+              <li>Wear protective gloves for cleaning chemicals or frequent wet work.</li>
+            </ul>
+          </div>
+        </details>
 
-      <details>
-        <summary><span><span class="icon">🚿</span> Face &amp; Body (Showers)</span></summary>
-        <div class="content">
-          <h3>Showers</h3>
-          <ul>
-            <li>Keep showers <strong>short and warm</strong>, not long and hot.</li>
-            <li>Use soap mainly on armpits, groin, and feet. Rinse the rest.</li>
-          </ul>
-          <h3>After shower</h3>
-          <ul>
-            <li>Pat skin dry. While slightly damp, <strong>put a plain, fragrance-free cream</strong> on arms, legs, and hands (cream/ointment works better than lotion).</li>
-            <li>Use petroleum jelly over cream for very dry spots at night (knuckles, shins, heels).</li>
-          </ul>
-          <h3>Out on deck</h3>
-          <ul>
-            <li>Cover skin: hat, neck gaiter, gloves; cover cheeks and nose in cold wind.</li>
-            <li>If wool itches, wear cotton underneath to reduce rubbing.</li>
-          </ul>
-        </div>
-      </details>
+        <details>
+          <summary><span><span class="icon">💋</span> Lips</span></summary>
+          <div class="content">
+            <ul>
+              <li>Carry a <strong>plain lip balm</strong> or petroleum jelly (avoid strong flavours/perfume if you’re prone to irritation).</li>
+              <li>Apply before watch, every 1–2 hours in wind/cold, and before sleep.</li>
+              <li><strong>Don’t lick your lips</strong> – saliva evaporates and dries them more.</li>
+              <li>If corners of the mouth crack, keep them clean and greasy with ointment; see medical if they are very sore or crusting.</li>
+            </ul>
+          </div>
+        </details>
 
-      <details>
-        <summary><span><span class="icon">🦶</span> Feet &amp; Heels</span></summary>
-        <div class="content">
-          <ul>
-            <li>Change out of <strong>wet or very damp socks</strong> as soon as you can.</li>
-            <li><strong>Before bed:</strong> rub thick cream/ointment into heels and dry, cracked areas, then put on clean socks.</li>
-            <li><strong>Days off:</strong> soak feet in warm water for 10 mins, gently file hard skin, then moisturize.</li>
-            <li>See medical if heel cracks are deep, painful, look infected, or make it hard to stand watches.</li>
-          </ul>
-        </div>
-      </details>
+        <details>
+          <summary><span><span class="icon">🚿</span> Face &amp; Body (Showers)</span></summary>
+          <div class="content">
+            <h3>Showers</h3>
+            <ul>
+              <li>Keep showers <strong>short and warm</strong>, not long and hot.</li>
+              <li>Use soap mainly on armpits, groin, and feet. Rinse the rest.</li>
+            </ul>
+            <h3>After shower</h3>
+            <ul>
+              <li>Pat skin dry. While slightly damp, <strong>put a plain, fragrance-free cream</strong> on arms, legs, and hands (cream/ointment works better than lotion).</li>
+              <li>Use petroleum jelly over cream for very dry spots at night (knuckles, shins, heels).</li>
+            </ul>
+            <h3>Out on deck</h3>
+            <ul>
+              <li>Cover skin: hat, neck gaiter, gloves; cover cheeks and nose in cold wind.</li>
+              <li>If wool itches, wear cotton underneath to reduce rubbing.</li>
+            </ul>
+          </div>
+        </details>
 
-      <details>
-        <summary><span><span class="icon">🧔</span> Scalp &amp; Beard</span></summary>
-        <div class="content">
-          <ul>
-            <li>Use gentle shampoo (daily if oily, every 2–3 days if scalp is dry/itchy).</li>
-            <li>Use anti-dandruff shampoo if you get flakes; leave it on for a few minutes before rinsing.</li>
-            <li><strong>Beards:</strong> Wash, rinse well, and use a light beard oil/conditioner to prevent drying and “beard dandruff.”</li>
-            <li>Wear a hat liner if wool hats make you itch.</li>
-            <li>See medical if you have a red, very itchy rash or flaking that doesn’t settle with over-the-counter shampoo.</li>
-          </ul>
-        </div>
-      </details>
+        <details>
+          <summary><span><span class="icon">🦶</span> Feet &amp; Heels</span></summary>
+          <div class="content">
+            <ul>
+              <li>Change out of <strong>wet or very damp socks</strong> as soon as you can.</li>
+              <li><strong>Before bed:</strong> rub thick cream/ointment into heels and dry, cracked areas, then put on clean socks.</li>
+              <li><strong>Days off:</strong> soak feet in warm water for 10 mins, gently file hard skin, then moisturize.</li>
+              <li>See medical if heel cracks are deep, painful, look infected, or make it hard to stand watches.</li>
+            </ul>
+          </div>
+        </details>
 
-      <details>
-        <summary><span><span class="icon">👃</span> Nose &amp; Nosebleeds</span></summary>
-        <div class="content">
-          <ul>
-            <li>Use <strong>plain saline nasal spray</strong> several times a day (salt water only – not decongestant spray).</li>
-            <li>Apply a tiny amount of petroleum jelly just inside the nostrils at night with a clean finger or cotton bud tip (don’t push deep into the nose).</li>
-            <li><strong>For a bleed:</strong> Sit up, lean forward, pinch the soft part of your nose for 10–15 mins. Spit blood out; do not tilt head back.</li>
-            <li>If still bleeding after two rounds of 10–15 minutes of pressure, get medical help.</li>
-            <li>Drink water regularly to stay hydrated.</li>
-          </ul>
-        </div>
-      </details>
-    </div>
+        <details>
+          <summary><span><span class="icon">🧔</span> Scalp &amp; Beard</span></summary>
+          <div class="content">
+            <ul>
+              <li>Use gentle shampoo (daily if oily, every 2–3 days if scalp is dry/itchy).</li>
+              <li>Use anti-dandruff shampoo if you get flakes; leave it on for a few minutes before rinsing.</li>
+              <li><strong>Beards:</strong> Wash, rinse well, and use a light beard oil/conditioner to prevent drying and “beard dandruff.”</li>
+              <li>Wear a hat liner if wool hats make you itch.</li>
+              <li>See medical if you have a red, very itchy rash or flaking that doesn’t settle with over-the-counter shampoo.</li>
+            </ul>
+          </div>
+        </details>
 
-    <div class="warning-card">
-      <h2><span class="icon">⚠️</span> When to see medical</h2>
-      <ul>
-        <li>Skin cracks are <strong>very painful, deep, or not healing</strong> after a week of good self-care.</li>
-        <li>You see <strong>redness, warmth, pus</strong>, or spreading colour from any crack or rash.</li>
-        <li>A rash is blistering, spreading, or keeping you awake at night.</li>
-        <li>You have known eczema, psoriasis, or other skin condition that is clearly flaring.</li>
-        <li>Nosebleeds last longer than 30 mins total, keep coming back, or make you feel faint.</li>
-        <li>Problems prevent you from doing your job or wearing required PPE.</li>
-      </ul>
+        <details>
+          <summary><span><span class="icon">👃</span> Nose &amp; Nosebleeds</span></summary>
+          <div class="content">
+            <ul>
+              <li>Use <strong>plain saline nasal spray</strong> several times a day (salt water only – not decongestant spray).</li>
+              <li>Apply a tiny amount of petroleum jelly just inside the nostrils at night with a clean finger or cotton bud tip (don’t push deep into the nose).</li>
+              <li><strong>For a bleed:</strong> Sit up, lean forward, pinch the soft part of your nose for 10–15 mins. Spit blood out; do not tilt head back.</li>
+              <li>If still bleeding after two rounds of 10–15 minutes of pressure, get medical help.</li>
+              <li>Drink water regularly to stay hydrated.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="warning-card">
+        <h2><span class="icon">⚠️</span> When to see medical</h2>
+        <ul>
+          <li>Skin cracks are <strong>very painful, deep, or not healing</strong> after a week of good self-care.</li>
+          <li>You see <strong>redness, warmth, pus</strong>, or spreading colour from any crack or rash.</li>
+          <li>A rash is blistering, spreading, or keeping you awake at night.</li>
+          <li>You have known eczema, psoriasis, or other skin condition that is clearly flaring.</li>
+          <li>Nosebleeds last longer than 30 mins total, keep coming back, or make you feel faint.</li>
+          <li>Problems prevent you from doing your job or wearing required PPE.</li>
+        </ul>
+      </div>
     </div>
   </main>
+
+  <script>
+    (function() {
+      const detailsList = Array.from(document.querySelectorAll('details'));
+      const toggleAllButton = document.querySelector('.toggle-all');
+
+      function updateToggleLabel() {
+        if (!toggleAllButton) return;
+        const openCount = detailsList.filter(d => d.open).length;
+        const allOpen = openCount === detailsList.length && detailsList.length > 0;
+        toggleAllButton.textContent = allOpen ? 'Close all' : 'Open all';
+        toggleAllButton.setAttribute('aria-expanded', allOpen ? 'true' : 'false');
+      }
+
+      if (toggleAllButton) {
+        toggleAllButton.addEventListener('click', () => {
+          const allOpen = detailsList.every(d => d.open);
+          detailsList.forEach(d => { d.open = !allOpen; });
+          updateToggleLabel();
+        });
+      }
+
+      detailsList.forEach(detail => {
+        detail.open = false;
+        detail.addEventListener('toggle', updateToggleLabel);
+      });
+
+      updateToggleLabel();
+    })();
+  </script>
 </body>
 </html>
