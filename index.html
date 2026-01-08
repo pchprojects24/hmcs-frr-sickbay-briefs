@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>HMCS Frédérick Rolette — Sick Bay Briefs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <meta name="description" content="Preventative health guides for HMCS Frédérick Rolette sailors. Self-care tips for winter skin, shaving, wounds, foot care, fatigue, and seasickness.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +34,29 @@
 
     * {
       box-sizing: border-box;
+    }
+
+    /* Accessibility: Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Accessibility: Focus styles */
+    *:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 2px;
     }
 
     body {
@@ -223,6 +247,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="header-content">
@@ -234,7 +259,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="grid">
       
       <a class="card" href="winter-skin.html">

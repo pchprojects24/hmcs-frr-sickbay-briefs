@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Cold Weather Skin — HMCS Frédérick Rolette</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prevent skin cracking and flare-ups during winter sailing and Arctic trials. Care tips for hands, lips, face, feet, and nose for HMCS sailors.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +29,29 @@
     }
 
     * { box-sizing: border-box; }
+
+    /* Accessibility: Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Accessibility: Focus styles */
+    *:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 2px;
+    }
 
     body {
       margin: 0;
@@ -299,6 +323,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="header-content intro-block">
@@ -309,7 +334,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="page-card">
       <div class="section-card">
         <h2>Quick Actions</h2>
