@@ -1,0 +1,140 @@
+/* Home Page Styles - for index.html */
+
+/* Hero Header adjustments for homepage */
+header h1 {
+  font-size: 1.75rem;
+}
+
+.intro {
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  display: none;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--card-border);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Icon Container */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: #f0f9ff;
+  color: #0284c7;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+/* Specific colors for specific cards */
+.card:nth-child(1) .card-icon {
+  color: #0ea5e9;
+  background: #e0f2fe;
+}
+
+.card:nth-child(2) .card-icon {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+.card:nth-child(3) .card-icon {
+  color: #f59e0b;
+  background: #fef3c7;
+}
+
+.card:nth-child(4) .card-icon {
+  color: #10b981;
+  background: #d1fae5;
+}
+
+.card:nth-child(5) .card-icon {
+  color: #6366f1;
+  background: #e0e7ff;
+}
+
+.card:nth-child(6) .card-icon {
+  color: #0ea5e9;
+  background: #e0f2fe;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Learn more link style at bottom of card */
+.card-action {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy-light);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0.8;
+  transition: gap 0.2s;
+}
+
+/* Hover States */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cbd5e1;
+}
+
+.card:hover .card-action {
+  gap: 0.5rem;
+  opacity: 1;
+  color: #002b45;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
