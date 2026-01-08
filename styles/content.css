@@ -1,0 +1,220 @@
+/* Content Page Styles - for pages with cards, badges, and pills but no accordions */
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.pill {
+  font-size: 0.76rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #e5f0ff;
+  color: #1f2937;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+  border-left: 3px solid var(--navy-light);
+  padding-left: 0.5rem;
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+  font-size: 0.98rem;
+}
+
+.card p {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+ul {
+  margin: 0.25rem 0 0.5rem 1.1rem;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+li + li {
+  margin-top: 0.1rem;
+}
+
+.highlight {
+  background: #e5f0ff;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.7rem;
+  font-size: 0.88rem;
+  color: #111827;
+  border: 1px solid #dbeafe;
+}
+
+.callout-danger {
+  border-left: 4px solid #b91c1c;
+  background: #fef2f2;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  color: #7f1d1d;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: #e5e7eb;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.15rem;
+}
+
+/* Foot care specific styles */
+.page-meta {
+  margin-bottom: 1.25rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(244,197,66,0.14);
+  color: #b45309;
+  border: 1px solid rgba(244,197,66,0.6);
+}
+
+.page-title {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.page-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.quick-alert {
+  margin-top: 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 1rem;
+  background: #fff7e0;
+  border: 1px solid rgba(244,197,66,0.7);
+  font-size: 0.9rem;
+}
+
+.quick-alert strong {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.section-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.checklist li::before {
+  content: "•";
+  color: #0284c7;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-weight: 700;
+}
+
+.callout {
+  border-left: 3px solid #0284c7;
+  padding-left: 0.75rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.callout-danger {
+  border-left-color: #b91c1c;
+}
+
+.callout-danger strong {
+  color: #b91c1c;
+}
+
+.footer-note {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.image-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.image-placeholder {
+  flex: 1 1 130px;
+  min-height: 80px;
+  border-radius: 10px;
+  border: 1px dashed #e2e8f0;
+  background: repeating-linear-gradient(
+    45deg,
+    #f3f4fb,
+    #f3f4fb 6px,
+    #e4e6f4 6px,
+    #e4e6f4 12px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0.4rem;
+}
