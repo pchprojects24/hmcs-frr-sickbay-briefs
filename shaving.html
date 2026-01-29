@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/page.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -27,43 +27,26 @@
 
   <main id="main-content">
     <div class="page-card">
-    <p class="tagline">
-      For sailors who have to shave for work, especially if you get red skin, small bumps, or "pimples" on the lower cheeks or neck. This page covers what causes razor irritation, practical self-care, and when to see Sick Bay.
-    </p>
-
-    <div class="pill-row">
-      <span class="pill">Razor burn</span>
-      <span class="pill">Ingrown hairs</span>
-      <span class="pill">Shaving technique</span>
-      <span class="pill">Neck irritation</span>
-    </div>
-
-    <section class="card">
-      <span class="badge">Quick take</span>
+    
+    <section class="section-card">
       <h2>What's going on with my skin?</h2>
-      <div class="highlight">
-        All three problems — razor burn, bumps, and folliculitis — can overlap. The aim here is to calm the skin, reduce bumps, and keep you able to shave safely for work.
-      </div>
-      <p><strong>Razor burn (irritation)</strong></p>
+      <p>All three problems — razor burn, bumps, and folliculitis — can overlap. The aim here is to calm the skin, reduce bumps, and keep you able to shave safely for work.</p>
       <ul>
-        <li>Red, burning or stinging skin right after shaving.</li>
-        <li>From friction, dry shaving, dull blades, or pressing too hard.</li>
-      </ul>
-      <p><strong>Razor bumps (ingrown hairs / pseudofolliculitis)</strong></p>
-      <ul>
-        <li>Small firm bumps, often with a hair trapped inside, usually on the neck or jawline.</li>
-        <li>More common with curly or coarse hair and very close shaves.</li>
-      </ul>
-      <p><strong>Folliculitis (infected follicles)</strong></p>
-      <ul>
-        <li>Bacteria get into irritated hair follicles.</li>
-        <li>Small sore pimples with white/yellow heads that can crust.</li>
+        <li><strong>Razor burn (irritation):</strong> Red, burning or stinging skin right after shaving. From friction, dry shaving, dull blades, or pressing too hard.</li>
+        <li><strong>Razor bumps (ingrown hairs):</strong> Small firm bumps, often with a hair trapped inside, usually on the neck or jawline. More common with curly or coarse hair and very close shaves.</li>
+        <li><strong>Folliculitis (infected follicles):</strong> Bacteria get into irritated hair follicles. Small sore pimples with white/yellow heads that can crust.</li>
       </ul>
     </section>
 
-    <section class="card">
-      <span class="badge">Quick wins</span>
-      <h2>Do's &amp; Don'ts</h2>
+    <div class="accordion-actions">
+      <button class="toggle-all" aria-expanded="false">Open all</button>
+    </div>
+
+    <div class="card-stack">
+    
+    <details>
+      <summary><span class="icon">✅</span>Do's &amp; Don'ts</summary>
+      <div class="content">
       <p>Fast changes that usually help quickly.</p>
       
       <h3>✅ DO</h3>
@@ -84,11 +67,12 @@
         <li>Don't use strong alcohol-heavy aftershaves that sting and dry you out.</li>
         <li>Don't pick or squeeze bumps or ingrown hairs.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Step-by-step</span>
-      <h2>Routine for Better Shaving</h2>
+    <details>
+      <summary><span class="icon">🪒</span>Routine for Better Shaving</summary>
+      <div class="content">
       
       <h3>Step 1 – Before you shave</h3>
       <ul>
@@ -111,11 +95,12 @@
         <li><strong>Moisturize:</strong> apply a gentle, alcohol-free moisturizer or balm.</li>
         <li><strong>Hands off:</strong> avoid scratching, rubbing, or picking bumps.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Shaving gear</span>
-      <h2>Choosing the Right Tools</h2>
+    <details>
+      <summary><span class="icon">🔧</span>Choosing the Right Tools</summary>
+      <div class="content">
       
       <h3>Multi-blade cartridges</h3>
       <ul>
@@ -142,11 +127,12 @@
         <li><strong>Pros:</strong> no blade; hair regrows with a blunt end.</li>
         <li><strong>Cons:</strong> can irritate or burn skin and often smell strong; must follow package directions exactly and patch-test first.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Self-care kit</span>
-      <h2>What to Keep in Your Wash Bag</h2>
+    <details>
+      <summary><span class="icon">🧴</span>What to Keep in Your Wash Bag</summary>
+      <div class="content">
       <p>Useful items for your wash bag (ingredient-based, not brand-specific):</p>
       <ul>
         <li><strong>Gentle face wash:</strong> mild, non-scrub cleanser for daily use.</li>
@@ -162,11 +148,12 @@
       </ul>
 
       <p><em>Start new products slowly and one at a time so you know what your skin tolerates.</em></p>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Escalation</span>
-      <h2>When to see medical</h2>
+    <details>
+      <summary><span class="icon">⚠️</span>When to see medical</summary>
+      <div class="content">
       <ul>
         <li>Bumps are <strong>very painful</strong>, keep getting infected, or you see <strong>pus, crusting, or spreading redness</strong>.</li>
         <li>You have many deep, hard bumps or scars on the neck or jawline.</li>
@@ -176,8 +163,11 @@
         <li>You're unsure if it's shaving rash, infection, eczema, or something else.</li>
       </ul>
       <p style="font-size:0.9rem;margin-top:0.75rem;">Medical staff can check for infection or other skin conditions and talk through options such as different shaving methods, medicated creams, or (if needed) shaving profiles in line with policy.</p>
-    </section>
+      </div>
+    </details>
+    </div>
     </div>
   </main>
+  <script src="scripts/accordion.js"></script>
 </body>
 </html>

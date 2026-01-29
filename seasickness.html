@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/page.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -25,20 +25,23 @@
 
   <main id="main-content">
     <div class="page-card">
-<p class="tagline">
-      For sailors who feel unwell when the ship moves. This page covers what seasickness looks like, what you can try yourself, how Gravol and similar meds fit in, and when to see Sick Bay.
-    </p>
+    
+    <section class="section-card">
+      <h2>What you need to know</h2>
+      <p>Seasickness is your brain reacting to mixed signals: your inner ear feels motion, but your eyes say you're still. This causes nausea, dizziness, and vomiting.</p>
+      <p>Most sailors adapt after a few days at sea. Simple steps work best: fresh air, horizon view, bland food, and hydration. Gravol helps but can make you drowsy.</p>
+      <p><strong>Quick actions:</strong> At first signs, get fresh air and look at the horizon. Eat small bland meals. Stay hydrated. Use medication cautiously—it affects alertness.</p>
+    </section>
 
-    <div class="pill-row">
-      <span class="pill">New to sea</span>
-      <span class="pill">Heavy seas</span>
-      <span class="pill">Small boats / RHIBs</span>
-      <span class="pill">Nausea &amp; dizziness</span>
+    <div class="accordion-actions">
+      <button class="toggle-all" aria-expanded="false">Open all</button>
     </div>
 
-    <section class="card">
-      <span class="badge">Quick take</span>
-      <h2>What Seasickness Feels Like</h2>
+    <div class="card-stack">
+
+    <details>
+      <summary><span class="icon">🤢</span>What Seasickness Feels Like</summary>
+      <div class="content">
       <div class="highlight">
         Seasickness is your brain reacting to mixed signals: your inner ear feels motion, but your eyes and body position say you are still. The mismatch can make you feel nauseated, dizzy and unwell.
       </div>
@@ -51,11 +54,12 @@
         <li>Headache, increased salivation, loss of appetite.</li>
       </ul>
       <p>Seasickness usually starts mild and builds. Catching it early and taking simple steps often prevents a bad day.</p>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Why it happens</span>
-      <h2>Why Some People Feel Worse at Sea</h2>
+    <details>
+      <summary><span class="icon">🌊</span>Why Some People Feel Worse at Sea</summary>
+      <div class="content">
       <p><strong>Sensory conflict:</strong></p>
       <ul>
         <li>Your inner ear senses the ship’s pitch, roll and heave.</li>
@@ -74,12 +78,12 @@
         <li>Known motion sensitivity in cars, aircraft or amusement rides.</li>
       </ul>
       <p>This is about physiology, not toughness. Many experienced sailors still get seasick in the wrong conditions.</p>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Non-drug self-care</span>
-      <h2>What You Can Do Without Medication</h2>
-
+    <details>
+      <summary><span class="icon">🧭</span>What You Can Do Without Medication</summary>
+      <div class="content">
       <h3>1. Position and fresh air</h3>
       <ul>
         <li>When safe to do so, move to a more stable part of the ship (midships, closer to waterline).</li>
@@ -123,11 +127,12 @@
         <li>Chewing gum or mints may provide distraction and help with saliva flow.</li>
       </ul>
       <p>These extras are optional. The basics (position, air, vision, food and fluids) make the biggest difference.</p>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Medication overview</span>
-      <h2>Gravol &amp; Similar Medications: Where They Fit</h2>
+    <details>
+      <summary><span class="icon">💊</span>Gravol &amp; Similar Medications: Where They Fit</summary>
+      <div class="content">
       <p>This section is about how these medicines affect you and your duties. It is not a dosing guide.</p>
 
       <h3>1. Dimenhydrinate (Gravol&reg;)</h3>
@@ -156,12 +161,12 @@
       </ul>
 
       <p>If you think you need regular or strong medication just to function at sea, discuss this with the MO or Sick Bay rather than self-managing long-term.</p>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Stepwise plan</span>
-      <h2>Step-by-Step: What to Do When You Feel Seasick</h2>
-
+    <details>
+      <summary><span class="icon">📋</span>Step-by-Step: What to Do When You Feel Seasick</summary>
+      <div class="content">
       <h3>1. Before sailing / early prep</h3>
       <ul>
         <li>Get a reasonable sleep if you can.</li>
@@ -192,11 +197,12 @@
         <li>Move away from tasks where an error could harm you or others.</li>
         <li>Go to Sick Bay for assessment, hydration and supervised treatment.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Red flags</span>
-      <h2>When Seasickness Might Be Something Else</h2>
+    <details>
+      <summary><span class="icon">⚠️</span>When Seasickness Might Be Something Else</summary>
+      <div class="content">
       <p>Seasickness is common, but not everything that happens at sea is “just” seasickness.</p>
 
       <h3>See Sick Bay promptly if:</h3>
@@ -218,19 +224,12 @@
       <div class="callout-danger">
         If something feels “not right” or out of proportion to usual seasickness, get checked. It is better to be seen and reassured than to miss a serious problem.
       </div>
-    </section>
-
-    <section class="card">
-      <span class="badge">Key points</span>
-      <h2>Bottom Line</h2>
-      <ul>
-        <li>Seasickness is common and often improves after a few days, but it can seriously affect safety and performance.</li>
-        <li>Start with non-drug steps: position, fresh air, horizon view, small bland meals, fluids and rest.</li>
-        <li>Gravol and meclizine can help but may make you sleepy and slower; use them within unit policy and be honest about your fitness for duty.</li>
-        <li>See Sick Bay if you cannot keep fluids down, if symptoms stay severe, or if anything does not fit the usual seasickness pattern.</li>
-      </ul>
-    </section>
+      </div>
+      </div>
+    </details>
+    </div>
     </div>
   </main>
+  <script src="scripts/accordion.js"></script>
 </body>
 </html>
