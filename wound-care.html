@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/page.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -25,21 +25,23 @@
 
   <main id="main-content">
     <div class="page-card">
-<p class="tagline">
-      For minor cuts, scrapes, small blisters and skin splits. If it looks serious,
-      keeps bleeding, or you are unsure, go to Sick Bay.
-    </p>
+    
+    <section class="section-card">
+      <h2>Self-care for minor wounds</h2>
+      <p>Small cuts, scrapes, and blisters can usually be handled yourself if bleeding stops with pressure, the wound is shallow, and edges close easily.</p>
+      <p>Clean with water and mild soap, apply thin petroleum jelly or antibiotic ointment, and cover with a clean dressing. Change daily or when wet. Avoid seawater exposure.</p>
+      <p><strong>Get help now if:</strong> bleeding won't stop, wound is deep/gaping, it's a puncture or bite, you see spreading redness, or signs of infection appear.</p>
+    </section>
 
-    <div class="pill-row">
-      <span class="pill">Small cuts</span>
-      <span class="pill">Scrapes</span>
-      <span class="pill">Blisters</span>
-      <span class="pill">Skin splits</span>
+    <div class="accordion-actions">
+      <button class="toggle-all" aria-expanded="false">Open all</button>
     </div>
 
-    <section class="card">
-      <span class="badge">Self-care check</span>
-      <h2>Is this wound okay for self-care?</h2>
+    <div class="card-stack">
+
+    <details>
+      <summary><span class="icon">✅</span>Is this wound okay for self-care?</summary>
+      <div class="content">
     <p>You can usually look after it yourself if:</p>
     <ul>
       <li>Bleeding stops within a few minutes of firm pressure.</li>
@@ -58,11 +60,11 @@
         <li>The injury is near the eye, neck, genitals, or over a suspected fracture.</li>
       </ul>
     </div>
-    </section>
+    </details>
 
-    <section class="card">
-      <span class="badge">Step 1</span>
-      <h2>Clean the wound</h2>
+    <details>
+      <summary><span class="icon">🚿</span>Clean the wound</summary>
+      <div class="content">
     <p><strong>As soon as you can:</strong></p>
     <ul>
       <li>Wash your hands with soap or sanitizer.</li>
@@ -74,11 +76,12 @@
       alcohol, or strong detergents – they damage healing tissue.</p>
     <p>Don&rsquo;t scrub raw tissue or pick at clots or scabs – this restarts bleeding and slows healing.</p>
     <p>If you still see grit or debris you can&rsquo;t remove with gentle rinsing, have Sick Bay check it.</p>
-    </section>
+    </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Step 2</span>
-      <h2>Antiseptics – only if really dirty</h2>
+    <details>
+      <summary><span class="icon">🧴</span>Antiseptics – only if really dirty</summary>
+      <div class="content">
     <p>Most minor wounds don&rsquo;t need antiseptic solutions once they are well rinsed.</p>
     <ul>
       <li>If the wound was heavily contaminated and still looks dirty, a one-time brief rinse
@@ -86,11 +89,12 @@
       <li>Apply briefly, then rinse again with clean water.</li>
       <li>Avoid repeated soaking or scrubbing with antiseptics – this slows healing.</li>
     </ul>
-    </section>
+    </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Step 3</span>
-      <h2>Ointment: petroleum jelly vs antibiotic</h2>
+    <details>
+      <summary><span class="icon">💊</span>Ointment: petroleum jelly vs antibiotic</summary>
+      <div class="content">
     <p>After cleaning, apply a <strong>thin</strong> layer over the wound:</p>
     <ul>
       <li><strong>Plain petroleum jelly</strong> – good default for clean, low-risk minor wounds.</li>
@@ -99,11 +103,12 @@
     </ul>
     <p>Stop using any antibiotic ointment if the surrounding skin becomes red and itchy
       (possible allergy); switch back to plain petroleum jelly.</p>
-    </section>
+    </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Step 4</span>
-      <h2>Dressings &amp; changing them</h2>
+    <details>
+      <summary><span class="icon">🩹</span>Dressings &amp; changing them</summary>
+      <div class="content">
     <p>Covered, slightly moist wounds heal faster and hurt less.</p>
     <ul>
       <li>Use a Band-Aid for small cuts, or a non-stick pad and tape for larger scrapes.</li>
@@ -136,11 +141,12 @@
         <li>You develop fever, chills, or feel very unwell.</li>
       </ul>
     </div>
-    </section>
+    </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Tetanus</span>
-      <h2>Tetanus check</h2>
+    <details>
+      <summary><span class="icon">💉</span>Tetanus check</summary>
+      <div class="content">
     <ul>
       <li>Routine tetanus booster: about every 10 years.</li>
       <li>Dirty or major wounds: a booster is usually recommended if it&rsquo;s been &gt;5 years.</li>
@@ -150,11 +156,12 @@
     <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.3rem;">
       Sick Bay can review your record, advise if a booster is needed, and give it if required.
     </p>
-    </section>
+    </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">When to escalate</span>
-      <h2>When to see Sick Bay</h2>
+    <details>
+      <summary><span class="icon">⚠️</span>When to see Sick Bay</summary>
+      <div class="content">
       <h3>Go now (urgent) - Same watch / immediately</h3>
       <ul>
         <li>Bleeding won&rsquo;t stop with firm pressure.</li>
@@ -177,8 +184,11 @@
         This brief is general information for minor wounds and does not replace a medical assessment.
         If you are unsure or worried about a wound, come to Sick Bay.
       </p>
-    </section>
+      </div>
+    </details>
+    </div>
     </div>
   </main>
+  <script src="scripts/accordion.js"></script>
 </body>
 </html>

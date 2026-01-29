@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/page.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -27,31 +27,23 @@
 
   <main id="main-content">
     <div class="page-card">
-    <p class="tagline">
-      For sailors dealing with dry, cracked skin during winter sailing and Arctic trials. This page covers prevention, simple self-care for hands, lips, face, and feet, and when to see Sick Bay.
-    </p>
-
-    <div class="pill-row">
-      <span class="pill">Dry skin</span>
-      <span class="pill">Cracked hands</span>
-      <span class="pill">Chapped lips</span>
-      <span class="pill">Winter sailing</span>
-    </div>
-
-    <section class="card">
-      <span class="badge">Quick take</span>
+    
+    <section class="section-card">
       <h2>Why this matters</h2>
-      <div class="highlight">
-        Cold air + ship heating = very dry air inside. This pulls water from your skin, lips, and nose.
-      </div>
+      <p>Cold air + ship heating = very dry air inside. This pulls water from your skin, lips, and nose.</p>
       <p>Simple items like a <strong>plain, fragrance-free moisturizing cream</strong>, <strong>lip balm</strong>, and <strong>saline nasal spray</strong> prevent most issues if you use them early and often.</p>
       <p><strong>Quick actions:</strong> Moisturize twice daily, especially hands/face. Keep gloves dry and change socks often.</p>
     </section>
 
-    <section class="card">
-      <span class="badge">Hands &amp; knuckles</span>
-      <h2>Hand Care in Cold Weather</h2>
-      
+    <div class="accordion-actions">
+      <button class="toggle-all" aria-expanded="false">Open all</button>
+    </div>
+
+    <div class="card-stack">
+
+    <details>
+      <summary><span class="icon">🖐️</span>Hand Care in Cold Weather</summary>
+      <div class="content">
       <h3>Day-to-day</h3>
       <ul>
         <li>Use <strong>warm, not hot</strong> water when you can.</li>
@@ -69,23 +61,24 @@
       <ul>
         <li>Wear protective gloves for cleaning chemicals or frequent wet work.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Lips</span>
-      <h2>Preventing Chapped Lips</h2>
+    <details>
+      <summary><span class="icon">💋</span>Preventing Chapped Lips</summary>
+      <div class="content">
       <ul>
         <li>Carry a <strong>plain lip balm</strong> or petroleum jelly (avoid strong flavours/perfume if you're prone to irritation).</li>
         <li>Apply before watch, every 1–2 hours in wind/cold, and before sleep.</li>
         <li><strong>Don't lick your lips</strong> – saliva evaporates and dries them more.</li>
         <li>If corners of the mouth crack, keep them clean and greasy with ointment; see medical if they are very sore or crusting.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Face &amp; body</span>
-      <h2>Showers and Skin Protection</h2>
-      
+    <details>
+      <summary><span class="icon">🚿</span>Showers and Skin Protection</summary>
+      <div class="content">
       <h3>Showers</h3>
       <ul>
         <li>Keep showers <strong>short and warm</strong>, not long and hot.</li>
@@ -103,22 +96,24 @@
         <li>Cover skin: hat, neck gaiter, gloves; cover cheeks and nose in cold wind.</li>
         <li>If wool itches, wear cotton underneath to reduce rubbing.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Feet &amp; heels</span>
-      <h2>Foot Care in Winter</h2>
+    <details>
+      <summary><span class="icon">👣</span>Foot Care in Winter</summary>
+      <div class="content">
       <ul>
         <li>Change out of <strong>wet or very damp socks</strong> as soon as you can.</li>
         <li><strong>Before bed:</strong> rub thick cream/ointment into heels and dry, cracked areas, then put on clean socks.</li>
         <li><strong>Days off:</strong> soak feet in warm water for 10 mins, gently file hard skin, then moisturize.</li>
         <li>See medical if heel cracks are deep, painful, look infected, or make it hard to stand watches.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Scalp &amp; beard</span>
-      <h2>Hair and Scalp Care</h2>
+    <details>
+      <summary><span class="icon">💇</span>Hair and Scalp Care</summary>
+      <div class="content">
       <ul>
         <li>Use gentle shampoo (daily if oily, every 2–3 days if scalp is dry/itchy).</li>
         <li>Use anti-dandruff shampoo if you get flakes; leave it on for a few minutes before rinsing.</li>
@@ -126,11 +121,12 @@
         <li>Wear a hat liner if wool hats make you itch.</li>
         <li>See medical if you have a red, very itchy rash or flaking that doesn't settle with over-the-counter shampoo.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Nose &amp; nosebleeds</span>
-      <h2>Nasal Care and Nosebleeds</h2>
+    <details>
+      <summary><span class="icon">👃</span>Nasal Care and Nosebleeds</summary>
+      <div class="content">
       <ul>
         <li>Use <strong>plain saline nasal spray</strong> several times a day (salt water only – not decongestant spray).</li>
         <li>Apply a tiny amount of petroleum jelly just inside the nostrils at night with a clean finger or cotton bud tip (don't push deep into the nose).</li>
@@ -138,11 +134,12 @@
         <li>If still bleeding after two rounds of 10–15 minutes of pressure, get medical help.</li>
         <li>Drink water regularly to stay hydrated.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
-    <section class="card">
-      <span class="badge">Escalation</span>
-      <h2>When to see medical</h2>
+    <details>
+      <summary><span class="icon">⚠️</span>When to see medical</summary>
+      <div class="content">
       <ul>
         <li>Skin cracks are <strong>very painful, deep, or not healing</strong> after a week of good self-care.</li>
         <li>You see <strong>redness, warmth, pus</strong>, or spreading colour from any crack or rash.</li>
@@ -152,11 +149,15 @@
         <li>Problems prevent you from doing your job or wearing required PPE.</li>
       </ul>
       
-      <div class="callout-danger">
-        <strong>Get urgent help</strong> (don't wait for routine Sick Parade) if you see signs of serious infection or severe symptoms that affect your ability to work safely.
+      <div class="warning-card">
+        <h2>⚠️ Get urgent help</h2>
+        <p>Don't wait for routine Sick Parade if you see signs of serious infection or severe symptoms that affect your ability to work safely.</p>
       </div>
-    </section>
+      </div>
+    </details>
+    </div>
     </div>
   </main>
+  <script src="scripts/accordion.js"></script>
 </body>
 </html>
