@@ -2,7 +2,7 @@
 
 .tagline {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--muted);
   margin-bottom: 1rem;
 }
 
@@ -17,23 +17,23 @@
   font-size: 0.76rem;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
-  background: #e5f0ff;
-  color: #1f2937;
+  background: var(--surface-soft);
+  color: var(--text);
 }
 
 .card {
-  background: var(--card-bg);
+  background: var(--surface);
   border-radius: 0.75rem;
   padding: 1rem 1.1rem;
   margin-bottom: 1rem;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
 }
 
 .card h2 {
   margin-top: 0;
   font-size: 1.05rem;
-  border-left: 3px solid var(--navy-light);
+  border-left: 3px solid var(--accent);
   padding-left: 0.5rem;
 }
 
@@ -45,14 +45,14 @@
 .card p {
   margin: 0.25rem 0 0.5rem;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 ul {
   margin: 0.25rem 0 0.5rem 1.1rem;
   padding: 0;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 li + li {
@@ -60,12 +60,12 @@ li + li {
 }
 
 .highlight {
-  background: #e5f0ff;
+  background: var(--surface-soft);
   border-radius: 0.5rem;
   padding: 0.6rem 0.7rem;
   font-size: 0.88rem;
-  color: #111827;
-  border: 1px solid #dbeafe;
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
 .callout-danger {
@@ -82,8 +82,8 @@ li + li {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
-  background: #e5e7eb;
+  color: var(--muted);
+  background: var(--surface-soft);
   border-radius: 999px;
   padding: 0.15rem 0.5rem;
   margin-bottom: 0.15rem;
@@ -116,7 +116,7 @@ li + li {
 .page-subtitle {
   margin: 0;
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .quick-alert {
@@ -149,7 +149,7 @@ li + li {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--text-muted);
+  color: var(--muted);
   margin-bottom: 0.2rem;
 }
 
@@ -162,7 +162,7 @@ li + li {
 
 .checklist li::before {
   content: "•";
-  color: #0284c7;
+  color: var(--accent-strong);
   display: inline-block;
   width: 1em;
   margin-left: -1em;
@@ -170,11 +170,11 @@ li + li {
 }
 
 .callout {
-  border-left: 3px solid #0284c7;
+  border-left: 3px solid var(--accent-strong);
   padding-left: 0.75rem;
   margin: 0.5rem 0;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .callout-danger {
@@ -188,7 +188,7 @@ li + li {
 .footer-note {
   margin-top: 1.5rem;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .image-strip {
@@ -202,19 +202,19 @@ li + li {
   flex: 1 1 130px;
   min-height: 80px;
   border-radius: 10px;
-  border: 1px dashed #e2e8f0;
+  border: 1px dashed var(--border);
   background: repeating-linear-gradient(
     45deg,
-    #f3f4fb,
-    #f3f4fb 6px,
-    #e4e6f4 6px,
-    #e4e6f4 12px
+    var(--surface-soft),
+    var(--surface-soft) 6px,
+    var(--surface) 6px,
+    var(--surface) 12px
   );
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--muted);
   text-align: center;
   padding: 0.4rem;
 }
