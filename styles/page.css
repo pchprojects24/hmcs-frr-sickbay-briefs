@@ -18,6 +18,65 @@ main .container,
   margin-bottom: 1rem;
 }
 
+.page-intro .toggle-all {
+  margin-top: 0.75rem;
+}
+
+details.section-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease;
+}
+
+details.section-block:hover {
+  box-shadow: var(--shadow-md);
+}
+
+details.section-block summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.25rem;
+  user-select: none;
+  position: relative;
+}
+
+details.section-block summary::-webkit-details-marker {
+  display: none;
+}
+
+details.section-block summary::after {
+  content: "▼";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+}
+
+details.section-block[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+details.section-block .section-content {
+  padding: 0 1.25rem 1.25rem;
+}
+
+details.section-block summary:hover .section-title {
+  color: var(--accent-strong);
+}
+
+details.section-block summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+  border-radius: var(--radius);
+}
+
 .stack {
   display: flex;
   flex-direction: column;

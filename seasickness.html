@@ -30,20 +30,25 @@
     <section class="page-intro">
       <p class="eyebrow">Purpose</p>
       <p class="lede">Simple, low-risk steps to manage motion sickness and know when medical help is needed.</p>
+      <button class="btn secondary toggle-all" aria-label="Toggle all sections">Expand all</button>
     </section>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Try this now (60 seconds)</p>
-        <h2 class="section-title">Immediate steps</h2>
-      </div>
+    <details class="section-block" open>
+      <summary>
+        <div class="section-header">
+          <p class="eyebrow">Try this now (60 seconds)</p>
+          <h2 class="section-title">Immediate steps</h2>
+        </div>
+      </summary>
+      <div class="section-content">
       <ul class="bullet-list">
         <li>Get fresh air; face the horizon. Avoid screens/reading until steadier.</li>
         <li>Take small sips of water or electrolyte drink; eat a bland snack (cracker, dry toast).</li>
         <li>Loosen tight gear; avoid strong smells if possible.</li>
         <li>Sit where motion is smaller (midship, low) if duties allow.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
     <div class="callout info">
       <div class="callout-title">Why this is worse at sea</div>
@@ -54,11 +59,14 @@
       </ul>
     </div>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Self-care for the next 24–72 hours</p>
-        <h2 class="section-title">Stay steady</h2>
-      </div>
+    <details class="section-block">
+      <summary>
+        <div class="section-header">
+          <p class="eyebrow">Self-care for the next 24–72 hours</p>
+          <h2 class="section-title">Stay steady</h2>
+        </div>
+      </summary>
+      <div class="section-content">
       <ul class="bullet-list">
         <li>Eat small, bland, frequent snacks; avoid heavy, greasy meals.</li>
         <li>Keep sipping fluids; aim for urine that is pale yellow.</li>
@@ -66,20 +74,25 @@
         <li>Choose watch spots with airflow and sightlines if possible.</li>
         <li>Optional low-risk extras: ginger candies/tea or acupressure wrist bands.</li>
       </ul>
-    </section>
-
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Avoid / common mistakes</p>
-        <h2 class="section-title">Keep it safe</h2>
       </div>
+    </details>
+
+    <details class="section-block">
+      <summary>
+        <div class="section-header">
+          <p class="eyebrow">Avoid / common mistakes</p>
+          <h2 class="section-title">Keep it safe</h2>
+        </div>
+      </summary>
+      <div class="section-content">
       <ul class="bullet-list">
         <li>Skipping fluids—dehydration makes nausea worse.</li>
         <li>Taking sedating medication before safety-critical duties without telling your supervisor.</li>
         <li>Combining sedating meds with alcohol or other sedatives.</li>
         <li>Going below decks immediately after eating if you can avoid it.</li>
       </ul>
-    </section>
+      </div>
+    </details>
 
     <div class="callout caution">
       <div class="callout-title">Medication safety</div>
@@ -127,5 +140,6 @@
   </main>
 
   <script src="scripts/home.js" defer></script>
+  <script src="scripts/accordion.js" defer></script>
 </body>
 </html>
