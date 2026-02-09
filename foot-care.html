@@ -31,18 +31,24 @@
       <p class="lede">Keep feet comfortable and safe for long watches in damp boots.</p>
     </section>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Try this now (60 seconds)</p>
-        <h2 class="section-title">Immediate steps</h2>
+    <button class="toggle-all" aria-label="Toggle all sections">Expand all</button>
+
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Try this now (60 seconds)</span>
+          <span>Immediate steps</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Change into dry socks; dry between toes.</li>
+          <li>Air boots and insoles away from direct heat.</li>
+          <li>Check for hotspots; pad and protect them before they blister.</li>
+          <li>Gently dry any macerated (whitish, soft) skin.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Change into dry socks; dry between toes.</li>
-        <li>Air boots and insoles away from direct heat.</li>
-        <li>Check for hotspots; pad and protect them before they blister.</li>
-        <li>Gently dry any macerated (whitish, soft) skin.</li>
-      </ul>
-    </section>
+    </details>
 
     <div class="callout info">
       <div class="callout-title">Why this is worse at sea</div>
@@ -53,30 +59,38 @@
       </ul>
     </div>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Self-care for the next 24–72 hours</p>
-        <h2 class="section-title">Protect skin and nails</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Self-care for the next 24–72 hours</span>
+          <span>Protect skin and nails</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Rotate socks through drying; use thin liner socks if prone to blisters.</li>
+          <li>Apply petroleum jelly or blister tape to hotspots before watch.</li>
+          <li>If spray/immersion is likely, use a waterproof dressing over clean skin and change once dry.</li>
+          <li>Keep toe webs dry; remove boots when safe to air feet during down time.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Rotate socks through drying; use thin liner socks if prone to blisters.</li>
-        <li>Apply petroleum jelly or blister tape to hotspots before watch.</li>
-        <li>If spray/immersion is likely, use a waterproof dressing over clean skin and change once dry.</li>
-        <li>Keep toe webs dry; remove boots when safe to air feet during down time.</li>
-      </ul>
-    </section>
+    </details>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Avoid / common mistakes</p>
-        <h2 class="section-title">Small issues grow fast</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Avoid / common mistakes</span>
+          <span>Small issues grow fast</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Ignoring hotspots—treat them before they blister.</li>
+          <li>Staying in wet socks through a whole watch.</li>
+          <li>Using tight tape or wraps that cut off circulation.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Ignoring hotspots—treat them before they blister.</li>
-        <li>Staying in wet socks through a whole watch.</li>
-        <li>Using tight tape or wraps that cut off circulation.</li>
-      </ul>
-    </section>
+    </details>
 
     <div class="callout caution">
       <div class="callout-title">Hotspot → blister micro-protocol</div>
@@ -122,17 +136,21 @@
       </div>
     </div>
 
-    <section class="section-block more-info">
-      <div class="section-header">
-        <p class="eyebrow">More info (optional)</p>
-        <h2 class="section-title">Canadian resources</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">More info (optional)</span>
+          <span>Canadian resources</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="link-list">
+          <li><a href="https://811.novascotia.ca/health_topics/athletes-foot/">811 Nova Scotia: tinea / athlete's foot</a></li>
+          <li><a href="https://www.canada.ca/en/public-health/services/diseases/athletes-foot.html">Government of Canada: athlete's foot overview</a></li>
+        </ul>
+        <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
       </div>
-      <ul class="link-list">
-        <li><a href="https://811.novascotia.ca/health_topics/athletes-foot/">811 Nova Scotia: tinea / athlete's foot</a></li>
-        <li><a href="https://www.canada.ca/en/public-health/services/diseases/athletes-foot.html">Government of Canada: athlete's foot overview</a></li>
-      </ul>
-      <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
-    </section>
+    </details>
 
     <div class="footer-line">
       <span>General info only; not a substitute for assessment. If unsure, come to Sick Bay.</span>
@@ -140,6 +158,7 @@
     </div>
   </main>
 
+  <script src="scripts/accordion.js" defer></script>
   <script src="scripts/home.js" defer></script>
 </body>
 </html>

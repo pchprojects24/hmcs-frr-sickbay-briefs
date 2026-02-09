@@ -31,18 +31,24 @@
       <p class="lede">Make shipboard shaving safer and cleaner with quick prep and simple aftercare.</p>
     </section>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Try this now (60 seconds)</p>
-        <h2 class="section-title">Immediate steps</h2>
+    <button class="toggle-all" aria-label="Toggle all sections">Expand all</button>
+
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Try this now (60 seconds)</span>
+          <span>Immediate steps</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Take a warm shower or press a warm cloth on your face/neck to soften hair.</li>
+          <li>Shave with the grain, using light pressure and one slow pass.</li>
+          <li>Rinse the blade under hot water between strokes.</li>
+          <li>Rinse skin with cool water and apply a gentle, fragrance-free moisturizer.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Take a warm shower or press a warm cloth on your face/neck to soften hair.</li>
-        <li>Shave with the grain, using light pressure and one slow pass.</li>
-        <li>Rinse the blade under hot water between strokes.</li>
-        <li>Rinse skin with cool water and apply a gentle, fragrance-free moisturizer.</li>
-      </ul>
-    </section>
+    </details>
 
     <div class="callout info">
       <div class="callout-title">Why this is worse at sea</div>
@@ -53,32 +59,40 @@
       </ul>
     </div>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Self-care for the next 24–72 hours</p>
-        <h2 class="section-title">Keep it clean and calm</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Self-care for the next 24–72 hours</span>
+          <span>Keep it clean and calm</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Use a clean, sharp razor; rinse and dry it after use. Replace cartridges regularly.</li>
+          <li>If you can, give irritated skin a 1–2 day break or use an electric trimmer on a higher setting.</li>
+          <li>Shave with the grain only; avoid repeated passes on the same spot.</li>
+          <li>Apply a light, non-scented moisturizer after shaving. Stop any over-the-counter product if it burns or peels.</li>
+          <li>Keep straps, collars, and chin pieces clean to reduce friction grime.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Use a clean, sharp razor; rinse and dry it after use. Replace cartridges regularly.</li>
-        <li>If you can, give irritated skin a 1–2 day break or use an electric trimmer on a higher setting.</li>
-        <li>Shave with the grain only; avoid repeated passes on the same spot.</li>
-        <li>Apply a light, non-scented moisturizer after shaving. Stop any over-the-counter product if it burns or peels.</li>
-        <li>Keep straps, collars, and chin pieces clean to reduce friction grime.</li>
-      </ul>
-    </section>
+    </details>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Avoid / common mistakes</p>
-        <h2 class="section-title">Protect skin</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Avoid / common mistakes</span>
+          <span>Protect skin</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Dry shaving or shaving without softening hair first.</li>
+          <li>Pressing hard, doing multiple fast passes, or going against the grain.</li>
+          <li>Sharing razors or trimmers—easy way to spread infection.</li>
+          <li>Using dull blades or letting them rust in a damp head.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Dry shaving or shaving without softening hair first.</li>
-        <li>Pressing hard, doing multiple fast passes, or going against the grain.</li>
-        <li>Sharing razors or trimmers—easy way to spread infection.</li>
-        <li>Using dull blades or letting them rust in a damp head.</li>
-      </ul>
-    </section>
+    </details>
 
     <div class="callout caution">
       <div class="callout-title">Irritation vs infection</div>
@@ -108,16 +122,20 @@
       </div>
     </div>
 
-    <section class="section-block more-info">
-      <div class="section-header">
-        <p class="eyebrow">More info (optional)</p>
-        <h2 class="section-title">Canadian resources</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">More info (optional)</span>
+          <span>Canadian resources</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="link-list">
+          <li><a href="https://dermatology.ca/public-patients/skin/folliculitis/">Canadian Dermatology Association: folliculitis overview</a></li>
+        </ul>
+        <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
       </div>
-      <ul class="link-list">
-        <li><a href="https://dermatology.ca/public-patients/skin/folliculitis/">Canadian Dermatology Association: folliculitis overview</a></li>
-      </ul>
-      <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
-    </section>
+    </details>
 
     <div class="footer-line">
       <span>General info only; not a substitute for assessment. If unsure, come to Sick Bay.</span>
@@ -125,6 +143,7 @@
     </div>
   </main>
 
+  <script src="scripts/accordion.js" defer></script>
   <script src="scripts/home.js" defer></script>
 </body>
 </html>

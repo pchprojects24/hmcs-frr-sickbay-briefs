@@ -32,18 +32,24 @@
       <p class="lede">Simple, low-risk steps to manage motion sickness and know when medical help is needed.</p>
     </section>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Try this now (60 seconds)</p>
-        <h2 class="section-title">Immediate steps</h2>
+    <button class="toggle-all" aria-label="Toggle all sections">Expand all</button>
+
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Try this now (60 seconds)</span>
+          <span>Immediate steps</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Get fresh air; face the horizon. Avoid screens/reading until steadier.</li>
+          <li>Take small sips of water or electrolyte drink; eat a bland snack (cracker, dry toast).</li>
+          <li>Loosen tight gear; avoid strong smells if possible.</li>
+          <li>Sit where motion is smaller (midship, low) if duties allow.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Get fresh air; face the horizon. Avoid screens/reading until steadier.</li>
-        <li>Take small sips of water or electrolyte drink; eat a bland snack (cracker, dry toast).</li>
-        <li>Loosen tight gear; avoid strong smells if possible.</li>
-        <li>Sit where motion is smaller (midship, low) if duties allow.</li>
-      </ul>
-    </section>
+    </details>
 
     <div class="callout info">
       <div class="callout-title">Why this is worse at sea</div>
@@ -54,32 +60,40 @@
       </ul>
     </div>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Self-care for the next 24–72 hours</p>
-        <h2 class="section-title">Stay steady</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Self-care for the next 24–72 hours</span>
+          <span>Stay steady</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Eat small, bland, frequent snacks; avoid heavy, greasy meals.</li>
+          <li>Keep sipping fluids; aim for urine that is pale yellow.</li>
+          <li>Rest when you can—fatigue worsens nausea.</li>
+          <li>Choose watch spots with airflow and sightlines if possible.</li>
+          <li>Optional low-risk extras: ginger candies/tea or acupressure wrist bands.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Eat small, bland, frequent snacks; avoid heavy, greasy meals.</li>
-        <li>Keep sipping fluids; aim for urine that is pale yellow.</li>
-        <li>Rest when you can—fatigue worsens nausea.</li>
-        <li>Choose watch spots with airflow and sightlines if possible.</li>
-        <li>Optional low-risk extras: ginger candies/tea or acupressure wrist bands.</li>
-      </ul>
-    </section>
+    </details>
 
-    <section class="section-block">
-      <div class="section-header">
-        <p class="eyebrow">Avoid / common mistakes</p>
-        <h2 class="section-title">Keep it safe</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">Avoid / common mistakes</span>
+          <span>Keep it safe</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="bullet-list">
+          <li>Skipping fluids—dehydration makes nausea worse.</li>
+          <li>Taking sedating medication before safety-critical duties without telling your supervisor.</li>
+          <li>Combining sedating meds with alcohol or other sedatives.</li>
+          <li>Going below decks immediately after eating if you can avoid it.</li>
+        </ul>
       </div>
-      <ul class="bullet-list">
-        <li>Skipping fluids—dehydration makes nausea worse.</li>
-        <li>Taking sedating medication before safety-critical duties without telling your supervisor.</li>
-        <li>Combining sedating meds with alcohol or other sedatives.</li>
-        <li>Going below decks immediately after eating if you can avoid it.</li>
-      </ul>
-    </section>
+    </details>
 
     <div class="callout caution">
       <div class="callout-title">Medication safety</div>
@@ -109,16 +123,20 @@
       </div>
     </div>
 
-    <section class="section-block more-info">
-      <div class="section-header">
-        <p class="eyebrow">More info (optional)</p>
-        <h2 class="section-title">Canadian resources</h2>
+    <details>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">More info (optional)</span>
+          <span>Canadian resources</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <ul class="link-list">
+          <li><a href="https://811.novascotia.ca/health_topics/motion-sickness/">811 Nova Scotia: motion sickness</a></li>
+        </ul>
+        <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
       </div>
-      <ul class="link-list">
-        <li><a href="https://811.novascotia.ca/health_topics/motion-sickness/">811 Nova Scotia: motion sickness</a></li>
-      </ul>
-      <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
-    </section>
+    </details>
 
     <div class="footer-line">
       <span>General info only; not a substitute for assessment. If unsure, come to Sick Bay.</span>
@@ -126,6 +144,7 @@
     </div>
   </main>
 
+  <script src="scripts/accordion.js" defer></script>
   <script src="scripts/home.js" defer></script>
 </body>
 </html>
