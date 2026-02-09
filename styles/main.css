@@ -1,33 +1,39 @@
 /* HMCS Frédérick Rolette Sick Bay Briefs - Main Styles */
 
 :root {
-  --bg: #f6f7fb;
+  --bg: #f0f4f8;
   --surface: #ffffff;
-  --surface-soft: #eef2f7;
-  --border: #d7deeb;
-  --text: #111827;
-  --muted: #4b5563;
-  --accent: #0ea5e9;
-  --accent-strong: #0b6faf;
-  --navy: #0f172a;
-  --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.12);
+  --surface-soft: #e6f0fa;
+  --border: #b8d4e8;
+  --text: #1a202c;
+  --muted: #2d3748;
+  --accent: #3b82f6;
+  --accent-strong: #2563eb;
+  --gold: #d4af37;
+  --gold-light: #f4e4a6;
+  --navy: #1e3a8a;
+  --bright-blue: #3b82f6;
+  --shadow-sm: 0 4px 12px rgba(59, 130, 246, 0.08);
+  --shadow-md: 0 8px 24px rgba(59, 130, 246, 0.12);
   --radius: 14px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0c1220;
-    --surface: #111927;
-    --surface-soft: #0f172a;
-    --border: #1f2937;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-    --accent: #38bdf8;
-    --accent-strong: #0ea5e9;
-    --navy: #e5e7eb;
-    --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.25);
-    --shadow-md: 0 20px 48px rgba(0, 0, 0, 0.45);
+    --bg: #1a202c;
+    --surface: #2d3748;
+    --surface-soft: #4a5568;
+    --border: #718096;
+    --text: #f7fafc;
+    --muted: #cbd5e0;
+    --accent: #60a5fa;
+    --accent-strong: #3b82f6;
+    --gold: #f4e4a6;
+    --gold-light: #d4af37;
+    --navy: #93c5fd;
+    --bright-blue: #60a5fa;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -135,7 +141,8 @@ li {
 }
 
 header.hero {
-  background: linear-gradient(135deg, #0f172a, #0b6faf);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border-bottom: 4px solid var(--gold);
   color: #fff;
   padding: 3.5rem 1.25rem 4rem;
   position: relative;
@@ -146,9 +153,9 @@ header.hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), transparent 42%),
-              radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.12), transparent 40%);
-  opacity: 0.7;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15), transparent 42%),
+              radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.15), transparent 40%);
+  opacity: 0.8;
 }
 
 .hero-inner {
@@ -156,6 +163,7 @@ header.hero::after {
   z-index: 2;
   max-width: 1080px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .hero .eyebrow {
@@ -165,8 +173,10 @@ header.hero::after {
 
 .hero h1 {
   color: #fff;
-  margin: 0.4rem 0 0.6rem;
-  font-size: 2rem;
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero .lede {
@@ -374,7 +384,7 @@ main {
   }
 
   .hero h1 {
-    font-size: 1.7rem;
+    font-size: 2.5rem;
   }
 
   .grid-2 {
