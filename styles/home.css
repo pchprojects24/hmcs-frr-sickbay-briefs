@@ -91,7 +91,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.75rem;
   font-weight: 600;
   user-select: none;
 }
@@ -102,10 +102,10 @@
 
 .brief-card summary::after {
   content: "▼";
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--gold);
   transition: transform 0.2s ease;
-  margin-left: 0.5rem;
+  margin-left: auto;
 }
 
 .brief-card details[open] summary::after {
@@ -115,6 +115,12 @@
 .brief-card summary h2 {
   margin: 0;
   flex: 1;
+  font-size: 1.15rem;
+}
+
+.brief-card summary .icon {
+  flex-shrink: 0;
+  color: var(--accent);
 }
 
 .brief-card .card-content {
