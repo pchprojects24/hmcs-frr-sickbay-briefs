@@ -90,12 +90,14 @@
     }
 
     function expandCollapseAllAccordions() {
-        // Supports either <details> accordions, or your accordion.js toggles if they use [data-accordion] hooks.
+        // Uses explicit data hooks only.
+        // Content pages already use accordion.js with ".toggle-all"; binding here too
+        // causes competing click handlers and inconsistent open/close behavior.
         // Optional buttons:
         //  - <button data-expand-all>Expand all</button>
         //  - <button data-collapse-all>Collapse all</button>
 
-        const expandBtn = $("[data-expand-all]") || $(".toggle-all");
+        const expandBtn = $("[data-expand-all]");
         const collapseBtn = $("[data-collapse-all]");
         const details = $$("details");
 
@@ -108,7 +110,16 @@
             }
         };
 
-        if (expandBtn) expandBtn.addEventListener("click", () => setAllDetails(true));
+        if (expandBtn) {
+            expandBtn.addEventListener("click", () => {
+                if (collapseBtn) {
+                    setAllDetails(true);
+                    return;
+                }
+                const allOpen = details.length > 0 && details.every((d) => d.open);
+                setAllDetails(!allOpen);
+            });
+        }
         if (collapseBtn) collapseBtn.addEventListener("click", () => setAllDetails(false));
     }
 
