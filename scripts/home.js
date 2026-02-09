@@ -36,6 +36,8 @@
 
         if (!input) return;
 
+        const clearBtn = $("[data-clear]");
+
         // Items to filter
         let items = $$("[data-filter-text]");
         if (items.length === 0) items = $$(".card, .item, li");
@@ -54,10 +56,18 @@
                 const hay = normalize(el.getAttribute("data-filter-text") || el.textContent);
                 const show = q === "" || hay.includes(q);
                 el.style.display = show ? "" : "none";
+                el.toggleAttribute("hidden", !show);
             });
         };
 
         input.addEventListener("input", applyFilter);
+        if (clearBtn) {
+            clearBtn.addEventListener("click", () => {
+                input.value = "";
+                applyFilter();
+                input.focus();
+            });
+        }
 
         // Press "/" to focus search (common UX)
         document.addEventListener("keydown", (e) => {
@@ -85,17 +95,21 @@
         //  - <button data-expand-all>Expand all</button>
         //  - <button data-collapse-all>Collapse all</button>
 
-        const expandBtn = $("[data-expand-all]");
+        const expandBtn = $("[data-expand-all]") || $(".toggle-all");
         const collapseBtn = $("[data-collapse-all]");
         const details = $$("details");
 
         const setAllDetails = (open) => {
             if (details.length === 0) return;
             details.forEach((d) => (d.open = open));
+            if (expandBtn && !collapseBtn) {
+                expandBtn.textContent = open ? \"Collapse all\" : \"Expand all\";
+                expandBtn.setAttribute(\"aria-expanded\", open ? \"true\" : \"false\");
+            }
         };
 
-        if (expandBtn) expandBtn.addEventListener("click", () => setAllDetails(true));
-        if (collapseBtn) collapseBtn.addEventListener("click", () => setAllDetails(false));
+        if (expandBtn) expandBtn.addEventListener(\"click\", () => setAllDetails(true));
+        if (collapseBtn) collapseBtn.addEventListener(\"click\", () => setAllDetails(false));
     }
 
     document.addEventListener("DOMContentLoaded", () => {
