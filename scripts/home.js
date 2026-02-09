@@ -103,13 +103,13 @@
             if (details.length === 0) return;
             details.forEach((d) => (d.open = open));
             if (expandBtn && !collapseBtn) {
-                expandBtn.textContent = open ? \"Collapse all\" : \"Expand all\";
-                expandBtn.setAttribute(\"aria-expanded\", open ? \"true\" : \"false\");
+                expandBtn.textContent = open ? "Collapse all" : "Expand all";
+                expandBtn.setAttribute("aria-expanded", open ? "true" : "false");
             }
         };
 
-        if (expandBtn) expandBtn.addEventListener(\"click\", () => setAllDetails(true));
-        if (collapseBtn) collapseBtn.addEventListener(\"click\", () => setAllDetails(false));
+        if (expandBtn) expandBtn.addEventListener("click", () => setAllDetails(true));
+        if (collapseBtn) collapseBtn.addEventListener("click", () => setAllDetails(false));
     }
 
     document.addEventListener("DOMContentLoaded", () => {
