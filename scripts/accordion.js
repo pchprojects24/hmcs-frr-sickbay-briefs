@@ -27,7 +27,7 @@
     function updateToggleLabel() {
       const openCount = detailsList.filter(d => d.open).length;
       const allOpen = openCount === detailsList.length && detailsList.length > 0;
-      toggleAllButton.textContent = allOpen ? 'Close all' : 'Open all';
+      toggleAllButton.textContent = allOpen ? 'Collapse all' : 'Expand all';
       toggleAllButton.setAttribute('aria-expanded', allOpen ? 'true' : 'false');
     }
 

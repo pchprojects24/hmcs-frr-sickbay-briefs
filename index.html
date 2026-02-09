@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HMCS Frédérick Rolette — Sick Bay Briefs</title>
+  <title>Sick Bay Briefs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Preventative health guides for HMCS Frédérick Rolette sailors. Self-care tips for winter skin, shaving, wounds, foot care, fatigue, and seasickness.">
+  <meta name="description" content="Preventative guides for HMCS Frédérick Rolette sailors. Self-care first, clear red flags, and when to go to Sick Bay.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/home.css">
@@ -16,112 +16,166 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header>
-    <div class="header-content">
-      <div class="sub">HMCS Frédérick Rolette</div>
-      <h1>Sick Bay Briefs</h1>
-      <p style="margin-top: 1rem; opacity: 0.9; max-width: 500px; font-size: 0.95rem;">
-        Preventative guides for sailors. Focus on self-care, prevention, and knowing when to report to medical.
-      </p>
+  <div class="top-bar">
+    <span class="top-title">Sick Bay Briefs</span>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner hero-grid">
+      <div>
+        <p class="eyebrow">Sick Bay Briefs</p>
+        <h1>Preventative guides for sailors</h1>
+        <p class="lede">Self-care first. Know when to report. Built for HMCS Frédérick Rolette.</p>
+        <div class="hero-meta">
+          <span class="chip">Self-care</span>
+          <span class="chip muted">Prevention</span>
+          <span class="chip">Red flags</span>
+        </div>
+      </div>
+      <div class="section-block" aria-label="Quick reminder">
+        <p class="eyebrow">Quick links</p>
+        <p class="lede">Jump to the help checklist or reminders.</p>
+        <div class="quick-links">
+          <a class="quick-link" href="#help">When to go to Sick Bay</a>
+          <a class="quick-link" href="#emergency">Emergency: call/pipes</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
-    <div class="grid">
-      
-      <a class="card" href="winter-skin.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 12h20"/>
-            <path d="M12 2v20"/>
-            <path d="m20 20-8.5-8.5"/>
-            <path d="m4 20 8.5-8.5"/>
-            <path d="m20 4-8.5 8.5"/>
-            <path d="m4 4 8.5 8.5"/>
-          </svg>
-        </div>
-        <div>
-          <h2>Cold Weather &amp; Dry Air</h2>
-          <p>Prevent cracking and flare-ups during winter sailing and Arctic trials.</p>
-        </div>
-        <div class="card-action">Read Guide <span>&rarr;</span></div>
-      </a>
+  <main id="main-content" class="container">
+    <section class="search-panel" aria-label="Search briefs">
+      <div class="section-header">
+        <p class="eyebrow">Search</p>
+        <h2 class="section-title">Find a brief</h2>
+      </div>
+      <div class="search-row">
+        <input id="search" class="input-field" type="search" placeholder="Search by title, topic, or tags" aria-label="Search briefs">
+        <button type="button" class="btn secondary" data-clear>Clear</button>
+      </div>
+    </section>
 
-      <a class="card" href="shaving.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-            <line x1="9" y1="9" x2="9.01" y2="9"/>
-            <line x1="15" y1="9" x2="15.01" y2="9"/>
-          </svg>
-        </div>
-        <div>
-          <h2>Shaving Problems</h2>
-          <p>Razor burn, bumps, and irritation. Practical tips and when to ask for medical help.</p>
-        </div>
-        <div class="card-action">Read Guide <span>&rarr;</span></div>
-      </a>
+    <section aria-label="Brief list">
+      <div class="card-grid">
+        <article class="brief-card" data-filter-text="Cold Weather Skin dry air winter cracks nosebleeds eczema">
+          <div class="card-meta">
+            <span class="label">Skin</span>
+            <div class="card-tags">
+              <span class="chip">Cold</span>
+              <span class="chip">Dry air</span>
+              <span class="chip">Hands & face</span>
+            </div>
+          </div>
+          <h2>Cold Weather Skin</h2>
+          <p>Stop cracks, chapping, and nosebleeds in cold, dry shipboard air.</p>
+          <a class="card-cta" href="winter-skin.html">Read guide →</a>
+        </article>
 
-      <a class="card" href="wound-care.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="6" width="20" height="12" rx="2"/>
-            <path d="M12 12h.01"/>
-            <path d="M12 8v8"/>
-            <path d="M8 12h8"/>
-          </svg>
-        </div>
-        <div>
-          <h2>Minor Cuts &amp; Scrapes</h2>
-          <p>How to clean small wounds, dressing tips, and warning signs of infection.</p>
-        </div>
-        <div class="card-action">Read Guide <span>&rarr;</span></div>
-      </a>
+        <article class="brief-card" data-filter-text="Shaving razor bumps irritation infection">
+          <div class="card-meta">
+            <span class="label">Skin</span>
+            <div class="card-tags">
+              <span class="chip">Irritation</span>
+              <span class="chip">Gear friction</span>
+              <span class="chip">Hygiene</span>
+            </div>
+          </div>
+          <h2>Shaving & Razor Bumps</h2>
+          <p>Reduce burn and bumps, keep razors clean, and spot infection early.</p>
+          <a class="card-cta" href="shaving.html">Read guide →</a>
+        </article>
 
-      <a class="card" href="foot-care.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 11 3.8 11 8c0 2.25-.5 3-2 5-1.5 2-2 3-2 5 0 2.5 2.5 2.5 2.5 2.5H19c3 0 3-3 3-3V7.5L19 4l-4 4"/>
-          </svg>
-        </div>
-        <div>
-          <h2>Foot Care in Boots</h2>
-          <p>Managing damp socks, blisters, and athlete’s foot during long days at sea.</p>
-        </div>
-        <div class="card-action">Read Guide <span>&rarr;</span></div>
-      </a>
+        <article class="brief-card" data-filter-text="Minor cuts scrapes wound care dressing tetanus seawater">
+          <div class="card-meta">
+            <span class="label">First aid</span>
+            <div class="card-tags">
+              <span class="chip">Wounds</span>
+              <span class="chip">Dressings</span>
+              <span class="chip">Seawater</span>
+            </div>
+          </div>
+          <h2>Minor Cuts & Wound Care</h2>
+          <p>Clean, cover, and protect small wounds; know when infection needs help.</p>
+          <a class="card-cta" href="wound-care.html">Read guide →</a>
+        </article>
 
-      <a class="card" href="fatigue.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-          </svg>
-        </div>
-        <div>
+        <article class="brief-card" data-filter-text="Foot care boots blisters athlete's foot wet socks">
+          <div class="card-meta">
+            <span class="label">Feet</span>
+            <div class="card-tags">
+              <span class="chip">Boots</span>
+              <span class="chip">Blisters</span>
+              <span class="chip">Moisture</span>
+            </div>
+          </div>
+          <h2>Foot Care at Sea</h2>
+          <p>Keep feet dry, manage hotspots early, and prevent athlete’s foot.</p>
+          <a class="card-cta" href="foot-care.html">Read guide →</a>
+        </article>
+
+        <article class="brief-card" data-filter-text="Fatigue at sea sleep watch rotation caffeine safety">
+          <div class="card-meta">
+            <span class="label">Readiness</span>
+            <div class="card-tags">
+              <span class="chip">Sleep</span>
+              <span class="chip">Watch</span>
+              <span class="chip">Alertness</span>
+            </div>
+          </div>
           <h2>Fatigue at Sea</h2>
-          <p>Managing broken sleep, caffeine use, and spotting safety issues.</p>
-        </div>
-        <div class="card-action">Read Guide <span>&rarr;</span></div>
-      </a>
+          <p>Protect core sleep, use naps and caffeine wisely, and flag safety risks.</p>
+          <a class="card-cta" href="fatigue.html">Read guide →</a>
+        </article>
 
-      <a class="card" href="seasickness.html">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/>
-            <path d="M4 10a4 4 0 0 1 8 0v2"/>
-            <path d="M8 10h4"/>
-          </svg>
-        </div>
-        <div>
+        <article class="brief-card" data-filter-text="Seasickness motion sickness nausea vomiting dehydration">
+          <div class="card-meta">
+            <span class="label">Motion</span>
+            <div class="card-tags">
+              <span class="chip">Hydration</span>
+              <span class="chip">Watchkeeping</span>
+              <span class="chip">Safety</span>
+            </div>
+          </div>
           <h2>Seasickness</h2>
-          <p>Motion sickness at sea: simple self-care, Gravol/meclizine use, and when to see Sick Bay.</p>
-        </div>
-        <div class="card-action">Read Guide <span>&rarr;</span></div>
-      </a>
+          <p>Simple positioning, food, and safety tips; know when meds or Sick Bay are needed.</p>
+          <a class="card-cta" href="seasickness.html">Read guide →</a>
+        </article>
+      </div>
+    </section>
 
-    </div>
+    <section id="help" class="help-section" aria-label="When to get help">
+      <div class="section-header">
+        <p class="eyebrow">When to get help</p>
+        <h2 class="section-title">Red flags to report</h2>
+      </div>
+      <div class="help-grid">
+        <div class="help-card urgent" id="emergency">
+          <strong>Go now (urgent / same watch)</strong>
+          <ul class="bullet-list">
+            <li>Fever with worsening or spreading redness.</li>
+            <li>Rapidly increasing pain, swelling, or numbness.</li>
+            <li>Bleeding that will not stop with pressure.</li>
+            <li>Vomiting plus unable to keep fluids down.</li>
+            <li>Severe dizziness, confusion, or fainting.</li>
+          </ul>
+        </div>
+        <div class="help-card">
+          <strong>Not improving (within 24–72 hours)</strong>
+          <ul class="bullet-list">
+            <li>Symptoms not improving after good self-care.</li>
+            <li>Redness, pus, foul smell, or warmth around a wound or rash.</li>
+            <li>Repeated nosebleeds, nose/sinus blockage, or new breathing trouble.</li>
+            <li>Blisters, cracks, or sores that make duty or PPE difficult.</li>
+            <li>Any doubt about safe watchstanding—come to Sick Bay.</li>
+          </ul>
+          <p class="small-note" style="margin:0">For emergencies, follow shipboard call/pipes procedures immediately.</p>
+        </div>
+      </div>
+      <p class="disclaimer">General info only; not a substitute for assessment. If unsure, come to Sick Bay.</p>
+      <p class="disclaimer">Last updated: 9 Feb 2026</p>
+    </section>
   </main>
-<script src="scripts/home.js"></script>
+
+  <script src="scripts/home.js"></script>
 </body>
 </html>
