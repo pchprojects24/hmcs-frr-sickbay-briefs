@@ -25,136 +25,160 @@
     </div>
   </header>
 
-  <main id="main-content" class="container page-body">
+  <main id="main-content" class="container page-body" data-accordion-root>
     <section class="page-intro">
       <p class="eyebrow">Purpose</p>
       <p class="lede">Keep feet comfortable and safe for long watches in damp boots.</p>
     </section>
 
-    <button class="toggle-all" aria-label="Toggle all sections">Expand all</button>
+    <section class="brief-controls" aria-label="Section controls">
+      <div class="control-row">
+        <button class="toggle-all" type="button" data-accordion-toggle aria-expanded="false">Expand all</button>
+        <p class="small-note control-hint">Jump straight to the section you need.</p>
+      </div>
+      <nav class="jump-nav" aria-label="Jump to sections">
+        <a class="jump-link" data-jump-link href="#section-now">Try now</a>
+        <a class="jump-link" data-jump-link href="#section-next">Next 24-72h</a>
+        <a class="jump-link" data-jump-link href="#section-avoid">Avoid</a>
+        <a class="jump-link" data-jump-link href="#section-sickbay">When to go</a>
+        <a class="jump-link" data-jump-link href="#section-resources">Resources</a>
+      </nav>
+    </section>
 
-    <details>
+    <details id="section-now" data-accordion-item open>
       <summary>
         <div class="accordion-header">
           <span class="eyebrow">Try this now (60 seconds)</span>
-          <span>Immediate steps</span>
+          <span>Immediate reset for wet or sore feet</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Change into dry socks; dry between toes.</li>
+          <li>Change into dry socks and dry carefully between toes.</li>
           <li>Air boots and insoles away from direct heat.</li>
-          <li>Check for hotspots; pad and protect them before they blister.</li>
+          <li>Check for hotspots and protect them before they blister.</li>
           <li>Gently dry any macerated (whitish, soft) skin.</li>
         </ul>
+        <div class="callout info">
+          <div class="callout-title">Why this is worse at sea</div>
+          <ul class="bullet-list">
+            <li>Long watches in damp boots with limited drying time.</li>
+            <li>Sweat plus cold-wet exposure soften skin and increase breakdown.</li>
+            <li>Gear friction and ladders can turn hotspots into blisters quickly.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="callout info">
-      <div class="callout-title">Why this is worse at sea</div>
-      <ul class="bullet-list">
-        <li>Long watches in damp boots with limited drying time.</li>
-        <li>Sweat plus cold-wet exposure soften skin and cause breakdown.</li>
-        <li>Gear friction and ladders turn small hotspots into blisters fast.</li>
-      </ul>
-    </div>
-
-    <details>
+    <details id="section-next" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Self-care for the next 24–72 hours</span>
-          <span>Protect skin and nails</span>
+          <span class="eyebrow">Next 24-72 hours</span>
+          <span>Protect skin, nails, and toe-web spaces</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Rotate socks through drying; use thin liner socks if prone to blisters.</li>
+          <li>Rotate socks through drying; use liner socks if you blister easily.</li>
           <li>Apply petroleum jelly or blister tape to hotspots before watch.</li>
-          <li>If spray/immersion is likely, use a waterproof dressing over clean skin and change once dry.</li>
-          <li>Keep toe webs dry; remove boots when safe to air feet during down time.</li>
+          <li>If spray/immersion is likely, use a waterproof dressing over clean skin and change it once dry.</li>
+          <li>Keep toe webs dry; remove boots when safe to air feet.</li>
+          <li>Trim toenails straight across and not too short to reduce ingrown nails.</li>
         </ul>
+        <div class="callout caution">
+          <div class="callout-title">Hotspot to blister micro-protocol</div>
+          <ul class="bullet-list">
+            <li>Stop, dry the area, and change socks.</li>
+            <li>Pad with moleskin/blister dressing and avoid wrinkles.</li>
+            <li>Re-check halfway through the next watch.</li>
+          </ul>
+        </div>
+        <div class="callout info">
+          <div class="callout-title">Athlete&apos;s foot basics</div>
+          <ul class="bullet-list">
+            <li>Keep toe webs dry and change socks often.</li>
+            <li>Use an over-the-counter antifungal cream as directed, and continue a few days after rash clears.</li>
+            <li>Do not share shower shoes, towels, or nail tools.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <details>
+    <details id="section-avoid" data-accordion-item>
       <summary>
         <div class="accordion-header">
           <span class="eyebrow">Avoid / common mistakes</span>
-          <span>Small issues grow fast</span>
+          <span>Small issues can escalate quickly</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Ignoring hotspots—treat them before they blister.</li>
-          <li>Staying in wet socks through a whole watch.</li>
-          <li>Using tight tape or wraps that cut off circulation.</li>
+          <li>Ignoring hotspots instead of treating them early.</li>
+          <li>Staying in wet socks for an entire watch.</li>
+          <li>Using tight tape or wraps that reduce circulation.</li>
+          <li>Popping blisters with unclean tools.</li>
         </ul>
+        <div class="callout caution">
+          <div class="callout-title">Immersion foot warning</div>
+          <p class="lede">Prolonged cold-wet exposure with numb, tingling, pale, or mottled skin needs prompt assessment.</p>
+        </div>
+        <div class="note-box">
+          <strong>Higher-risk feet:</strong> Diabetes, poor circulation, or nerve problems mean a lower threshold to come to Sick Bay, especially with any sign of infection.
+        </div>
       </div>
     </details>
 
-    <div class="callout caution">
-      <div class="callout-title">Hotspot → blister micro-protocol</div>
-      <ul class="bullet-list">
-        <li>Stop, dry the area, and change socks.</li>
-        <li>Pad with moleskin/blister dressing; ensure no wrinkles.</li>
-        <li>Re-check halfway through the next watch.</li>
-      </ul>
-    </div>
-
-    <div class="callout info">
-      <div class="callout-title">Athlete's foot basics</div>
-      <ul class="bullet-list">
-        <li>Keep toe webs dry and change socks often.</li>
-        <li>Use an over-the-counter antifungal cream as directed; keep using for a few days after the rash clears.</li>
-        <li>Do not share shower shoes, towels, or nail tools.</li>
-      </ul>
-    </div>
-
-    <div class="callout caution">
-      <div class="callout-title">Immersion foot warning</div>
-      <p class="lede">Prolonged cold-wet exposure with numb, tingling, pale, or mottled skin—get evaluated.</p>
-    </div>
-
-    <div class="note-box">
-      <strong>Higher-risk feet:</strong> diabetes, poor circulation, or nerve issues mean lower threshold to see Sick Bay, especially with any sign of infection.</div>
-
-    <div class="split-cards" id="sickbay">
-      <div class="callout urgent">
-        <div class="callout-title">Go now (urgent / same watch)</div>
-        <ul class="bullet-list">
-          <li>Rapid swelling, spreading redness, fever, or streaks up the foot/leg.</li>
-          <li>Severe pain, numbness, or color change after cold-wet exposure.</li>
-        </ul>
-      </div>
-      <div class="callout caution">
-        <div class="callout-title">Not improving (within 24–72 hours)</div>
-        <ul class="bullet-list">
-          <li>Blisters that keep refilling or won't heal.</li>
-          <li>Athlete's foot not settling after a week of treatment.</li>
-          <li>Cracks between toes that look red, ooze, or block wearing boots.</li>
-        </ul>
-      </div>
-    </div>
-
-    <details>
+    <details id="section-sickbay" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">More info (optional)</span>
-          <span>Canadian resources</span>
+          <span class="eyebrow">When to go to Sick Bay (urgent vs soon)</span>
+          <span>Know your escalation points</span>
         </div>
       </summary>
       <div class="accordion-content">
+        <div class="split-cards">
+          <div class="callout urgent">
+            <div class="callout-title">Go now (urgent / same watch)</div>
+            <ul class="bullet-list">
+              <li>Rapid swelling, spreading redness, fever, or streaks up the foot/leg.</li>
+              <li>Severe pain, numbness, or color change after cold-wet exposure.</li>
+              <li>Deep or contaminated foot wound that keeps bleeding.</li>
+            </ul>
+          </div>
+          <div class="callout caution">
+            <div class="callout-title">Book soon (within 24-72 hours)</div>
+            <ul class="bullet-list">
+              <li>Blisters that keep refilling or do not heal.</li>
+              <li>Athlete&apos;s foot not settling after about 1 week of treatment.</li>
+              <li>Cracks between toes that ooze, smell bad, or prevent safe boot wear.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details id="section-resources" data-accordion-item>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">More info / resources</span>
+          <span>Trusted references</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <h2 class="sources-title">Sources</h2>
         <ul class="link-list">
-          <li><a href="https://811.novascotia.ca/health_topics/athletes-foot/">811 Nova Scotia: tinea / athlete's foot</a></li>
-          <li><a href="https://www.canada.ca/en/public-health/services/diseases/athletes-foot.html">Government of Canada: athlete's foot overview</a></li>
+          <li><a href="https://811.novascotia.ca/health_topics/athletes-foot/">811 Nova Scotia: athlete&apos;s foot (tinea)</a></li>
+          <li><a href="https://www.canada.ca/en/public-health/services/diseases/athletes-foot.html">Government of Canada: athlete&apos;s foot overview</a></li>
+          <li><a href="https://www.mayoclinic.org/diseases-conditions/blisters/diagnosis-treatment/drc-20369907">Mayo Clinic: blister care basics</a></li>
         </ul>
         <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
+        <p class="small-note source-meta"><strong>Updated:</strong> 10 Feb 2026</p>
       </div>
     </details>
 
     <div class="footer-line">
-      <span>General info only; not a substitute for assessment. If unsure, come to Sick Bay.</span>
-      <span>Last updated: 9 Feb 2026</span>
+      <span>General info only; not a substitute for medical assessment. If unsure, come to Sick Bay.</span>
+      <span>Last updated: 10 Feb 2026</span>
     </div>
   </main>
 

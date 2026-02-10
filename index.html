@@ -23,25 +23,34 @@
     </div>
   </header>
 
-  <main id="main-content" class="container">
+  <main id="main-content" class="container" data-page="home">
     <section class="search-panel" aria-label="Search and filter">
       <div class="search-row">
         <label for="search" class="visually-hidden">Search briefs</label>
         <input
           type="search"
           id="search"
+          data-search-input
           class="input-field"
+          autocomplete="off"
           placeholder="Search by topic, symptom, or keyword..."
           aria-label="Search briefs">
-        <button class="btn secondary" data-clear aria-label="Clear search">
+        <button class="btn secondary" data-clear type="button" aria-label="Clear search">
           <span class="icon icon-close icon-sm"></span>
           Clear
         </button>
       </div>
+      <div class="search-chip-row" aria-label="Quick filters">
+        <button class="search-chip" type="button" data-search-chip="skin" aria-pressed="false">Skin</button>
+        <button class="search-chip" type="button" data-search-chip="wound" aria-pressed="false">Wounds</button>
+        <button class="search-chip" type="button" data-search-chip="fatigue" aria-pressed="false">Sleep and fatigue</button>
+        <button class="search-chip" type="button" data-search-chip="nausea" aria-pressed="false">Nausea</button>
+      </div>
+      <p class="search-status small-note" data-results-status role="status" aria-live="polite"></p>
     </section>
 
     <section aria-label="Brief list">
-      <div class="card-grid">
+      <div class="card-grid" data-brief-list>
         <a href="winter-skin.html" class="brief-card" data-filter-text="cold weather skin dry chapped lips nosebleed winter hands face prevention">
           <div class="card-header">
             <span class="icon icon-skin"></span>
@@ -102,11 +111,12 @@
           </div>
         </a>
       </div>
+      <p class="search-empty" data-empty-state hidden role="status" aria-live="polite"></p>
     </section>
 
     <footer class="disclaimer">
       <p><strong>Disclaimer:</strong> These briefs provide general information only and are not a substitute for professional medical assessment. When in doubt, come to Sick Bay.</p>
-      <p class="small-note">Last updated: 9 February 2026</p>
+      <p class="small-note">Last updated: 10 February 2026</p>
     </footer>
   </main>
 

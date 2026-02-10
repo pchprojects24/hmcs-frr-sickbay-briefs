@@ -26,7 +26,7 @@
 .search-row {
   display: flex;
   gap: 0.6rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .search-row .input-field {
@@ -35,6 +35,53 @@
 
 .search-row .btn.secondary {
   padding: 0.65rem 0.9rem;
+}
+
+.search-row .btn.secondary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.search-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.search-chip {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.search-chip:hover {
+  border-color: var(--accent);
+}
+
+.search-chip[aria-pressed="true"] {
+  background: #dff4ff;
+  border-color: var(--accent);
+  color: #075985;
+}
+
+.search-status {
+  margin: 0.75rem 0 0;
+}
+
+.search-empty {
+  margin: 1rem 0 0;
+  padding: 0.85rem 0.95rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  color: var(--text);
 }
 
 .quick-links {
@@ -76,6 +123,10 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+}
+
+.brief-card[hidden] {
+  display: none !important;
 }
 
 .brief-card:hover {
@@ -181,7 +232,6 @@
 
   .search-row {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .quick-links {
