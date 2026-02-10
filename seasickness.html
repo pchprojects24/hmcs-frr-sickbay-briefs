@@ -26,121 +26,148 @@
     </div>
   </header>
 
-  <main id="main-content" class="container page-body">
+  <main id="main-content" class="container page-body" data-accordion-root>
     <section class="page-intro">
       <p class="eyebrow">Purpose</p>
       <p class="lede">Simple, low-risk steps to manage motion sickness and know when medical help is needed.</p>
     </section>
 
-    <button class="toggle-all" aria-label="Toggle all sections">Expand all</button>
+    <section class="brief-controls" aria-label="Section controls">
+      <div class="control-row">
+        <button class="toggle-all" type="button" data-accordion-toggle aria-expanded="false">Expand all</button>
+        <p class="small-note control-hint">Jump straight to the section you need.</p>
+      </div>
+      <nav class="jump-nav" aria-label="Jump to sections">
+        <a class="jump-link" data-jump-link href="#section-now">Try now</a>
+        <a class="jump-link" data-jump-link href="#section-next">Next 24-72h</a>
+        <a class="jump-link" data-jump-link href="#section-avoid">Avoid</a>
+        <a class="jump-link" data-jump-link href="#section-sickbay">When to go</a>
+        <a class="jump-link" data-jump-link href="#section-resources">Resources</a>
+      </nav>
+    </section>
 
-    <details>
+    <details id="section-now" data-accordion-item open>
       <summary>
         <div class="accordion-header">
           <span class="eyebrow">Try this now (60 seconds)</span>
-          <span>Immediate steps</span>
+          <span>Immediate steps to settle nausea</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Get fresh air; face the horizon. Avoid screens/reading until steadier.</li>
-          <li>Take small sips of water or electrolyte drink; eat a bland snack (cracker, dry toast).</li>
-          <li>Loosen tight gear; avoid strong smells if possible.</li>
-          <li>Sit where motion is smaller (midship, low) if duties allow.</li>
+          <li>Get fresh air and face the horizon. Pause reading/screens until steadier.</li>
+          <li>Take small sips of water or oral rehydration/electrolyte drink.</li>
+          <li>Eat a bland snack (cracker, dry toast) if tolerated.</li>
+          <li>Loosen tight gear and reduce strong smells if possible.</li>
+          <li>If duties allow, stay midship and low where motion is usually reduced.</li>
         </ul>
+        <div class="callout info">
+          <div class="callout-title">Why this is worse at sea</div>
+          <ul class="bullet-list">
+            <li>Fatigue lowers motion tolerance.</li>
+            <li>Anxiety, heat, and exhaust/galley smells add nausea.</li>
+            <li>Working below decks increases motion cues and limits fresh air.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="callout info">
-      <div class="callout-title">Why this is worse at sea</div>
-      <ul class="bullet-list">
-        <li>Fatigue lowers your tolerance to motion.</li>
-        <li>Anxiety, heat, and exhaust/galley smells add nausea.</li>
-        <li>Working below decks increases motion and limits fresh air.</li>
-      </ul>
-    </div>
-
-    <details>
+    <details id="section-next" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Self-care for the next 24–72 hours</span>
-          <span>Stay steady</span>
+          <span class="eyebrow">Next 24-72 hours</span>
+          <span>Stay hydrated and prevent rebound symptoms</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Eat small, bland, frequent snacks; avoid heavy, greasy meals.</li>
-          <li>Keep sipping fluids; aim for urine that is pale yellow.</li>
-          <li>Rest when you can—fatigue worsens nausea.</li>
-          <li>Choose watch spots with airflow and sightlines if possible.</li>
-          <li>Optional low-risk extras: ginger candies/tea or acupressure wrist bands.</li>
+          <li>Eat small, bland, frequent snacks; avoid heavy or greasy meals.</li>
+          <li>Keep sipping fluids; aim for pale yellow urine.</li>
+          <li>Rest when possible because fatigue worsens nausea.</li>
+          <li>Choose watch spots with airflow and horizon sightline when practical.</li>
+          <li>Optional low-risk extras: ginger tea/candies or acupressure wrist bands.</li>
+          <li>If medication is recommended by Sick Bay, take it early (before expected motion), not after severe nausea starts.</li>
         </ul>
       </div>
     </details>
 
-    <details>
+    <details id="section-avoid" data-accordion-item>
       <summary>
         <div class="accordion-header">
           <span class="eyebrow">Avoid / common mistakes</span>
-          <span>Keep it safe</span>
+          <span>Keep it safe while on duty</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Skipping fluids—dehydration makes nausea worse.</li>
-          <li>Taking sedating medication before safety-critical duties without telling your supervisor.</li>
-          <li>Combining sedating meds with alcohol or other sedatives.</li>
-          <li>Going below decks immediately after eating if you can avoid it.</li>
+          <li>Skipping fluids; dehydration worsens nausea and fatigue.</li>
+          <li>Taking sedating medication before safety-critical duties without informing supervisor.</li>
+          <li>Combining sedating medication with alcohol or other sedatives.</li>
+          <li>Going below decks immediately after meals if avoidable.</li>
         </ul>
+        <div class="callout caution">
+          <div class="callout-title">Medication safety</div>
+          <ul class="bullet-list">
+            <li>Common motion-sickness medicines can cause drowsiness, blurry vision, and slower reaction time.</li>
+            <li>Do not mix with alcohol or other sedating drugs.</li>
+            <li>Tell your supervisor if you have taken a sedating medicine before duty.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="callout caution">
-      <div class="callout-title">Medication safety</div>
-      <ul class="bullet-list">
-        <li>Common motion-sickness meds can cause drowsiness and blurred vision.</li>
-        <li>Do not mix with alcohol or other sedating drugs.</li>
-        <li>Tell your supervisor if you take a sedating med before duty; adjust tasks if needed.</li>
-      </ul>
-    </div>
-
-    <div class="split-cards" id="sickbay">
-      <div class="callout urgent">
-        <div class="callout-title">Go now (urgent / same watch)</div>
-        <ul class="bullet-list">
-          <li>Vomiting plus unable to keep fluids down or signs of dehydration (very dry mouth, dizziness, minimal urine).</li>
-          <li>Vomiting blood or material that looks like coffee grounds.</li>
-          <li>Severe abdominal pain, confusion, or fainting.</li>
-        </ul>
-      </div>
-      <div class="callout caution">
-        <div class="callout-title">Not improving (within 24–72 hours)</div>
-        <ul class="bullet-list">
-          <li>Nausea that prevents eating or drinking for more than a day.</li>
-          <li>Persistent vomiting despite self-care and rest.</li>
-          <li>Need for medication guidance or ongoing refills.</li>
-        </ul>
-      </div>
-    </div>
-
-    <details>
+    <details id="section-sickbay" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">More info (optional)</span>
-          <span>Canadian resources</span>
+          <span class="eyebrow">When to go to Sick Bay (urgent vs soon)</span>
+          <span>Escalate early to prevent dehydration</span>
         </div>
       </summary>
       <div class="accordion-content">
+        <div class="split-cards">
+          <div class="callout urgent">
+            <div class="callout-title">Go now (urgent / same watch)</div>
+            <ul class="bullet-list">
+              <li>Repeated vomiting and unable to keep fluids down.</li>
+              <li>Signs of dehydration: very dry mouth, dizziness, confusion, or minimal urine.</li>
+              <li>Vomiting blood or material that looks like coffee grounds.</li>
+              <li>Severe abdominal pain, fainting, or confusion.</li>
+            </ul>
+          </div>
+          <div class="callout caution">
+            <div class="callout-title">Book soon (within 24-72 hours)</div>
+            <ul class="bullet-list">
+              <li>Nausea limiting eating/drinking for more than a day.</li>
+              <li>Persistent vomiting despite rest and hydration steps.</li>
+              <li>You need medication guidance for recurrent episodes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details id="section-resources" data-accordion-item>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">More info / resources</span>
+          <span>Trusted references</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <h2 class="sources-title">Sources</h2>
         <ul class="link-list">
           <li><a href="https://811.novascotia.ca/health_topics/motion-sickness/">811 Nova Scotia: motion sickness</a></li>
+          <li><a href="https://www.cdc.gov/yellow-book/hcp/travel-by-air-land-sea/motion-sickness.html">CDC Yellow Book: motion sickness prevention and treatment</a></li>
+          <li><a href="https://www.nhs.uk/conditions/travel-sickness/">NHS: travel sickness self-care</a></li>
         </ul>
         <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
+        <p class="small-note source-meta"><strong>Updated:</strong> 10 Feb 2026</p>
       </div>
     </details>
 
     <div class="footer-line">
-      <span>General info only; not a substitute for assessment. If unsure, come to Sick Bay.</span>
-      <span>Last updated: 9 Feb 2026</span>
+      <span>General info only; not a substitute for medical assessment. If unsure, come to Sick Bay.</span>
+      <span>Last updated: 10 Feb 2026</span>
     </div>
   </main>
 

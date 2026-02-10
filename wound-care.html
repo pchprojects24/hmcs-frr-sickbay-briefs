@@ -26,131 +26,154 @@
     </div>
   </header>
 
-  <main id="main-content" class="container page-body">
+  <main id="main-content" class="container page-body" data-accordion-root>
     <section class="page-intro">
       <p class="eyebrow">Purpose</p>
       <p class="lede">A quick, ship-friendly routine for small cuts, scrapes, and blisters.</p>
     </section>
 
-    <button class="toggle-all" aria-label="Toggle all sections">Expand all</button>
+    <section class="brief-controls" aria-label="Section controls">
+      <div class="control-row">
+        <button class="toggle-all" type="button" data-accordion-toggle aria-expanded="false">Expand all</button>
+        <p class="small-note control-hint">Jump straight to the section you need.</p>
+      </div>
+      <nav class="jump-nav" aria-label="Jump to sections">
+        <a class="jump-link" data-jump-link href="#section-now">Try now</a>
+        <a class="jump-link" data-jump-link href="#section-next">Next 24-72h</a>
+        <a class="jump-link" data-jump-link href="#section-avoid">Avoid</a>
+        <a class="jump-link" data-jump-link href="#section-sickbay">When to go</a>
+        <a class="jump-link" data-jump-link href="#section-resources">Resources</a>
+      </nav>
+    </section>
 
-    <details>
+    <details id="section-now" data-accordion-item open>
       <summary>
         <div class="accordion-header">
           <span class="eyebrow">Try this now (60 seconds)</span>
-          <span>Immediate steps</span>
+          <span>Immediate wound-care steps</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Apply firm pressure with clean cloth/gauze to stop bleeding.</li>
-          <li>Rinse under a gentle stream of potable water for 2–5 minutes; use mild soap on nearby skin.</li>
-          <li>Apply a thin layer of plain petroleum jelly or antibiotic ointment if the wound was dirty.</li>
-          <li>Cover with a clean dressing; change if it gets wet or dirty.</li>
+          <li>Apply firm pressure with clean cloth or gauze to stop bleeding.</li>
+          <li>Rinse under gentle potable water for 2-5 minutes; use mild soap on nearby skin.</li>
+          <li>Apply a thin layer of petroleum jelly (or antibiotic ointment if visibly dirty).</li>
+          <li>Cover with a clean dressing and replace if wet or dirty.</li>
         </ul>
+        <div class="callout info">
+          <div class="callout-title">Why this is worse at sea</div>
+          <ul class="bullet-list">
+            <li>Wet decks and gear friction reopen minor cuts.</li>
+            <li>Delayed cleaning during evolutions leaves grime in wounds.</li>
+            <li>Harbour, bilge, or seawater exposure raises contamination risk.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="callout info">
-      <div class="callout-title">Why this is worse at sea</div>
-      <ul class="bullet-list">
-        <li>Wet decks and gear friction reopen small cuts.</li>
-        <li>Delayed cleaning during evolutions lets grime sit in wounds.</li>
-        <li>Harbour, bilge, or seawater can contaminate and seed infection.</li>
-      </ul>
-    </div>
-
-    <details>
+    <details id="section-next" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Self-care for the next 24–72 hours</span>
-          <span>Protect and monitor</span>
+          <span class="eyebrow">Next 24-72 hours</span>
+          <span>Protect and monitor healing</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Keep wounds covered; change dressings at least daily or sooner if wet.</li>
-          <li>Use waterproof dressing if spray/immersion is likely; replace once back inside.</li>
-          <li>Check once per watch for redness, swelling, warmth, pus, or foul smell.</li>
-          <li>Plain petroleum jelly is enough for clean minor wounds; antibiotic ointment is optional for dirtier cuts on hands/feet.</li>
+          <li>Keep wounds covered and change dressings at least daily, or sooner if wet.</li>
+          <li>Use waterproof dressing when spray or immersion is likely.</li>
+          <li>Check once per watch for redness, warmth, swelling, pus, or foul odour.</li>
+          <li>Clean minor wounds generally heal well with petroleum jelly and clean coverage.</li>
         </ul>
+        <div class="callout info">
+          <div class="callout-title">Tetanus check</div>
+          <ul class="bullet-list">
+            <li>Routine booster is usually every 10 years.</li>
+            <li>For dirty wounds, a booster may be needed sooner (often if more than 5 years).</li>
+            <li>Sick Bay can check your immunization status.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="callout caution">
-      <div class="callout-title">Avoid / common mistakes</div>
-      <ul class="bullet-list">
-        <li>Do not pour hydrogen peroxide, alcohol, or full-strength iodine into the wound—they damage healing tissue.</li>
-        <li>Do not scrub raw tissue or pick scabs.</li>
-        <li>Do not leave wounds open to seawater or dirty gloves/boots.</li>
-      </ul>
-    </div>
-
-    <div class="callout info">
-      <div class="callout-title">Seawater or dirty-water exposure</div>
-      <ul class="bullet-list">
-        <li>Rinse with potable water and mild soap as soon as possible.</li>
-        <li>Re-apply ointment and a clean, waterproof dressing.</li>
-      </ul>
-      <p class="small-note">If pain, redness, or swelling ramps up quickly after seawater exposure, seek help urgently.</p>
-    </div>
-
-    <details>
+    <details id="section-avoid" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Tetanus</span>
-          <span>Stay current</span>
+          <span class="eyebrow">Avoid / common mistakes</span>
+          <span>Do not slow healing unintentionally</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Routine booster: about every 10 years.</li>
-          <li>Dirty wounds: consider booster if it has been more than 5 years.</li>
-          <li>Sick Bay can check your record and advise on boosters.</li>
+          <li>Do not pour hydrogen peroxide, alcohol, or full-strength iodine into the wound.</li>
+          <li>Do not scrub raw tissue or pick scabs.</li>
+          <li>Do not leave wounds open to seawater or dirty gloves/boots.</li>
+          <li>Do not close deep or gaping wounds yourself with tape/glue.</li>
         </ul>
+        <div class="callout caution">
+          <div class="callout-title">If exposed to seawater or dirty water</div>
+          <ul class="bullet-list">
+            <li>Rinse promptly with potable water and mild soap.</li>
+            <li>Re-apply ointment and a clean waterproof dressing.</li>
+            <li>If pain, redness, or swelling ramps up quickly, seek help urgently.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="split-cards" id="sickbay">
-      <div class="callout urgent">
-        <div class="callout-title">Go now (urgent / same watch)</div>
-        <ul class="bullet-list">
-          <li>Bleeding will not stop with 5–10 minutes of firm pressure.</li>
-          <li>Deep, gaping, puncture, crush, or bite wounds.</li>
-          <li>Something stuck in the wound.</li>
-          <li>Rapidly spreading redness, streaks, fever, or feeling very unwell.</li>
-        </ul>
-      </div>
-      <div class="callout caution">
-        <div class="callout-title">Not improving (within 24–72 hours)</div>
-        <ul class="bullet-list">
-          <li>Redness, warmth, swelling, or pain getting worse after 24–48 hours.</li>
-          <li>Pus, bad smell, or delayed healing.</li>
-          <li>Unsure about tetanus status, especially if wound was dirty.</li>
-        </ul>
-      </div>
-    </div>
-
-    <details>
+    <details id="section-sickbay" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">More info (optional)</span>
-          <span>Canadian resources</span>
+          <span class="eyebrow">When to go to Sick Bay (urgent vs soon)</span>
+          <span>Escalate early for infection risk</span>
         </div>
       </summary>
       <div class="accordion-content">
+        <div class="split-cards">
+          <div class="callout urgent">
+            <div class="callout-title">Go now (urgent / same watch)</div>
+            <ul class="bullet-list">
+              <li>Bleeding does not stop after 5-10 minutes of firm pressure.</li>
+              <li>Deep, gaping, puncture, crush, or bite wounds.</li>
+              <li>Foreign body stuck in the wound.</li>
+              <li>Rapidly spreading redness, streaks, fever, or feeling very unwell.</li>
+            </ul>
+          </div>
+          <div class="callout caution">
+            <div class="callout-title">Book soon (within 24-72 hours)</div>
+            <ul class="bullet-list">
+              <li>Redness, warmth, swelling, or pain worsening after 24-48 hours.</li>
+              <li>Pus, bad odour, or delayed healing.</li>
+              <li>Uncertain tetanus status, especially after a dirty wound.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details id="section-resources" data-accordion-item>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">More info / resources</span>
+          <span>Trusted references</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <h2 class="sources-title">Sources</h2>
         <ul class="link-list">
           <li><a href="https://811.novascotia.ca/health_topics/cuts-scrapes-and-stitches/">811 Nova Scotia: cuts, scrapes, and stitches</a></li>
-          <li><a href="https://811.novascotia.ca/health_topics/household-injuries/">811 Nova Scotia: household injuries first aid</a></li>
+          <li><a href="https://811.novascotia.ca/health_topics/household-injuries/">811 Nova Scotia: first aid for common injuries</a></li>
           <li><a href="https://www.canada.ca/en/public-health/services/immunization/diseases/tetanus.html">Government of Canada: tetanus immunization</a></li>
+          <li><a href="https://www.mayoclinic.org/first-aid/first-aid-cuts/basics/art-20056711">Mayo Clinic: first aid for cuts and scrapes</a></li>
         </ul>
         <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
+        <p class="small-note source-meta"><strong>Updated:</strong> 10 Feb 2026</p>
       </div>
     </details>
 
     <div class="footer-line">
-      <span>General info only; not a substitute for assessment. If unsure, come to Sick Bay.</span>
-      <span>Last updated: 9 Feb 2026</span>
+      <span>General info only; not a substitute for medical assessment. If unsure, come to Sick Bay.</span>
+      <span>Last updated: 10 Feb 2026</span>
     </div>
   </main>
 

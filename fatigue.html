@@ -25,123 +25,148 @@
     </div>
   </header>
 
-  <main id="main-content" class="container page-body">
+  <main id="main-content" class="container page-body" data-accordion-root>
     <section class="page-intro">
       <p class="eyebrow">Purpose</p>
       <p class="lede">Practical steps to stay alert on watches and avoid fatigue-related mishaps.</p>
     </section>
 
-    <button class="toggle-all" aria-label="Toggle all sections">Expand all</button>
+    <section class="brief-controls" aria-label="Section controls">
+      <div class="control-row">
+        <button class="toggle-all" type="button" data-accordion-toggle aria-expanded="false">Expand all</button>
+        <p class="small-note control-hint">Jump straight to the section you need.</p>
+      </div>
+      <nav class="jump-nav" aria-label="Jump to sections">
+        <a class="jump-link" data-jump-link href="#section-now">Try now</a>
+        <a class="jump-link" data-jump-link href="#section-next">Next 24-72h</a>
+        <a class="jump-link" data-jump-link href="#section-avoid">Avoid</a>
+        <a class="jump-link" data-jump-link href="#section-sickbay">When to go</a>
+        <a class="jump-link" data-jump-link href="#section-resources">Resources</a>
+      </nav>
+    </section>
 
-    <details>
+    <details id="section-now" data-accordion-item open>
       <summary>
         <div class="accordion-header">
           <span class="eyebrow">Try this now (60 seconds)</span>
-          <span>Immediate steps</span>
+          <span>Immediate reset for safer alertness</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Protect one 4+ hour core sleep block each 24 hours.</li>
-          <li>Take a 10–30 minute power nap if you are nodding off.</li>
-          <li>Avoid caffeine in the 4–6 hours before planned sleep.</li>
-          <li>Tell your supervisor if you are too tired to be safe.</li>
+          <li>Protect one 4+ hour core sleep block each 24 hours whenever possible.</li>
+          <li>Take a 10-30 minute nap if you are nodding off or missing details.</li>
+          <li>Avoid caffeine in the 4-6 hours before planned sleep.</li>
+          <li>Tell your supervisor if you are too tired to be safe for current tasks.</li>
         </ul>
+        <div class="callout info">
+          <div class="callout-title">Why this is worse at sea</div>
+          <ul class="bullet-list">
+            <li>Rotating watches, split sleep, and non-24-hour routines.</li>
+            <li>Noise, motion, and light leakage in berthing.</li>
+            <li>Heat/cold stress and high operational tempo.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="callout info">
-      <div class="callout-title">Why this is worse at sea</div>
-      <ul class="bullet-list">
-        <li>Rotating watches, split sleep, and non-24-hour schedules.</li>
-        <li>Noise, motion, and light leakage in berthing and workspaces.</li>
-        <li>Heat or cold in compartments and high operational tempo.</li>
-      </ul>
-    </div>
-
-    <details>
+    <details id="section-next" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Self-care for the next 24–72 hours</span>
-          <span>Build a small routine</span>
+          <span class="eyebrow">Next 24-72 hours</span>
+          <span>Build a repeatable sleep routine</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
-          <li>Same quick wind-down before rack time: wash, stretch, dim screens, and quiet your space.</li>
-          <li>Use earplugs/white noise and an eye mask to block noise and light; keep rack courtesy for others.</li>
-          <li>Plan caffeine as a tool: small doses earlier in the watch; aim for about 400 mg/day or less for most healthy adults.</li>
-          <li>Drink water regularly; light meals and snacks are easier on sleep than heavy late meals.</li>
-          <li>If possible, pair a short nap with caffeine ("coffee nap"): drink, then nap 15–20 minutes so caffeine kicks in as you wake.</li>
+          <li>Use the same short wind-down before rack time: wash, stretch, dim screens, and quiet the berth.</li>
+          <li>Use earplugs or white noise and an eye mask; keep rack courtesy to protect everyone&apos;s sleep.</li>
+          <li>Plan caffeine as a tool: smaller doses early in watch; about 400 mg/day or less for most healthy adults.</li>
+          <li>Hydrate regularly. Lighter meals/snacks support sleep better than heavy late meals.</li>
+          <li>If possible, pair a short nap with caffeine ("coffee nap"): drink, then nap 15-20 minutes.</li>
+          <li>Get bright light early in your wake period and dim light before sleep to support circadian rhythm.</li>
         </ul>
       </div>
     </details>
 
-    <details>
+    <details id="section-avoid" data-accordion-item>
       <summary>
         <div class="accordion-header">
           <span class="eyebrow">Avoid / common mistakes</span>
-          <span>Protect your alertness</span>
+          <span>Protect alertness and reaction time</span>
         </div>
       </summary>
       <div class="accordion-content">
         <ul class="bullet-list">
           <li>Stacking large caffeine doses late in your duty day.</li>
           <li>Bright screens or intense gaming right before trying to sleep.</li>
-          <li>Skipping ear protection/eye masks in noisy, bright berthing.</li>
-          <li>Pushing through microsleeps instead of taking a brief reset.</li>
+          <li>Skipping ear/eye protection in noisy, bright berthing.</li>
+          <li>Pushing through microsleeps instead of taking a short reset.</li>
+          <li>Using alcohol to force sleep; it fragments rest and worsens recovery.</li>
         </ul>
+        <div class="callout caution">
+          <div class="callout-title">Safety red flags</div>
+          <ul class="bullet-list">
+            <li>Microsleeps, nodding off, or missing calls and alarms.</li>
+            <li>Repeated mistakes on tasks you usually perform well.</li>
+            <li>Trouble tracking instructions or slower reactions on ladders/decks.</li>
+          </ul>
+        </div>
       </div>
     </details>
 
-    <div class="callout caution">
-      <div class="callout-title">Safety red flags</div>
-      <ul class="bullet-list">
-        <li>Microsleeps, nodding off, or missing calls/alarms.</li>
-        <li>Repeated mistakes on tasks you know well.</li>
-        <li>Trouble tracking instructions or slower reactions on ladders/decks.</li>
-      </ul>
-      <p class="small-note">If you hit these, inform your supervisor and adjust duties/rest right away.</p>
-    </div>
-
-    <div class="split-cards" id="sickbay">
-      <div class="callout urgent">
-        <div class="callout-title">Go now (urgent / same watch)</div>
-        <ul class="bullet-list">
-          <li>Near-miss or safety incident linked to fatigue.</li>
-          <li>Fainting, chest pain, shortness of breath, or confusion.</li>
-        </ul>
-      </div>
-      <div class="callout caution">
-        <div class="callout-title">Not improving (within 24–72 hours)</div>
-        <ul class="bullet-list">
-          <li>Persistent exhaustion despite naps and caffeine timing.</li>
-          <li>New headaches, mood changes, or sleep that never feels restorative.</li>
-          <li>Snoring with choking pauses reported by bunkmates.</li>
-        </ul>
-      </div>
-    </div>
-
-    <details>
+    <details id="section-sickbay" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">More info (optional)</span>
-          <span>Canadian resources</span>
+          <span class="eyebrow">When to go to Sick Bay (urgent vs soon)</span>
+          <span>Escalate early if safety is affected</span>
         </div>
       </summary>
       <div class="accordion-content">
+        <div class="split-cards">
+          <div class="callout urgent">
+            <div class="callout-title">Go now (urgent / same watch)</div>
+            <ul class="bullet-list">
+              <li>Near-miss or safety incident linked to fatigue.</li>
+              <li>Fainting, chest pain, shortness of breath, or confusion.</li>
+              <li>You cannot stay awake during safety-critical duties.</li>
+            </ul>
+          </div>
+          <div class="callout caution">
+            <div class="callout-title">Book soon (within 24-72 hours)</div>
+            <ul class="bullet-list">
+              <li>Persistent exhaustion despite naps and caffeine timing changes.</li>
+              <li>New headaches, mood changes, or sleep that is never restorative.</li>
+              <li>Snoring with choking pauses reported by bunkmates.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details id="section-resources" data-accordion-item>
+      <summary>
+        <div class="accordion-header">
+          <span class="eyebrow">More info / resources</span>
+          <span>Trusted references</span>
+        </div>
+      </summary>
+      <div class="accordion-content">
+        <h2 class="sources-title">Sources</h2>
         <ul class="link-list">
           <li><a href="https://www.ccohs.ca/oshanswers/psychosocial/fatigue.html">CCOHS: fatigue and work safety</a></li>
-          <li><a href="https://www.ccohs.ca/oshanswers/ergonomics/shiftwrk.html">CCOHS: shift work strategies</a></li>
+          <li><a href="https://www.ccohs.ca/oshanswers/ergonomics/shiftwrk.html">CCOHS: shift work and sleep strategies</a></li>
           <li><a href="https://www.canada.ca/en/health-canada/services/food-nutrition/food-nutrition-surveillance/health-effects-caffeine.html">Health Canada: caffeine guidance (about 400 mg/day for most adults)</a></li>
+          <li><a href="https://www.cdc.gov/niosh/work-hour-training-for-nurses/longhours/mod2/06.html">CDC/NIOSH: fatigue signs and safety impacts</a></li>
         </ul>
         <p class="small-note">In Nova Scotia, you can also call 811 for nurse advice (when ashore/when available).</p>
+        <p class="small-note source-meta"><strong>Updated:</strong> 10 Feb 2026</p>
       </div>
     </details>
 
     <div class="footer-line">
-      <span>General info only; not a substitute for assessment. If unsure, come to Sick Bay.</span>
-      <span>Last updated: 9 Feb 2026</span>
+      <span>General info only; not a substitute for medical assessment. If unsure, come to Sick Bay.</span>
+      <span>Last updated: 10 Feb 2026</span>
     </div>
   </main>
 

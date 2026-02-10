@@ -1,54 +1,73 @@
-/**
- * Accordion Toggle Functionality
- * Manages "Open all" / "Close all" button for details/summary elements
- */
-(function() {
+/* accordion.js - shared controls for brief-page details accordions. */
+(function () {
   'use strict';
 
-  // Wait for DOM to be ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
+  function getTargetDetail(hash) {
+    if (!hash || !hash.startsWith('#')) return null;
+    const target = document.getElementById(hash.slice(1));
+    if (!target) return null;
+    return target.tagName === 'DETAILS' ? target : target.closest('details');
   }
 
-  function init() {
-    const detailsList = Array.from(document.querySelectorAll('details'));
-    const toggleAllButton = document.querySelector('.toggle-all');
+  function initAccordionControls() {
+    const accordionRoot = document.querySelector('[data-accordion-root]') || document.querySelector('main');
+    if (!accordionRoot) return;
 
-    // Exit if no accordions or button found
-    if (!toggleAllButton || detailsList.length === 0) {
-      return;
-    }
+    const detailsList = Array.from(accordionRoot.querySelectorAll('details'));
+    if (detailsList.length === 0) return;
 
-    /**
-     * Update the toggle button label based on current state
-     */
-    function updateToggleLabel() {
-      const openCount = detailsList.filter(d => d.open).length;
-      const allOpen = openCount === detailsList.length && detailsList.length > 0;
+    const toggleAllButton = document.querySelector('[data-accordion-toggle], .toggle-all');
+
+    const updateToggleLabel = () => {
+      if (!toggleAllButton) return;
+      const allOpen = detailsList.every((detail) => detail.open);
       toggleAllButton.textContent = allOpen ? 'Collapse all' : 'Expand all';
       toggleAllButton.setAttribute('aria-expanded', allOpen ? 'true' : 'false');
+      toggleAllButton.setAttribute(
+        'aria-label',
+        allOpen ? 'Collapse all accordion sections' : 'Expand all accordion sections'
+      );
+    };
+
+    const openHashTarget = () => {
+      const targetDetail = getTargetDetail(window.location.hash);
+      if (targetDetail && !targetDetail.open) {
+        targetDetail.open = true;
+      }
+    };
+
+    if (toggleAllButton) {
+      toggleAllButton.addEventListener('click', () => {
+        const allOpen = detailsList.every((detail) => detail.open);
+        detailsList.forEach((detail) => {
+          detail.open = !allOpen;
+        });
+        updateToggleLabel();
+      });
     }
 
-    /**
-     * Toggle all accordions open or closed
-     */
-    toggleAllButton.addEventListener('click', () => {
-      const allOpen = detailsList.every(d => d.open);
-      detailsList.forEach(d => {
-        d.open = !allOpen;
-      });
-      updateToggleLabel();
-    });
-
-    // Initialize all accordions as closed
-    detailsList.forEach(detail => {
-      detail.open = false;
+    detailsList.forEach((detail) => {
       detail.addEventListener('toggle', updateToggleLabel);
     });
 
-    // Set initial button label
+    document.querySelectorAll('[data-jump-link]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href') || '';
+        const targetDetail = getTargetDetail(href);
+        if (targetDetail && !targetDetail.open) {
+          targetDetail.open = true;
+        }
+      });
+    });
+
+    window.addEventListener('hashchange', openHashTarget);
+    openHashTarget();
     updateToggleLabel();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAccordionControls);
+  } else {
+    initAccordionControls();
   }
 })();
