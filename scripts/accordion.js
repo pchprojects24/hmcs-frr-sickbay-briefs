@@ -17,6 +17,20 @@
     if (detailsList.length === 0) return;
 
     const toggleAllButton = document.querySelector('[data-accordion-toggle], .toggle-all');
+    const controls = document.querySelector('.brief-controls');
+    let progressText;
+    let progressFill;
+
+    if (controls) {
+      const progress = document.createElement('div');
+      progress.className = 'learning-progress';
+      progress.innerHTML =
+        '<p class="small-note" data-progress-text role="status" aria-live="polite"></p>' +
+        '<div class="progress-track" role="progressbar" aria-label="Sections reviewed" aria-valuemin="0" aria-valuemax="' + detailsList.length + '" aria-valuenow="0"><div class="progress-fill"></div></div>';
+      controls.appendChild(progress);
+      progressText = progress.querySelector('[data-progress-text]');
+      progressFill = progress.querySelector('.progress-fill');
+    }
 
     const updateToggleLabel = () => {
       if (!toggleAllButton) return;
@@ -27,6 +41,15 @@
         'aria-label',
         allOpen ? 'Collapse all accordion sections' : 'Expand all accordion sections'
       );
+    };
+
+    const updateProgress = () => {
+      if (!progressText || !progressFill) return;
+      const opened = detailsList.filter((detail) => detail.open).length;
+      progressText.textContent = `Learning progress: ${opened}/${detailsList.length} sections open`;
+      progressFill.style.width = `${(opened / detailsList.length) * 100}%`;
+      const track = progressFill.parentElement;
+      if (track) track.setAttribute('aria-valuenow', String(opened));
     };
 
     const openHashTarget = () => {
@@ -43,11 +66,15 @@
           detail.open = !allOpen;
         });
         updateToggleLabel();
+        updateProgress();
       });
     }
 
     detailsList.forEach((detail) => {
-      detail.addEventListener('toggle', updateToggleLabel);
+      detail.addEventListener('toggle', () => {
+        updateToggleLabel();
+        updateProgress();
+      });
     });
 
     document.querySelectorAll('[data-jump-link]').forEach((link) => {
@@ -63,6 +90,7 @@
     window.addEventListener('hashchange', openHashTarget);
     openHashTarget();
     updateToggleLabel();
+    updateProgress();
   }
 
   if (document.readyState === 'loading') {
