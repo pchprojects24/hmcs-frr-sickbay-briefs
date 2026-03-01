@@ -192,9 +192,36 @@
         applyFilter();
     }
 
+    function enableLearningMission() {
+        const missionText = $("[data-mission-text]");
+        if (!missionText) return;
+
+        const missions = [
+            "Find one red-flag symptom in a brief you have not read this week.",
+            "Open a topic card and practice the first 60-second action step.",
+            "Review one 'When to go to Sick Bay' section and share it with a shipmate.",
+            "Pick a Canadian source link and compare one tip with your current routine."
+        ];
+
+        const setMission = () => {
+            const current = normalize(missionText.textContent);
+            const options = missions.filter((mission) => normalize(mission) !== current);
+            const pool = options.length ? options : missions;
+            missionText.textContent = pool[Math.floor(Math.random() * pool.length)];
+        };
+
+        const missionButton = $("[data-mission-btn]");
+        if (missionButton) {
+            missionButton.addEventListener("click", setMission);
+        }
+
+        setMission();
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         setCurrentYear();
         externalLinksNewTab();
         enableSearchFilter();
+        enableLearningMission();
     });
 })();

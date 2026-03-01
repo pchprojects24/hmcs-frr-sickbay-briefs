@@ -219,6 +219,44 @@
   border-color: #ef444433;
 }
 
+.learning-lab {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+  margin-top: 1rem;
+}
+
+.learning-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.learning-header h2 {
+  font-size: 1.1rem;
+}
+
+.learning-header .btn {
+  padding: 0.55rem 0.9rem;
+}
+
+.learning-mission {
+  margin: 0.75rem 0;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+}
+
+.learning-lab .sources-title {
+  margin: 0.85rem 0 0.4rem;
+  font-size: 0.95rem;
+}
+
 .disclaimer {
   color: var(--muted);
   font-size: 0.95rem;
