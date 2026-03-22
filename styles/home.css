@@ -156,8 +156,8 @@
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .brief-card {
@@ -181,6 +181,12 @@
   border-color: var(--blue);
   text-decoration: none;
   color: inherit;
+}
+
+.brief-card:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: var(--radius-lg);
 }
 
 .brief-card[hidden] { display: none !important; }
@@ -227,6 +233,11 @@
   line-height: 1;
   flex-shrink: 0;
   margin-top: 0.05rem;
+  transition: transform 0.3s ease;
+}
+
+.brief-card:hover .card-header .icon {
+  transform: scale(1.1) rotate(2deg);
 }
 
 /* Icon styles for health topics */
@@ -386,6 +397,16 @@
   box-shadow: var(--shadow-sm);
 }
 
+.disclaimer {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-top: 2px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+
 .footer-inner {
   display: flex;
   align-items: flex-start;
@@ -471,6 +492,11 @@
 
 .search-chip:active {
   transform: translateY(0);
+}
+
+.search-chip:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
 .search-status {
