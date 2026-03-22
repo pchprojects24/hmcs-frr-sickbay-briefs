@@ -2,114 +2,287 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Crew Health Information Hub</title>
+  <title>Crew Health Hub — HMCS Frédérick Rolette</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Central shipboard health information hub for HMCS Frédérick Rolette crew.">
-
+  <meta name="description" content="Central shipboard health information hub for HMCS Frédérick Rolette crew. Health topics, clinic hours, contacts, and wellness resources.">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- ── Top Navigation Bar ── -->
   <div class="top-bar">
-    <span class="top-title">HMCS FRR Health Hub</span>
+    <div class="top-bar-brand">
+      <span class="top-bar-crest" aria-hidden="true">⚓</span>
+      <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic Hours</a>
+      <a href="contacts.html" class="top-bar-link">Contacts</a>
+      <a href="notices.html" class="top-bar-link">Notices</a>
+      <a href="when-to-report.html" class="top-bar-link urgent">⚕ Sick Bay</a>
+    </nav>
   </div>
 
-  <header class="hero">
+  <!-- ── Hero ── -->
+  <header class="hero" role="banner">
     <div class="hero-inner">
+      <div class="hero-eyebrow" aria-label="Ship designation">
+        <span aria-hidden="true">🇨🇦</span>
+        HMCS Frédérick Rolette &middot; Maritime Operations
+      </div>
       <h1>Crew Health Information Hub</h1>
-      <p class="lede">Your central source for shipboard health resources, medical information, and wellness guidance.</p>
+      <p class="lede">Your central source for shipboard health resources, sick bay guidance, and crew wellness information.</p>
+      <div class="hero-actions">
+        <a href="when-to-report.html" class="btn btn-gold">
+          ⚕ When to Report to Sick Bay
+        </a>
+        <a href="health-topics.html" class="btn btn-outline">
+          Browse Health Topics
+        </a>
+      </div>
     </div>
   </header>
 
+  <!-- ── Main Content ── -->
   <main id="main-content" class="container" data-page="home">
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner" role="alert" aria-label="Emergency information">
+      <div class="banner-icon" aria-hidden="true">🚨</div>
+      <div class="banner-text">
+        <div class="banner-title">Medical Emergency?</div>
+        <p class="banner-desc">If you believe this is a life-threatening emergency, contact the Officer of the Watch immediately and report to Sick Bay.</p>
+      </div>
+      <a href="when-to-report.html" class="btn">When to Report</a>
+    </div>
+
+    <!-- Welcome -->
     <section class="intro-section" aria-label="Welcome">
       <div class="section-block">
-        <p><strong>Welcome to the HMCS Frédérick Rolette Health Information Hub.</strong> This site provides quick access to health topics, clinic information, contact details, and wellness resources for all crew members.</p>
-        <p class="small-note">Browse by section below, or use the search on the Health Topics page to find specific information.</p>
+        <div class="intro-icon" aria-hidden="true">⚓</div>
+        <div class="intro-body">
+          <p><strong>Welcome to the HMCS Frédérick Rolette Health Information Hub.</strong> This site provides quick access to health briefs, clinic information, contact details, and wellness resources for all crew members.</p>
+          <p class="small-note">Use the navigation cards below to browse by section, or select an item in the top bar for direct access.</p>
+        </div>
       </div>
     </section>
 
-    <section aria-label="Main navigation sections">
+    <!-- Quick Actions -->
+    <section aria-label="Quick access">
+      <div class="quick-actions">
+        <a href="when-to-report.html" class="quick-action-btn qa-urgent">
+          <span class="qa-icon" aria-hidden="true">🏥</span>
+          <span>Sick Bay?</span>
+        </a>
+        <a href="clinic-hours.html" class="quick-action-btn">
+          <span class="qa-icon" aria-hidden="true">🕐</span>
+          <span>Hours</span>
+        </a>
+        <a href="contacts.html" class="quick-action-btn">
+          <span class="qa-icon" aria-hidden="true">📞</span>
+          <span>Contacts</span>
+        </a>
+        <a href="notices.html" class="quick-action-btn">
+          <span class="qa-icon" aria-hidden="true">📋</span>
+          <span>Notices</span>
+        </a>
+        <a href="support.html" class="quick-action-btn">
+          <span class="qa-icon" aria-hidden="true">🤝</span>
+          <span>Support</span>
+        </a>
+        <a href="health-topics.html" class="quick-action-btn">
+          <span class="qa-icon" aria-hidden="true">📖</span>
+          <span>Topics</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section aria-label="Main sections">
+      <div class="section-heading">
+        <h2>All Sections</h2>
+        <span class="section-count">6 sections</span>
+      </div>
+
       <div class="card-grid">
-        <a href="health-topics.html" class="brief-card">
-          <div class="card-header">
-            <span class="icon icon-info"></span>
-            <h2>Health Topics & Briefs</h2>
+
+        <!-- Health Topics -->
+        <a href="health-topics.html" class="brief-card cat-health" aria-label="Health Topics and Briefs">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">📋</div>
+              <div class="card-header-text">
+                <h2>Health Topics &amp; Briefs</h2>
+                <span class="card-tag">Reference</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Browse briefs on fatigue, foot care, seasickness, winter skin, shaving, and wound care — written for shipboard conditions.</p>
+            </div>
           </div>
-          <div class="card-content">
-            <p>Browse health topics including fatigue, foot care, seasickness, skin care, shaving, and wound care.</p>
+          <div class="card-footer">
+            <span class="card-footer-label">6 topics available</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
-        <a href="when-to-report.html" class="brief-card">
-          <div class="card-header">
-            <span class="icon icon-emergency"></span>
-            <h2>When to Report to Sick Bay</h2>
+        <!-- When to Report -->
+        <a href="when-to-report.html" class="brief-card cat-urgent" aria-label="When to Report to Sick Bay">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">🏥</div>
+              <div class="card-header-text">
+                <h2>When to Report to Sick Bay</h2>
+                <span class="card-tag">Urgent Guidance</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Know when to seek medical attention. Includes red-flag symptoms and conditions requiring immediate care.</p>
+            </div>
           </div>
-          <div class="card-content">
-            <p>Learn when to seek medical attention and what conditions require immediate care.</p>
-          </div>
-        </a>
-
-        <a href="contacts.html" class="brief-card">
-          <div class="card-header">
-            <span class="icon icon-info"></span>
-            <h2>Contacts & Resources</h2>
-          </div>
-          <div class="card-content">
-            <p>Find contact information for medical staff and links to health resources.</p>
-          </div>
-        </a>
-
-        <a href="clinic-hours.html" class="brief-card">
-          <div class="card-header">
-            <span class="icon icon-info"></span>
-            <h2>Clinic Hours</h2>
-          </div>
-          <div class="card-content">
-            <p>Check current sick bay hours and appointment information.</p>
+          <div class="card-footer">
+            <span class="card-footer-label">Read before you need it</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
-        <a href="notices.html" class="brief-card">
-          <div class="card-header">
-            <span class="icon icon-warning"></span>
-            <h2>Current Notices</h2>
+        <!-- Clinic Hours -->
+        <a href="clinic-hours.html" class="brief-card cat-schedule" aria-label="Clinic Hours">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">🕐</div>
+              <div class="card-header-text">
+                <h2>Clinic Hours</h2>
+                <span class="card-tag">Schedule</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Current sick bay hours and appointment information for routine and urgent care visits.</p>
+            </div>
           </div>
-          <div class="card-content">
-            <p>View important health updates, alerts, and time-sensitive information.</p>
+          <div class="card-footer">
+            <span class="card-footer-label">Hours &amp; availability</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </div>
         </a>
 
-        <a href="support.html" class="brief-card">
-          <div class="card-header">
-            <span class="icon icon-info"></span>
-            <h2>Support Resources</h2>
+        <!-- Contacts -->
+        <a href="contacts.html" class="brief-card cat-contact" aria-label="Contacts and Resources">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">📞</div>
+              <div class="card-header-text">
+                <h2>Contacts &amp; Resources</h2>
+                <span class="card-tag">Directory</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Medical staff contact details, ship's medical office information, and links to external health resources.</p>
+            </div>
           </div>
-          <div class="card-content">
-            <p>Access mental health support, confidential resources, and wellness programs.</p>
+          <div class="card-footer">
+            <span class="card-footer-label">Medical team &amp; helplines</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </div>
         </a>
+
+        <!-- Notices -->
+        <a href="notices.html" class="brief-card cat-notice" aria-label="Current Notices">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">📢</div>
+              <div class="card-header-text">
+                <h2>Current Notices</h2>
+                <span class="card-tag">Alerts &amp; Updates</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Health updates, alerts, and time-sensitive information relevant to the current deployment.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-footer-label">Check regularly</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Support -->
+        <a href="support.html" class="brief-card cat-support" aria-label="Support Resources">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">🤝</div>
+              <div class="card-header-text">
+                <h2>Support Resources</h2>
+                <span class="card-tag">Wellness &amp; Mental Health</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Confidential mental health support, chaplaincy, peer programs, and CAF wellness resources.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-footer-label">Confidential &amp; available 24/7</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
       </div>
     </section>
 
-    <section class="learning-lab" aria-label="External resources">
-      <h2>Canadian & Nova Scotia public health links</h2>
-      <ul class="link-list">
-        <li><a href="https://www.nshealth.ca/">Nova Scotia Health</a></li>
-        <li><a href="https://www.nshealth.ca/public-health">Nova Scotia Public Health</a></li>
-        <li><a href="https://www.canada.ca/en/public-health.html">Public Health Agency of Canada</a></li>
-        <li><a href="https://www.canada.ca/en/department-national-defence/services/benefits-military/health-support.html">CAF health support overview</a></li>
-      </ul>
-      <p class="small-note">Need advice while ashore? Call <a href="https://811.novascotia.ca/">811 Nova Scotia</a> for nurse support.</p>
+    <!-- External Resources -->
+    <section class="resources-section" aria-label="External health resources">
+      <h2>
+        <span aria-hidden="true">🌐</span> Canadian &amp; Nova Scotia Public Health
+      </h2>
+
+      <div class="link-grid">
+        <a href="https://www.nshealth.ca/" class="resource-link" aria-label="Nova Scotia Health (opens in new tab)">
+          <span class="resource-icon" aria-hidden="true">🏥</span>
+          <span>Nova Scotia Health</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a href="https://www.nshealth.ca/public-health" class="resource-link" aria-label="Nova Scotia Public Health (opens in new tab)">
+          <span class="resource-icon" aria-hidden="true">🔬</span>
+          <span>NS Public Health</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a href="https://www.canada.ca/en/public-health.html" class="resource-link" aria-label="Public Health Agency of Canada (opens in new tab)">
+          <span class="resource-icon" aria-hidden="true">🇨🇦</span>
+          <span>Public Health Canada</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a href="https://www.canada.ca/en/department-national-defence/services/benefits-military/health-support.html" class="resource-link" aria-label="CAF Health Support (opens in new tab)">
+          <span class="resource-icon" aria-hidden="true">🎖️</span>
+          <span>CAF Health Support</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="hotline-callout">
+        <span class="hotline-icon" aria-hidden="true">📱</span>
+        <p class="hotline-text">
+          <strong>Ashore and need advice?</strong> Call <a href="https://811.novascotia.ca/">811 Nova Scotia</a> for nurse triage support — available 24 hours a day.
+        </p>
+      </div>
     </section>
 
-    <footer class="disclaimer">
-      <p><strong>Disclaimer:</strong> This site provides general information only and is not a substitute for professional medical assessment. When in doubt, come to Sick Bay.</p>
-      <p class="small-note">Last updated: 22 March 2026</p>
+    <!-- Footer / Disclaimer -->
+    <footer class="page-footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-disclaimer">
+          <p><strong>Medical Disclaimer:</strong> This site provides general health information only and is not a substitute for professional medical assessment. When in doubt, report to Sick Bay.</p>
+          <p>Information is intended for crew members of HMCS Frédérick Rolette and is reviewed by the ship's medical staff.</p>
+        </div>
+        <div class="footer-meta">
+          <div>⚓ HMCS Frédérick Rolette</div>
+          <div>Updated: 22 March 2026</div>
+        </div>
+      </div>
     </footer>
+
   </main>
 
   <script src="scripts/home.js" defer></script>
