@@ -102,16 +102,18 @@
             return { card, combinedText, indexedWords };
         });
 
-        const updateChipState = (queryTokens) => {
+        const updateChipState = (queryValue) => {
+            const normalizedQuery = normalize(queryValue);
             chips.forEach((chip) => {
                 const chipToken = normalize(chip.getAttribute("data-search-chip") || "");
-                const pressed = chipToken !== "" && queryTokens.includes(chipToken);
+                const pressed = chipToken !== "" && normalizedQuery === chipToken;
                 chip.setAttribute("aria-pressed", pressed ? "true" : "false");
             });
         };
 
         const applyFilter = () => {
-            const query = normalize(input.value);
+            const rawQuery = input.value || "";
+            const query = normalize(rawQuery);
             const queryTokens = query.split(" ").filter(Boolean);
             let visibleCount = 0;
 
@@ -127,23 +129,24 @@
             });
 
             if (clearBtn) clearBtn.disabled = queryTokens.length === 0;
-            updateChipState(queryTokens);
+            updateChipState(query);
 
             if (emptyState) {
                 emptyState.hidden = visibleCount !== 0;
                 emptyState.textContent =
                     visibleCount === 0
-                        ? `No briefs matched "${input.value.trim()}". Try a broader term such as "skin", "sleep", or "wound".`
+                        ? `No briefs matched "${rawQuery.trim()}". Try a broader term such as "skin", "sleep", or "wound".`
                         : "";
             }
 
             if (resultsStatus) {
+                const trimmedQuery = rawQuery.trim();
                 if (queryTokens.length === 0) {
                     resultsStatus.textContent = `Showing all ${cards.length} briefs.`;
                 } else if (visibleCount === 0) {
-                    resultsStatus.textContent = `No matches for "${input.value.trim()}".`;
+                    resultsStatus.textContent = `No matches for "${trimmedQuery}".`;
                 } else {
-                    resultsStatus.textContent = `Showing ${visibleCount} of ${cards.length} briefs for "${input.value.trim()}".`;
+                    resultsStatus.textContent = `Showing ${visibleCount} of ${cards.length} briefs for "${trimmedQuery}".`;
                 }
             }
         };
