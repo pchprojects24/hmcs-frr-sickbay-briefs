@@ -360,20 +360,24 @@ main {
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  transition: all 0.2s ease;
   min-height: 44px;
   text-align: center;
   text-decoration: none;
   letter-spacing: 0.01em;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
 }
 .btn:hover {
   background: var(--navy-500);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
   text-decoration: none;
   color: #fff;
 }
-.btn:active { transform: translateY(0); box-shadow: none; }
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
 
 .btn.btn-gold {
   background: var(--gold);
@@ -399,17 +403,20 @@ main {
   background: var(--surface);
   color: var(--text);
   border: 1.5px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .btn.secondary:hover {
-  background: var(--surface-raised);
+  background: var(--blue-pale);
   border-color: var(--blue);
   color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
 }
 .btn.secondary:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
-  box-shadow: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn-sm {
