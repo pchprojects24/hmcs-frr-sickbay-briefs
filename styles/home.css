@@ -112,6 +112,13 @@
   line-height: 1;
 }
 
+.quick-action-full {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
 .quick-action-btn.qa-urgent {
   border-color: var(--red);
   background: var(--red-pale);
