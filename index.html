@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sick Bay Briefs</title>
+  <title>Crew Health Information Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sick Bay Briefs - Health and wellness guides for sailors.">
+  <meta name="description" content="Central shipboard health information hub for HMCS Frédérick Rolette crew.">
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/home.css">
@@ -13,117 +13,90 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="top-bar">
-    <span class="top-title">Sick Bay Briefs</span>
+    <span class="top-title">HMCS FRR Health Hub</span>
   </div>
 
   <header class="hero">
     <div class="hero-inner">
-      <h1>Sick Bay Briefs</h1>
-      <p class="lede">Self-care first. Know when to report.</p>
+      <h1>Crew Health Information Hub</h1>
+      <p class="lede">Your central source for shipboard health resources, medical information, and wellness guidance.</p>
     </div>
   </header>
 
   <main id="main-content" class="container" data-page="home">
-    <section class="search-panel" aria-label="Search and filter">
-      <div class="search-row">
-        <label for="search" class="visually-hidden">Search briefs</label>
-        <input
-          type="search"
-          id="search"
-          data-search-input
-          class="input-field"
-          autocomplete="off"
-          placeholder="Search by topic, symptom, or keyword..."
-          aria-label="Search briefs">
-        <button class="btn secondary" data-clear type="button" aria-label="Clear search">
-          <span class="icon icon-close icon-sm"></span>
-          Clear
-        </button>
+    <section class="intro-section" aria-label="Welcome">
+      <div class="section-block">
+        <p><strong>Welcome to the HMCS Frédérick Rolette Health Information Hub.</strong> This site provides quick access to health topics, clinic information, contact details, and wellness resources for all crew members.</p>
+        <p class="small-note">Browse by section below, or use the search on the Health Topics page to find specific information.</p>
       </div>
-      <div class="search-chip-row" aria-label="Quick filters">
-        <button class="search-chip" type="button" data-search-chip="skin" aria-pressed="false">Skin</button>
-        <button class="search-chip" type="button" data-search-chip="wound" aria-pressed="false">Wounds</button>
-        <button class="search-chip" type="button" data-search-chip="fatigue" aria-pressed="false">Sleep and fatigue</button>
-        <button class="search-chip" type="button" data-search-chip="nausea" aria-pressed="false">Nausea</button>
-      </div>
-      <p class="search-status small-note" data-results-status role="status" aria-live="polite"></p>
     </section>
 
-    <section aria-label="Brief list">
-      <div class="card-grid" data-brief-list>
-        <a href="winter-skin.html" class="brief-card" data-filter-text="cold weather skin dry chapped lips nosebleed winter hands face prevention">
+    <section aria-label="Main navigation sections">
+      <div class="card-grid">
+        <a href="health-topics.html" class="brief-card">
           <div class="card-header">
-            <span class="icon icon-skin"></span>
-            <h2>Cold Weather Skin</h2>
+            <span class="icon icon-info"></span>
+            <h2>Health Topics & Briefs</h2>
           </div>
           <div class="card-content">
-            <p>Stop cracks, chapping, and nosebleeds in cold, dry shipboard air.</p>
+            <p>Browse health topics including fatigue, foot care, seasickness, skin care, shaving, and wound care.</p>
           </div>
         </a>
 
-        <a href="shaving.html" class="brief-card" data-filter-text="shaving razor bumps burn irritation infection grooming beard facial hair">
+        <a href="when-to-report.html" class="brief-card">
           <div class="card-header">
-            <span class="icon icon-razor"></span>
-            <h2>Shaving & Razor Bumps</h2>
+            <span class="icon icon-emergency"></span>
+            <h2>When to Report to Sick Bay</h2>
           </div>
           <div class="card-content">
-            <p>Reduce burn and bumps, keep razors clean, and spot infection early.</p>
+            <p>Learn when to seek medical attention and what conditions require immediate care.</p>
           </div>
         </a>
 
-        <a href="wound-care.html" class="brief-card" data-filter-text="cuts scrapes wounds bleeding injury first aid infection seawater dressing bandage">
+        <a href="contacts.html" class="brief-card">
           <div class="card-header">
-            <span class="icon icon-wound"></span>
-            <h2>Minor Cuts & Wound Care</h2>
+            <span class="icon icon-info"></span>
+            <h2>Contacts & Resources</h2>
           </div>
           <div class="card-content">
-            <p>Clean, cover, and protect small wounds; know when infection needs help.</p>
+            <p>Find contact information for medical staff and links to health resources.</p>
           </div>
         </a>
 
-        <a href="foot-care.html" class="brief-card" data-filter-text="feet foot care blisters hotspots athlete's foot moisture boots socks fungal">
+        <a href="clinic-hours.html" class="brief-card">
           <div class="card-header">
-            <span class="icon icon-foot"></span>
-            <h2>Foot Care at Sea</h2>
+            <span class="icon icon-info"></span>
+            <h2>Clinic Hours</h2>
           </div>
           <div class="card-content">
-            <p>Keep feet dry, manage hotspots early, and prevent athlete's foot.</p>
+            <p>Check current sick bay hours and appointment information.</p>
           </div>
         </a>
 
-        <a href="fatigue.html" class="brief-card" data-filter-text="fatigue tired sleep exhausted alertness watch nap caffeine rest energy readiness">
+        <a href="notices.html" class="brief-card">
           <div class="card-header">
-            <span class="icon icon-sleep"></span>
-            <h2>Fatigue at Sea</h2>
+            <span class="icon icon-warning"></span>
+            <h2>Current Notices</h2>
           </div>
           <div class="card-content">
-            <p>Protect core sleep, use naps and caffeine wisely, and flag safety risks.</p>
+            <p>View important health updates, alerts, and time-sensitive information.</p>
           </div>
         </a>
 
-        <a href="seasickness.html" class="brief-card" data-filter-text="seasickness motion sickness nausea vomit vomiting dehydration medication drugs">
+        <a href="support.html" class="brief-card">
           <div class="card-header">
-            <span class="icon icon-motion"></span>
-            <h2>Seasickness</h2>
+            <span class="icon icon-info"></span>
+            <h2>Support Resources</h2>
           </div>
           <div class="card-content">
-            <p>Simple positioning, food, and safety tips; know when meds or Sick Bay are needed.</p>
+            <p>Access mental health support, confidential resources, and wellness programs.</p>
           </div>
         </a>
       </div>
-      <p class="search-empty" data-empty-state hidden role="status" aria-live="polite"></p>
     </section>
 
-    <section class="learning-lab" aria-label="Learning tools">
-      <div class="learning-header">
-        <h2>Daily learning mission</h2>
-        <button class="btn" type="button" data-mission-btn>
-          <span class="icon icon-refresh icon-sm"></span>
-          New mission
-        </button>
-      </div>
-      <p class="learning-mission" data-mission-text role="status" aria-live="polite"></p>
-      <h3 class="sources-title">Canadian & Nova Scotia public health links</h3>
+    <section class="learning-lab" aria-label="External resources">
+      <h2>Canadian & Nova Scotia public health links</h2>
       <ul class="link-list">
         <li><a href="https://www.nshealth.ca/">Nova Scotia Health</a></li>
         <li><a href="https://www.nshealth.ca/public-health">Nova Scotia Public Health</a></li>
@@ -134,8 +107,8 @@
     </section>
 
     <footer class="disclaimer">
-      <p><strong>Disclaimer:</strong> These briefs provide general information only and are not a substitute for professional medical assessment. When in doubt, come to Sick Bay.</p>
-      <p class="small-note">Last updated: 1 March 2026</p>
+      <p><strong>Disclaimer:</strong> This site provides general information only and is not a substitute for professional medical assessment. When in doubt, come to Sick Bay.</p>
+      <p class="small-note">Last updated: 22 March 2026</p>
     </footer>
   </main>
 
