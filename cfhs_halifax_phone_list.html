@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canadian Forces Health Services Center, Halifax</title>
+  <style>
+    :root{
+      --yellow:#f4c400; --yellow-dark:#d8ac00; --ink:#111827; --muted:#6b7280;
+      --panel:#ffffff; --bg:#f6f7fb; --line:#d1d5db; --shadow: 0 10px 26px rgba(17,24,39,.10);
+      --radius:16px; --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--sans); color:var(--ink);
+      background:
+        radial-gradient(1100px 560px at 18% -10%, #fff7cc 0%, rgba(255,247,204,0) 55%),
+        radial-gradient(900px 520px at 110% 10%, #e7f3ff 0%, rgba(231,243,255,0) 55%),
+        var(--bg);
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:16px 12px 44px}
+    header{
+      background: linear-gradient(180deg, #ffffff 0%, #fffef6 100%);
+      border:1px solid var(--line); box-shadow: var(--shadow); border-radius: var(--radius);
+      padding:16px 14px 12px; text-align:center;
+    }
+    h1{margin:0; font-size: clamp(20px, 4.5vw, 30px); letter-spacing:.02em; text-transform:uppercase; line-height:1.1;}
+    h2{margin:6px 0 0; font-size: clamp(13px, 3.2vw, 16px); letter-spacing:.10em; text-transform:uppercase; color:#111827;}
+    .date{margin:6px 0 0; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:#111827; font-size: clamp(12px, 3vw, 14px);}
+
+    .searchbar{margin-top:12px; display:flex; gap:10px; justify-content:center; align-items:stretch;}
+    .searchbar input{
+      width:min(720px, 100%); padding:14px 14px; border-radius:14px; border:1px solid #e5e7eb; background:#fff;
+      font-size:16px; font-weight:700; outline:none; box-shadow: 0 2px 12px rgba(17,24,39,.06);
+    }
+    .searchbar input:focus{border-color:#c7b200; box-shadow: 0 0 0 3px rgba(244,196,0,.25), 0 2px 12px rgba(17,24,39,.06);}
+    .searchbar button{
+      padding:14px 16px; border-radius:14px; border:1px solid #e5e7eb; background:#f9fafb; font: inherit;
+      font-weight:900; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; box-shadow: 0 2px 12px rgba(17,24,39,.06);
+      min-width:92px;
+    }
+    .searchbar button:active{transform: translateY(1px)}
+    @media (max-width: 560px){ .searchbar{flex-direction:column; align-items:stretch} .searchbar button{width:100%} }
+
+    .group-controls{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .group-controls button{
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid #e5e7eb;
+      background:#f9fafb;
+      font: inherit;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      cursor:pointer;
+      box-shadow: 0 2px 12px rgba(17,24,39,.06);
+      min-width:150px;
+    }
+    .group-controls button:active{transform: translateY(1px)}
+    @media (max-width: 560px){
+      .group-controls{flex-direction:column; align-items:stretch}
+      .group-controls button{width:100%}
+    }
+
+    .grid{display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:14px; margin-top:14px; align-items:start;}
+    @media (max-width: 560px){ .wrap{padding:14px 12px 40px} .grid{grid-template-columns: 1fr; gap:12px} }
+
+    details.card{background:var(--panel); border:1px solid var(--line); border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow);}
+    details.card > summary{
+      list-style:none; cursor:pointer; padding:16px 14px;
+      background: linear-gradient(180deg, var(--yellow) 0%, #ffd84d 100%);
+      border-bottom: 1px solid var(--yellow-dark);
+      font-weight:900; text-transform:uppercase; letter-spacing:.06em; font-size:14px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    details.card > summary::-webkit-details-marker{display:none}
+    .chev{width:12px;height:12px;flex:0 0 auto; border-right:3px solid rgba(17,24,39,.75); border-bottom:3px solid rgba(17,24,39,.75);
+      transform: rotate(45deg); transition: transform .18s ease; margin-left:8px;}
+    details[open] .chev{transform: rotate(225deg);}
+
+    .content{padding:12px 14px 14px}
+    .rows{display:flex;flex-direction:column;gap:12px}
+    .row{padding-bottom:12px; border-bottom:1px dashed #e5e7eb;}
+    .row:last-child{border-bottom:none;padding-bottom:0}
+
+    .label{font-size:15px; line-height:1.25rem; font-weight:900; color:#0f172a;}
+    .actions{margin-top:10px; display:flex; flex-wrap:wrap; gap:10px;}
+    .btn{display:inline-flex; align-items:center; padding:14px 14px; border-radius: 14px; border:1px solid #e5e7eb; background:#f9fafb;
+      text-decoration:none; color:#111827; box-shadow: 0 2px 12px rgba(17,24,39,.07); min-height:44px; -webkit-tap-highlight-color: transparent; user-select:none;}
+    .btn:active{transform: translateY(1px)}
+    .btn .stack{display:flex; flex-direction:column; line-height:1.05;}
+    .btn .num{font-family:var(--mono); font-size:18px; font-weight:900; letter-spacing:.01em;}
+    .btn .meta{font-size:12px; color:var(--muted); font-weight:900; text-transform:uppercase; letter-spacing:.08em;}
+    .plain{padding:12px 14px; border-radius:14px; border:1px solid #e5e7eb; background:#fff; font-weight:800; font-family:var(--mono);}
+    @media (max-width: 560px){ .label{font-size:16px} .btn{width:100%; justify-content:flex-start; padding:16px 14px} .btn .num{font-size:20px} }
+
+    .footer{margin-top:14px; text-align:center; color:var(--muted); font-size:12px;}
+    .is-hidden{display:none !important;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Canadian Forces Health Services Center, Halifax</h1>
+      <h2>KEY CONTACT INFORMATION</h2>
+      <div class="date">JAN 2024</div>
+
+      <div class="searchbar" role="search" aria-label="Search contacts">
+        <input id="searchInput" type="search" inputmode="search" autocomplete="off"
+               placeholder="Search (name, section, or number)" aria-label="Search contacts" />
+        <button id="clearBtn" type="button" aria-label="Clear search">Clear</button>
+      </div>
+      <div class="group-controls" aria-label="Group controls">
+        <button id="expandAllBtn" type="button" aria-label="Expand all sections">Expand all</button>
+        <button id="collapseAllBtn" type="button" aria-label="Collapse all sections">Collapse all</button>
+      </div>
+    </header>
+
+    <section class="grid" id="cardsGrid" aria-label="Phone list accordions">
+      
+      <details class="card">
+        <summary>CDU 1 <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Dr Lynne Poirier</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218890" aria-label="Call 902-721-8890">
+                <span class="stack"><span class="num">902-721-8890</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Dr. David Botten</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218890" aria-label="Call 902-721-8890">
+                <span class="stack"><span class="num">902-721-8890</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Capt Desjardins, MO</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218890" aria-label="Call 902-721-8890">
+                <span class="stack"><span class="num">902-721-8890</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Verena Rizg, NP</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218890" aria-label="Call 902-721-8890">
+                <span class="stack"><span class="num">902-721-8890</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Shaun Kaye, PA</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218890" aria-label="Call 902-721-8890">
+                <span class="stack"><span class="num">902-721-8890</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Sheri Richer-Claeys / Kristian Goodine        Admin</div>
+              <div class="actions">
+              <a class="btn" href="tel:8889/8890" aria-label="Call 8889/8890">
+                <span class="stack"><span class="num">8889/8890</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Holly Hadley                                                                PCN</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218681" aria-label="Call 902-721-8681">
+                <span class="stack"><span class="num">902-721-8681</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218787" aria-label="Call 902-721-8787">
+                <span class="stack"><span class="num">902-721-8787</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>CDU 2 <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Dr. Joyce Coles</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218868" aria-label="Call 902-721-8868">
+                <span class="stack"><span class="num">902-721-8868</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Erica Ellis, NP</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218868" aria-label="Call 902-721-8868">
+                <span class="stack"><span class="num">902-721-8868</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Dr. Cheri Collicott</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218868" aria-label="Call 902-721-8868">
+                <span class="stack"><span class="num">902-721-8868</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Pascale Drown/Sarah Baillie                         Admin</div>
+              <div class="actions">
+              <a class="btn" href="tel:8868/1285" aria-label="Call 8868/1285">
+                <span class="stack"><span class="num">8868/1285</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Jenelle Winter                                                          PCN</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218785" aria-label="Call 902-721-8785">
+                <span class="stack"><span class="num">902-721-8785</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210215" aria-label="Call 902-721-0215">
+                <span class="stack"><span class="num">902-721-0215</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>CDU3 <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Dr. Michelle Lambeth</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218764" aria-label="Call 902-721-8764">
+                <span class="stack"><span class="num">902-721-8764</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Capt Allen, Capt Blaskovits</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218764" aria-label="Call 902-721-8764">
+                <span class="stack"><span class="num">902-721-8764</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Chris McCarthy, NP</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218764" aria-label="Call 902-721-8764">
+                <span class="stack"><span class="num">902-721-8764</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Megan Glover NP</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218764" aria-label="Call 902-721-8764">
+                <span class="stack"><span class="num">902-721-8764</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Maureen MacDonald/ Hiliary Poirier</div>
+              <div class="actions">
+              <a class="btn" href="tel:8912/8764" aria-label="Call 8912/8764">
+                <span class="stack"><span class="num">8912/8764</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Jenelle Thompson                                                    PCN</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218638" aria-label="Call 902-721-8638">
+                <span class="stack"><span class="num">902-721-8638</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217535" aria-label="Call 902-721-7535">
+                <span class="stack"><span class="num">902-721-7535</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>CDU 5 <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Jeremy Burton, NP</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210815" aria-label="Call 902-721-0815">
+                <span class="stack"><span class="num">902-721-0815</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Dr. Kirk Poulos</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210815" aria-label="Call 902-721-0815">
+                <span class="stack"><span class="num">902-721-0815</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Capt Smith</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210815" aria-label="Call 902-721-0815">
+                <span class="stack"><span class="num">902-721-0815</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Justina Mattie/Patrick Logan                           Admin</div>
+              <div class="actions">
+              <a class="btn" href="tel:0815/0816" aria-label="Call 0815/0816">
+                <span class="stack"><span class="num">0815/0816</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Jenelle Thompson (A/PCN - See CDU 3 info)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210813" aria-label="Call 902-721-0813">
+                <span class="stack"><span class="num">902-721-0813</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218998" aria-label="Call 902-721-8998">
+                <span class="stack"><span class="num">902-721-8998</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>CDU 6 (Det Sydeny) <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Hele MacPhee, PCN - Nursing</div>
+              <div class="actions">
+              <a class="btn" href="tel:86-563-7247" aria-label="Call 86-563-7247">
+                <span class="stack"><span class="num">86-563-7247</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Dr. R.J. MacKenzie</div>
+              <div class="actions">
+              <a class="btn" href="tel:86-563-7247" aria-label="Call 86-563-7247">
+                <span class="stack"><span class="num">86-563-7247</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>MENTAL HEALTH <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Scott Currie                        MH Manager</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218564" aria-label="Call 902-721-8564">
+                <span class="stack"><span class="num">902-721-8564</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Ashley Stewart                 Admin Supvr</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217536" aria-label="Call 902-721-7536">
+                <span class="stack"><span class="num">902-721-7536</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Tom Webber                             PSS Clerk</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218607" aria-label="Call 902-721-8607">
+                <span class="stack"><span class="num">902-721-8607</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Nicki Hamilton                    OTSSC Clerk</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027215703" aria-label="Call 902-721-5703">
+                <span class="stack"><span class="num">902-721-5703</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Heather Balcom                       APT Clerk</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218600" aria-label="Call 902-721-8600">
+                <span class="stack"><span class="num">902-721-8600</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Rita Locke                                GMH Clerk</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218012" aria-label="Call 902-721-8012">
+                <span class="stack"><span class="num">902-721-8012</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">LeeAnn Benoit             Ext Provider Clk</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211267" aria-label="Call 902-721-1267">
+                <span class="stack"><span class="num">902-721-1267</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>PHYSICAL REHAB SECT <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Maj R. Ingar                                                       IC</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210504" aria-label="Call 902-721-0504">
+                <span class="stack"><span class="num">902-721-0504</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Capt B. Stefanov                                            2IC</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218738" aria-label="Call 902-721-8738">
+                <span class="stack"><span class="num">902-721-8738</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Lt Thibeault-Rivard,                                     3IC</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218744" aria-label="Call 902-721-8744">
+                <span class="stack"><span class="num">902-721-8744</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Physio Sick Parade/Treatment Room</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027215483" aria-label="Call 902-721-5483">
+                <span class="stack"><span class="num">902-721-5483</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Alyssa Maloney, OT</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218859" aria-label="Call 902-721-8859">
+                <span class="stack"><span class="num">902-721-8859</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Jessica Waters, OT</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218767" aria-label="Call 902-721-8767">
+                <span class="stack"><span class="num">902-721-8767</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Haley Greenlaw - Bracing</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218023" aria-label="Call 902-721-8023">
+                <span class="stack"><span class="num">902-721-8023</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Shearwater Det</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027201608" aria-label="Call 902-720-1608">
+                <span class="stack"><span class="num">902-720-1608</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Francine Richard/Eva Tanner          Admin</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218738" aria-label="Call 902-721-8738">
+                <span class="stack"><span class="num">902-721-8738</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218990" aria-label="Call 902-721-8990">
+                <span class="stack"><span class="num">902-721-8990</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>SPECIALIST SERVICES CENTRE <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Capt Rumbolt</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218895" aria-label="Call 902-721-8895">
+                <span class="stack"><span class="num">902-721-8895</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">NCM IC Sgt MacGregor</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218774" aria-label="Call 902-721-8774">
+                <span class="stack"><span class="num">902-721-8774</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">SSC Med Tech</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218774" aria-label="Call 902-721-8774">
+                <span class="stack"><span class="num">902-721-8774</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Terri Lynch/ Vicky Dixon                   Admin</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218774" aria-label="Call 902-721-8774">
+                <span class="stack"><span class="num">902-721-8774</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210356" aria-label="Call 902-721-0356">
+                <span class="stack"><span class="num">902-721-0356</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Endoscopy/Cystoscopy Unit</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218845" aria-label="Call 902-721-8845">
+                <span class="stack"><span class="num">902-721-8845</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>PMED <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Lt(N) Kriesse, TL</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217885" aria-label="Call 902-721-7885">
+                <span class="stack"><span class="num">902-721-7885</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Sgt Underhill</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218197" aria-label="Call 902-721-8197">
+                <span class="stack"><span class="num">902-721-8197</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Sgt Ouelette-Wall</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218706" aria-label="Call 902-721-8706">
+                <span class="stack"><span class="num">902-721-8706</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Erica Boudreau</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217836" aria-label="Call 902-721-7836">
+                <span class="stack"><span class="num">902-721-7836</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>MPP STORES <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Capt Mckenna, MPP O</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218797" aria-label="Call 902-721-8797">
+                <span class="stack"><span class="num">902-721-8797</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Shonna Howell</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027216847" aria-label="Call 902-721-6847">
+                <span class="stack"><span class="num">902-721-6847</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Effie Rumbolt</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211237" aria-label="Call 902-721-1237">
+                <span class="stack"><span class="num">902-721-1237</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>BMET - General Inquiries <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">WO Bowman</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218710" aria-label="Call 902-721-8710">
+                <span class="stack"><span class="num">902-721-8710</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>DTS Services <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Pharm TL,</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027216722" aria-label="Call 902-721-6722">
+                <span class="stack"><span class="num">902-721-6722</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Lab Reception</div>
+              <div class="actions">
+              <a class="btn" href="tel:8759/8185" aria-label="Call 8759/8185">
+                <span class="stack"><span class="num">8759/8185</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">DI Reception -  Kenny Shea</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218805" aria-label="Call 902-721-8805">
+                <span class="stack"><span class="num">902-721-8805</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">IPAC</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211259" aria-label="Call 902-721-1259">
+                <span class="stack"><span class="num">902-721-1259</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>MISCELLANEOUS - INTERNAL <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Immununization Office</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218780" aria-label="Call 902-721-8780">
+                <span class="stack"><span class="num">902-721-8780</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Heather Robinson                            CHN</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217860" aria-label="Call 902-721-7860">
+                <span class="stack"><span class="num">902-721-7860</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Housekeeping Spvsr</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218718" aria-label="Call 902-721-8718">
+                <span class="stack"><span class="num">902-721-8718</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">General Stores</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211983" aria-label="Call 902-721-1983">
+                <span class="stack"><span class="num">902-721-1983</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Dental Unit Reception</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218960" aria-label="Call 902-721-8960">
+                <span class="stack"><span class="num">902-721-8960</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Duty Officer (non-med)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19022223858" aria-label="Call 902-222-3858">
+                <span class="stack"><span class="num">902-222-3858</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Paging System</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218810" aria-label="Call 902-721-8810">
+                <span class="stack"><span class="num">902-721-8810</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Conference Room</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218371" aria-label="Call 902-721-8371">
+                <span class="stack"><span class="num">902-721-8371</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Padre</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024277788" aria-label="Call 902-427-7788">
+                <span class="stack"><span class="num">902-427-7788</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Tailor Shop</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024274738" aria-label="Call 902-427-4738">
+                <span class="stack"><span class="num">902-427-4738</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">CFHIS ISSO Jenelle Winter</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218785" aria-label="Call 902-721-8785">
+                <span class="stack"><span class="num">902-721-8785</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Commissionaires Desk</div>
+              <div class="actions"><div class="plain">—</div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>MISCELLANEOUS - EXTERNAL <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">IM/IT BIS</div>
+              <div class="actions">
+              <a class="btn" href="tel:+18339281577" aria-label="Call 1-833-928-1577">
+                <span class="stack"><span class="num">1-833-928-1577</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">MP’s</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027224444" aria-label="Call 902-722-4444">
+                <span class="stack"><span class="num">902-722-4444</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fleet Club</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024278352" aria-label="Call 902-427-8352">
+                <span class="stack"><span class="num">902-427-8352</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Base Post Office</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027216728" aria-label="Call 902-721-6728">
+                <span class="stack"><span class="num">902-721-6728</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Learning Centre</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027224657" aria-label="Call 902-722-4657">
+                <span class="stack"><span class="num">902-722-4657</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Base Taxi (or 229-5760)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027224046" aria-label="Call 902-722-4046">
+                <span class="stack"><span class="num">902-722-4046</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">VAC</div>
+              <div class="actions">
+              <a class="btn" href="tel:+18005222122" aria-label="Call 1-800-522-2122">
+                <span class="stack"><span class="num">1-800-522-2122</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Storm Watch/Info Line (Stad)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218325" aria-label="Call 902-721-8325">
+                <span class="stack"><span class="num">902-721-8325</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Storm Watch/Info Line (SHW)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027201305" aria-label="Call 902-720-1305">
+                <span class="stack"><span class="num">902-720-1305</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Base Switchboard</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024270550" aria-label="Call 902-427-0550">
+                <span class="stack"><span class="num">902-427-0550</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">ID Section Dckyard 2385 Valour Way</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024273680" aria-label="Call 902-427-3680">
+                <span class="stack"><span class="num">902-427-3680</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Car Pass Office (Dckyrd)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024273677" aria-label="Call 902-427-3677">
+                <span class="stack"><span class="num">902-427-3677</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Paid Parking (Bldg S90)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211989" aria-label="Call 902-721-1989">
+                <span class="stack"><span class="num">902-721-1989</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Shearwater Clothing</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027201612" aria-label="Call 902-720-1612">
+                <span class="stack"><span class="num">902-720-1612</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Tailor Shop</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024274738" aria-label="Call 902-427-4738">
+                <span class="stack"><span class="num">902-427-4738</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">QEII H.S. Centre</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024732700" aria-label="Call 902-473-2700">
+                <span class="stack"><span class="num">902-473-2700</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Duty Driver</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024020605" aria-label="Call 902-402-0605">
+                <span class="stack"><span class="num">902-402-0605</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Formation Imaging Reception</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024276293" aria-label="Call 902-427-6293">
+                <span class="stack"><span class="num">902-427-6293</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">LCol C. Mountford/Reg Surg</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024277283" aria-label="Call 902-427-7283">
+                <span class="stack"><span class="num">902-427-7283</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">CFB Greenwood Pharm</div>
+              <div class="actions">
+              <a class="btn" href="tel:86-568-5386" aria-label="Call 86-568-5386">
+                <span class="stack"><span class="num">86-568-5386</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">CFB Gagetown Health Records</div>
+              <div class="actions">
+              <a class="btn" href="tel:86-432-1482" aria-label="Call 86-432-1482">
+                <span class="stack"><span class="num">86-432-1482</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>Finance/Claims <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">MS Hermosura FSA</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218934" aria-label="Call 902-721-8934">
+                <span class="stack"><span class="num">902-721-8934</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Eion Black - Health Related Travel/IT</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210554" aria-label="Call 902-721-0554">
+                <span class="stack"><span class="num">902-721-0554</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Denise Roberts - Claims</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027216505" aria-label="Call 902-721-6505">
+                <span class="stack"><span class="num">902-721-6505</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>HEALTH RECORDS <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Chris Robinson                      Team Lead</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218928" aria-label="Call 902-721-8928">
+                <span class="stack"><span class="num">902-721-8928</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Grayce Baillie                          Reception</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218853" aria-label="Call 902-721-8853">
+                <span class="stack"><span class="num">902-721-8853</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Mike Ballam                             Reception</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211276" aria-label="Call 902-721-1276">
+                <span class="stack"><span class="num">902-721-1276</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210748" aria-label="Call 902-721-0748">
+                <span class="stack"><span class="num">902-721-0748</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>PAYMENT CENTRE <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Jaime Woolstencroft</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211101" aria-label="Call 902-721-1101">
+                <span class="stack"><span class="num">902-721-1101</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">J. Fillmore</div>
+              <div class="actions"><div class="plain">—</div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>SUPPORT SERVICES <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Darlene Miller                                  SSM</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211185" aria-label="Call 902-721-1185">
+                <span class="stack"><span class="num">902-721-1185</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Linda Bradley                                          HR</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218715" aria-label="Call 902-721-8715">
+                <span class="stack"><span class="num">902-721-8715</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Ann Rhynold                                    Fin O</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218865" aria-label="Call 902-721-8865">
+                <span class="stack"><span class="num">902-721-8865</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>FLEET/Ops &amp; Trg <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">LCdr M. Menard, FSPA</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210527" aria-label="Call 902-721-0527">
+                <span class="stack"><span class="num">902-721-0527</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Capt Hartery Ops O</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211100" aria-label="Call 902-721-1100">
+                <span class="stack"><span class="num">902-721-1100</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Lt Carr Trg O</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211170" aria-label="Call 902-721-1170">
+                <span class="stack"><span class="num">902-721-1170</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Sgt Clarke, Trg NCO</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218741" aria-label="Call 902-721-8741">
+                <span class="stack"><span class="num">902-721-8741</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">MCpl Wry, Trg NCM</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027214279" aria-label="Call 902-721-4279">
+                <span class="stack"><span class="num">902-721-4279</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">MCpl McLeod, Ops O NCM</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218266" aria-label="Call 902-721-8266">
+                <span class="stack"><span class="num">902-721-8266</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Maj Kyle Thebault, FSMO</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218842" aria-label="Call 902-721-8842">
+                <span class="stack"><span class="num">902-721-8842</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">FDU</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027201355" aria-label="Call 902-720-1355">
+                <span class="stack"><span class="num">902-720-1355</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>PRIMARY CARE SERVICES <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">PCS  CHOD</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218812" aria-label="Call 902-721-8812">
+                <span class="stack"><span class="num">902-721-8812</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Admin Assistant Desk</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218792" aria-label="Call 902-721-8792">
+                <span class="stack"><span class="num">902-721-8792</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Duty PCN</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027210537" aria-label="Call 902-721-0537">
+                <span class="stack"><span class="num">902-721-0537</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Treatment Room (Dr Spencer/Dr leighton/Dr Boudreau)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218794" aria-label="Call 902-721-8794">
+                <span class="stack"><span class="num">902-721-8794</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Code White/Blue (Paging)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218810" aria-label="Call 902-721-8810">
+                <span class="stack"><span class="num">902-721-8810</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">CDU Pharmacist</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218754" aria-label="Call 902-721-8754">
+                <span class="stack"><span class="num">902-721-8754</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>OR <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Chief Clerk/WO Somerville</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218909" aria-label="Call 902-721-8909">
+                <span class="stack"><span class="num">902-721-8909</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Cathy Rhynold                              Admin</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218728" aria-label="Call 902-721-8728">
+                <span class="stack"><span class="num">902-721-8728</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Cpl Byers - HRA</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218760" aria-label="Call 902-721-8760">
+                <span class="stack"><span class="num">902-721-8760</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>CASE MANAGEMENT <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Lynne Robichaud Team Lead CMgrs</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218006" aria-label="Call 902-721-8006">
+                <span class="stack"><span class="num">902-721-8006</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Darlene DeBarres CMgrs</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217813" aria-label="Call 902-721-7813">
+                <span class="stack"><span class="num">902-721-7813</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Leslie Smith CMgrs</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218815" aria-label="Call 902-721-8815">
+                <span class="stack"><span class="num">902-721-8815</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Markita Balfour CMgrs</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218531" aria-label="Call 902-721-8531">
+                <span class="stack"><span class="num">902-721-8531</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Darlene Bernier (Shearwater)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027201914" aria-label="Call 902-720-1914">
+                <span class="stack"><span class="num">902-720-1914</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Angela Manson                                                     Admin</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218628" aria-label="Call 902-721-8628">
+                <span class="stack"><span class="num">902-721-8628</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">MEC</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027211783" aria-label="Call 902-721-1783">
+                <span class="stack"><span class="num">902-721-1783</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>BAYSHORE HEALTH CARE INC <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">Calian – Holly Gallagher</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024614492" aria-label="Call 902-461-4492">
+                <span class="stack"><span class="num">902-461-4492</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Calian Local Fax</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19024614511" aria-label="Call 902-461-4511">
+                <span class="stack"><span class="num">902-461-4511</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Calian HDQ Fax (1-877)</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19023298655" aria-label="Call 902-329-8655">
+                <span class="stack"><span class="num">902-329-8655</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>COMMAND <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">LCol J. Keddy, CO</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218731" aria-label="Call 902-721-8731">
+                <span class="stack"><span class="num">902-721-8731</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">LCdr B. Pelley, BSurg</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217844" aria-label="Call 902-721-7844">
+                <span class="stack"><span class="num">902-721-7844</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Dr. Keith Loukes, DSurg</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218730" aria-label="Call 902-721-8730">
+                <span class="stack"><span class="num">902-721-8730</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">CWO Finamore, UCWO</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027217850" aria-label="Call 902-721-7850">
+                <span class="stack"><span class="num">902-721-7850</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">Capt C. Poitras, Adjt</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218727" aria-label="Call 902-721-8727">
+                <span class="stack"><span class="num">902-721-8727</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">CO’s Admin Asst.</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218732" aria-label="Call 902-721-8732">
+                <span class="stack"><span class="num">902-721-8732</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details class="card">
+        <summary>DTSM <span class="chev" aria-hidden="true"></span></summary>
+        <div class="content">
+          <div class="rows">
+            
+            <div class="row">
+              <div class="label">DTSM- Bruce Langlois</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218791" aria-label="Call 902-721-8791">
+                <span class="stack"><span class="num">902-721-8791</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">AA</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218792" aria-label="Call 902-721-8792">
+                <span class="stack"><span class="num">902-721-8792</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+            <div class="row">
+              <div class="label">DTS CHOD</div>
+              <div class="actions">
+              <a class="btn" href="tel:+19027218759" aria-label="Call 902-721-8759">
+                <span class="stack"><span class="num">902-721-8759</span><span class="meta">Tap to Call</span></span>
+              </a></div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="footer">Tap a section to expand. Search filters live.</div>
+  </div>
+
+  <script>
+    (function(){
+      const input = document.getElementById('searchInput');
+      const clearBtn = document.getElementById('clearBtn');
+      const expandAllBtn = document.getElementById('expandAllBtn');
+      const collapseAllBtn = document.getElementById('collapseAllBtn');
+      const cards = Array.from(document.querySelectorAll('details.card'));
+
+      function normalize(s){
+        return (s || '').toLowerCase().replace(/\s+/g,' ').trim();
+      }
+
+      function filter(){
+        const q = normalize(input.value);
+
+        if(!q){
+          cards.forEach(card => {
+            card.classList.remove('is-hidden');
+            card.querySelectorAll('.row').forEach(r => r.classList.remove('is-hidden'));
+          });
+          return;
+        }
+
+        cards.forEach(card => {
+          const title = normalize(card.querySelector('summary')?.innerText || '');
+          let cardHasMatch = false;
+
+          const rows = Array.from(card.querySelectorAll('.row'));
+          rows.forEach(row => {
+            const rowText = normalize(row.innerText);
+            const match = rowText.includes(q) || title.includes(q);
+            row.classList.toggle('is-hidden', !match);
+            if(match) cardHasMatch = true;
+          });
+
+          card.classList.toggle('is-hidden', !cardHasMatch);
+          if(cardHasMatch) card.open = true;
+        });
+      }
+
+      input.addEventListener('input', filter);
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        input.focus();
+        filter();
+      });
+
+      if(expandAllBtn){
+        expandAllBtn.addEventListener('click', () => {
+          cards.forEach(card => { if(!card.classList.contains('is-hidden')) card.open = true; });
+        });
+      }
+      if(collapseAllBtn){
+        collapseAllBtn.addEventListener('click', () => {
+          cards.forEach(card => { card.open = false; });
+        });
+      }
+
+      filter();
+    })();
+  </script>
+</body>
+</html>
