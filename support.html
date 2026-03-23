@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Support Resources — Health Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mental health support, confidential resources, and wellness programs.">
+  <meta name="description" content="Wellness and mental health programs available to CAF members and their families.">
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/page.css">
@@ -13,69 +13,160 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="top-bar">
-    <a class="top-link" href="index.html">← Back to hub</a>
-    <span class="top-title">Support</span>
+    <div class="top-bar-brand">
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
+      <a href="contacts.html" class="top-bar-link">Contacts</a>
+      <a href="notices.html" class="top-bar-link">Notices</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
   </div>
 
-  <header class="hero">
+  <header class="hero" role="banner">
     <div class="hero-inner">
-      <p class="eyebrow">Wellness & Mental Health</p>
+      <p class="eyebrow">Wellness &amp; Mental Health</p>
       <h1>Support Resources</h1>
-      <p class="lede">Mental health support, confidential resources, and wellness programs available to all crew.</p>
+      <p class="lede">Programs and services available to all CAF members for mental health, wellness, chaplaincy, and family support.</p>
     </div>
   </header>
 
   <main id="main-content" class="container page-body">
-    <div class="callout info">
-      <div class="callout-title">Confidential Support Available</div>
-      <p>All support resources listed here are confidential. Reaching out for help is a sign of strength and professionalism.</p>
-    </div>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="bc-sep" aria-hidden="true">/</span></li>
+        <li><span class="bc-current">Support Resources</span></li>
+      </ol>
+    </nav>
 
-    <section class="section-block">
-      <h2>Mental Health Support</h2>
-      <p><strong>Content to be added:</strong> Information about mental health services, counseling access, and support programs will be inserted here.</p>
+    <section class="page-intro">
+      <p class="eyebrow">About These Resources</p>
+      <p class="lede">The following programs are available through CAF and provincial health services. All are confidential. Access is voluntary and self-referral is welcomed for most programs.</p>
     </section>
 
-    <section class="section-block">
-      <h2>Crisis Resources</h2>
-      <p><strong>Content to be added:</strong> 24/7 crisis lines, emergency mental health contacts, and immediate support options will be inserted here.</p>
+    <section class="section-block" aria-labelledby="cfmap-heading">
+      <h2 id="cfmap-heading" class="section-title">Canadian Forces Member Assistance Program (CFMAP)</h2>
+      <p class="lede">CFMAP is a DND-sponsored employee assistance program offering confidential support to CAF members and their families.</p>
+      <p>Areas covered include:</p>
+      <ul class="bullet-list">
+        <li>Marital and family concerns</li>
+        <li>Work-related stress and adjustment</li>
+        <li>Emotional and psychological well-being</li>
+        <li>Financial concerns</li>
+        <li>Support for those affected by sexual assault or harassment</li>
+      </ul>
+      <div class="callout info">
+        <div class="callout-title">Confidential support line</div>
+        <p><strong>1-800-268-7708</strong> — available 24 hours a day, 7 days a week.</p>
+      </div>
+    </section>
 
-      <h3>National Crisis Lines (Available 24/7)</h3>
-      <ul class="link-list">
-        <li>988 Suicide Crisis Helpline (call or text 988)</li>
-        <li>Kids Help Phone: 1-800-668-6868 (text 686868)</li>
+    <section class="section-block" aria-labelledby="mh-heading">
+      <h2 id="mh-heading" class="section-title">Mental Health Programs — Stadacona</h2>
+      <p class="lede">Four programs are available through Stadacona Medical Clinic's Mental Health Services. All are available to military personnel; some include family members in educational components.</p>
+      <div class="grid-2">
+        <div class="callout info">
+          <div class="callout-title">Psychosocial Services</div>
+          <p class="small-note">Direct-access counselling for individuals, couples, and families. Self-referral is welcome.</p>
+          <p class="small-note">Phone: <strong>902-721-8607</strong></p>
+        </div>
+        <div class="callout info">
+          <div class="callout-title">General Mental Health</div>
+          <p class="small-note">Assessment, counselling, and follow-up for mental health concerns not related to operational experience.</p>
+          <p class="small-note">Phone: <strong>902-721-8012</strong></p>
+        </div>
+        <div class="callout info">
+          <div class="callout-title">Operational Trauma &amp; Stress Support Centre</div>
+          <p class="small-note">Assessment and treatment for conditions related to operational or occupational exposure, including PTSD.</p>
+          <p class="small-note">Phone: <strong>902-721-5703</strong></p>
+        </div>
+        <div class="callout info">
+          <div class="callout-title">Addiction Prevention &amp; Treatment</div>
+          <p class="small-note">Assessment and treatment for substance use concerns, including individual and group counselling.</p>
+          <p class="small-note">Phone: <strong>902-721-8600</strong></p>
+        </div>
+      </div>
+      <p class="small-note">For general mental health inquiries or to request a triage appointment: <strong>902-721-8607</strong>. Hours: Monday to Friday, 0730–1530.</p>
+    </section>
+
+    <section class="section-block" aria-labelledby="chaplain-heading">
+      <h2 id="chaplain-heading" class="section-title">Chaplaincy</h2>
+      <p class="lede">Military chaplains provide pastoral care and counselling to all CAF members regardless of religious affiliation.</p>
+      <ul class="bullet-list">
+        <li>Support with personal concerns, family stress, and spiritual well-being</li>
+        <li>Counselling around meaning, hope, healing, and life transitions</li>
+        <li>Confidential — not related specifically to religion</li>
+        <li>Self-referral welcome; accessible through the ship or base</li>
       </ul>
     </section>
 
-    <section class="section-block">
-      <h2>CAF Mental Health Programs</h2>
-      <p><strong>Content to be added:</strong> Canadian Armed Forces mental health programs, peer support networks, and chaplain services will be inserted here.</p>
+    <section class="section-block" aria-labelledby="smrc-heading">
+      <h2 id="smrc-heading" class="section-title">Sexual Misconduct Response Centre (SMRC)</h2>
+      <p class="lede">The SMRC provides confidential support to anyone who has experienced sexual misconduct in the CAF.</p>
+      <ul class="bullet-list">
+        <li>Confidential, 24-hour support line: <strong>1-844-750-1648</strong></li>
+        <li>Email: <strong>DND.SMRC-CIIS.MDN@forces.gc.ca</strong></li>
+        <li>Support is available regardless of whether a formal complaint is made</li>
+      </ul>
     </section>
 
-    <section class="section-block">
-      <h2>Wellness Programs</h2>
-      <p><strong>Content to be added:</strong> Information about fitness programs, nutrition support, stress management resources, and wellness initiatives will be inserted here.</p>
+    <section class="section-block" aria-labelledby="family-heading">
+      <h2 id="family-heading" class="section-title">Family Support</h2>
+      <p class="lede">The Military Family Resource Centre (MFRC) provides programs and services for CAF families throughout the deployment cycle.</p>
+      <ul class="bullet-list">
+        <li>Counselling and referral services for family members</li>
+        <li>Deployment preparation and reunion support</li>
+        <li>Child and youth programs</li>
+        <li>Individual and group support during absence periods</li>
+      </ul>
+      <p class="small-note">Contact the Halifax MFRC for specific program information and availability.</p>
     </section>
 
-    <section class="section-block">
-      <h2>Family Support</h2>
-      <p><strong>Content to be added:</strong> Resources for family members, deployment support, and family counseling services will be inserted here.</p>
+    <section class="section-block" aria-labelledby="wellness-heading">
+      <h2 id="wellness-heading" class="section-title">Additional Wellness Resources</h2>
+      <div class="callout">
+        <div class="callout-title">Provincial Mental Health and Addictions</div>
+        <p>Nova Scotia provincial line for mental health and addictions information and referrals: <strong>1-888-429-8167</strong></p>
+      </div>
+      <div class="callout">
+        <div class="callout-title">988 — Suicide Prevention &amp; Mental Health Support</div>
+        <p>A national line for mental health support and suicide prevention (call or text <strong>988</strong>). Available 24 hours a day across Canada.</p>
+      </div>
     </section>
-
-    <section class="section-block">
-      <h2>Substance Use Support</h2>
-      <p><strong>Content to be added:</strong> Confidential resources for alcohol and substance use concerns, treatment programs, and support options will be inserted here.</p>
-    </section>
-
-    <div class="callout info">
-      <div class="callout-title">How to Access Support</div>
-      <p>You can access these resources through Sick Bay, chaplain services, your chain of command, or by contacting programs directly. All inquiries are handled with confidentiality and respect.</p>
-    </div>
 
     <footer class="disclaimer">
-      <p><strong>Note:</strong> If you are in immediate danger or experiencing a medical emergency, contact emergency services immediately.</p>
       <p class="small-note">Last updated: 22 March 2026</p>
     </footer>
   </main>
+
+  <script src="scripts/theme.js" defer></script>
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="contacts.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📞</span>
+      <span class="tab-label">Contacts</span>
+    </a>
+    <a href="support.html" class="tab-item active" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
 </body>
 </html>

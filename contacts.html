@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contacts & Resources — Health Hub</title>
+  <title>Contacts &amp; Resources — Health Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact information for medical staff and links to health resources.">
+  <meta name="description" content="Contact information for Sick Bay, medical directories, and shore-based health resources.">
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/page.css">
@@ -13,65 +13,105 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="top-bar">
-    <a class="top-link" href="index.html">← Back to hub</a>
-    <span class="top-title">Contacts</span>
+    <div class="top-bar-brand">
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
+      <a href="contacts.html" class="top-bar-link active" aria-current="page">Contacts</a>
+      <a href="notices.html" class="top-bar-link">Notices</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
   </div>
 
-  <header class="hero">
+  <header class="hero" role="banner">
     <div class="hero-inner">
       <p class="eyebrow">Information</p>
-      <h1>Contacts & Resources</h1>
-      <p class="lede">Find contact information for medical staff and links to health resources.</p>
+      <h1>Contacts &amp; Resources</h1>
+      <p class="lede">Sick Bay contact details, medical staff directory, and links to shore-based health resources.</p>
     </div>
   </header>
 
   <main id="main-content" class="container page-body">
-    <section class="section-block">
-      <h2>Sick Bay Contact Information</h2>
-      <p><strong>Insert contact information here.</strong></p>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="bc-sep" aria-hidden="true">/</span></li>
+        <li><span class="bc-current">Contacts &amp; Resources</span></li>
+      </ol>
+    </nav>
+
+    <section class="section-block" aria-labelledby="sickbay-heading">
+      <h2 id="sickbay-heading" class="section-title">Sick Bay — HMCS Frédérick Rolette</h2>
+      <p class="lede">For all routine medical and health inquiries, contact Sick Bay through the ship's internal communication system.</p>
       <ul class="bullet-list">
-        <li>Internal phone extension: [To be confirmed]</li>
-        <li>Location: [Deck and compartment details to be added]</li>
-        <li>Email: [If applicable]</li>
+        <li><strong>Location:</strong> To be confirmed — check ship's daily orders or ask your divisional staff.</li>
+        <li><strong>Internal extension:</strong> To be confirmed by ship's company orders.</li>
+        <li><strong>Routine hours:</strong> As posted by the Medical Officer / Medical Technician.</li>
       </ul>
+      <p class="small-note">After-hours medical concerns should be directed through the Officer of the Watch.</p>
     </section>
 
-    <section class="section-block">
-      <h2>Medical Staff</h2>
-      <p><strong>Content to be added:</strong> Names, roles, and contact information for medical personnel will be inserted here.</p>
+    <section class="section-block" aria-labelledby="staff-heading">
+      <h2 id="staff-heading" class="section-title">Medical Staff</h2>
+      <p class="lede">Medical personnel assigned to HMCS Frédérick Rolette. Contact information confirmed through ship's company orders.</p>
+      <div class="grid-2">
+        <div class="callout info">
+          <div class="callout-title">Medical Officer / PA</div>
+          <p class="small-note">Name and contact confirmed by ship's company orders.</p>
+        </div>
+        <div class="callout info">
+          <div class="callout-title">Medical Technician(s)</div>
+          <p class="small-note">Name and contact confirmed by ship's company orders.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="section-block">
-      <h2>Emergency Contacts</h2>
-      <p><strong>Content to be added:</strong> After-hours emergency procedures and duty medic contact information will be inserted here.</p>
+    <section class="section-block" aria-labelledby="contacts-heading">
+      <h2 id="contacts-heading" class="section-title">Key Contacts</h2>
+      <p class="lede">Shore-based medical contacts and duty lines for non-operational hours.</p>
+      <div class="callout info">
+        <div class="callout-title">Stadacona Medical Clinic — After-Hours Primary Care</div>
+        <p><strong>902-402-6832</strong> &mdash; Available for after-hours and weekend primary care inquiries.</p>
+        <p class="small-note">For full clinic services and program contacts, see the <a href="clinic-hours.html">Clinic Information</a> page.</p>
+      </div>
+      <div class="callout">
+        <div class="callout-title">811 Nova Scotia — Nurse Advice Line</div>
+        <p>Free nurse triage advice available 24 hours a day when ashore or when available. Call <strong>811</strong>.</p>
+      </div>
     </section>
 
-    <section class="section-block">
-      <h2>Shore-Based Resources</h2>
-      <h3>Canadian Forces Health Services</h3>
+    <section class="section-block" aria-labelledby="shore-heading">
+      <h2 id="shore-heading" class="section-title">Shore-Based Resources</h2>
+
+      <h3 class="section-title">Canadian Forces Health Services</h3>
       <ul class="link-list">
         <li><a href="https://www.canada.ca/en/department-national-defence/services/benefits-military/health-support.html">CAF Health Support Overview</a></li>
       </ul>
 
-      <h3>Nova Scotia Health Services</h3>
+      <h3 class="section-title">Nova Scotia Health Services</h3>
       <ul class="link-list">
         <li><a href="https://www.nshealth.ca/">Nova Scotia Health</a></li>
-        <li><a href="https://811.novascotia.ca/">811 Nova Scotia</a> - 24/7 nurse support line</li>
+        <li><a href="https://811.novascotia.ca/">811 Nova Scotia</a> — 24/7 nurse advice line</li>
         <li><a href="https://www.nshealth.ca/public-health">Nova Scotia Public Health</a></li>
       </ul>
 
-      <h3>National Health Information</h3>
+      <h3 class="section-title">National Health Information</h3>
       <ul class="link-list">
         <li><a href="https://www.canada.ca/en/public-health.html">Public Health Agency of Canada</a></li>
       </ul>
     </section>
 
-    <section class="section-block">
-      <h2>Directories</h2>
-      <p>Searchable phone directories and referral guides for shore-based health and support services.</p>
+    <section class="section-block" aria-labelledby="dir-heading">
+      <h2 id="dir-heading" class="section-title">Directories</h2>
+      <p class="lede">Searchable phone directories and reference guides for shore-based health and support services.</p>
       <ul class="link-list">
         <li><a href="cfhs_halifax_phone_list.html">CFHS Halifax Phone Directory</a> — Searchable directory of Canadian Forces Health Services Centre, Halifax contacts</li>
-        <li><a href="Helping Pros.html">Helping Professionals Reference</a> — Key contact information for helping professionals: crisis lines, CAF mental health programs, chaplain services, and peer support</li>
+        <li><a href="Helping Pros.html">Helping Professionals Reference</a> — Key contact information for helping professionals: CAF mental health programs, chaplain services, and peer support</li>
       </ul>
     </section>
 
@@ -79,5 +119,29 @@
       <p class="small-note">Last updated: 22 March 2026</p>
     </footer>
   </main>
+
+  <script src="scripts/theme.js" defer></script>
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="contacts.html" class="tab-item active" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">📞</span>
+      <span class="tab-label">Contacts</span>
+    </a>
+    <a href="support.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
 </body>
 </html>
