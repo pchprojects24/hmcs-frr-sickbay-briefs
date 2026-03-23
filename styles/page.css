@@ -239,6 +239,102 @@ details[open] summary::after {
   font-size: 0.92rem;
 }
 
+/* ─── Related Topics ─── */
+.related-topics {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.related-topics-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.75rem;
+}
+.related-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.65rem;
+}
+.related-topic-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  box-shadow: var(--shadow-xs);
+}
+.related-topic-link:hover {
+  border-color: var(--blue);
+  background: var(--blue-pale);
+  color: var(--blue);
+  text-decoration: none;
+  transform: translateX(2px);
+}
+.related-topic-arrow {
+  margin-left: auto;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  transition: transform 0.15s;
+}
+.related-topic-link:hover .related-topic-arrow {
+  transform: translateX(2px);
+  color: var(--blue);
+}
+
+.back-to-topics {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  transition: color 0.15s;
+}
+.back-to-topics:hover { color: var(--blue); text-decoration: none; }
+
+/* ─── Service Cards Grid (clinic page) ─── */
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.9rem 0.5rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  box-shadow: var(--shadow-xs);
+}
+.service-card:hover {
+  border-color: var(--blue);
+  background: var(--blue-pale);
+  color: var(--blue);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.service-card-icon { font-size: 1.4rem; line-height: 1; }
+
 @media (max-width: 720px) {
   .page-body {
     max-width: 100%;

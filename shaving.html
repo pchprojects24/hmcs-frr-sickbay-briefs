@@ -13,8 +13,19 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="top-bar">
-    <a class="top-link" href="health-topics.html">← All briefs</a>
-    <span class="top-title">Shaving & Razor Bumps</span>
+    <div class="top-bar-brand">
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link active" aria-current="page">Health Topics</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
+      <a href="contacts.html" class="top-bar-link">Contacts</a>
+      <a href="notices.html" class="top-bar-link">Notices</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
   </div>
 
   <header class="hero">
@@ -26,6 +37,15 @@
   </header>
 
   <main id="main-content" class="container page-body" data-accordion-root>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="bc-sep" aria-hidden="true">/</span></li>
+        <li><a href="health-topics.html">Health Topics</a></li>
+        <li><span class="bc-sep" aria-hidden="true">/</span></li>
+        <li><span class="bc-current">Shaving &amp; Razor Bumps</span></li>
+      </ol>
+    </nav>
     <section class="page-intro">
       <p class="eyebrow">Purpose</p>
       <p class="lede">Make shipboard shaving safer and cleaner with quick prep and simple aftercare.</p>
@@ -37,17 +57,17 @@
         <p class="small-note control-hint">Jump straight to the section you need.</p>
       </div>
       <nav class="jump-nav" aria-label="Jump to sections">
-        <a class="jump-link" data-jump-link href="#section-now">Try now</a>
-        <a class="jump-link" data-jump-link href="#section-next">Next 24-72h</a>
+        <a class="jump-link" data-jump-link href="#section-now">Quick steps</a>
+        <a class="jump-link" data-jump-link href="#section-next">Ongoing care</a>
         <a class="jump-link" data-jump-link href="#section-avoid">Avoid</a>
-        <a class="jump-link" data-jump-link href="#section-resources">Resources</a>
+        <a class="jump-link" data-jump-link href="#section-resources">References</a>
       </nav>
     </section>
 
     <details id="section-now" data-accordion-item open>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Try this now (60 seconds)</span>
+          <span class="eyebrow">Quick Steps</span>
           <span>Immediate steps to lower razor irritation</span>
         </div>
       </summary>
@@ -72,7 +92,7 @@
     <details id="section-next" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Next 24-72 hours</span>
+          <span class="eyebrow">Ongoing Care</span>
           <span>Keep skin calm and reduce ingrown hairs</span>
         </div>
       </summary>
@@ -91,7 +111,7 @@
     <details id="section-avoid" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">Avoid / common mistakes</span>
+          <span class="eyebrow">Things to Avoid</span>
           <span>Prevent irritation from becoming infection</span>
         </div>
       </summary>
@@ -117,7 +137,7 @@
     <details id="section-resources" data-accordion-item>
       <summary>
         <div class="accordion-header">
-          <span class="eyebrow">More info / resources</span>
+          <span class="eyebrow">References</span>
           <span>Trusted references</span>
         </div>
       </summary>
@@ -133,13 +153,52 @@
       </div>
     </details>
 
+    <a href="health-topics.html" class="back-to-topics">← Back to Health Topics</a>
+
+    <section class="related-topics" aria-label="Related topics">
+      <h2 class="related-topics-heading">Related Topics</h2>
+      <div class="related-topics-grid">
+        <a href="wound-care.html" class="related-topic-link">
+          <span aria-hidden="true">🩹</span> Minor Cuts &amp; Wound Care
+          <span class="related-topic-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="winter-skin.html" class="related-topic-link">
+          <span aria-hidden="true">❄️</span> Cold Weather Skin
+          <span class="related-topic-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
     <div class="footer-line">
       <span>General info only; not a substitute for professional medical assessment.</span>
       <span>Last updated: 1 Mar 2026</span>
     </div>
   </main>
 
+  <script src="scripts/theme.js" defer></script>
   <script src="scripts/accordion.js" defer></script>
   <script src="scripts/home.js" defer></script>
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item active" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="contacts.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📞</span>
+      <span class="tab-label">Contacts</span>
+    </a>
+    <a href="support.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
 </body>
 </html>

@@ -14,15 +14,18 @@
   <!-- ── Top Navigation Bar ── -->
   <div class="top-bar">
     <div class="top-bar-brand">
-      <span class="top-bar-crest" aria-hidden="true">⚓</span>
-      <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link">Health Topics</a>
-      <a href="clinic-hours.html" class="top-bar-link">Stadacona Medical Clinic Information</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link">Contacts</a>
       <a href="notices.html" class="top-bar-link">Notices</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
   </div>
 
   <!-- ── Hero ── -->
@@ -53,16 +56,6 @@
           <p><strong>Welcome to the HMCS Frédérick Rolette Health Information Hub.</strong> This site provides quick access to health briefs, clinic information, contact details, and wellness resources for all crew members.</p>
           <p class="small-note">Use the navigation cards below to browse by section, or select an item in the top bar for direct access.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Quick Actions -->
-    <section aria-label="Quick access">
-      <div class="quick-actions">
-        <a href="notices.html" class="quick-action-btn quick-action-full">
-          <span class="qa-icon" aria-hidden="true">📋</span>
-          <span>Notices</span>
-        </a>
       </div>
     </section>
 
@@ -251,6 +244,29 @@
 
   </main>
 
+  <script src="scripts/theme.js" defer></script>
   <script src="scripts/home.js" defer></script>
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item active" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="contacts.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📞</span>
+      <span class="tab-label">Contacts</span>
+    </a>
+    <a href="support.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
 </body>
 </html>

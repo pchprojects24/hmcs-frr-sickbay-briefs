@@ -200,10 +200,10 @@
         if (!missionText) return;
 
         const missions = [
-            "Find one red-flag symptom in a brief you have not read this week.",
-            "Open a topic card and practice the first 60-second action step.",
-            "Review one 'When to go to Sick Bay' section and share it with a shipmate.",
-            "Pick a Canadian source link and compare one tip with your current routine."
+            "Open a brief you haven't read yet and note one thing you didn't know.",
+            "Check the References section of any brief for the official Canadian health source.",
+            "Read about a topic that affects your current watch rotation or duty.",
+            "Pick a brief and compare one recommendation with your current daily routine."
         ];
 
         const setMission = () => {
