@@ -13,8 +13,19 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="top-bar">
-    <a class="top-link" href="index.html">← Back to hub</a>
-    <span class="top-title">Notices</span>
+    <div class="top-bar-brand">
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
+      <a href="contacts.html" class="top-bar-link">Contacts</a>
+      <a href="notices.html" class="top-bar-link active" aria-current="page">Notices</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
   </div>
 
   <header class="hero">
@@ -26,6 +37,13 @@
   </header>
 
   <main id="main-content" class="container page-body">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="bc-sep" aria-hidden="true">/</span></li>
+        <li><span class="bc-current">Notices</span></li>
+      </ol>
+    </nav>
     <div class="callout info">
       <div class="callout-title">No Current Notices</div>
       <p><strong>Current notices will appear here.</strong> Check back regularly for updates on health alerts, policy changes, immunization schedules, and time-sensitive medical information.</p>
@@ -50,13 +68,36 @@
     </section>
 
     <div class="callout info">
-      <div class="callout-title">Stay Informed</div>
-      <p>Check this page regularly, especially before departures and during operational periods. Critical health information affecting crew safety will be posted here.</p>
+      <div class="callout-title">About This Page</div>
+      <p>This page is updated as needed. Check back periodically for health updates, seasonal reminders, and clinic schedule changes.</p>
     </div>
 
     <footer class="disclaimer">
       <p class="small-note">Last updated: 22 March 2026</p>
     </footer>
   </main>
+  <script src="scripts/theme.js" defer></script>
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="contacts.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📞</span>
+      <span class="tab-label">Contacts</span>
+    </a>
+    <a href="support.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
 </body>
 </html>

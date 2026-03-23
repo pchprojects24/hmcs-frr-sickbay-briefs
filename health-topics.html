@@ -13,14 +13,29 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="top-bar">
-    <a class="top-link" href="index.html">← Back to hub</a>
-    <span class="top-title">Health Topics</span>
+    <div class="top-bar-brand">
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link active" aria-current="page">Health Topics</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
+      <a href="contacts.html" class="top-bar-link">Contacts</a>
+      <a href="notices.html" class="top-bar-link">Notices</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
   </div>
 
-  <header class="hero">
+  <header class="hero" role="banner">
     <div class="hero-inner">
-      <h1>Health Topics & Briefs</h1>
-      <p class="lede">Self-care first.</p>
+      <div class="hero-eyebrow" aria-label="Section">
+        <span aria-hidden="true">📋</span>
+        HMCS Frédérick Rolette &middot; Health Information
+      </div>
+      <h1>Health Topics &amp; Briefs</h1>
+      <p class="lede">Practical, evidence-based health information written for shipboard conditions.</p>
     </div>
   </header>
 
@@ -46,6 +61,8 @@
         <button class="search-chip" type="button" data-search-chip="wound" aria-pressed="false">Wounds</button>
         <button class="search-chip" type="button" data-search-chip="fatigue" aria-pressed="false">Sleep and fatigue</button>
         <button class="search-chip" type="button" data-search-chip="nausea" aria-pressed="false">Nausea</button>
+        <button class="search-chip" type="button" data-search-chip="foot" aria-pressed="false">Foot care</button>
+        <button class="search-chip" type="button" data-search-chip="shaving" aria-pressed="false">Shaving</button>
       </div>
       <p class="search-status small-note" data-results-status role="status" aria-live="polite"></p>
     </section>
@@ -60,6 +77,7 @@
           <div class="card-content">
             <p>Stop cracks, chapping, and nosebleeds in cold, dry shipboard air.</p>
           </div>
+          <div class="card-meta"><span class="card-read-time">⏱ ~3 min</span></div>
         </a>
 
         <a href="shaving.html" class="brief-card" data-filter-text="shaving razor bumps burn irritation infection grooming beard facial hair">
@@ -70,6 +88,7 @@
           <div class="card-content">
             <p>Reduce burn and bumps, keep razors clean, and spot infection early.</p>
           </div>
+          <div class="card-meta"><span class="card-read-time">⏱ ~3 min</span></div>
         </a>
 
         <a href="wound-care.html" class="brief-card" data-filter-text="cuts scrapes wounds bleeding injury first aid infection seawater dressing bandage">
@@ -80,6 +99,7 @@
           <div class="card-content">
             <p>Clean, cover, and protect small wounds.</p>
           </div>
+          <div class="card-meta"><span class="card-read-time">⏱ ~4 min</span></div>
         </a>
 
         <a href="foot-care.html" class="brief-card" data-filter-text="feet foot care blisters hotspots athlete's foot moisture boots socks fungal">
@@ -90,6 +110,7 @@
           <div class="card-content">
             <p>Keep feet dry, manage hotspots early, and prevent athlete's foot.</p>
           </div>
+          <div class="card-meta"><span class="card-read-time">⏱ ~4 min</span></div>
         </a>
 
         <a href="fatigue.html" class="brief-card" data-filter-text="fatigue tired sleep exhausted alertness watch nap caffeine rest energy readiness">
@@ -100,6 +121,7 @@
           <div class="card-content">
             <p>Protect core sleep, use naps and caffeine wisely, and flag safety risks.</p>
           </div>
+          <div class="card-meta"><span class="card-read-time">⏱ ~5 min</span></div>
         </a>
 
         <a href="seasickness.html" class="brief-card" data-filter-text="seasickness motion sickness nausea vomit vomiting dehydration medication drugs">
@@ -110,6 +132,7 @@
           <div class="card-content">
             <p>Simple positioning, food, and safety tips for managing motion sickness.</p>
           </div>
+          <div class="card-meta"><span class="card-read-time">⏱ ~3 min</span></div>
         </a>
       </div>
       <p class="search-empty" data-empty-state hidden role="status" aria-live="polite"></p>
@@ -117,10 +140,10 @@
 
     <section class="learning-lab" aria-label="Learning tools">
       <div class="learning-header">
-        <h2>Daily learning mission</h2>
+        <h2>Health Tip of the Day</h2>
         <button class="btn" type="button" data-mission-btn>
           <span class="icon icon-refresh icon-sm"></span>
-          New mission
+          New tip
         </button>
       </div>
       <p class="learning-mission" data-mission-text role="status" aria-live="polite"></p>
@@ -132,6 +155,29 @@
     </footer>
   </main>
 
+  <script src="scripts/theme.js" defer></script>
   <script src="scripts/home.js" defer></script>
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item active" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="contacts.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📞</span>
+      <span class="tab-label">Contacts</span>
+    </a>
+    <a href="support.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
 </body>
 </html>

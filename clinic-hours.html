@@ -13,8 +13,19 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="top-bar">
-    <a class="top-link" href="index.html">← Back to hub</a>
-    <span class="top-title">Stadacona Medical Clinic Information</span>
+    <div class="top-bar-brand">
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="clinic-hours.html" class="top-bar-link active" aria-current="page">Clinic</a>
+      <a href="contacts.html" class="top-bar-link">Contacts</a>
+      <a href="notices.html" class="top-bar-link">Notices</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
   </div>
 
   <header class="hero">
@@ -22,14 +33,17 @@
       <p class="eyebrow">CFB Halifax / Stadacona</p>
       <h1>Stadacona Medical Clinic Information</h1>
       <p class="lede">Booked appointments, mental health programs, pharmacy, diagnostics, sexual health, and after-hours contacts for the Stadacona Medical Clinic.</p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="tel:9024026832">After hours / weekend: 902-402-6832</a>
-        <a class="btn secondary" href="tel:911">Emergency: Call 911</a>
-      </div>
     </div>
   </header>
 
   <main id="main-content" class="container page-body" data-accordion-root>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="bc-sep" aria-hidden="true">/</span></li>
+        <li><span class="bc-current">Stadacona Medical Clinic</span></li>
+      </ol>
+    </nav>
     <section class="page-intro">
       <p class="eyebrow">Navigation</p>
       <p class="lede">Jump to booking, mental health, immunizations, pharmacy, diagnostic imaging, laboratory, sexual health, and 24/7 support services.</p>
@@ -52,12 +66,39 @@
       </nav>
     </section>
 
-    <div class="callout urgent">
-      <div class="callout-title">Medical emergency</div>
-      <ul class="bullet-list">
-        <li>Call <strong>911</strong> or go to the nearest local Emergency Department.</li>
-        <li>Primary care after hours/weekends: <strong>902-402-6832</strong>.</li>
-      </ul>
+    <div class="service-cards-grid" aria-label="Jump to service">
+      <a href="#section-booked" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">📅</span>
+        Appointments
+      </a>
+      <a href="#section-immunization" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">💉</span>
+        Immunizations
+      </a>
+      <a href="#section-mental-health" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">🧠</span>
+        Mental Health
+      </a>
+      <a href="#section-pharmacy" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">💊</span>
+        Pharmacy
+      </a>
+      <a href="#section-sexual-health" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">🏥</span>
+        Sexual Health
+      </a>
+      <a href="#section-imaging" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">🔬</span>
+        Imaging
+      </a>
+      <a href="#section-lab" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">🧪</span>
+        Laboratory
+      </a>
+      <a href="#section-cfmap" class="service-card">
+        <span class="service-card-icon" aria-hidden="true">🤝</span>
+        CFMAP
+      </a>
     </div>
 
     <details id="section-booked" data-accordion-item open>
@@ -80,18 +121,9 @@
             <li>CDU 6: 902-563-7100 ext 7247</li>
           </ul>
         </div>
-        <div class="grid-2">
-          <div class="callout">
-            <div class="callout-title">Primary care after hours/weekends</div>
-            <p class="lede">Call <strong>902-402-6832</strong> for after-hours or weekend primary care needs or inquiries.</p>
-          </div>
-          <div class="callout caution">
-            <div class="callout-title">Urgent or emergency</div>
-            <ul class="bullet-list">
-              <li>Call 911.</li>
-              <li>Or go to the nearest local Emergency Department.</li>
-            </ul>
-          </div>
+        <div class="callout info">
+          <div class="callout-title">After-hours primary care</div>
+          <p class="lede">For after-hours or weekend primary care needs: <strong>902-402-6832</strong>.</p>
         </div>
       </div>
     </details>
@@ -456,7 +488,30 @@
     </footer>
   </main>
 
+  <script src="scripts/theme.js" defer></script>
   <script src="scripts/accordion.js" defer></script>
   <script src="scripts/home.js" defer></script>
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item active" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="contacts.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📞</span>
+      <span class="tab-label">Contacts</span>
+    </a>
+    <a href="support.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
 </body>
 </html>
