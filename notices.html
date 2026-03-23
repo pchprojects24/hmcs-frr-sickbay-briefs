@@ -44,27 +44,22 @@
         <li><span class="bc-current">Notices</span></li>
       </ol>
     </nav>
-    <div class="callout info">
-      <div class="callout-title">No Current Notices</div>
-      <p><strong>Current notices will appear here.</strong> Check back regularly for updates on health alerts, policy changes, immunization schedules, and time-sensitive medical information.</p>
-    </div>
+    <!-- Current notices — add new .callout.notice blocks here; remove when no longer active -->
 
-    <section class="section-block">
-      <h2>What You'll Find Here</h2>
-      <p>This page will be updated with:</p>
-      <ul class="bullet-list">
-        <li>Health advisories and outbreak information</li>
-        <li>Changes to clinic hours or sick bay procedures</li>
-        <li>Upcoming immunization clinics or health screenings</li>
-        <li>Seasonal health reminders (flu season, cold weather precautions, etc.)</li>
-        <li>Policy updates affecting crew health or medical procedures</li>
-        <li>Time-sensitive announcements from medical staff</li>
-      </ul>
+    <section class="section-block" aria-labelledby="active-notices-heading">
+      <h2 id="active-notices-heading">Active</h2>
+
+      <div class="callout notice">
+        <div class="callout-title">Scabies — confirmed case aboard <span class="small-note" style="font-weight:400;">23 March 2026</span></div>
+        <p>One confirmed case of scabies has been identified among ship's company. Scabies is a skin infestation caused by a small mite; it is treatable and not dangerous.</p>
+        <p>Close contacts (berthmates) may be assessed and treated at the same time. All crew should review the scabies brief for information on how it spreads, what to watch for, and personal hygiene and laundry steps.</p>
+        <p><a href="scabies.html">Read the scabies brief →</a></p>
+      </div>
     </section>
 
-    <section class="section-block">
-      <h2>Previous Notices</h2>
-      <p><strong>Content to be added:</strong> Archive of recent notices will be available here for reference.</p>
+    <section class="section-block" aria-labelledby="previous-notices-heading">
+      <h2 id="previous-notices-heading">Previous Notices</h2>
+      <p class="small-note">No previous notices on record.</p>
     </section>
 
     <div class="callout info">
@@ -73,7 +68,7 @@
     </div>
 
     <footer class="disclaimer">
-      <p class="small-note">Last updated: 22 March 2026</p>
+      <p class="small-note">Last updated: 23 March 2026</p>
     </footer>
   </main>
   <script src="scripts/theme.js" defer></script>

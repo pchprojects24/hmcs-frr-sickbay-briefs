@@ -378,6 +378,11 @@ main {
   background: var(--green-pale);
   border-color: rgba(22,163,74,0.25);
 }
+.callout.notice {
+  border-left: 4px solid var(--gold);
+  background: var(--gold-pale);
+  border-color: rgba(201,162,39,0.3);
+}
 
 /* ─── Buttons ─── */
 .btn {

@@ -573,3 +573,25 @@
     width: 100%;
   }
 }
+
+/* ─── Notice Strip (home page) ─── */
+.notice-strip {
+  margin-bottom: 1.5rem;
+}
+.notice-strip-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.notice-read-more {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy-600);
+  text-decoration: none;
+}
+.notice-read-more:hover { text-decoration: underline; }
