@@ -23,6 +23,12 @@
 
 .intro-section .intro-body p:last-child { margin-bottom: 0; }
 
+/* Dark mode override for intro section */
+[data-theme="dark"] .intro-section .section-block {
+  background: linear-gradient(to right, rgba(201, 162, 39, 0.15), var(--surface));
+  border-left-color: var(--gold);
+}
+
 /* ─── Quick Actions Bar ─── */
 .quick-actions {
   display: grid;
