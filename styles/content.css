@@ -218,3 +218,161 @@ li + li {
   text-align: center;
   padding: 0.4rem;
 }
+
+/* ─── Print Styles for Content ─── */
+@media print {
+  /* Content-specific print adjustments */
+  .pill-row {
+    margin-bottom: 8pt;
+  }
+
+  .pill,
+  .tag,
+  .badge {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    padding: 2pt 6pt;
+    display: inline-block;
+    margin-right: 4pt;
+    margin-bottom: 2pt;
+  }
+
+  .card {
+    background: white !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  .card h2 {
+    color: black !important;
+    border-left: 4px solid black !important;
+    padding-left: 6pt;
+    font-size: 14pt;
+    margin-top: 0;
+    margin-bottom: 8pt;
+  }
+
+  .card h3 {
+    color: black !important;
+    font-size: 12pt;
+    margin-top: 6pt;
+    margin-bottom: 4pt;
+  }
+
+  .card p,
+  .card ul,
+  .card li {
+    color: black !important;
+  }
+
+  .highlight {
+    background: #f5f5f5 !important;
+    border: 1px solid black !important;
+    border-radius: 0;
+    padding: 8pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .callout-danger {
+    background: white !important;
+    border: 2px solid black !important;
+    border-left: 6px solid black !important;
+    color: black !important;
+    padding: 10pt;
+    border-radius: 0;
+  }
+
+  .callout-danger strong {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  .callout {
+    border-left: 4px solid black !important;
+    padding-left: 10pt;
+    color: black !important;
+  }
+
+  .page-meta {
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+
+  .page-title {
+    color: black !important;
+    font-size: 18pt;
+    margin: 8pt 0;
+    page-break-after: avoid;
+  }
+
+  .page-subtitle,
+  .tagline {
+    color: black !important;
+    font-size: 11pt;
+    margin-bottom: 6pt;
+  }
+
+  .quick-alert {
+    background: #f5f5f5 !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 10pt;
+    margin: 8pt 0;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .quick-alert strong {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  .grid {
+    display: block;
+  }
+
+  .grid-2 {
+    display: block;
+  }
+
+  .section-label {
+    color: black !important;
+    font-size: 10pt;
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+
+  .checklist {
+    margin: 6pt 0 8pt 1em;
+  }
+
+  .checklist li {
+    color: black !important;
+    margin-bottom: 3pt;
+  }
+
+  .checklist li::before {
+    color: black !important;
+  }
+
+  .footer-note {
+    margin-top: 12pt;
+    padding-top: 8pt;
+    border-top: 1px solid black;
+    font-size: 9pt;
+    color: black !important;
+  }
+
+  /* Hide image placeholders in print */
+  .image-strip,
+  .image-placeholder {
+    display: none;
+  }
+}
