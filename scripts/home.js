@@ -147,10 +147,13 @@
                 const trimmedQuery = rawQuery.trim();
                 if (queryTokens.length === 0) {
                     resultsStatus.textContent = `Showing all ${cards.length} briefs.`;
+                    resultsStatus.setAttribute('role', 'status');
                 } else if (visibleCount === 0) {
                     resultsStatus.textContent = `No matches for "${trimmedQuery}".`;
+                    resultsStatus.setAttribute('role', 'alert');
                 } else {
-                    resultsStatus.textContent = `Showing ${visibleCount} of ${cards.length} briefs for "${trimmedQuery}".`;
+                    resultsStatus.textContent = `Showing ${visibleCount} of ${cards.length} ${visibleCount === 1 ? 'brief' : 'briefs'} for "${trimmedQuery}".`;
+                    resultsStatus.setAttribute('role', 'status');
                 }
             }
         };
@@ -184,15 +187,27 @@
                 activeTag === "SELECT" ||
                 (active && active.isContentEditable);
 
+            // Forward slash: focus search (common shortcut)
             if (event.key === "/" && !isTypingTarget) {
                 event.preventDefault();
                 input.focus();
+                // Announce to screen readers
+                if (resultsStatus) {
+                    resultsStatus.textContent = "Search field focused. Type to filter health topics.";
+                }
             }
 
+            // Escape: clear search and blur
             if (event.key === "Escape" && active === input) {
-                input.value = "";
-                applyFilter();
-                input.blur();
+                if (input.value) {
+                    input.value = "";
+                    applyFilter();
+                    if (resultsStatus) {
+                        resultsStatus.textContent = "Search cleared. Showing all briefs.";
+                    }
+                } else {
+                    input.blur();
+                }
             }
         });
 
