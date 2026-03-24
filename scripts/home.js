@@ -133,10 +133,14 @@
 
             if (emptyState) {
                 emptyState.hidden = visibleCount !== 0;
-                emptyState.textContent =
-                    visibleCount === 0
-                        ? `No briefs matched "${rawQuery.trim()}". Try a broader term such as "skin", "sleep", or "wound".`
-                        : "";
+                if (visibleCount === 0) {
+                    const suggestions = ['skin', 'sleep', 'wound', 'foot', 'fatigue', 'nausea'];
+                    const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+                    emptyState.textContent =
+                        `No briefs matched "${rawQuery.trim()}". Try "${randomSuggestion}" or browse all topics above.`;
+                } else {
+                    emptyState.textContent = '';
+                }
             }
 
             if (resultsStatus) {

@@ -29,6 +29,7 @@
   --bg:      #f1f5f9;
   --surface: #ffffff;
   --surface-raised: #f8fafc;
+  --surface-soft: #f8fafc;
   --border:  #e2e8f0;
   --border-strong: #cbd5e1;
 
@@ -36,6 +37,11 @@
   --text:       #0f172a;
   --text-muted: #64748b;
   --text-light: #94a3b8;
+  --muted: #64748b;
+
+  /* Accent (primary interactive color) */
+  --accent: #2563eb;
+  --accent-strong: #1e4a9a;
 
   /* Shadows */
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
@@ -64,11 +70,15 @@
   --bg:      #0f172a;
   --surface: #1e293b;
   --surface-raised: #162032;
+  --surface-soft: #1a2332;
   --border:  #334155;
   --border-strong: #475569;
   --text:       #e2e8f0;
   --text-muted: #94a3b8;
   --text-light: #64748b;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+  --accent-strong: #2563eb;
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.25);
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
@@ -95,6 +105,19 @@ a {
   text-decoration: none;
 }
 a:hover { color: var(--navy-500); text-decoration: underline; }
+
+/* External links get an icon */
+a[target="_blank"]::after {
+  content: '↗';
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 0.85em;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+a[target="_blank"]:hover::after {
+  opacity: 1;
+}
 
 p { margin: 0 0 0.9rem; }
 p:last-child { margin-bottom: 0; }
@@ -143,6 +166,18 @@ li { margin-bottom: 0.45rem; }
   outline: 3px solid var(--blue);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Better focus for buttons and interactive elements */
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] button:focus-visible,
+[data-theme="dark"] .btn:focus-visible {
+  outline-color: var(--blue-light);
 }
 
 /* ─── Layout ─── */
@@ -216,6 +251,10 @@ li { margin-bottom: 0.45rem; }
   background: rgba(255,255,255,0.1);
   color: #fff;
   text-decoration: none;
+}
+.top-bar-link.active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
 }
 
 /* ─── Hero ─── */
@@ -410,6 +449,12 @@ main {
 .btn:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
 }
 
 .btn.btn-gold {
