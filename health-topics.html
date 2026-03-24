@@ -43,14 +43,17 @@
     <section class="search-panel" aria-label="Search and filter">
       <div class="search-row">
         <label for="search" class="visually-hidden">Search briefs</label>
-        <input
-          type="search"
-          id="search"
-          data-search-input
-          class="input-field"
-          autocomplete="off"
-          placeholder="Search by topic, symptom, or keyword..."
-          aria-label="Search briefs">
+        <div class="search-input-wrapper">
+          <input
+            type="search"
+            id="search"
+            data-search-input
+            class="input-field"
+            autocomplete="off"
+            placeholder="Search by topic, symptom, or keyword..."
+            aria-label="Search briefs">
+          <span class="keyboard-hint" aria-hidden="true">/</span>
+        </div>
         <button class="btn secondary" data-clear type="button" aria-label="Clear search">
           <span class="icon icon-close icon-sm"></span>
           Clear

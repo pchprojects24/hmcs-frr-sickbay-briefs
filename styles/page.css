@@ -22,6 +22,24 @@ main .container,
   margin-bottom: 0.9rem;
 }
 
+/* Notice page specific styles */
+.notice-meta {
+  margin-bottom: 0.75rem;
+}
+
+.notice-section-heading {
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.notice-callout {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 .brief-controls {
   position: sticky;
   top: 4.05rem;
@@ -32,6 +50,11 @@ main .container,
   box-shadow: var(--shadow-sm);
   padding: 0.75rem;
   margin-bottom: 0.9rem;
+}
+
+[data-theme="dark"] .brief-controls {
+  background: rgba(30, 41, 59, 0.96);
+  backdrop-filter: blur(8px);
 }
 
 .control-row {
@@ -90,6 +113,7 @@ main .container,
 .toggle-all:hover {
   background: var(--accent-strong);
   box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .toggle-all[aria-expanded="true"] {
