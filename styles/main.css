@@ -13,6 +13,7 @@
   --gold:       #c9a227;
   --gold-light: #e8c84a;
   --gold-pale:  #fef9e7;
+  --gold-dark:  #92700a;
   --teal:       #0f766e;
   --teal-pale:  #ccfbf1;
   --red:        #dc2626;
@@ -79,6 +80,17 @@
   --muted: #94a3b8;
   --accent: #3b82f6;
   --accent-strong: #2563eb;
+
+  /* Pale color overrides for dark mode - darker, more muted versions */
+  --blue-pale:   #1e3a5f;
+  --gold-pale:   #3d3417;
+  --gold-dark:   #e8c84a;  /* Lighter gold text for dark mode */
+  --red-pale:    #3d1a1a;
+  --orange-pale: #3d2412;
+  --teal-pale:   #1a3d3a;
+  --green-pale:  #1a3d1f;
+  --purple-pale: #2d1a3d;
+
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.25);
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
@@ -585,7 +597,7 @@ main {
 }
 .chip.gold {
   background: var(--gold-pale);
-  color: #92700a;
+  color: var(--gold-dark);
   border-color: rgba(201,162,39,0.4);
 }
 .chip.muted {
