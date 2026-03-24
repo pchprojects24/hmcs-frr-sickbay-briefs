@@ -387,3 +387,197 @@ details[open] summary::after {
     align-items: flex-start;
   }
 }
+
+/* ─── Print Styles for Page ─── */
+@media print {
+  /* Hide interactive controls */
+  .brief-controls,
+  .toggle-all,
+  .jump-nav,
+  .back-to-topics {
+    display: none !important;
+  }
+
+  /* Page layout */
+  .page-body {
+    max-width: 100%;
+  }
+
+  .page-intro {
+    background: white !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  /* Notice page styles */
+  .notice-meta {
+    margin-bottom: 10pt;
+  }
+
+  .notice-section-heading {
+    color: black !important;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+  }
+
+  .notice-callout {
+    margin: 8pt 0;
+  }
+
+  /* Accordion/details elements */
+  details {
+    background: white !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 12pt;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    display: block !important;
+  }
+
+  details[open] {
+    box-shadow: none !important;
+  }
+
+  summary {
+    background: #f0f0f0 !important;
+    color: black !important;
+    padding: 10pt 12pt;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    page-break-after: avoid;
+    display: block;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  summary::after {
+    display: none !important;
+  }
+
+  .accordion-header {
+    color: black !important;
+  }
+
+  .accordion-content {
+    padding: 12pt;
+    display: block !important;
+  }
+
+  /* Show all accordion content when printing */
+  details:not([open]) .accordion-content {
+    display: block !important;
+  }
+
+  /* Rule cards and note boxes */
+  .rule-card {
+    border: 2px solid black !important;
+    background: white !important;
+    color: black !important;
+    padding: 10pt;
+    border-radius: 0;
+    page-break-inside: avoid;
+  }
+
+  .note-box {
+    border: 1px solid black !important;
+    background: #f5f5f5 !important;
+    color: black !important;
+    padding: 10pt;
+    border-radius: 0;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Split cards grid */
+  .split-cards {
+    display: block;
+  }
+
+  .split-cards > * {
+    margin-bottom: 8pt;
+    page-break-inside: avoid;
+  }
+
+  /* Source information */
+  .sources-title {
+    color: black !important;
+    font-size: 11pt;
+    margin: 8pt 0 4pt;
+  }
+
+  .source-meta {
+    color: black !important;
+  }
+
+  /* Footer line */
+  .footer-line {
+    border-top: 1px solid black !important;
+    padding-top: 8pt;
+    margin-top: 12pt;
+    color: black !important;
+    font-size: 9pt;
+  }
+
+  /* Related topics */
+  .related-topics {
+    margin-top: 16pt;
+    page-break-before: avoid;
+  }
+
+  .related-topics-heading {
+    color: black !important;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 8pt;
+  }
+
+  .related-topics-grid {
+    display: block;
+  }
+
+  .related-topic-link {
+    display: block;
+    background: white !important;
+    border: 1px solid black !important;
+    border-radius: 0;
+    color: black !important;
+    padding: 6pt;
+    margin-bottom: 4pt;
+    box-shadow: none !important;
+    text-decoration: none;
+  }
+
+  .related-topic-arrow {
+    display: none;
+  }
+
+  /* Service cards grid */
+  .service-cards-grid {
+    display: block;
+  }
+
+  .service-card {
+    display: block;
+    background: white !important;
+    border: 1px solid black !important;
+    border-radius: 0;
+    color: black !important;
+    padding: 8pt;
+    margin-bottom: 6pt;
+    box-shadow: none !important;
+    text-decoration: none;
+  }
+
+  .service-card-icon {
+    display: none;
+  }
+}

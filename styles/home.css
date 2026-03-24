@@ -732,3 +732,249 @@
     width: 100%;
   }
 }
+
+/* ─── Print Styles for Home Page ─── */
+@media print {
+  /* Hide interactive elements */
+  .quick-actions,
+  .search-panel,
+  .search-row,
+  .search-chip-row,
+  .search-input,
+  .filter-row,
+  .learning-lab,
+  .active-notices-banner {
+    display: none !important;
+  }
+
+  /* Intro section */
+  .intro-section .section-block {
+    background: white !important;
+    border: 2px solid black !important;
+    border-left: 6px solid black !important;
+    border-radius: 0;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .intro-section .intro-icon {
+    display: none;
+  }
+
+  .intro-section .intro-body p {
+    color: black !important;
+  }
+
+  /* Section headings */
+  .section-heading {
+    margin-bottom: 10pt;
+    page-break-after: avoid;
+  }
+
+  .section-heading h2 {
+    color: black !important;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+
+  .section-heading .section-count {
+    color: black !important;
+    font-size: 10pt;
+  }
+
+  /* Card grid */
+  .card-grid {
+    display: block;
+  }
+
+  /* Brief cards */
+  .brief-card {
+    background: white !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 12pt;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    display: block;
+  }
+
+  .brief-card::before {
+    display: none !important;
+  }
+
+  .brief-card:hover {
+    transform: none;
+    box-shadow: none !important;
+  }
+
+  .brief-card .card-header {
+    background: #f0f0f0 !important;
+    padding: 10pt 12pt;
+    border-bottom: 1px solid black;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .brief-card .card-header .icon {
+    display: none;
+  }
+
+  .card-header-text {
+    color: black !important;
+  }
+
+  .brief-card h2 {
+    color: black !important;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .brief-card .card-tag {
+    color: black !important;
+    font-size: 9pt;
+    margin-top: 2pt;
+  }
+
+  .card-inner {
+    padding: 10pt 12pt;
+  }
+
+  .brief-card .card-content p {
+    color: black !important;
+    font-size: 10pt;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-footer {
+    display: none !important;
+  }
+
+  .card-meta,
+  .card-read-time {
+    display: none !important;
+  }
+
+  .card-arrow {
+    display: none;
+  }
+
+  /* Resources section */
+  .resources-section {
+    background: white !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  .resources-section h2 {
+    color: black !important;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 8pt;
+  }
+
+  .link-grid {
+    display: block;
+  }
+
+  .resource-link {
+    display: block;
+    background: white !important;
+    border: 1px solid black !important;
+    border-radius: 0;
+    color: black !important;
+    padding: 6pt;
+    margin-bottom: 4pt;
+    text-decoration: none;
+  }
+
+  .resource-link::before {
+    display: none !important;
+  }
+
+  .resource-link:hover {
+    transform: none;
+    box-shadow: none !important;
+  }
+
+  .resource-link .resource-icon {
+    display: none;
+  }
+
+  .resource-link .resource-arrow {
+    display: none;
+  }
+
+  /* Hotline callout */
+  .hotline-callout {
+    background: #f5f5f5 !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 10pt;
+    margin-top: 8pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .hotline-callout .hotline-icon {
+    display: none;
+  }
+
+  .hotline-callout .hotline-text {
+    color: black !important;
+    font-size: 10pt;
+  }
+
+  .hotline-callout .hotline-text a {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  /* Notices banner - hide in print */
+  .notices-list {
+    margin: 0;
+  }
+
+  .notice-item {
+    background: white !important;
+    border: 1px solid black !important;
+    color: black !important;
+    padding: 8pt;
+    margin-bottom: 6pt;
+    page-break-inside: avoid;
+  }
+
+  .notice-row {
+    display: block;
+  }
+
+  .notice-icon {
+    display: none;
+  }
+
+  .notice-body {
+    color: black !important;
+  }
+
+  .notice-title {
+    color: black !important;
+    font-weight: bold;
+  }
+
+  .notice-date {
+    color: black !important;
+    font-size: 9pt;
+  }
+
+  .notice-link {
+    display: none;
+  }
+}

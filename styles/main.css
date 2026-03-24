@@ -755,3 +755,267 @@ main {
   .top-bar-nav { display: none; }
   .container { padding: 0 1rem; }
 }
+
+/* ─── Print Styles ─── */
+@media print {
+  /* Reset for print */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 2cm;
+    size: letter;
+  }
+
+  /* Body and typography */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide UI elements not needed in print */
+  .skip-link,
+  .top-bar,
+  .theme-toggle,
+  .bottom-tab-bar,
+  .hero-actions,
+  button:not(.btn),
+  nav,
+  .top-bar-nav {
+    display: none !important;
+  }
+
+  /* Hero header for print */
+  header.hero {
+    background: white !important;
+    color: black !important;
+    padding: 1rem 0 1.5rem;
+    border-bottom: 3px solid black;
+    page-break-after: avoid;
+  }
+
+  header.hero::before,
+  header.hero::after {
+    display: none !important;
+  }
+
+  .hero-inner {
+    text-align: left;
+  }
+
+  .hero-eyebrow {
+    background: white !important;
+    border: 1px solid black !important;
+    color: black !important;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h1 {
+    color: black !important;
+    font-size: 24pt;
+    margin-bottom: 0.5rem;
+    page-break-after: avoid;
+  }
+
+  .hero .lede {
+    color: black !important;
+    font-size: 11pt;
+    margin-bottom: 0;
+  }
+
+  /* Main content */
+  main {
+    margin: 1rem 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    font-weight: bold;
+  }
+
+  h1 { font-size: 20pt; margin-top: 0; margin-bottom: 10pt; }
+  h2 { font-size: 16pt; margin-top: 12pt; margin-bottom: 8pt; }
+  h3 { font-size: 14pt; margin-top: 10pt; margin-bottom: 6pt; }
+  h4 { font-size: 12pt; margin-top: 8pt; margin-bottom: 6pt; }
+
+  /* Paragraphs and text */
+  p {
+    margin: 0 0 8pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after,
+  a[href^="https://"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    font-style: italic;
+  }
+
+  a[href^="#"]::after,
+  a[href^="mailto:"]::after {
+    content: "";
+  }
+
+  /* Remove external link icon */
+  a[target="_blank"]::after {
+    content: "" !important;
+    margin-left: 0 !important;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin: 0 0 8pt 1.5em;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 4pt;
+  }
+
+  /* Section blocks and cards */
+  .section-block,
+  .card {
+    background: white !important;
+    border: 2px solid black !important;
+    border-radius: 0;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .section-title {
+    color: black !important;
+    font-size: 14pt;
+    margin-bottom: 8pt;
+    border-bottom: 1px solid black;
+    padding-bottom: 4pt;
+  }
+
+  /* Callouts */
+  .callout {
+    border: 2px solid black !important;
+    border-left: 4px solid black !important;
+    padding: 10pt;
+    margin: 8pt 0;
+    page-break-inside: avoid;
+  }
+
+  .callout.caution,
+  .callout.urgent {
+    border: 2px solid black !important;
+    border-left: 6px solid black !important;
+  }
+
+  .callout-title {
+    font-weight: bold !important;
+    text-transform: uppercase;
+  }
+
+  /* Buttons in print */
+  .btn {
+    display: inline-block;
+    border: 2px solid black !important;
+    padding: 6pt 12pt;
+    text-decoration: none;
+    font-weight: bold;
+    page-break-inside: avoid;
+  }
+
+  /* Chips and badges */
+  .chip,
+  .badge {
+    border: 1px solid black !important;
+    padding: 2pt 6pt;
+    margin-right: 4pt;
+  }
+
+  /* Grid layouts */
+  .grid-2 {
+    display: block;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    margin-bottom: 12pt;
+    padding-bottom: 8pt;
+    border-bottom: 1px solid black;
+  }
+
+  /* Force visibility of important content */
+  .eyebrow,
+  .lede,
+  .tagline {
+    color: black !important;
+  }
+
+  /* Ensure proper spacing */
+  .container > * + * {
+    margin-top: 8pt;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .no-page-break {
+    page-break-inside: avoid;
+  }
+
+  /* Table support (if any) */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 8pt 0;
+  }
+
+  th, td {
+    border: 1px solid black !important;
+    padding: 6pt;
+    text-align: left;
+  }
+
+  th {
+    font-weight: bold;
+    background: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Disclaimer and footer */
+  .disclaimer {
+    margin-top: 16pt;
+    padding-top: 8pt;
+    border-top: 1px solid black !important;
+    font-size: 9pt;
+  }
+}
