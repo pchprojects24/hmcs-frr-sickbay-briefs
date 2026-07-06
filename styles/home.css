@@ -343,6 +343,9 @@
   transform: scaleY(1);
 }
 
+/* These links carry their own arrow span — suppress the global external-link icon */
+.resource-link[target="_blank"]::after { content: none; }
+
 .resource-link .resource-icon { flex-shrink: 0; }
 .resource-link .resource-arrow {
   margin-left: auto;
@@ -361,7 +364,7 @@
   gap: 0.75rem;
   padding: 0.85rem 1rem;
   border-radius: var(--radius);
-  background: linear-gradient(to right, #f0fdf4, var(--surface));
+  background: linear-gradient(to right, var(--green-pale), var(--surface));
   border: 1px solid rgba(22,163,74,0.3);
   margin-top: 0.25rem;
 }
@@ -668,6 +671,10 @@
   border-radius: var(--radius);
   border-left: 4px solid var(--purple);
   font-weight: 500;
+}
+
+[data-theme="dark"] .learning-mission {
+  background: rgba(15, 23, 42, 0.45);
 }
 
 /* ─── Responsive ─── */
