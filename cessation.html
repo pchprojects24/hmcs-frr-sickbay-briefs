@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/page.css">
+  <link rel="stylesheet" href="styles/interactive.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="scripts/theme.js"></script>
 </head>
@@ -23,6 +24,7 @@
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
       <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link">Contacts</a>
       <a href="notices.html" class="top-bar-link">Notices</a>
@@ -85,7 +87,7 @@
         <div class="callout info">
           <div class="callout-title">Pharmacy — Nicotine Replacement Therapy (NRT)</div>
           <p class="small-note">Visit the Stadacona base clinic pharmacy for patches, gum, and other NRT products at no cost to CAF members.</p>
-          <p class="small-note">Phone: <strong>721-8757</strong><br>Hours: Monday to Friday, 0730–1530 (closed Thursday 1300–1400)</p>
+          <p class="small-note">Phone: <a href="tel:+19027218757"><strong>902-721-8757</strong></a><br>Hours: Monday to Friday, 0730–1530 (closed Thursday 1300–1400)</p>
         </div>
       </div>
 
@@ -116,8 +118,8 @@
       </div>
 
       <div class="callout">
-        <div class="callout-title">NSHA — Stop Smoking Program</div>
-        <p>Group and individual counselling, virtual options, and access to quit aids through Nova Scotia Health Authority.</p>
+        <div class="callout-title">Nova Scotia Health — Stop Smoking Program</div>
+        <p>Group and individual counselling, virtual options, and access to quit aids through Nova Scotia Health.</p>
         <p class="small-note"><a href="https://mha.nshealth.ca/en/stop-smoking-program">mha.nshealth.ca/en/stop-smoking-program</a></p>
       </div>
 
@@ -142,9 +144,26 @@
       <h2 id="alcohol-heading" class="section-title">🍺 Alcohol Use Support</h2>
       <p class="lede">Support is available whether you are concerned about your own drinking, a colleague's, or a family member's.</p>
 
+      <div class="callout caution">
+        <div class="callout-title">📏 Canada's Guidance on Alcohol and Health (2023)</div>
+        <p>Canada's national guidance describes a range of risk. Less is better.</p>
+        <div class="risk-scale" role="list" aria-label="Weekly alcohol risk levels">
+          <div class="risk-step risk-none" role="listitem"><strong>0</strong><span>drinks/week<br>Not drinking has benefits</span></div>
+          <div class="risk-step risk-low" role="listitem"><strong>1–2</strong><span>drinks/week<br>Low risk</span></div>
+          <div class="risk-step risk-mod" role="listitem"><strong>3–6</strong><span>drinks/week<br>Moderate risk</span></div>
+          <div class="risk-step risk-high" role="listitem"><strong>7+</strong><span>drinks/week<br>Increasingly high risk</span></div>
+        </div>
+        <ul class="bullet-list">
+          <li>If you drink, have no more than <strong>2 standard drinks on any one occasion</strong>.</li>
+          <li>One standard drink = 341 mL (12 oz) of 5% beer, 142 mL (5 oz) of 12% wine, or 43 mL (1.5 oz) of 40% spirits.</li>
+          <li>Try the <a href="toolkit.html#drinks">standard-drink counter</a> in the Health Toolkit.</li>
+        </ul>
+        <p class="small-note">Source: <a href="https://www.ccsa.ca/en/guidance-tools-resources/substance-use-and-addiction/alcohol/canadas-guidance-alcohol-and-health">Canadian Centre on Substance Use and Addiction</a></p>
+      </div>
+
       <div class="callout">
-        <div class="callout-title">NSHA — Addiction Services</div>
-        <p>Nova Scotia Health Authority provides community-based addiction services including assessment, individual counselling, group therapy, and withdrawal management referrals.</p>
+        <div class="callout-title">Nova Scotia Health — Mental Health &amp; Addictions</div>
+        <p>Nova Scotia Health provides community-based addiction services including assessment, individual counselling, group therapy, and withdrawal management referrals.</p>
         <ul class="bullet-list">
           <li>Access via 811 or your family doctor for a referral</li>
           <li>Self-referral accepted at most sites</li>
@@ -178,13 +197,31 @@
       <h2 id="substances-heading" class="section-title">💊 Drugs &amp; Opioid Safety</h2>
       <p class="lede">Harm reduction, treatment, and overdose prevention resources available in Nova Scotia.</p>
 
+      <div class="callout urgent">
+        <div class="callout-title">🚨 Suspect an overdose? Call for help.</div>
+        <p>Call <strong>911</strong> (ashore) or pipe for medical help on board, give naloxone if you have it, and stay with the person. Canada's <strong>Good Samaritan Drug Overdose Act</strong> protects people who call 911 for an overdose from simple drug possession charges.</p>
+      </div>
+
+      <div class="callout caution">
+        <div class="callout-title">🌿 Cannabis and CAF duty (DAOD 9004-1)</div>
+        <p>Cannabis is legal for adults in Canada, but CAF members must follow <strong>DAOD 9004-1, Use of Cannabis by CAF Members</strong>. Key rules include no cannabis use or possession:</p>
+        <ul class="bullet-list">
+          <li><strong>8 hours</strong> before any duty;</li>
+          <li><strong>24 hours</strong> before safety-sensitive duties listed in the DAOD, such as handling loaded weapons, ammunition, or explosives;</li>
+          <li><strong>28 days</strong> before highly demanding or precision duties such as diving, submarine service, high-altitude parachuting, or aircrew;</li>
+          <li>and none at all while in or on any vessel, vehicle, or aircraft operated by or for DND/CAF (that includes the ship), or during an international operation or OUTCAN posting (other than authorized leave in Canada).</li>
+        </ul>
+        <p class="small-note">The DAOD was amended in June 2026 (CANFORGEN 115/26), and command, occupational, and OUTCAN orders can add restrictions. Always check the <a href="https://www.canada.ca/en/department-national-defence/corporate/policies-standards/defence-administrative-orders-directives/9000-series/9004/9004-1-use-cannabis-caf-members.html">current DAOD 9004-1</a> and your ship's standing orders. See also Health Canada's <a href="https://www.canada.ca/en/health-canada/services/drugs-medication/cannabis/resources/lower-risk-cannabis-use-guidelines.html">Lower-Risk Cannabis Use Guidelines</a>.</p>
+      </div>
+
       <div class="callout">
         <div class="callout-title">Take Home Naloxone (THN) Program</div>
-        <p>Naloxone reverses opioid overdose. Free naloxone kits are available at most pharmacies across Nova Scotia — no prescription required. Training on how to use it takes only a few minutes.</p>
+        <p>Naloxone reverses opioid overdose. Free naloxone kits are available at participating pharmacies across Nova Scotia for anyone at risk of an overdose or likely to witness one. Training on how to use it takes only a few minutes.</p>
         <ul class="bullet-list">
           <li>Pick up a kit at any participating NS pharmacy</li>
           <li>Ask the pharmacist for a Take Home Naloxone kit</li>
-          <li>Website: <a href="https://novascotia.ca/dhw/naloxone">novascotia.ca/dhw/naloxone</a></li>
+          <li>No prescription, health card, or ID needed</li>
+          <li>Website: <a href="https://mha.nshealth.ca/en/services/take-home-naloxone-program">Nova Scotia Take Home Naloxone Program</a></li>
         </ul>
       </div>
 
@@ -198,7 +235,7 @@
       </div>
 
       <div class="callout">
-        <div class="callout-title">NSHA — Addiction &amp; Withdrawal Services</div>
+        <div class="callout-title">Nova Scotia Health — Addiction &amp; Withdrawal Services</div>
         <p>Clinical support for substance use including assessment, counselling, medical withdrawal management, and referral to residential treatment.</p>
         <ul class="bullet-list">
           <li>Referral through 811 or your doctor</li>
@@ -270,8 +307,8 @@
       </div>
 
       <div class="callout">
-        <div class="callout-title">NSHA — Mental Health &amp; Addictions (Full Program Directory)</div>
-        <p>Access the full directory of NSHA addiction services including outpatient, day programs, withdrawal management, and residential treatment across Nova Scotia.</p>
+        <div class="callout-title">Nova Scotia Health — Mental Health &amp; Addictions (Full Program Directory)</div>
+        <p>Access the full directory of Nova Scotia Health addiction services including outpatient, day programs, withdrawal management, and residential treatment across Nova Scotia.</p>
         <p class="small-note">Website: <a href="https://mha.nshealth.ca">mha.nshealth.ca</a></p>
       </div>
     </section>
@@ -293,7 +330,7 @@
 
     <footer class="disclaimer">
       <p>For informational purposes only. Some provincial services require a valid Nova Scotia Health Card. Phone numbers are verified at time of publishing — confirm with the service provider if in doubt.</p>
-      <p class="small-note">Content last reviewed: March 2026</p>
+      <p class="small-note">Content last reviewed: 26 September 2026</p>
     </footer>
   </main>
 
@@ -306,18 +343,21 @@
       <span class="tab-icon" aria-hidden="true">📋</span>
       <span class="tab-label">Topics</span>
     </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
     <a href="clinic-hours.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🕐</span>
       <span class="tab-label">Clinic</span>
-    </a>
-    <a href="contacts.html" class="tab-item">
-      <span class="tab-icon" aria-hidden="true">📞</span>
-      <span class="tab-label">Contacts</span>
     </a>
     <a href="support.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🤝</span>
       <span class="tab-label">Support</span>
     </a>
   </nav>
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 </body>
 </html>

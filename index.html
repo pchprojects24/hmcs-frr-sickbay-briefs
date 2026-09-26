@@ -7,6 +7,7 @@
   <meta name="description" content="Central shipboard health information hub for HMCS Frédérick Rolette crew. Health topics, clinic hours, contacts, and wellness resources.">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/interactive.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="scripts/theme.js"></script>
 </head>
@@ -23,6 +24,7 @@
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
       <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link">Contacts</a>
       <a href="notices.html" class="top-bar-link">Notices</a>
@@ -41,8 +43,14 @@
       <p class="lede">Your central source for shipboard health resources and crew wellness information.</p>
       <div class="hero-actions">
         <a href="health-topics.html" class="btn btn-gold">
-          Browse Health Topics
+          📋 Browse Health Topics
         </a>
+        <a href="challenge.html" class="btn btn-outline hero-btn-light">
+          🎯 Take the Crew Challenge
+        </a>
+        <button type="button" class="btn btn-outline hero-btn-light" data-help-now>
+          🆘 Help now
+        </button>
       </div>
     </div>
   </header>
@@ -61,11 +69,30 @@
       </div>
     </section>
 
+    <!-- Readiness dashboard -->
+    <section id="readiness" class="readiness" data-readiness aria-labelledby="readiness-title">
+      <div class="readiness-top">
+        <div class="readiness-ring-wrap" data-ring-wrap role="img" aria-label="Readiness 0 percent">
+          <div class="readiness-ring" data-ring>
+            <span class="readiness-ring-value" data-ring-value>0%</span>
+          </div>
+        </div>
+        <div class="readiness-intro">
+          <p class="eyebrow">Your Health Readiness</p>
+          <h2 id="readiness-title">Earn your badges, shipmate 🏅</h2>
+          <p class="readiness-next" data-next-step>Read a brief, ace its Knowledge Check, and try the Toolkit to fill your readiness ring.</p>
+          <ul class="readiness-stats" data-stats></ul>
+        </div>
+      </div>
+      <ul class="badge-grid" data-badges aria-label="Badges"></ul>
+      <p class="small-note readiness-foot">Progress is saved only on this device, and nothing is sent anywhere. <button type="button" class="link-btn" data-reset-progress>Reset progress</button></p>
+    </section>
+
     <!-- Navigation Cards -->
     <section aria-label="Main sections">
       <div class="section-heading">
         <h2>All Sections</h2>
-        <span class="section-count">6 sections</span>
+        <span class="section-count">8 sections</span>
       </div>
 
       <div class="card-grid">
@@ -81,11 +108,51 @@
               </div>
             </div>
             <div class="card-content">
-              <p>Browse briefs on fatigue, foot care, seasickness, winter skin, shaving, and wound care — written for shipboard conditions.</p>
+              <p>Briefs on fatigue, foot care, seasickness, winter skin, shaving, and wound care, written for shipboard conditions, each with a quick Knowledge Check.</p>
             </div>
           </div>
           <div class="card-footer">
             <span class="card-footer-label">6 topics available</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Health Toolkit -->
+        <a href="toolkit.html" class="brief-card cat-tool" aria-label="Health Toolkit">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">🧰</div>
+              <div class="card-header-text">
+                <h2>Health Toolkit</h2>
+                <span class="card-tag">Interactive</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Caffeine &amp; sleep planner, power-nap timer, wind chill in knots, engine-room humidex, hydration check, and a standard-drink counter.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-footer-label">6 tools</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Crew Health Challenge -->
+        <a href="challenge.html" class="brief-card cat-game" aria-label="Crew Health Challenge">
+          <div class="card-inner">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">🎯</div>
+              <div class="card-header-text">
+                <h2>Crew Health Challenge</h2>
+                <span class="card-tag">Quiz &amp; Badges</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Ten random questions on shipboard health, lifelines, and Canadian guidelines. Build a streak and earn your rank, from Sailor 3rd Class to CPO1.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-footer-label">~3 minutes</span>
             <span class="card-arrow" aria-hidden="true">→</span>
           </div>
         </a>
@@ -225,7 +292,7 @@
       <div class="hotline-callout">
         <span class="hotline-icon" aria-hidden="true">📱</span>
         <p class="hotline-text">
-          <strong>Ashore and need advice?</strong> Call <a href="https://811.novascotia.ca/">811 Nova Scotia</a> for nurse triage support — available 24 hours a day.
+          <strong>Ashore and need advice?</strong> Call <a href="https://811.novascotia.ca/">811 Nova Scotia</a> for nurse advice, 24 hours a day. <strong>Thinking about suicide?</strong> Call or text <a href="tel:988">988</a>, any time.
         </p>
       </div>
     </section>
@@ -239,7 +306,7 @@
         </div>
         <div class="footer-meta">
           <div>⚓ HMCS Frédérick Rolette</div>
-          <div>Updated: 22 March 2026</div>
+          <div>Updated: 26 September 2026</div>
         </div>
       </div>
     </footer>
@@ -256,18 +323,20 @@
       <span class="tab-icon" aria-hidden="true">📋</span>
       <span class="tab-label">Topics</span>
     </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
     <a href="clinic-hours.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🕐</span>
       <span class="tab-label">Clinic</span>
-    </a>
-    <a href="contacts.html" class="tab-item">
-      <span class="tab-icon" aria-hidden="true">📞</span>
-      <span class="tab-label">Contacts</span>
     </a>
     <a href="support.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🤝</span>
       <span class="tab-label">Support</span>
     </a>
   </nav>
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
 </body>
 </html>

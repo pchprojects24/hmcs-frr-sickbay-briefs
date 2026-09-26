@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/interactive.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="scripts/theme.js"></script>
 </head>
@@ -23,6 +24,7 @@
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link active" aria-current="page">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
       <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link">Contacts</a>
       <a href="notices.html" class="top-bar-link">Notices</a>
@@ -72,9 +74,17 @@
       <p class="search-status small-note" data-results-status role="status" aria-live="polite"></p>
     </section>
 
+    <section class="topics-progress" aria-label="Your progress">
+      <p class="topics-progress-text"><span aria-hidden="true">🧭</span> <span data-topics-progress>You have read 0 of 6 briefs.</span> Open every section of a brief and ace its Knowledge Check to earn badges.</p>
+      <div class="topics-progress-actions">
+        <a class="btn btn-gold btn-sm" href="challenge.html">🎯 Crew Health Challenge</a>
+        <a class="btn btn-outline btn-sm" href="toolkit.html">🧰 Health Toolkit</a>
+      </div>
+    </section>
+
     <section aria-label="Brief list">
       <div class="card-grid" data-brief-list>
-        <a href="winter-skin.html" class="brief-card" data-filter-text="cold weather skin dry chapped lips nosebleed winter hands face prevention">
+        <a href="winter-skin.html" class="brief-card" data-brief-card="winter-skin" data-filter-text="cold weather skin dry chapped lips nosebleed winter hands face prevention">
           <div class="card-header">
             <span class="icon icon-skin"></span>
             <h2>Cold Weather Skin</h2>
@@ -85,7 +95,7 @@
           <div class="card-meta"><span class="card-read-time">⏱ ~3 min</span></div>
         </a>
 
-        <a href="shaving.html" class="brief-card" data-filter-text="shaving razor bumps burn irritation infection grooming beard facial hair">
+        <a href="shaving.html" class="brief-card" data-brief-card="shaving" data-filter-text="shaving razor bumps burn irritation infection grooming beard facial hair">
           <div class="card-header">
             <span class="icon icon-razor"></span>
             <h2>Shaving & Razor Bumps</h2>
@@ -96,7 +106,7 @@
           <div class="card-meta"><span class="card-read-time">⏱ ~3 min</span></div>
         </a>
 
-        <a href="wound-care.html" class="brief-card" data-filter-text="cuts scrapes wounds bleeding injury first aid infection seawater dressing bandage">
+        <a href="wound-care.html" class="brief-card" data-brief-card="wound-care" data-filter-text="cuts scrapes wounds bleeding injury first aid infection seawater dressing bandage">
           <div class="card-header">
             <span class="icon icon-wound"></span>
             <h2>Minor Cuts & Wound Care</h2>
@@ -107,7 +117,7 @@
           <div class="card-meta"><span class="card-read-time">⏱ ~4 min</span></div>
         </a>
 
-        <a href="foot-care.html" class="brief-card" data-filter-text="feet foot care blisters hotspots athlete's foot moisture boots socks fungal">
+        <a href="foot-care.html" class="brief-card" data-brief-card="foot-care" data-filter-text="feet foot care blisters hotspots athlete's foot moisture boots socks fungal">
           <div class="card-header">
             <span class="icon icon-foot"></span>
             <h2>Foot Care at Sea</h2>
@@ -118,7 +128,7 @@
           <div class="card-meta"><span class="card-read-time">⏱ ~4 min</span></div>
         </a>
 
-        <a href="fatigue.html" class="brief-card" data-filter-text="fatigue tired sleep exhausted alertness watch nap caffeine rest energy readiness">
+        <a href="fatigue.html" class="brief-card" data-brief-card="fatigue" data-filter-text="fatigue tired sleep exhausted alertness watch nap caffeine rest energy readiness">
           <div class="card-header">
             <span class="icon icon-sleep"></span>
             <h2>Fatigue at Sea</h2>
@@ -129,7 +139,7 @@
           <div class="card-meta"><span class="card-read-time">⏱ ~5 min</span></div>
         </a>
 
-        <a href="seasickness.html" class="brief-card" data-filter-text="seasickness motion sickness nausea vomit vomiting dehydration medication drugs">
+        <a href="seasickness.html" class="brief-card" data-brief-card="seasickness" data-filter-text="seasickness motion sickness nausea vomit vomiting dehydration medication drugs">
           <div class="card-header">
             <span class="icon icon-motion"></span>
             <h2>Seasickness</h2>
@@ -145,7 +155,7 @@
 
     <section class="learning-lab" aria-label="Learning tools">
       <div class="learning-header">
-        <h2>Health Tip of the Day</h2>
+        <h2>💡 Health Tip of the Day</h2>
         <button class="btn" type="button" data-mission-btn>
           <span class="icon icon-refresh icon-sm"></span>
           New tip
@@ -156,7 +166,7 @@
 
     <footer class="disclaimer">
       <p><strong>Disclaimer:</strong> These briefs provide general information only and are not a substitute for professional medical assessment.</p>
-      <p class="small-note">Last updated: 7 July 2026</p>
+      <p class="small-note">Last updated: 26 September 2026</p>
     </footer>
   </main>
 
@@ -170,18 +180,20 @@
       <span class="tab-icon" aria-hidden="true">📋</span>
       <span class="tab-label">Topics</span>
     </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
     <a href="clinic-hours.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🕐</span>
       <span class="tab-label">Clinic</span>
-    </a>
-    <a href="contacts.html" class="tab-item">
-      <span class="tab-icon" aria-hidden="true">📞</span>
-      <span class="tab-label">Contacts</span>
     </a>
     <a href="support.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🤝</span>
       <span class="tab-label">Support</span>
     </a>
   </nav>
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
 </body>
 </html>

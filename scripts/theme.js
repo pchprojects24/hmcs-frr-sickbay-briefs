@@ -7,7 +7,8 @@
   const LIGHT = 'light';
 
   function getPreferred() {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    let saved = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { /* storage blocked */ }
     if (saved === DARK || saved === LIGHT) return saved;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT;
   }
@@ -24,7 +25,7 @@
   function toggleTheme() {
     const current = document.documentElement.getAttribute('data-theme') || getPreferred();
     const next = current === DARK ? LIGHT : DARK;
-    localStorage.setItem(STORAGE_KEY, next);
+    try { localStorage.setItem(STORAGE_KEY, next); } catch (e) { /* storage blocked */ }
     applyTheme(next);
   }
 

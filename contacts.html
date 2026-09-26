@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/page.css">
+  <link rel="stylesheet" href="styles/interactive.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="scripts/theme.js"></script>
 </head>
@@ -23,6 +24,7 @@
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
       <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link active" aria-current="page">Contacts</a>
       <a href="notices.html" class="top-bar-link">Notices</a>
@@ -118,7 +120,7 @@
     </section>
 
     <footer class="disclaimer">
-      <p class="small-note">Last updated: 22 March 2026</p>
+      <p class="small-note">Last updated: 26 September 2026</p>
     </footer>
   </main>
 
@@ -131,18 +133,21 @@
       <span class="tab-icon" aria-hidden="true">📋</span>
       <span class="tab-label">Topics</span>
     </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
     <a href="clinic-hours.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🕐</span>
       <span class="tab-label">Clinic</span>
-    </a>
-    <a href="contacts.html" class="tab-item active" aria-current="page">
-      <span class="tab-icon" aria-hidden="true">📞</span>
-      <span class="tab-label">Contacts</span>
     </a>
     <a href="support.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🤝</span>
       <span class="tab-label">Support</span>
     </a>
   </nav>
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 </body>
 </html>

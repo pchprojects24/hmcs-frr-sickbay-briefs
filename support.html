@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/page.css">
+  <link rel="stylesheet" href="styles/interactive.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="scripts/theme.js"></script>
 </head>
@@ -23,6 +24,7 @@
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
       <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link">Contacts</a>
       <a href="notices.html" class="top-bar-link">Notices</a>
@@ -109,13 +111,14 @@
       </ul>
     </section>
 
-    <section class="section-block" aria-labelledby="smrc-heading">
-      <h2 id="smrc-heading" class="section-title">Sexual Misconduct Response Centre (SMRC)</h2>
-      <p class="lede">The SMRC provides confidential support to anyone who has experienced sexual misconduct in the CAF.</p>
+    <section class="section-block" aria-labelledby="dcsrc-heading">
+      <h2 id="dcsrc-heading" class="section-title">Defence Community Support and Resource Centre (DCSRC)</h2>
+      <p class="lede">Formerly the Sexual Misconduct Support and Resource Centre (SMSRC). Renamed in April 2026, the DCSRC gives confidential, trauma-informed support to anyone in the Defence community affected by <strong>sexual misconduct or racism</strong>. It operates outside the chain of command.</p>
       <ul class="bullet-list">
-        <li>Confidential, 24-hour support line: <a href="tel:+18447501648"><strong>1-844-750-1648</strong></a></li>
-        <li>Email: <a href="mailto:DND.SMRC-CIIS.MDN@forces.gc.ca"><strong>DND.SMRC-CIIS.MDN@forces.gc.ca</strong></a></li>
-        <li>Support is available regardless of whether a formal complaint is made</li>
+        <li>Confidential 24/7 support line: <a href="tel:+18447501648"><strong>1-844-750-1648</strong></a></li>
+        <li>Email (answered weekdays 0700–1700 ET): <a href="mailto:DND.DCSRC-CSRCD.MDN@forces.gc.ca"><strong>DND.DCSRC-CSRCD.MDN@forces.gc.ca</strong></a></li>
+        <li>Support is available whether or not you make a formal report or complaint</li>
+        <li>Website: <a href="https://www.canada.ca/en/department-national-defence/services/benefits-military/health-support/sexual-misconduct-response.html">Defence Community Support and Resource Centre</a></li>
       </ul>
     </section>
 
@@ -134,9 +137,20 @@
     <section class="section-block" aria-labelledby="wellness-heading">
       <h2 id="wellness-heading" class="section-title">Additional Wellness Resources</h2>
 
+      <div class="callout urgent">
+        <div class="callout-title">9-8-8 Suicide Crisis Helpline</div>
+        <p>If you or someone you know is thinking about suicide, <a href="tel:988">call <strong>988</strong></a> or <a href="sms:988">text <strong>988</strong></a>. Free, confidential, 24 hours a day across Canada, in English or French. (This replaced the older Talk Suicide Canada line.)</p>
+      </div>
+
       <div class="callout">
-        <div class="callout-title">988 — Suicide Prevention &amp; Mental Health Support</div>
-        <p>A national line for mental health support and suicide prevention — <a href="tel:988">call <strong>988</strong></a> or <a href="sms:988">text <strong>988</strong></a>. Available 24 hours a day across Canada.</p>
+        <div class="callout-title">Hope for Wellness Help Line</div>
+        <p>Counselling and crisis support for all Indigenous peoples across Canada, 24/7. Services in English and French; Cree, Ojibway, and Inuktitut on request.</p>
+        <p>Phone: <a href="tel:+18552423310"><strong>1-855-242-3310</strong></a> &nbsp;&bull;&nbsp; Online chat: <a href="https://www.hopeforwellness.ca/">hopeforwellness.ca</a></p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">Kids &amp; teens in military families</div>
+        <p>Your kids can text <strong>CAFKIDS</strong> (English) or <strong>JEUNESFAC</strong> (French) to <a href="sms:686868"><strong>686868</strong></a> for free, confidential 24/7 support from Kids Help Phone, or call <a href="tel:+18006686868"><strong>1-800-668-6868</strong></a>.</p>
       </div>
 
       <div class="callout">
@@ -146,7 +160,7 @@
       </div>
 
       <div class="callout">
-        <div class="callout-title">811 — Nova Scotia Health Line</div>
+        <div class="callout-title">811 Nova Scotia — Nurse Advice Line</div>
         <p>Registered nurse triage, health advice, and referrals to local mental health and addiction services — free from any phone in Nova Scotia.</p>
         <p>Call: <a href="tel:811"><strong>811</strong></a> — available 24 hours a day</p>
       </div>
@@ -170,7 +184,7 @@
     </section>
 
     <footer class="disclaimer">
-      <p class="small-note">Last updated: 22 March 2026</p>
+      <p class="small-note">Last updated: 26 September 2026</p>
     </footer>
   </main>
 
@@ -183,18 +197,21 @@
       <span class="tab-icon" aria-hidden="true">📋</span>
       <span class="tab-label">Topics</span>
     </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
     <a href="clinic-hours.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🕐</span>
       <span class="tab-label">Clinic</span>
-    </a>
-    <a href="contacts.html" class="tab-item">
-      <span class="tab-icon" aria-hidden="true">📞</span>
-      <span class="tab-label">Contacts</span>
     </a>
     <a href="support.html" class="tab-item active" aria-current="page">
       <span class="tab-icon" aria-hidden="true">🤝</span>
       <span class="tab-label">Support</span>
     </a>
   </nav>
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 </body>
 </html>

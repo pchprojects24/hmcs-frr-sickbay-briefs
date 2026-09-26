@@ -219,10 +219,18 @@
         if (!missionText) return;
 
         const missions = [
-            "Open a brief you haven't read yet and note one thing you didn't know.",
-            "Check the References section of any brief for the official Canadian health source.",
-            "Read about a topic that affects your current watch rotation or duty.",
-            "Pick a brief and compare one recommendation with your current daily routine."
+            "Caffeine sticks around: about half of a 3 pm coffee can still be active at 8 pm. Aim to stop 6 hours before sleep.",
+            "Hotspot on your heel? Stop, dry, change socks, and pad it now. It's much faster than treating a blister later.",
+            "Nosebleed? Lean forward, not back, and pinch the soft part of your nose for 10–15 minutes without peeking.",
+            "Ointment beats cream, and cream beats lotion, for keeping hands from cracking in cold wind.",
+            "Feeling seasick? Head midship and low, look at the horizon, and keep sipping fluids.",
+            "Dirty cut? If your last tetanus shot was more than 5 years ago, you may need a booster. Ask Sick Bay.",
+            "Shave with the grain, rinse the blade often, and swap blades every 5–7 shaves to cut down on razor bumps.",
+            "Canada's alcohol guidance: if you drink, keep it to 2 standard drinks or fewer on any occasion.",
+            "Wind makes cold dangerous fast. At a wind chill of −28 or colder, exposed skin can freeze in 10–30 minutes.",
+            "Need to talk, any time? Call or text 988, or call CFMAP at 1-800-268-7708. Free and confidential.",
+            "Adults need 7–9 hours of sleep in 24. At sea, protect a 4+ hour core block and top up with short naps.",
+            "Pale yellow urine is the goal. Darker than that? Drink some water now."
         ];
 
         const setMission = () => {
