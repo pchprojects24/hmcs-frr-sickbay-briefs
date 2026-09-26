@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crew Health Challenge — Health Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ten quick questions on shipboard health, lifelines, and Canadian guidelines. Earn your rank!">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/page.css">
+  <link rel="stylesheet" href="styles/interactive.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script src="scripts/theme.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="top-bar">
+    <div class="top-bar-brand">
+      <a href="index.html">
+        <span class="top-bar-crest" aria-hidden="true">⚓</span>
+        <span class="top-title">HMCS Frédérick Rolette &mdash; Sickbay</span>
+      </a>
+    </div>
+    <nav class="top-bar-nav" aria-label="Site navigation">
+      <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
+      <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
+      <a href="contacts.html" class="top-bar-link">Contacts</a>
+      <a href="notices.html" class="top-bar-link">Notices</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>🌙</button>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Test Yourself</p>
+      <h1>Crew Health Challenge 🎯</h1>
+      <p class="lede">Ten random questions from every brief, plus lifelines and Canadian guidelines. How high can you rank?</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="container page-body">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="bc-sep" aria-hidden="true">/</span></li>
+        <li><span class="bc-current">Crew Health Challenge</span></li>
+      </ol>
+    </nav>
+
+    <section class="challenge-intro tool-card" data-challenge-intro aria-labelledby="intro-title">
+      <div class="challenge-intro-art" aria-hidden="true">⚓🎯🏆</div>
+      <h2 id="intro-title">Ready, shipmate?</h2>
+      <ul class="rank-ladder" aria-label="Ranks you can earn">
+        <li><span aria-hidden="true">🎖️</span> 10/10 — Chief Petty Officer 1st Class</li>
+        <li><span aria-hidden="true">🥇</span> 8–9 — Petty Officer 1st Class</li>
+        <li><span aria-hidden="true">🥈</span> 6–7 — Master Sailor</li>
+        <li><span aria-hidden="true">🥉</span> 4–5 — Sailor 1st Class</li>
+        <li><span aria-hidden="true">⚓</span> 0–3 — Sailor 3rd Class</li>
+      </ul>
+      <p class="small-note">Build a 🔥 streak by answering in a row. Score 8 or more to earn the ⚓ Crew Champion badge. Every answer explains the why, so you learn as you go.</p>
+      <button type="button" class="btn btn-gold btn-lg" data-challenge-start>Start the challenge →</button>
+    </section>
+
+    <section class="tool-card challenge" data-challenge hidden aria-label="Crew Health Challenge questions"></section>
+
+    <footer class="disclaimer">
+      <p><strong>Disclaimer:</strong> For learning only. Not a substitute for professional medical assessment.</p>
+      <p class="small-note">Last updated: 26 September 2026</p>
+    </footer>
+  </main>
+
+  <nav class="bottom-tab-bar" aria-label="Main navigation">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">⚓</span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a href="health-topics.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">📋</span>
+      <span class="tab-label">Topics</span>
+    </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
+    <a href="clinic-hours.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🕐</span>
+      <span class="tab-label">Clinic</span>
+    </a>
+    <a href="support.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🤝</span>
+      <span class="tab-label">Support</span>
+    </a>
+  </nav>
+
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/quiz.js" defer></script>
+  <script src="scripts/home.js" defer></script>
+</body>
+</html>

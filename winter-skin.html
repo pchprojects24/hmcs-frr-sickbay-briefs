@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/page.css">
+  <link rel="stylesheet" href="styles/interactive.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="scripts/theme.js"></script>
 </head>
@@ -24,6 +25,7 @@
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link active" aria-current="page">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
       <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link">Contacts</a>
       <a href="notices.html" class="top-bar-link">Notices</a>
@@ -39,7 +41,7 @@
     </div>
   </header>
 
-  <main id="main-content" class="container page-body" data-accordion-root>
+  <main id="main-content" class="container page-body" data-accordion-root data-brief="winter-skin">
     <nav aria-label="Breadcrumb">
       <ol class="breadcrumb">
         <li><a href="index.html">Home</a></li>
@@ -162,12 +164,17 @@
           <li><a href="https://811.novascotia.ca/health_topics/nosebleeds-epistaxis/">811 Nova Scotia: nosebleeds</a></li>
           <li><a href="https://dermatology.ca/public-patients/skin/dry-skin/">Canadian Dermatology Association: dry skin basics</a></li>
           <li><a href="https://www.canada.ca/en/health-canada/services/healthy-living/your-health/environment/extreme-cold.html">Health Canada: extreme cold guidance</a></li>
+          <li><a href="https://www.canada.ca/en/environment-climate-change/services/weather-health/wind-chill-cold-weather.html">Environment and Climate Change Canada: wind chill and cold weather</a></li>
           <li><a href="https://www.nhs.uk/conditions/sunburn/">NHS: sunscreen and cold-weather sun exposure</a></li>
         </ul>
-        <p class="small-note">In Nova Scotia, you can also call <a href="https://811.novascotia.ca/">811 Nova Scotia</a> for nurse advice (when ashore/when available).</p>
-        <p class="small-note source-meta"><strong>Updated:</strong> 7 Jul 2026</p>
+        <p class="small-note">Check frostbite risk with the <a href="toolkit.html#windchill">Wind Chill calculator</a>. In Nova Scotia, you can also call <a href="https://811.novascotia.ca/">811 Nova Scotia</a> for nurse advice (when ashore/when available).</p>
+        <p class="small-note source-meta"><strong>Reviewed:</strong> 26 Sep 2026</p>
       </div>
     </details>
+
+    <section class="quiz-card" data-quiz="winter-skin">
+      <noscript><p class="small-note">Turn on JavaScript to take the Knowledge Check.</p></noscript>
+    </section>
 
     <a href="health-topics.html" class="back-to-topics">← Back to Health Topics</a>
 
@@ -187,7 +194,7 @@
 
     <div class="footer-line">
       <span>General info only; not a substitute for professional medical assessment.</span>
-      <span>Last updated: 7 Jul 2026</span>
+      <span>Last reviewed: 26 Sep 2026</span>
     </div>
   </main>
 
@@ -202,18 +209,21 @@
       <span class="tab-icon" aria-hidden="true">📋</span>
       <span class="tab-label">Topics</span>
     </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
     <a href="clinic-hours.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🕐</span>
       <span class="tab-label">Clinic</span>
-    </a>
-    <a href="contacts.html" class="tab-item">
-      <span class="tab-icon" aria-hidden="true">📞</span>
-      <span class="tab-label">Contacts</span>
     </a>
     <a href="support.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🤝</span>
       <span class="tab-label">Support</span>
     </a>
   </nav>
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/quiz.js" defer></script>
 </body>
 </html>

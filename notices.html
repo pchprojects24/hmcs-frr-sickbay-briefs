@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/page.css">
+  <link rel="stylesheet" href="styles/interactive.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="scripts/theme.js"></script>
 </head>
@@ -23,6 +24,7 @@
     </div>
     <nav class="top-bar-nav" aria-label="Site navigation">
       <a href="health-topics.html" class="top-bar-link">Health Topics</a>
+      <a href="toolkit.html" class="top-bar-link">Toolkit</a>
       <a href="clinic-hours.html" class="top-bar-link">Clinic</a>
       <a href="contacts.html" class="top-bar-link">Contacts</a>
       <a href="notices.html" class="top-bar-link active" aria-current="page">Notices</a>
@@ -50,49 +52,66 @@
     <section aria-label="Active notices">
       <h2>Active Notices</h2>
 
-      <!-- Notice: Scabies Advisory -->
-      <article class="callout urgent" aria-label="Scabies Advisory">
-        <div class="callout-title">⚠️ Scabies Advisory — Active on Board</div>
-        <p class="small-note notice-meta">Posted: 23 March 2026 &nbsp;&bull;&nbsp; Status: <strong>Active</strong></p>
-
-        <p>Scabies spreads easily in close-quarter environments. All crew members should review the information below and report any symptoms to sickbay promptly.</p>
-
-        <h3 class="notice-section-heading">What Is Scabies?</h3>
-        <p>Scabies is a contagious skin infestation caused by a microscopic mite (<em>Sarcoptes scabiei</em>). The mites burrow into the outer layer of skin, causing intense itching and a rash. It is <strong>not</strong> a sign of poor hygiene — it spreads through prolonged direct skin contact and, less commonly, through shared bedding or clothing.</p>
-
-        <h3 class="notice-section-heading">Symptoms to Watch For</h3>
-        <ul class="bullet-list">
-          <li>Intense itching, especially at night or after a hot shower</li>
-          <li>A pimple-like rash, small blisters, or red bumps</li>
-          <li>Thin, irregular burrow lines on the skin (often visible in skin folds)</li>
-          <li>Common sites: between fingers, wrists, elbows, waistline, buttocks, and groin</li>
-        </ul>
-        <p>Symptoms may take 2–6 weeks to appear after first exposure. If you have been in close contact with a known case, you may develop symptoms sooner (1–4 days).</p>
-
-        <h3 class="notice-section-heading">What You Should Do</h3>
-        <ul class="bullet-list">
-          <li><strong>Report to sickbay immediately</strong> if you have any of the above symptoms.</li>
-          <li>Do not self-treat — prescription medication (permethrin cream) is required and is available through sickbay.</li>
-          <li>All close contacts must be assessed and treated at the same time, even without symptoms, to prevent reinfection.</li>
-          <li>Wash all worn clothing, bedding, and towels in hot water (&ge;60°C) and dry on high heat. Items that cannot be washed should be sealed in a bag for at least 72 hours.</li>
-          <li>Avoid sharing towels, clothing, or bedding until cleared by medical staff.</li>
-        </ul>
-
-        <h3 class="notice-section-heading">Treatment</h3>
-        <p>Treatment is effective. Permethrin 5% cream is applied to the entire body from neck to toes, left on overnight, then washed off. A second application one week later is usually recommended. Itching may continue for 1–2 weeks after treatment — this is normal and does not mean treatment has failed.</p>
-
-        <div class="callout caution notice-callout">
-          <div class="callout-title">Report to Sickbay</div>
-          <p>If you have symptoms or have had prolonged skin-to-skin contact with someone who may have scabies, come to sickbay during sick parade or contact medical staff directly. Early treatment protects you and the rest of the crew.</p>
-        </div>
+      <article class="callout success" aria-label="No active advisories">
+        <div class="callout-title">✅ No active outbreak advisories</div>
+        <p class="small-note notice-meta">Checked: 26 September 2026</p>
+        <p>There are no active health advisories for the ship right now. If something changes, Sick Bay will post it here and in daily orders.</p>
       </article>
 
+      <article class="callout info" aria-label="Seasonal reminder: respiratory virus season">
+        <div class="callout-title">🍂 Seasonal reminder — respiratory virus season</div>
+        <p class="small-note notice-meta">General health information &nbsp;&bull;&nbsp; Fall/winter 2026–27</p>
+        <p>Colds, flu, and COVID-19 spread fast in close quarters. The Public Health Agency of Canada recommends a flu shot every year for everyone 6 months and older.</p>
+        <ul class="bullet-list">
+          <li>Ask Sick Bay or the <a href="clinic-hours.html#section-immunization">Stadacona immunization nurse</a> about this season's flu and COVID-19 vaccines.</li>
+          <li>Wash or sanitize hands often, especially before meals and after heads visits.</li>
+          <li>Cough or sneeze into your sleeve, not your hand.</li>
+          <li>If you have a fever or feel unwell, report to Sick Bay rather than working through it on a crowded mess deck.</li>
+        </ul>
+        <p class="small-note">Source: <a href="https://www.canada.ca/en/public-health/services/diseases/flu-influenza.html">Public Health Agency of Canada: flu (influenza)</a></p>
+      </article>
     </section>
 
     <!-- ── Previous Notices ── -->
     <section class="section-block">
       <h2>Previous Notices</h2>
-      <p class="small-note">No previous notices on record.</p>
+      <details class="notice-archive">
+        <summary><strong>Scabies Advisory</strong> <span class="small-note">— posted 23 March 2026, now archived</span></summary>
+          <article class="notice-archived" aria-label="Scabies Advisory (archived)">
+                    <p class="small-note notice-meta">Posted: 23 March 2026 &nbsp;&bull;&nbsp; Status: <strong>Archived</strong> (26 September 2026)</p>
+
+            <p>Scabies spreads easily in close-quarter environments. All crew members should review the information below and report any symptoms to sickbay promptly.</p>
+
+            <h3 class="notice-section-heading">What Is Scabies?</h3>
+            <p>Scabies is a contagious skin infestation caused by a microscopic mite (<em>Sarcoptes scabiei</em>). The mites burrow into the outer layer of skin, causing intense itching and a rash. It is <strong>not</strong> a sign of poor hygiene — it spreads through prolonged direct skin contact and, less commonly, through shared bedding or clothing.</p>
+
+            <h3 class="notice-section-heading">Symptoms to Watch For</h3>
+            <ul class="bullet-list">
+              <li>Intense itching, especially at night or after a hot shower</li>
+              <li>A pimple-like rash, small blisters, or red bumps</li>
+              <li>Thin, irregular burrow lines on the skin (often visible in skin folds)</li>
+              <li>Common sites: between fingers, wrists, elbows, waistline, buttocks, and groin</li>
+            </ul>
+            <p>Symptoms may take 2–6 weeks to appear after first exposure. If you have had scabies before, symptoms can appear much sooner (1–4 days) after re-exposure.</p>
+
+            <h3 class="notice-section-heading">What You Should Do</h3>
+            <ul class="bullet-list">
+              <li><strong>Report to sickbay immediately</strong> if you have any of the above symptoms.</li>
+              <li>Do not self-treat — prescription medication (permethrin cream) is required and is available through sickbay.</li>
+              <li>All close contacts must be assessed and treated at the same time, even without symptoms, to prevent reinfection.</li>
+              <li>Wash all worn clothing, bedding, and towels in hot water (&ge;60°C) and dry on high heat. Items that cannot be washed should be sealed in a bag for at least 72 hours.</li>
+              <li>Avoid sharing towels, clothing, or bedding until cleared by medical staff.</li>
+            </ul>
+
+            <h3 class="notice-section-heading">Treatment</h3>
+            <p>Treatment is effective. Permethrin 5% cream is applied to the entire body from neck to toes, left on overnight, then washed off. A second application one week later is usually recommended. Itching may continue for 2–4 weeks after treatment — this is normal and does not mean treatment has failed.</p>
+
+            <div class="callout caution notice-callout">
+              <div class="callout-title">Report to Sickbay</div>
+              <p>If you have symptoms or have had prolonged skin-to-skin contact with someone who may have scabies, come to sickbay during sick parade or contact medical staff directly. Early treatment protects you and the rest of the crew.</p>
+            </div>
+          </article>
+      </details>
     </section>
 
     <div class="callout info">
@@ -101,7 +120,7 @@
     </div>
 
     <footer class="disclaimer">
-      <p class="small-note">Last updated: 23 March 2026</p>
+      <p class="small-note">Last updated: 26 September 2026</p>
     </footer>
   </main>
   <nav class="bottom-tab-bar" aria-label="Main navigation">
@@ -113,18 +132,21 @@
       <span class="tab-icon" aria-hidden="true">📋</span>
       <span class="tab-label">Topics</span>
     </a>
+    <a href="toolkit.html" class="tab-item">
+      <span class="tab-icon" aria-hidden="true">🧰</span>
+      <span class="tab-label">Toolkit</span>
+    </a>
     <a href="clinic-hours.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🕐</span>
       <span class="tab-label">Clinic</span>
-    </a>
-    <a href="contacts.html" class="tab-item">
-      <span class="tab-icon" aria-hidden="true">📞</span>
-      <span class="tab-label">Contacts</span>
     </a>
     <a href="support.html" class="tab-item">
       <span class="tab-icon" aria-hidden="true">🤝</span>
       <span class="tab-label">Support</span>
     </a>
   </nav>
+  <script src="scripts/quiz-data.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 </body>
 </html>
